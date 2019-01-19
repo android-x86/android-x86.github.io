@@ -1,0 +1,145 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+  <title>Android-x86 - Porting Android to x86</title>
+  <link rel="stylesheet" type="text/css" href="master.css">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+</head>
+
+<body>
+  <nav>
+    <ul>
+      <a class="navbar-link" href="index.html">
+        <li>Home</li>
+      </a>
+      <a class="navbar-link" href="https://www.fosshub.com/Android-x86.html">
+        <li>Download</li>
+      </a>
+      <a class="navbar-link" href="donate.html">
+        <li>Donate</li>
+      </a>
+      <a class="navbar-link" href="source.html">
+        <li>Get Source</li>
+      </a>
+      <a class="navbar-link" href="installhowto.html">
+        <li>Installation</li>
+      </a>
+      <a class="navbar-link" href="screenshots.html">
+        <li>Screenshots</li>
+      </a>
+      <a class="navbar-link" href="documentation.html">
+        <li>Documentation</li>
+      </a>
+      <a class="navbar-link" href="releases.html">
+        <li>Releases</li>
+      </a>
+      <a class="navbar-link" href="contact.html">
+        <li>Contact Us</li>
+      </a>
+      <a class="navbar-link" href="changelog.html">
+        <li>News</li>
+      </a>
+      <a class="active-navbar-link" href="credits.html">
+        <li>Credits</li>
+      </a>
+    </ul>
+  </nav>
+  <div class="openNav">
+    <div class="icon"></div>
+  </div>
+  <!--HTML of main page-->
+  <div class="wrapper">
+    <section>
+      <h1 id="top" class="heading">Android x86</h1>
+      <h2 class="subheading">Run Android on your PC</h2>
+      <p>This project could not have been a reality without these:</p>
+      <h2>Developers</h2>
+      <ul>
+        <li>Current project maintainer is <a href="mailto:cwhuang@android-x86.org">Chih-Wei Huang</a></li>
+        <li><a href="http://0xlab.org/">0xlab</a>, a group of engineers enthusiastic in open source software development , contributed many fixes and improvements to the Android frameworks, included the OpenGL ES hardware acceleration for Android-x86.</li>
+        <li><a href="mailto:omxcodec@gmail.com">Michael Chen</a> who developed the stagefright-plugins to improve the multimedia support.</li>
+        <li><a href="mailto:dima@android.com">Dima Zavin</a>, the original guy ported the Android to EeePC 701</li>
+        <li><a href="mailto:leemgs@gmail.com">Geunsik Lim</a>, wrote original "HOWTO Build Android-X86 Full Source" and "How to use x86 android platform on virtualbox"</li>
+        <li><a href="mailto:sunsetyang@gmail.com">Chen Yang</a> for the instructions on the how to make boot-able image and how to build Android for VMware, and investigations on almost all of the build breaks and run time issues </li>
+        <li><a href="mailto:aryabhushan2003@gmail.com">Arya Bhushan</a> and <a href="mailto:adityasood22@gmail.com">Aditya Sood</a> for developing and maintainig this website.</li>
+        <li><a href="https://codepen.io/Lewitje/pen/tyGdf">Lewi Hussey</a> for navigation bar design.</li>
+        <li><a href="mailto:jackie.wu@intel.com">Jackie Wu</a> for the fix in alarm.c </li>
+        <li><a href="mailto:nielskeeman@gmail.com">Niels Keeman</a> for the investigation on the path issue in the battery service jni code, v4l2 camera support (android-m912 project)</li>
+        <li><a href="mailto:lucabelluccini@gmail.com">Luca Belluccini</a> for the first patch to fix the path issue in the battery service jni code </li>
+        <li><a href="mailto:khjeng@princeton.edu">Kevin Jeng</a> for adding the mouse wheel support </li>
+        <li><a href="mailto:ashughes@gmail.com">Andrew Hughes</a> for the works on iwlwifi4965 and Thinkpad x61 testing </li>
+        <li><a href="mailto:alsutton@android-x86.org">Al Sutton</a> for testing and work on the ViewSonic ViewPad 10</li>
+      </ul>
+      <br>
+      <h2>Sponsors</h2>
+      <ul>
+        <li>Sponsored by <a href="https://microsoftsupports.net">Microsoft Support</a></li>
+        <li>Sponsored by <a href="https://www.stickeryou.com/">StickerYou.com</a>, manufacturers of quality <a href="https://www.stickeryou.com/products/custom-stickers/335/">Custom Stickers</a> and <a href="https://www.stickeryou.com/products/labels/654/">Custom Labels</a>.</li>
+        <li>Sponsored by <a href="https://crumbles.co/showbox-apk-download/">Showbox</a> and <a href="https://babasupport.org/">Customer Service Number</a></li>
+        <li><a href="http://www.acuitytraining.co.uk">Acuity Training</a> for various technical advice.</li>
+        <li>Sponsored by <a href="https://9appsapk.net.in">9APPS APK DOWNLOAD</a> &amp; <a href="https://droidmoda.com">Android Apps Free Download</a>.</li>
+        <li>Sponsored by <a href="http://kikonline.tips/tutuapp/">TutuApp</a>.</li>
+        <li>Sponsored by <a href="https://luckypatcherappdownload.com/">Lucky Patcher Apk</a> <a href="http://freedomapkdld.com/">Freedom Apk</a>.</li>
+        <li>Sponsored by <a href="https://luckypatcher.playstoredownloads.org">Lucky Patcher</a>.</li>
+        <li>Supported by <a href="http://www.showboxappz.com/">Official ShowBox Website</a>, <a href="http://showboxappdownload.co/showbox-apk/">ShowBox APK</a> and <a href="http://www.bloomtimes.com/facetime-for-pc-windows-and-mac/">FaceTime for PC</a>.</li>
+        <li>Sponsored by <a href="https://showboxa.com/showbox-app/">ShowBox for Android</a> &amp; <a href="https://showboxa.com/showbox-apk/">ShowBox APK file</a>.</li>
+        <li>Sebastian Albrecht from <a href="http://yourvancouverrealestate.ca/vancouver-special/">Vancouver special</a>, <a href="http://foliovision.com/2013/02/lorne-marr">Lorne Marr</a>, <a href="http://ellidavis.com/">Toronto Realtor</a> Elli Davis, and
+          Chantal Marr from <a href="http://nomedicallifeinsurance.ca/">No medical life insurance</a> for their support.</li>
+
+      </ul>
+      <br>
+      <p>Of course, there are other people who gave helps. But there are too many e-mails and it is very hard for me to go through each e-mail to find the related person to list here. So, if you think we missed your name here, please kindly <a href="mailto:android-x86.org">drop us an e-mail</a>.</p>
+      <br>
+      <br>
+      <br>
+      <br>
+      <br>
+      <br>
+
+
+      <footer class="footer">
+        <div class="cap">
+
+          <a href="#" id="scroll-top" class="scroll-to-top">
+                      Back to top
+                  </a>
+        </div>
+        <div class="footer-copyright">
+          <div class="navbar-link">
+            &copy; 2019 Android x86 by <a class="navbar-link" id="easter" href="mailto:aryabhushan2003@gmail.com">@arya</a> & <a class="navbar-link" id="easter" href="mailto:adityasood22@gmail.com">@sood</a>
+          </div>
+        </div>
+      </footer>
+  </div>
+
+  <!--JAVASCRIPT CODE-->
+
+  <script src="https://code.jquery.com/jquery-2.1.1.min.js"></script>
+  <script>
+    $(".openNav").click(function() {
+      $("body").toggleClass("navOpen");
+      $("nav").toggleClass("open");
+      $(".wrapper").toggleClass("open");
+      $(this).toggleClass("open");
+    });
+  </script>
+  <script type="text/javascript">
+    var _gaq = _gaq || [];
+    _gaq.push(['_setAccount', 'UA-36251023-1']);
+    _gaq.push(['_setDomainName', 'jqueryscript.net']);
+    _gaq.push(['_trackPageview']);
+
+    (function() {
+      var ga = document.createElement('script');
+      ga.type = 'text/javascript';
+      ga.async = true;
+      ga.src = ('https:' == document.location.protocol ? 'https://ssl' : 'http://www') + '.google-analytics.com/ga.js';
+      var s = document.getElementsByTagName('script')[0];
+      s.parentNode.insertBefore(ga, s);
+    })();
+  </script>
+
+</body>
+
+</html>

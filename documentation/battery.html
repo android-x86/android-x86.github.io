@@ -1,0 +1,198 @@
+<!DOCTYPE html>
+<!--Website created by Arya Bhushan & Aditya Sood-->
+<html>
+    <head>
+        <title>Android-x86 - Porting Android to x86</title>
+        <link rel="stylesheet" type="text/css" href="../master.css">
+		    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <style>
+            .code-snippet {
+              margin-top: 16px!important;
+              margin-bottom: 16px!important;
+            }
+            .code-snippet {
+              width: auto;
+              background-color: #2b2b2b;
+              padding: 8px 12px;
+              border-left: 4px solid #14b9ff;
+              word-wrap: break-word;
+            }
+
+            .code-snippet {
+              font-family: Consolas,"courier new";
+              font-size: 16px;
+            }
+
+                  .code-snippet-inv {
+              margin-top: 16px!important;
+              margin-bottom: 16px!important;
+            }
+            .code-snippet-inv {
+              width: auto;
+              background-color: #b0c9ff;
+              padding: 8px 12px;
+              border-left: 4px solid #000000;
+              word-wrap: break-word;
+            }
+
+            .code-snippet-inv {
+              font-family: Consolas,"courier new";
+              font-size: 16px;
+            }
+    </style>
+
+    </head>
+    <body>
+      <nav>
+        <ul>
+          <a class="navbar-link" href="../index.html">
+            <li>Home</li>
+          </a>
+          <a class="navbar-link" href="https://www.fosshub.com/Android-x86.html">
+            <li>Download</li>
+          </a>
+          <a class="navbar-link" href="../donate.html">
+            <li>Donate</li>
+          </a>
+          <a class="navbar-link" href="../source.html">
+            <li>Get Source</li>
+          </a>
+          <a class="navbar-link" href="../installhowto.html">
+            <li>Installation</li>
+          </a>
+          <a class="navbar-link" href="../screenshots.html">
+            <li>Screenshots</li>
+          </a>
+          <a class="active-navbar-link" href="../documentation.html">
+            <li>Documentation</li>
+          </a>
+          <a class="navbar-link" href="../releases.html">
+            <li>Releases</li>
+          </a>
+          <a class="navbar-link" href="../contact.html">
+            <li>Contact Us</li>
+          </a>
+          <a class="navbar-link" href="../changelog.html">
+            <li>News</li>
+          </a>
+          <a class="navbar-link" href="../credits.html">
+            <li>Credits</li>
+          </a>
+        </ul>
+      </nav>
+      <div class="openNav">
+        <div class="icon"></div>
+      </div>
+<!--HTML of main page-->
+        <div class="wrapper">
+            <section>
+                <h1 id="top" class="heading">Android x86</h1>
+                <h2 class="subheading">Run Android on your PC</h2>
+                <br>
+                <h2>How to Configure Battery Service</h2>
+                <br>
+                <p>
+                  Android battery service was developed with only one type of battery and power management in mind. When running Android on the different hardware platforms, the battery status often shows up incorrectly. To resolve this issue, we have developed an easier method of supporting different platforms and battery types. This document explains how to configure the android-x86 platform to support different type of batteries.
+                </p>
+                <h3>Battery Status sysfs Path Problem</h3>
+                <p>In Linux, applications collect the battery status through sysfs, where the battery status is located in /sys/class/power_supply/. Different platforms, however, may give you a different directory layout under /sys/class/power_supply/, but Android hardcodes the directory layout to /sys/class/power_supply/. To resolve this issue, I have added new entries in vendor/asus/eeepc/system.prop, where the user can change the value of these entries to correctly configure the sysfs directory layout for different platforms.
+                <br><br>These entries are:
+                <div class="code-snippet"><span style="color:#d1d1d1">
+
+                  ro.sys.fs.power_supply.ac=/AC0<br>
+                  ro.sys.fs.power_supply.bat=/BAT0<br>
+                  ro.sys.fs.power_supply.ac.feature.online=/online<br>
+                  ro.sys.fs.power_supply.bat.feature.status=/status<br>
+                  ro.sys.fs.power_supply.bat.feature.present=/present<br>
+                  ro.sys.fs.power_supply.bat.feature.capacity.now=/charge_now<br>
+                  ro.sys.fs.power_supply.bat.feature.capacity.full=/charge_full<br>
+                  ro.sys.fs.power_supply.bat.feature.voltage.now=/voltage_now<br>
+                  ro.sys.fs.power_supply.bat.feature.voltage.full=/voltage_full<br>
+                  ro.sys.fs.power_supply.bat.feature.tech=/technology<br>
+                  #ro.sys.fs.power_supply.bat.features.bat.health is not supported<br>
+                  #ro.sys.fs.power_supply.bat.features.bat.temperature is not supported
+
+        					</span></div>
+
+                  In essence, these entries tell the Android battery service code to look for the information in the correct place.</p>
+
+                  <h3>UEVENT Name Problem</h3>
+                  <p>
+                    There is another issue with vold. vold catches the uevent for power supplier type changing events. Unfortunately, on different platforms, the name of the uevent may be different, but Android vold hardcodes the uevent name. To resolve this issue, I have added an additional two entries in the system.prop to allow vold to use the uevent names based on the user configuration. These two new entries are:
+
+                  <div class="code-snippet"><span style="color:#d1d1d1">
+                        ro.power_supply.uevent.name.capacity.now=POWER_SUPPLY_CHARGE_NOW<br>
+                        ro.power_supply.uevent.name.capacity.full=POWER_SUPPLY_CHARGE_FULL
+          					</span></div>
+                    After installation, the system.prop will be installed in /system/build.prop. The user can modify this file during run time and reboot the system, allowing the change to take effect.
+                  </p>
+
+                  <h3>Battery Status Value Calculation</h3>
+                  <p>The X86 platform often connects the battery through ACPI, therefore the exposure of the battery status follows the ACPI standard. Very important is how the battery energy level is calculated. Below is what I've copied from ACPI spec:
+
+                    <div class="code-snippet"><span style="color:#d1d1d1">
+
+                      Remaining Battery Percentage[%] <br>
+                      = (Battery Remaining Capacity [mAh/mWh]/Last Full Charged Capacity [mAh/mWh])* 100
+
+                    </span></div>
+                      The Android standard platform (G1) however does not follow this model. On the G1, the kernel will push the "Remaining Battery Percentage" to the sysfs entries directly.
+                      <br>Currently Android-x86 code tries to support both cases. If the user specifies ro.sys.fs.power_supply.bat.feature.capacity.full, then the "Remaining Battery Percentage" will be calculated following the Android model, otherwise, it will be calculated by Android's original way.
+                    </p>
+                    <h3>User Specific Implementation</h3>
+                    <p>
+                      To implement your own battery status handling code, simply re-implement the IBatteryServiceStatus class in frameworks/base/libs/utils/IBatteryServiceStatus.cpp, replacing frameworks/base/libs/utils/BatteryServiceStatus.cpp with your own implementation.
+                    </p>
+
+
+    <div id="f-padding"></div>
+        </section>
+        <section class = "bg">
+            <div class="bg"></div>
+        <div class="clearfix"></div>
+        </section>
+
+
+        <footer class="footer">
+            <div class="cap">
+
+              <a href="#" id="scroll-top" class="scroll-to-top">
+                  Back to top
+              </a>
+            </div>
+                  <div class="footer-copyright">
+                    <div class="navbar-link">
+                    &copy; 2019 Android x86 | Website by <a class="navbar-link" id="easter" href="mailto:aryabhushan2003@gmail.com">@arya</a> & <a class="navbar-link" id="easter" href="mailto:adityasood22@gmail.com">@sood</a>
+                    </div>
+                  </div>
+                </footer>
+    </div>
+
+      <!--JAVASCRIPT CODE-->
+
+    <script src="https://code.jquery.com/jquery-2.1.1.min.js"></script>
+    <script>
+    $(".openNav").click(function() {
+    $("body").toggleClass("navOpen");
+    $("nav").toggleClass("open");
+    $(".wrapper").toggleClass("open");
+    $(this).toggleClass("open");
+    });
+    </script>
+    <script type="text/javascript">
+
+    var _gaq = _gaq || [];
+    _gaq.push(['_setAccount', 'UA-36251023-1']);
+    _gaq.push(['_setDomainName', 'jqueryscript.net']);
+    _gaq.push(['_trackPageview']);
+
+    (function() {
+    var ga = document.createElement('script'); ga.type = 'text/javascript'; ga.async = true;
+    ga.src = ('https:' == document.location.protocol ? 'https://ssl' : 'http://www') + '.google-analytics.com/ga.js';
+    var s = document.getElementsByTagName('script')[0]; s.parentNode.insertBefore(ga, s);
+    })();
+
+</script>
+
+</body>
+</html>

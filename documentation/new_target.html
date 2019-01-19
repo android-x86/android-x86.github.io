@@ -1,0 +1,243 @@
+<!DOCTYPE html>
+<!--Website created by Arya Bhushan & Aditya Sood-->
+<html>
+    <head>
+        <title>Android-x86 - Porting Android to x86</title>
+        <link rel="stylesheet" type="text/css" href="../master.css">
+		<meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <style>
+    .code-snippet {
+      margin-top: 16px!important;
+      margin-bottom: 16px!important;
+    }
+    .code-snippet {
+      width: auto;
+      background-color: #2b2b2b;
+      padding: 8px 12px;
+      border-left: 4px solid #14b9ff;
+      word-wrap: break-word;
+    }
+
+    .code-snippet {
+      font-family: Consolas,"courier new";
+      font-size: 16px;
+    }
+
+          .code-snippet-inv {
+      margin-top: 16px!important;
+      margin-bottom: 16px!important;
+    }
+    .code-snippet-inv {
+      width: auto;
+      background-color: #b0c9ff;
+      padding: 8px 12px;
+      border-left: 4px solid #000000;
+      word-wrap: break-word;
+    }
+
+    .code-snippet-inv {
+      font-family: Consolas,"courier new";
+      font-size: 16px;
+    }
+</style>
+    </head>
+    <body>
+      <nav>
+        <ul>
+          <a class="navbar-link" href="../index.html">
+            <li>Home</li>
+          </a>
+          <a class="navbar-link" href="https://www.fosshub.com/Android-x86.html">
+            <li>Download</li>
+          </a>
+          <a class="navbar-link" href="../donate.html">
+            <li>Donate</li>
+          </a>
+          <a class="navbar-link" href="../source.html">
+            <li>Get Source</li>
+          </a>
+          <a class="navbar-link" href="../installhowto.html">
+            <li>Installation</li>
+          </a>
+          <a class="navbar-link" href="../screenshots.html">
+            <li>Screenshots</li>
+          </a>
+          <a class="active-navbar-link" href="../documentation.html">
+            <li>Documentation</li>
+          </a>
+          <a class="navbar-link" href="../releases.html">
+            <li>Releases</li>
+          </a>
+          <a class="navbar-link" href="../contact.html">
+            <li>Contact Us</li>
+          </a>
+          <a class="navbar-link" href="../changelog.html">
+            <li>News</li>
+          </a>
+          <a class="navbar-link" href="../credits.html">
+            <li>Credits</li>
+          </a>
+        </ul>
+      </nav>
+      <div class="openNav">
+        <div class="icon"></div>
+      </div>
+<!--HTML of main page-->
+        <div class="wrapper">
+            <section>
+                <h1 id="top" class="heading">Android x86</h1>
+                <h2 class="subheading">Run Android on your PC</h2>
+
+                <h2>Add new target</h2>
+                <p>
+                  The article describes how to create a target for your own device under Android-x86. Rewritten from the e-mail Chih-wei Huang sent to android-x86 discussion group.
+                </p>
+                <h2>Create a directory</h2>
+                <p>
+                  First, you have to create a directory to hold all stuff specific for your target device.
+
+                <div class="code-snippet"><span style="color:#44ffc0">
+                  mkdir vendor/xxx/yyy
+                </span></div>
+                or
+                <div class="code-snippet"><span style="color:#44ffc0">
+                  mkdir device/xxx/yyy
+                </span></div>
+                where xxx is usually the vendor's name and yyy is the product name. Historically, we used the vendor/ directory. However, Google suggested to use device/ since Froyo. We encourage to use the new convention device/ as AOSP does.
+              </p>
+              <h2>Create makefiles</h2>
+              <p>
+                At least you have to create four makefiles in the new directory:
+                <h3>AndroidProducts.mk</h3>
+              <p>This makefile should only contain PRODUCT_MAKEFILES which is a list of product makefiles to expose to the build system. So if your product name is yyy, it is
+                <div class="code-snippet"><span style="color:#44ffc0">
+                PRODUCT_MAKEFILES := $(LOCAL_DIR)/yyy.mk
+                </span></div>
+              </p>
+              <h3>The product makefile: yyy.mk</h3>
+              <p>
+                You have to define PRODUCT_PACKAGES, PRODUCT_NAME, PRODUCT_DEVICE in it, and call inherit-product to inherit from a product makefile.  I suggest to to inherit generic_x86.mk to get all common x86 rules.
+                <div class="code-snippet"><span style="color:#44ffc0">
+                  $(call inherit-product,$(SRC_TARGET_DIR)/product/generic_x86.mk)
+                </span></div>
+              </p>
+              <h3>The board config makefile: BoardConfig.mk</h3>
+              <p>
+                You can override some variables before including $(GENERIC_X86_CONFIG_MK)
+                <div class="code-snippet"><span style="color:#ff8200">
+                  TARGET_HAS_THIRD_PARTY_APPS
+                </span></div>
+                 set to true if you hope to compile third party apps like ConnectBot, FileManager introduced by Android-x86.
+                 <br>Default: false<br><br>
+                 <div class="code-snippet"><span style="color:#ff8200">
+                   BOARD_USES_ALSA_AUDIO
+                 </span></div>
+                 Set to false if you don't want ALSA audio.
+                 <br>Default: true.<br><br>
+                 <div class="code-snippet"><span style="color:#ff8200">
+                   BOARD_HAVE_BLUETOOTH
+                 </span></div>
+                 If you don't need bluetooth, set it to false.
+                 <br>Default: true.<br><br>
+                 <div class="code-snippet"><span style="color:#ff8200">
+                   BOARD_USES_TSLIB
+                 </span></div>
+                 Set to true if you need tslib to calibrate the touchscreen.
+                 <br>Default: false<br><br>
+                 <div class="code-snippet"><span style="color:#ff8200">
+                   BOARD_KERNEL_CMDLINE
+                 </span></div>
+                 You can customize your cmdline (kernel boot options)<br><br>
+                 <div class="code-snippet"><span style="color:#ff8200">
+                   BOARD_WPA_SUPPLICANT_DRIVER
+                 </span></div>
+                 Set to true if you need wifi support
+
+              </p>
+              <h3>The android board makefile: AndroidBoard.mk</h3>
+                <p>
+                  You can override some variables before including
+                  <div class="code-snippet"><span style="color:#22cc45">
+                    $(GENERIC_X86_ANDROID_MK)
+                  </span></div>
+                  <br><br>
+                  The variables are:
+
+                  <div class="code-snippet"><span style="color:#ff8200">
+                    LOCAL_FIRMWARES
+                  </span></div>
+                  Specify the firmwares to be included in the target. The firmwares are supposed to be already in build/target/board/generic_x86/firmware/.
+                  <br>You may also specify a different directory in LOCAL_FIRMWARES_DIR<br><br>
+
+                  <div class="code-snippet"><span style="color:#ff8200">
+                    TARGET_INITRD_SCRIPTS
+                  </span></div>
+                  Specify a hook script to be added in the initrd.img. Usually the script should contain a detect_hardware function that will be called by the init script.
+                  <br>Read eeepc_info as an implementation example.<br><br>
+
+                  <div class="code-snippet"><span style="color:#ff8200">
+                    TARGET_PREBUILT_APPS
+                  </span></div>
+                  If you want to include some prebuilt apps (apk files), set them to this variable.<br><br>
+                  <div class="code-snippet"><span style="color:#ff8200">
+                    TARGET_KERNEL_CONFIG
+                  </span></div>
+                  Specify a kernel config file for this target. If not set, the default android-x86_defconfig will be used.
+                </p>
+                Besides the four makefiles, you may also add the file init.yyy.rc to do some initializations for your product
+                <br>The file will be included automatically if exists,and called by Android init on booting(after executing init.rc).
+              </p>
+
+
+
+    <div id="f-padding"></div>
+        </section>
+        <section class = "bg">
+            <div class="bg"></div>
+        <div class="clearfix"></div>
+        </section>
+
+
+        <footer class="footer">
+            <div class="cap">
+
+              <a href="#" id="scroll-top" class="scroll-to-top">
+                  Back to top
+              </a>
+            </div>
+                  <div class="footer-copyright">
+                    <div class="navbar-link">
+                    &copy; 2019 Android x86 | All Rights Reserved | Website v2.14 by <a class="navbar-link" id="easter" href="mailto:aryabhushan2003@gmail.com">@arya</a> & <a class="navbar-link" id="easter" href="mailto:adityasood22@gmail.com">@sood</a>
+                    </div>
+                  </div>
+                </footer>
+    </div>
+
+      <!--JAVASCRIPT CODE-->
+
+    <script src="https://code.jquery.com/jquery-2.1.1.min.js"></script>
+    <script>
+    $(".openNav").click(function() {
+    $("body").toggleClass("navOpen");
+    $("nav").toggleClass("open");
+    $(".wrapper").toggleClass("open");
+    $(this).toggleClass("open");
+    });
+    </script>
+    <script type="text/javascript">
+
+    var _gaq = _gaq || [];
+    _gaq.push(['_setAccount', 'UA-36251023-1']);
+    _gaq.push(['_setDomainName', 'jqueryscript.net']);
+    _gaq.push(['_trackPageview']);
+
+    (function() {
+    var ga = document.createElement('script'); ga.type = 'text/javascript'; ga.async = true;
+    ga.src = ('https:' == document.location.protocol ? 'https://ssl' : 'http://www') + '.google-analytics.com/ga.js';
+    var s = document.getElementsByTagName('script')[0]; s.parentNode.insertBefore(ga, s);
+    })();
+
+</script>
+
+</body>
+</html>

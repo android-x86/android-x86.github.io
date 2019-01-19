@@ -1,0 +1,116 @@
+<!DOCTYPE html>
+<!--Website created by Arya Bhushan & Aditya Sood-->
+<html>
+    <head>
+        <title>Android-x86 - Porting Android to x86</title>
+        <link rel="stylesheet" type="text/css" href="../master.css">
+		<meta name="viewport" content="width=device-width, initial-scale=1.0">
+    </head>
+    <body>
+      <nav>
+        <ul>
+          <a class="navbar-link" href="../index.html">
+            <li>Home</li>
+          </a>
+          <a class="navbar-link" href="https://www.fosshub.com/Android-x86.html">
+            <li>Download</li>
+          </a>
+          <a class="navbar-link" href="../donate.html">
+            <li>Donate</li>
+          </a>
+          <a class="navbar-link" href="../source.html">
+            <li>Get Source</li>
+          </a>
+          <a class="navbar-link" href="../installhowto.html">
+            <li>Installation</li>
+          </a>
+          <a class="navbar-link" href="../screenshots.html">
+            <li>Screenshots</li>
+          </a>
+          <a class="active-navbar-link" href="../documentation.html">
+            <li>Documentation</li>
+          </a>
+          <a class="navbar-link" href="../releases.html">
+            <li>Releases</li>
+          </a>
+          <a class="navbar-link" href="../contact.html">
+            <li>Contact Us</li>
+          </a>
+          <a class="navbar-link" href="../changelog.html">
+            <li>News</li>
+          </a>
+          <a class="navbar-link" href="../credits.html">
+            <li>Credits</li>
+          </a>
+        </ul>
+      </nav>
+      <div class="openNav">
+        <div class="icon"></div>
+      </div>
+<!--HTML of main page-->
+        <div class="wrapper">
+            <section>
+                <h1 id="top" class="heading">Android x86</h1>
+                <h2 class="subheading">Run Android on your PC</h2>
+                <br><br>
+                <h3>How to make camera work</h3>
+                <p>Here is a note from Chih-Wei:
+
+                <br>I've made it work. Exce the changes I mentioned, the steps are necessary:<br>
+                <br>• enable camera from BIOS
+                <br>• enable kernel uvcvideo module and load it from init</p>
+
+                <p>The tested Eee PC models are 701 and 1000. However, on 1000, taking snapshot doesn't work well. The picture is garbage (only black and green lines). But on 701 it's fine. The difference is 701 has 30M webcam, but on 1000 it's 130M.</p>
+
+
+    <div id="f-padding"></div>
+        </section>
+        <section class = "bg">
+            <div class="bg"></div>
+        <div class="clearfix"></div>
+        </section>
+
+
+        <footer class="footer">
+            <div class="cap">
+
+              <a href="#" id="scroll-top" class="scroll-to-top">
+                  Back to top
+              </a>
+            </div>
+                  <div class="footer-copyright">
+                    <div class="navbar-link">
+                    &copy; 2019 Android x86 | Website by <a class="navbar-link" id="easter" href="mailto:aryabhushan2003@gmail.com">@arya</a> & <a class="navbar-link" id="easter" href="mailto:adityasood22@gmail.com">@sood</a>
+                    </div>
+                  </div>
+                </footer>
+    </div>
+
+      <!--JAVASCRIPT CODE-->
+
+    <script src="https://code.jquery.com/jquery-2.1.1.min.js"></script>
+    <script>
+    $(".openNav").click(function() {
+    $("body").toggleClass("navOpen");
+    $("nav").toggleClass("open");
+    $(".wrapper").toggleClass("open");
+    $(this).toggleClass("open");
+    });
+    </script>
+    <script type="text/javascript">
+
+    var _gaq = _gaq || [];
+    _gaq.push(['_setAccount', 'UA-36251023-1']);
+    _gaq.push(['_setDomainName', 'jqueryscript.net']);
+    _gaq.push(['_trackPageview']);
+
+    (function() {
+    var ga = document.createElement('script'); ga.type = 'text/javascript'; ga.async = true;
+    ga.src = ('https:' == document.location.protocol ? 'https://ssl' : 'http://www') + '.google-analytics.com/ga.js';
+    var s = document.getElementsByTagName('script')[0]; s.parentNode.insertBefore(ga, s);
+    })();
+
+</script>
+
+</body>
+</html>

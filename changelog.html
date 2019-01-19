@@ -1,0 +1,205 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+  <title>Android-x86 - Porting Android to x86</title>
+  <link rel="stylesheet" type="text/css" href="master.css">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+</head>
+<body>
+  <nav>
+    <ul>
+      <a class="navbar-link" href="index.html">
+        <li>Home</li>
+      </a>
+      <a class="navbar-link" href="https://www.fosshub.com/Android-x86.html">
+        <li>Download</li>
+      </a>
+      <a class="navbar-link" href="donate.html">
+        <li>Donate</li>
+      </a>
+      <a class="navbar-link" href="source.html">
+        <li>Get Source</li>
+      </a>
+      <a class="navbar-link" href="installhowto.html">
+        <li>Installation</li>
+      </a>
+      <a class="navbar-link" href="screenshots.html">
+        <li>Screenshots</li>
+      </a>
+      <a class="navbar-link" href="documentation.html">
+        <li>Documentation</li>
+      </a>
+      <a class="navbar-link" href="releases.html">
+        <li>Releases</li>
+      </a>
+      <a class="navbar-link" href="contact.html">
+        <li>Contact Us</li>
+      </a>
+      <a class="active-navbar-link" href="changelog.html">
+        <li>News</li>
+      </a>
+      <a class="navbar-link" href="credits.html">
+        <li>Credits</li>
+      </a>
+    </ul>
+  </nav>
+  <div class="openNav">
+    <div class="icon"></div>
+  </div>
+  <!--HTML of main page-->
+  <div class="wrapper">
+    <section>
+      <h1 id="top" class="heading">Android x86</h1>
+      <h2 class="subheading">Run Android on your PC</h2>
+      <br>
+
+      <ul>
+        <li>2013-01-01: <b>IMPORTANT!! MUST READ</b>: <a href="/android-x86-blocked">Android-x86 was blocked by Google code</a>.</li>
+        <li>2012-12-25: Merry Christmas! The <a href="http://code.google.com/p/android-x86/downloads/detail?name=android-x86-4.2-20121225.iso&amp;can=2&amp;q=">first test release of jb-x86</a> is available for downloading.</li>
+        <li>2012-11-20: We begin the jb-x86 porting based on Android 4.2.</li>
+        <li>2012-07-15: <a href="/releases/releasenote-4-0-rc2">Android-x86 4.0-RC2</a> is released.
+        </li>
+        <li>2012-07-11: Intel contributes x86 Dalvik JIT support to AOSP.</li>
+        <li>2012-06-26: Dalvik patch for arm translator from BuilDroid is merged.</li>
+        <li>2012-04-10: The ics-x86 branch is updated to Android 4.0.4.</li>
+        <li>2012-02-27: <a href="http://www.android-x86.org/releases/releasenote-4-0-rc1">Android-x86 4.0-RC1</a> is released.
+        </li>
+        <li>2012-01-01: <a href="http://www.android-x86.org/releases/build-20120101">Test build 20120101</a> is released.
+        </li>
+        <li>2011-12-25: New testing ics-x86 isos supporting <a href="http://www.android-x86.org/getsourcecode">hybrid format</a> are available.
+        </li>
+        <li>2011-12-24: The git.android-x86.org is back and supports smart http transport.
+        </li>
+        <li>2011-12-20: The git.android-x86.org is down for maintenance. In the meantime please use the SourceForge mirror.
+        </li>
+        <li>2011-12-10: Display issue of Intel i915/i965 for ics-x86 is solved. <a href="http://www.android-x86.org/download">More ics-x86 images are available.</a></li>
+        <li>2011-12-01: The ics-x86 branch is ready for developers. <a href="http://www.android-x86.org/download">Download the testing iso for AMD tablet</a>...</li>
+        <li>2011-11-23: <a href="http://www.android-x86.org/releases/releasenote-3-2-rc2">Android-x86 3.2-RC2 (honeycomb-x86)</a> is released.</li>
+        <li>2011-10-31: New target amd_persimmon is added (contributed by AMD).</li>
+        <li>2011-10-30: The gingerbread-x86 branch is updated to Android 2.3.7.</li>
+        <li>2011-08-28: <a href="http://www.android-x86.org/releases/build-20110828">Android-x86 2.3 RC1 (Test build 20110828)</a> is released. </li>
+        <li>2011-08-08: The gingerbread-x86 branch is updated to Android 2.3.5, hardware acceleration enabled for some targets.</li>
+        <li>2011-07-04: The ethernet support is added to gingerbread-x86 branch.</li>
+        <li>2011-06-28: <a href="http://www.android-x86.org/releases/releasenote_2_2_r2">Android-x86 2.2-r2</a> is released.</li>
+        <li>2011-05-10: The mouse patch is added to gingerbread-x86 branch.</li>
+        <li>2011-05-05: The gingerbread-x86 branch is updated to Android 2.3.4, API level 10.</li>
+        <li>2011-04-20: The gingerbread-x86 branch is updated to Android 2.3.3.</li>
+        <li>2011-04-08: The froyo-x86 branch is updated to Android 2.2.2 based.</li>
+        <li>2011-04-02: We have 4 million pageviews now, and around 242,275 pageviews&nbsp;come from android-x86 installed machines. Check out "<a href="http://blog.android-x86.org/2011/04/some-statistics-about-android-x86org.html" target="_blank">Some Statistics about Android-x86.org Project</a>"
+          for more details. </li>
+        <li>2011-04-02: AMD donates T56N/E1 development boards to Android-x86.org</li>
+        <li>2011-03-30: The build break in gingerbread-x86 branch has been fixed. The patch is in the download section.</li>
+        <li>2011-02-10: <a href="http://www.android-x86.org/donate/tegatech">TegaTech donates three Tega v2 tablets to Android-x86.org</a>.</li>
+        <li>2011-01-26: <a href="http://www.android-x86.org/getsourcecode">Gingerbread-x86 branch</a> is ready to download.</li>
+        <li>2011-01-13: <a href="http://www.android-x86.org/releases/release_2_2">Android-x86 2.2</a> is released.</li>
+        <li>2011-01-01: <a href="http://www.android-x86.org/releases/build-20110101">Test build 20110101</a> is released. </li>
+        <li>2010-12-29: Add mesa i965c support and a new target asus_laptop. </li>
+        <li>2010-12-19: The installer supports read-write installation </li>
+        <li>2010-12-13: Froyo-x86 is ported to Dell Inspiron Mini Duo </li>
+        <li>2010-12-02: Mushishi (rudolff.vang@gmail.com) has helped to created a <a href="http://android-x86.moonman.dk">nightly build server</a> </li>
+        <li>2010-11-20: <a href="http://www.android-x86.org/documents/sdcardhowto">Sdcard HowTo</a> is updated for froyo-x86 </li>
+        <li>2010-11-19: Mplayer is added to Android-x86 repositories </li>
+        <li>2010-11-18: <a href="http://www.android-x86.org/download">IEEE paper: Virtual Smartphone over IP</a> using Android-x86 </li>
+        <li>2010-11-11: Two issues on rotated screen are fixed </li>
+        <li>2010-11-09: Froyo-x86 is ported to ViewSonic ViewPad 10 </li>
+        <li>2010-10-25: The app2sd issue is fixed </li>
+        <li>2010-10-21: 3D hardware acceleration for froyo-x86 is available for testing </li>
+        <li>2010-09-30: Froyo-x86 performance issue is solved (temporary) </li>
+        <li>2010-09-14: <a href="http://groups.google.com/group/android-x86/browse_thread/thread/ea5ed149e4680301#">Atom optimization</a> is added </li>
+        <li>2010-09-13: 3G USB dongle support is added to froyo-x86 branch </li>
+        <li>2010-09-06: Wifi support in froyo-x86 branch is ready </li>
+        <li>2010-08-23: Target 'eeepc' is available for froyo-x86 branch </li>
+        <li>2010-08-15: Android-x86 talks in <a href="http://coscup.org">COSCUP 2010</a> </li>
+        <li>2010-08-12: <a href="http://www.android-x86.org/releases/build-20100812">A testing build for virtual machine</a> is released </li>
+        <li>2010-08-01: The branch 'froyo-x86' in <a href="http://android-x86.git.sourceforge.net/git/gitweb-index.cgi">SourceForge mirror</a> is ready to download </li>
+        <li>2010-07-12: New target 'vm' is added to froyo-x86 branch </li>
+        <li>2010-07-07: The branch 'froyo-x86' is ready to download </li>
+        <li>2010-06-30: Android 2.2 has been merged to Android-x86 git repo</li>
+        <li>2010-06-29: Android-x86 joins <a href="http://www.oesf.jp/en">OESF</a> as an open source partner</li>
+        <li>2010-06-24: Okwon(pinebud@gmail.com) has contributed <a href="http://www.android-x86.org/download">Viliv S5 port</a></li>
+        <li>2010-06-04: Android-x86 talks in <a href="http://www.oesf.jp/en">OESF</a> Android Steps Ahead 2010/Taipei</li>
+        <li>2010-04-23: Android-x86 talks in <a href="http://www.oesf.jp/en">OESF</a> Android Steps Ahead 2010/Tokyo</li>
+        <li>2010-04-18: 'eclair-x86' branch is updated</li>
+        <li>2010-03-19: <a href="http://www.android-x86.org/releases/releasenote_1_6_r2">Android-x86 1.6-r2 is released</a></li>
+        <li>2010-03-18: Busybox is added into android-x86 source tree</li>
+        <li>2010-03-15: 3G support has been added into dount branch</li>
+        <li>2010-03-10: LIME package is added into android-x86 source tree</li>
+        <li>2010-02-25: MirBSD Korn shell has been added to android-x86</li>
+        <li>2010-02-17: A page is created to track the hardware supports</li>
+        <li>2010-02-05: The crashes in Live wallpapers have been fixed</li>
+        <li>2010-02-02: Eclair 2.1 has been merged to branch eclair-x86</li>
+        <li>2010-01-27: The audio recording issue with camcorder has been fixed</li>
+        <li>2010-01-25: Merging to Eclair 2.1</li>
+        <li>2010-01-20: The camcorder crash has been fixed. You can shot your own video now.</li>
+        <li>2010-01-15: New test build 20100115 is released</li>
+        <li>2010-01-13: Fixed the touch screen issue with EeePC T91 and added user configurable calibration support.</li>
+        <li>2010-01-12: Fixed the Camera crash when taking a picture.</li>
+        <li>2010-01-06: Fixed the keyguard window to make it looks better. The resume/sleep hack is finally removed.</li>
+        <li>2009-12-18: Kernel 2.6.32 is supported</li>
+        <li>2009-12-15: Merged software keyboard support to Eclair</li>
+        <li>2009-12-13: Merged code changes from mid policy to phone policy</li>
+        <li>2009-12-12: switched to use phone policy in Eclair build. It gives us a lot new features.</li>
+        <li>2009-12-10: Wifi changes have been merged to Eclair.</li>
+        <li>2009-12-10: multi-platform support has been added.</li>
+        <li>2009-12-07: Mouse and Battery supports are merged to Eclair.</li>
+        <li>2009-12-06: Fixed framebuffer issue on Eclair, now, VESA and I915 work correctly.</li>
+        <li>2009-12-02: We have been able to boot up Eclair on VirtualBox, see the <a href="http://blog.android-x86.org/" rel="nofollow">android-x86 blog</a> for screenshots</li>
+        <li>2009-12-01: Samsung Q1U is officially supported</li>
+        <br>
+      </ul>
+
+
+      <div id="f-padding"></div>
+    </section>
+    <section class="bg">
+      <div class="bg"></div>
+      <div class="clearfix"></div>
+    </section>
+
+    <footer class="footer">
+      <div class="cap">
+
+        <a href="#" id="scroll-top" class="scroll-to-top">
+                      Back to top
+                  </a>
+      </div>
+      <div class="footer-copyright">
+        <div class="navbar-link">
+          &copy; 2019 Android x86 by <a class="navbar-link" id="easter" href="mailto:aryabhushan2003@gmail.com">@arya</a> & <a class="navbar-link" id="easter" href="mailto:adityasood22@gmail.com">@sood</a>
+        </div>
+      </div>
+    </footer>
+  </div>
+
+  <!--JAVASCRIPT CODE-->
+
+  <script src="https://code.jquery.com/jquery-2.1.1.min.js"></script>
+  <script>
+    $(".openNav").click(function() {
+      $("body").toggleClass("navOpen");
+      $("nav").toggleClass("open");
+      $(".wrapper").toggleClass("open");
+      $(this).toggleClass("open");
+    });
+  </script>
+  <script type="text/javascript">
+    var _gaq = _gaq || [];
+    _gaq.push(['_setAccount', 'UA-36251023-1']);
+    _gaq.push(['_setDomainName', 'jqueryscript.net']);
+    _gaq.push(['_trackPageview']);
+
+    (function() {
+      var ga = document.createElement('script');
+      ga.type = 'text/javascript';
+      ga.async = true;
+      ga.src = ('https:' == document.location.protocol ? 'https://ssl' : 'http://www') + '.google-analytics.com/ga.js';
+      var s = document.getElementsByTagName('script')[0];
+      s.parentNode.insertBefore(ga, s);
+    })();
+  </script>
+
+</body>
+
+</html>

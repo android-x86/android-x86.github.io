@@ -1,0 +1,222 @@
+<!DOCTYPE html>
+<!--Website created by Arya Bhushan & Aditya Sood-->
+<html>
+    <head>
+        <title>Android-x86 - Porting Android to x86</title>
+        <link rel="stylesheet" type="text/css" href="../master.css">
+		    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+        <style>
+            .code-snippet {
+              margin-top: 16px!important;
+              margin-bottom: 16px!important;
+            }
+            .code-snippet {
+              width: auto;
+              background-color: #2b2b2b;
+              padding: 8px 12px;
+              border-left: 4px solid #14b9ff;
+              word-wrap: break-word;
+            }
+
+            .code-snippet {
+              font-family: Consolas,"courier new";
+              font-size: 16px;
+            }
+
+                  .code-snippet-inv {
+              margin-top: 16px!important;
+              margin-bottom: 16px!important;
+            }
+            .code-snippet-inv {
+              width: auto;
+              background-color: #b0c9ff;
+              padding: 8px 12px;
+              border-left: 4px solid #000000;
+              word-wrap: break-word;
+            }
+
+            .code-snippet-inv {
+              font-family: Consolas,"courier new";
+              font-size: 16px;
+            }
+        </style>
+
+    </head>
+    <body>
+      <nav>
+        <ul>
+          <a class="navbar-link" href="../index.html">
+            <li>Home</li>
+          </a>
+          <a class="navbar-link" href="https://www.fosshub.com/Android-x86.html">
+            <li>Download</li>
+          </a>
+          <a class="navbar-link" href="../donate.html">
+            <li>Donate</li>
+          </a>
+          <a class="navbar-link" href="../source.html">
+            <li>Get Source</li>
+          </a>
+          <a class="navbar-link" href="../installhowto.html">
+            <li>Installation</li>
+          </a>
+          <a class="navbar-link" href="../screenshots.html">
+            <li>Screenshots</li>
+          </a>
+          <a class="active-navbar-link" href="../documentation.html">
+            <li>Documentation</li>
+          </a>
+          <a class="navbar-link" href="../releases.html">
+            <li>Releases</li>
+          </a>
+          <a class="navbar-link" href="../contact.html">
+            <li>Contact Us</li>
+          </a>
+          <a class="navbar-link" href="../changelog.html">
+            <li>News</li>
+          </a>
+          <a class="navbar-link" href="../credits.html">
+            <li>Credits</li>
+          </a>
+        </ul>
+      </nav>
+      <div class="openNav">
+        <div class="icon"></div>
+      </div>
+<!--HTML of main page-->
+        <div class="wrapper">
+            <section>
+                <h1 id="top" class="heading">Android x86</h1>
+                <h2 class="subheading">Run Android on your PC</h2>
+                <br><br>
+                <h3>Customize Kernel</h3>
+                <p>
+                  The Android build system doesn't compile kernel on-fly. It just contains a prebuilt kernel binary which will be added to the target image. This approach may be good enough for the arm emulator target, but not suitable for x86 platforms. The x86 platforms have various hardware. The kernel binary and its modules may need to be adjusted at compile time or runtime.
+                  <br><br>This article describes an extra feature of the build system of android-x86 project. That is, the ability to build kernel and modules by a predefined or customized config during the building process.
+                </p>
+                <h3>Compile kernel for Android-x86<h3>
+                  <h3>Prepare the source tree</h3>
+                  <p>
+                    We have modified the Android build system to compile a kernel image on-fly.
+                    You need to use our repository to get this feature.
+                    <br>Read the article <a href="../source.html">Get Source Code</a> for details.
+                  </p>
+                  <h3>Build the default kernel</h3>
+                  <p>
+                    We put a default config for android-x86 in kernel/arch/x86/configs/. To build a kernel image from this config, run
+
+                    <div class="code-snippet"><span style="color:#d1d1d1">
+
+                    $ make iso_img TARGET_PRODUCT=android_x86
+
+                    </span></div>
+                    By specifying the TARGET_PRODUCT to android_x86, the build system automatically selects the config android-x86_defconfig to compile the kernel binary and its modules. The binary will finally be generated in out/target/product/x86/kernel, and the modules is put under out/target/product/x86/system/lib/modules/. The final target out/target/product/x86/android_x86.iso will contain the kernel binary and its modules.
+
+                    <br><br>
+                    You may build the kernel and its modules alone, by changing the goal iso_img to kernel.
+
+                    <div class="code-snippet"><span style="color:#d1d1d1">
+                      $ make kernel TARGET_PRODUCT=android_x86
+                    </span></div>
+                    </p>
+                  <h3>Build the target kernel</h3>
+                  <p>
+                    Since donut-x86 we have supported multiple targets, e.g., eeepc, tegav2, ... Each target may has its customized kernel config located in its device definition directory. When you choose a target (by specifying TARGET_PRODUCT or lunch command, see <a href="../source.html">Get Source Code</a> for details.), the customized kernel config of this target will be used to build the kernel image.
+                  </p>
+
+                  <h3>Build a customized kernel</h3>
+                  <p>Suppose you already have a workable kernel config for you hardware, it's easy to tell the build system to use your config to build the iso. Just put your config file to kernel/arch/x86/configs/, and run (suppose the name of your config is my_defconfig)
+
+                    <div class="code-snippet"><span style="color:#d1d1d1">
+                      $ make iso_img TARGET_PRODUCT=android_x86 TARGET_KERNEL_CONFIG=my_defconfig
+                    </span></div>
+                    Note you cannot use a kernel config from a normal linux distribution (e.g, ubuntu) for android-x86. You need to enable android kernel features to make it work. See android/configs/android-base.cfg for a list of required configuration options for a kernel to support an Android system. (but removes arm specific options for android-x86, e.g., PMEM)
+                  </p>
+                  <h3>Customize the kernel configuration</h3>
+                  <p>
+                    It is never advisable to edit the kernel config file directly, as it may generate faulty configuration (dependencies not met etc.). The correct way to customize the kernel config is (on the top of android-x86 tree)
+                    <div class="code-snippet"><span style="color:#d1d1d1">
+                      $ . build/envsetup.sh<br>
+                      $ lunch xxx-userdebug<br>
+                      $ make -C kernel O=$OUT/obj/kernel ARCH=x86 menuconfig<br>
+                    </span></div>
+                    where xxx is a target you chosen. Then copy $OUT/obj/kernel/.config to custom_kernel_config_location.<br>
+                    DO NOT issue make menuconfig in the kernel/ directory directly. If you do so, the build rules may be broken. In this case, try this way to recover it (on the top of android-x86 tree):</p>
+                    <div class="code-snippet"><span style="color:#d1d1d1">
+                      $ make -C kernel distclean<br>
+                      $ rm -rf $OUT/obj/kernel<br>
+                    </span></div>
+
+                    <h3>Use a prebuilt kernel</h3>
+                    <p>
+                      If you have a workable prebuilt kernel binary for your hardware, you can generate the iso with it:</p>
+                      <div class="code-snippet"><span style="color:#d1d1d1">
+                      $ make iso_img TARGET_PRODUCT=android_x86 TARGET_PREBUILT_KERNEL=&lt;path to the prebuilt kernel&gt;
+                      </span></div>
+                    <h2>Compile kernel for ARM (deprecated)</h2>
+                    <p>
+                      The kernel build system can also be used to compile kernel for ARM. For example, to compile kernel 2.6.29 for the goldfish CPU of the arm emulator, run
+                      <div class="code-snippet"><span style="color:#d1d1d1">
+                        $ cd kernel<br>
+                        $ git checkout x86/android-goldfish-2.6.29<br>
+                        $ cd ..<br>
+                        $ make kernel TARGET_KERNEL_CONFIG=goldfish_defconfig TARGET_NO_KERNEL=<br>
+                      </span></div>
+                      The kernel binary will be generated in out/target/product/generic/kernel.<br>
+
+                      Set TARGET_NO_KERNEL to be empty is important, otherwise the kernel building steps will be skipped.
+                    </p>
+
+
+    <div id="f-padding"></div>
+        </section>
+        <section class = "bg">
+            <div class="bg"></div>
+        <div class="clearfix"></div>
+        </section>
+
+
+        <footer class="footer">
+            <div class="cap">
+
+              <a href="#" id="scroll-top" class="scroll-to-top">
+                  Back to top
+              </a>
+            </div>
+                  <div class="footer-copyright">
+                    <div class="navbar-link">
+                    &copy; 2019 Android x86 | Website by <a class="navbar-link" id="easter" href="mailto:aryabhushan2003@gmail.com">@arya</a> &amp; <a class="navbar-link" id="easter" href="mailto:adityasood22@gmail.com">@sood</a>
+                    </div>
+                  </div>
+                </footer>
+    </div>
+
+      <!--JAVASCRIPT CODE-->
+
+    <script src="https://code.jquery.com/jquery-2.1.1.min.js"></script>
+    <script>
+    $(".openNav").click(function() {
+    $("body").toggleClass("navOpen");
+    $("nav").toggleClass("open");
+    $(".wrapper").toggleClass("open");
+    $(this).toggleClass("open");
+    });
+    </script>
+    <script type="text/javascript">
+
+    var _gaq = _gaq || [];
+    _gaq.push(['_setAccount', 'UA-36251023-1']);
+    _gaq.push(['_setDomainName', 'jqueryscript.net']);
+    _gaq.push(['_trackPageview']);
+
+    (function() {
+    var ga = document.createElement('script'); ga.type = 'text/javascript'; ga.async = true;
+    ga.src = ('https:' == document.location.protocol ? 'https://ssl' : 'http://www') + '.google-analytics.com/ga.js';
+    var s = document.getElementsByTagName('script')[0]; s.parentNode.insertBefore(ga, s);
+    })();
+
+</script>
+
+</body>
+</html>

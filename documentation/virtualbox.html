@@ -1,0 +1,291 @@
+<!DOCTYPE html>
+<!--Website created by Arya Bhushan & Aditya Sood-->
+<html>
+    <head>
+        <title>Android-x86 - Porting Android to x86</title>
+        <link rel="stylesheet" type="text/css" href="../master.css">
+		<meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <style>
+    #da_table{
+      overflow-x: auto;
+    }
+    .code-snippet {
+      margin-top: 16px!important;
+      margin-bottom: 16px!important;
+    }
+    .code-snippet {
+      width: auto;
+      background-color: #2b2b2b;
+      padding: 8px 12px;
+      border-left: 4px solid #14b9ff;
+      word-wrap: break-word;
+    }
+
+    .code-snippet {
+      font-family: Consolas,"courier new";
+      font-size: 16px;
+    }
+
+          .code-snippet-inv {
+      margin-top: 16px!important;
+      margin-bottom: 16px!important;
+    }
+    .code-snippet-inv {
+      width: auto;
+      background-color: #b0c9ff;
+      padding: 8px 12px;
+      border-left: 4px solid #000000;
+      word-wrap: break-word;
+    }
+
+    .code-snippet-inv {
+      font-family: Consolas,"courier new";
+      font-size: 16px;
+    }
+    table {
+    border-collapse: collapse;
+    width: 100%;
+    }
+
+    th, td {
+        padding: 8px;
+        text-align: left;
+        border-bottom: 1px solid #ddd;
+    }
+
+    tr:hover {background-color:#f5f5f5;}
+</style>
+    </head>
+    <body>
+      <nav>
+        <ul>
+          <a class="navbar-link" href="../index.html">
+            <li>Home</li>
+          </a>
+          <a class="navbar-link" href="https://www.fosshub.com/Android-x86.html">
+            <li>Download</li>
+          </a>
+          <a class="navbar-link" href="../donate.html">
+            <li>Donate</li>
+          </a>
+          <a class="navbar-link" href="../source.html">
+            <li>Get Source</li>
+          </a>
+          <a class="navbar-link" href="../installhowto.html">
+            <li>Installation</li>
+          </a>
+          <a class="navbar-link" href="../screenshots.html">
+            <li>Screenshots</li>
+          </a>
+          <a class="active-navbar-link" href="../documentation.html">
+            <li>Documentation</li>
+          </a>
+          <a class="navbar-link" href="../releases.html">
+            <li>Releases</li>
+          </a>
+          <a class="navbar-link" href="../contact.html">
+            <li>Contact Us</li>
+          </a>
+          <a class="navbar-link" href="../changelog.html">
+            <li>News</li>
+          </a>
+          <a class="navbar-link" href="../credits.html">
+            <li>Credits</li>
+          </a>
+        </ul>
+      </nav>
+      <div class="openNav">
+        <div class="icon"></div>
+      </div>
+<!--HTML of main page-->
+        <div class="wrapper">
+            <section>
+                <h1 id="top" class="heading">Android x86</h1>
+                <h2 class="subheading">Run Android on your PC</h2>
+                <br>
+                <h2>VirtualBox How To</h2>
+                <p>
+                  The following are instructions on how to run Android-x86 inside VirtualBox.
+                  <br>Note: For optimal performance, make sure you have enabled either VT-x or AMD-V in your host operating system's BIOS.
+
+                  <br><br>Android-x86 versions tested against Virtualbox versions.
+                  <div id="da_table">
+                  <table>
+                    <tr>
+                    <th>Date Tested</th>
+                    <th>Virtualbox</th>
+                    <th>Host OS</th>
+                    <th>Android-x86</th>
+                    <th>Result</th>
+                  </tr>
+                  <tr>
+                    <td>??</td>	<td>2.2.4</td>	<td>Windows XP</td>	<td>??</td>	<td>Good</td>
+                  </tr>
+                  <tr>
+                    <td>??</td>	<td>3.0.2</td>	<td>Fedora 11</td>	<td>??</td>	<td>Good</td>
+                  </tr>
+                  <tr>
+                    <td>Nov. 2 2017</td>	<td>5.2.0</td>	<td>Windows 10</td>	<td>6.0-r3 32/64 bit</td>	<td>Good</td>
+                  </tr>
+                  </table>
+                </div>
+                </p>
+
+                <h3>Downloading</h3>
+                  <p>Download an ISO of Android-x86 from <a href="http://www.android-x86.org/download">here</a>.
+                    <h5>Caution</h5>
+                    If you are using Android-x86 for debugging purposes, some binaries (gdb for example) are built for 32-bit architectures and will not support debugging 64-bit binaries such as the Android app host. Download a 32-bit distribution instead.
+                  </p>
+                <h3>Create a new VM</h3>
+                  <p>If you have not already created a VirtualBox virtual machine for Android-x86 yet, do so as follows:
+                    <ol>
+                      <li>Click the "New" button, and name your new virtual machine however you like. Set Type to Linux, and Verison to Linux 2.6 / 3.x / 4.x. Note that you should choose the appropriate bit type for the version of Android-x86 that you downloaded.</li>
+                      <li>Specify how much RAM will be allocated to your virtual machine when you run it. Android doesn't specify a bare-minimum requirement for memory, just keep in mind what apps you plan on running. 2GB (2048MB) is a good place to start, and you can change this later if you need to.</li>
+                      <li>Create a new Hard disk image which will act as your machine's storage. The recommended starting size of 8GB is enough. Click through the rest of the options for creating your Hard disk.</li>
+                    </ol>
+                    Your virtual machine has now been created. It still needs to be initially installed at this point.
+                  </p>
+                  <h3>Settings</h3>
+                  <p>
+                    Tested on VirtualBox 64-bit for Windows, version 5.2.0. Android-x86 version 6.0-r3, both 32-bit and 64-bit.
+                    <br><br>Select your machine, then click the Settings button and refer to the below recommended configuration to make sure your settings match.
+                    <ul>
+                    <li>[System] Optional: Processor(s) may be set above 1 if you have more than one virtual processor in your host system. It is uncertain whether or not this has any affect on Android-x86, be it positive or negative.</li>
+                    <li>[Display] Optional: Video Memory may be increased beyond the minimum selected automatically. Again, the affects of this are unknown.</li>
+                    <li>[Display] Optional: Enable 3D Acceleration may be checked. The Linux Guest Additions may need to be installed to get any benefit from this.</li>
+                    <li>[Storage] Find the first "Empty" item (this should have an icon of a CD). In the Attributes, click on the CD icon with a small down arrow, and pick "Choose Optical Virtual Disk File...". Specify the Android-x86 ISO that you downloaded.</li>
+                    <li>[Audio] Intel HD Audio seems to be natively supported in Android-x86.</li>
+                    <li>[Network] By default, your installation of Android-x86 will be able to automatically connect to the internet. If you do not want this, uncheck Enable Network Adapter under the Adapter 1 tab.</li>
+                  </ul>
+                </p>
+                <h3>Install</h3>
+                <p>Click the green Start arrow to power-on your virtual machine. You'll be presented with a list of options. Use the arrow keys to pick which one you want, then press Enter once the one you want is selected.
+                  <br>If you don't want to install Android-x86 yet and just want to test it, pick one of the Live CD options (except for Debug mode). Pick the Installation option if you want your system to be installed to the virtual hard drive.
+                  <br>If you want to use higher resolution, you can edit the boot option by pressing TAB, change vga=788 (800x600) to vga=791 (1024x768) or vga=794 (1280x1024), and press Enter. You can also use vga=ask to see all available modes. But please note Android will only work under 16-bit mode.
+                </p>
+                <h4>Partition</h4>
+                <p>
+                  When you are prompted to Choose a partition, you'll want to Create/Modify partitions. Do not use GPT! This will cause the GRUB installation to fail later.
+                  <br>
+                  You may partition your disk however you see fit. If you just want a simple installation, create one partition taking up the entire disk and format it as ext4.
+                </p>
+                <hr>
+                <p>
+                  Continue through the installation. You should install GRUB when it prompts you do so. You may also leave /system as read and write when prompted.
+                  <br>
+                  Once the installation is complete, reboot your virtual machine and remove the ISO from the virtual CD drive. Once Android-x86 has loaded, you can perform the Android setup and begin using your machine.
+                </p>
+                <h3>Advanced</h3>
+                <h4>Custom partitions, SDCard</h4>
+                When booting Android-x86, you may specify which partitions represent the data and sdcard. On the boot menu, select an entry you would like to boot from, press TAB, then add the following as it suits your needs:
+                <br><br>
+                DATA=sda1 SDCARD=sda2
+                Press Enter to boot. These options specify user data (your setting, your uploaded applications, ...) go into /dev/sda1, and data saved in sdcard go into /dev/sda2.
+                <br><br>
+                If you build the ISO from source, you can add these options to bootable/newinstaller/boot/isolinux/isolinux.cfg.
+                <br><br>
+                Here is a note from David when using fdisk:
+                <ol>
+                <li>Create a new virtual machine with a hard disk.
+                <li>Launch the Live ISO in Debug mode (I used android-x86-2.2-generic.iso) to get the commend prompt.
+                <li>"fdisk /dev/sda", then type:
+                  <ol>
+                      <li>"n" (new partition)
+                      <li>"p" (primary partition)
+                      <li>"1" (1st partition)
+                      <li>"1" (first cylinder)
+                      <li>"xx" (choose the last cylinder, leaving room for a 2nd partition)
+                      <li>"w" (write the partition)
+                    </ol>
+                <li>Repeat #3, but call it partition 2, and use the remaining cylinders.
+                <li>"mdev -s"
+                <li>"mke2fs -j -L DATA /dev/sda1"
+                <li>"mke2fs -j -L SDCARD /dev/sda2"
+                <li>Reboot ("reboot -f")
+                <li>At the boot menu, choose VESA, then hit TAB and type so that the end of the line reads: "DATA=sda1 SDCARD=sda2". (Only need for the generic target images, for VM target images, this is not needed)
+                <li>After booting (and of course disabling mouse integration via the machine menu), the SD card is read as unformatted, but you can format it by going to Settings > SD card & phone settings > Format SD Card, then Mount SD card.
+                <li>The SD card should now work!
+                </ol>
+                Note: for the step  7, if you want to format to vfat only, then you can do :
+                <div class="code-snippet"><span style="color:#d1d1d1">
+                newfs_msdos /dev/sda2
+                  </span></div>
+
+                Also remember the partition type has to be fat32 (b or c). By using vfat, the step 10 is not needed.
+                <br><br>
+                DevTools application has a MediaScanner which  (re)indexes your SD card for cases where you manually copied media over. This ensures that you see new images and/or music in the apps without having to reboot.
+                <br><br>
+                If you downloaded it from within android, the application asks the relevant service to index new files.
+              </p>
+
+              <h3>Playing music</h3>
+              <p>This section describes two ways to upload music files into Android running on a vbox so you can play them by the Music app. Of course, you can save the files to the virtual disk mounted at /sdcard, as described above.</p>
+              <h4>Upload files by adb</h4>
+                <p>Adb is Android Debug Bridge, a tool to debug Android system. If you compile from source, it is located in out/host/linux-x86/bin/adb. Otherwise you can get it from Android SDK. Suppose the network of your vbox is OK, you can upload a file from your host by
+              <div class="code-snippet"><span style="color:#d1d1d1">
+                $ ADBHOST=&lt;ip of vbox&gt; out/host/linux-x86/bin/adb push &lt;a music file&gt; /sdcard
+                </span></div>
+                You need to know the ip of your vbox. You can get it by Alt-F1 and netcfg. You may also need to reboot Android to see the uploaded files. Of course in this way you have to mount /sdcard to a virtual disk partion.
+                <br><br>
+                For complex network settings of the VirtualBox VM, you should refer to <a href="debug.html">Debug How To</a> on how to connect adb to the VM.
+              </p>
+              <h4>Upload files by wget</h4>
+              <p>You can also upload files by wget in the debug mode. In the debug mode shell, before entering Android,
+                <div class="code-snippet"><span style="color:#32ffea">
+                  # cd /android/sdcard<br>
+                  # netcfg eth0 dhcp<br>
+                  # wget &lt;url of a music file&gt;
+                  </span></div>
+              Then type exit to enter Android.
+            </p>
+
+    <div id="f-padding"></div>
+        </section>
+        <section class = "bg">
+            <div class="bg"></div>
+        <div class="clearfix"></div>
+        </section>
+
+
+        <footer class="footer">
+            <div class="cap">
+
+              <a href="#" id="scroll-top" class="scroll-to-top">
+                  Back to top
+              </a>
+            </div>
+                  <div class="footer-copyright">
+                    <div class="navbar-link">
+                    &copy; 2019 Android x86 | All Rights Reserved | Website v2.14 by <a class="navbar-link" id="easter" href="mailto:aryabhushan2003@gmail.com">@arya</a> & <a class="navbar-link" id="easter" href="mailto:adityasood22@gmail.com">@sood</a>
+                    </div>
+                  </footer>
+                  </div>
+
+      <!--JAVASCRIPT CODE-->
+
+    <script src="https://code.jquery.com/jquery-2.1.1.min.js"></script>
+    <script>
+    $(".openNav").click(function() {
+    $("body").toggleClass("navOpen");
+    $("nav").toggleClass("open");
+    $(".wrapper").toggleClass("open");
+    $(this).toggleClass("open");
+    });
+    </script>
+    <script type="text/javascript">
+
+    var _gaq = _gaq || [];
+    _gaq.push(['_setAccount', 'UA-36251023-1']);
+    _gaq.push(['_setDomainName', 'jqueryscript.net']);
+    _gaq.push(['_trackPageview']);
+
+    (function() {
+    var ga = document.createElement('script'); ga.type = 'text/javascript'; ga.async = true;
+    ga.src = ('https:' == document.location.protocol ? 'https://ssl' : 'http://www') + '.google-analytics.com/ga.js';
+    var s = document.getElementsByTagName('script')[0]; s.parentNode.insertBefore(ga, s);
+    })();
+
+</script>
+
+</body>
+</html>

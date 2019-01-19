@@ -1,0 +1,200 @@
+<!DOCTYPE html>
+<!--Website created by Arya Bhushan & Aditya Sood-->
+<html>
+    <head>
+        <title>Android-x86 - Porting Android to x86</title>
+        <link rel="stylesheet" type="text/css" href="../master.css">
+		<meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <style>
+    .code-snippet {
+      margin-top: 16px!important;
+      margin-bottom: 16px!important;
+    }
+    .code-snippet {
+      width: auto;
+      background-color: #2b2b2b;
+      padding: 8px 12px;
+      border-left: 4px solid #14b9ff;
+      word-wrap: break-word;
+    }
+
+    .code-snippet {
+      font-family: Consolas,"courier new";
+      font-size: 16px;
+    }
+
+          .code-snippet-inv {
+      margin-top: 16px!important;
+      margin-bottom: 16px!important;
+    }
+    .code-snippet-inv {
+      width: auto;
+      background-color: #b0c9ff;
+      padding: 8px 12px;
+      border-left: 4px solid #000000;
+      word-wrap: break-word;
+    }
+
+    .code-snippet-inv {
+      font-family: Consolas,"courier new";
+      font-size: 16px;
+    }
+</style>
+    </head>
+    <body>
+      <nav>
+        <ul>
+          <a class="navbar-link" href="../index.html">
+            <li>Home</li>
+          </a>
+          <a class="navbar-link" href="https://www.fosshub.com/Android-x86.html">
+            <li>Download</li>
+          </a>
+          <a class="navbar-link" href="../donate.html">
+            <li>Donate</li>
+          </a>
+          <a class="navbar-link" href="../source.html">
+            <li>Get Source</li>
+          </a>
+          <a class="navbar-link" href="../installhowto.html">
+            <li>Installation</li>
+          </a>
+          <a class="navbar-link" href="../screenshots.html">
+            <li>Screenshots</li>
+          </a>
+          <a class="active-navbar-link" href="../documentation.html">
+            <li>Documentation</li>
+          </a>
+          <a class="navbar-link" href="../releases.html">
+            <li>Releases</li>
+          </a>
+          <a class="navbar-link" href="../contact.html">
+            <li>Contact Us</li>
+          </a>
+          <a class="navbar-link" href="../changelog.html">
+            <li>News</li>
+          </a>
+          <a class="navbar-link" href="../credits.html">
+            <li>Credits</li>
+          </a>
+        </ul>
+      </nav>
+      <div class="openNav">
+        <div class="icon"></div>
+      </div>
+<!--HTML of main page-->
+        <div class="wrapper">
+            <section>
+                <h1 id="top" class="heading">Android x86</h1>
+                <h2 class="subheading">Run Android on your PC</h2>
+
+                <h2>SD-Card How To</h2>
+
+                <p>
+                  The Android system uses vold as the mount daemon, which detects, mounts and monitors the status of sdcard.
+                  <br>The mount daemon needs a configuration file to tell it what the sdcard device is. Before Android 2.1 (included), the file is /etc/vold.conf.
+                   <br>Since Android 2.2 (froyo), it ships with a new implementation of vold (aka vold2). The configuration is changed to /etc/vold.fstab and its format is also changed.
+                   <br>See system/core/rootdir/etc/vold.fstab in the Android source tree for the detailed explanations of the format.<br><br>
+                   However, a fixed vold.fstab can only support block device with fixed name. It is not suitable for x86 platforms with variable device names.
+                   <br><br>
+                   The Android-x86 project has extended the functions of the new vold to support auto-mount feature without a configuration file. That is, it can automatically detect any USB mass storage or MMC/SD card and mount it as the sdcard. Besides, if you don't have a real USB disk or SD card, it can simulate a fake sdcard to work smoothly with applications that need sdcard.
+                </p>
+                <h3>Details</h3>
+                <p>
+                  The Android-x86 vold works in this way<br><br>
+                  • If you have the configuration file /etc/vold.fstab, it reads and mounts the device specified in the file, as a normal Android's vold.<br>
+                  • If you don't have /etc/vold.fstab, you can set SDCARD variable in the kernel command line (/proc/cmdline) to control the behavior of vold. See the below section for details.<br>
+                  • Without /etc/vold.fstab and SDCARD variable, it works in auto-mount mode that detects a real external device (sdcard or USB disk) and mounts the first available vfat (dos filesystem) partition as the sdcard.<br>
+                </p>
+                <h3>SDCARD Variable</h3>
+                <p>
+                  The SDCARD variable is set via kernel command line and controls which device to be mounted. You can set it in the grub or syslinux/isolinux menu. The following values are supported in froyo-x86:
+                </p>
+                <h4>• SDCARD=&lt;device node&gt;</h4>
+                <p>
+                  Specify a device node to be mounted. For example, SDCARD=sdc1 (or /dev/sdc1, /dev/block/sdc1). You can specify a whole disk (e.g., sdc) or a partition in the disk (e.g., sdc2). If specifying a whole disk, vold will use the first available vfat partition, or the whole disk if no partition table found.
+                </p>
+                <h4>• SDCARD=&lt;file&gt;</h4>
+                <p>
+                  Where &lt;file&gt; is a vfat image that can be mounted as a loopback device.
+                  <br>You can create such an image on Android-x86 by the commands:
+                  <div class="code-snippet"><span style="color:#44ffc0">
+                    # dd if=/dev/zero of=/data/sdcard.img bs=1024 count=65536 (64MB image)<br>
+                    # losetup /dev/block/loop7 /data/sdcard.img<br>
+                    # newfs_msdos /dev/block/loop7<br>
+                  </span></div>
+                  You can switch to console 1 by Alt-F1 to do that. Then add SDCARD=/data/sdcard.img to the kernel command line.
+                  </p>
+                  <h4>• SDCARD=ramdisk</h4>
+                  <p>
+                    Use ramdisk as the sdcard. The ramdisk size is 4MB by default. You can change it by set ramdisk_size=N in the kernel command line.
+                    See kernel/Documentation/blockdev/ramdisk.txt for details.
+                    <br><br>Note all data saved in the ramdisk will lose after power off.
+                  </p>
+                  <h4>• SDCARD=premount</h4>
+                  <p>
+                    Tell vold that /mnt/sdcard is already mounted. By default, vold will bind $SRC/sdcard or /data/sdcard to /mnt/sdcard if one of them exists.
+                    <br><br>
+                    Note not all applications work well with such kind of sdcard. It's only left for backward compatibility and may be removed in the future. Do not use it unless absolutely necessary.
+                  </p>
+                  <h3>Older Version</h3>
+                  <p>
+                  There are several differences between the new vold of froyo-x86 and the vold of older Android-x86 version.
+                  <ul>
+                    <li>The old vold uses /etc/vold.conf, and the mount point is /sdcard, while the new vold uses /etc/vold.fstab, and the mount point is /mnt/sdcard. But it also creates a symlink /sdcard -> /mnt/sdcard for compatibility.
+                    <li>The old vold does not support SDCARD=&lt;file&gt; and SDCARD=ramdisk.
+                    <li>SDCARD=&lt;device node&gt; is handled by the new vold directly, so it works better with the Android frameworks.
+                    <li>The old vold supports vfat/ext2/ext3 filesystem, but the new vold only supports vfat filesystem. This is because Android frameworks does not support sdcard mounted on other filesystems. Even we can forcely mount an ext2/ext3 filesystem as the sdcard, it doesn't work well in some situations. So we decide to stop supporting them unless AOSP changes.
+                  </ul>
+                </p>
+    <div id="f-padding"></div>
+        </section>
+        <section class = "bg">
+            <div class="bg"></div>
+        <div class="clearfix"></div>
+        </section>
+
+
+        <footer class="footer">
+            <div class="cap">
+
+              <a href="#" id="scroll-top" class="scroll-to-top">
+                  Back to top
+              </a>
+            </div>
+                  <div class="footer-copyright">
+                    <div class="navbar-link">
+                    &copy; 2019 Android x86 | All Rights Reserved | Website v2.14 by <a class="navbar-link" id="easter" href="mailto:aryabhushan2003@gmail.com">@arya</a> & <a class="navbar-link" id="easter" href="mailto:adityasood22@gmail.com">@sood</a>
+                    </div>
+                  </div>
+                </footer>
+    </div>
+
+      <!--JAVASCRIPT CODE-->
+
+    <script src="https://code.jquery.com/jquery-2.1.1.min.js"></script>
+    <script>
+    $(".openNav").click(function() {
+    $("body").toggleClass("navOpen");
+    $("nav").toggleClass("open");
+    $(".wrapper").toggleClass("open");
+    $(this).toggleClass("open");
+    });
+    </script>
+    <script type="text/javascript">
+
+    var _gaq = _gaq || [];
+    _gaq.push(['_setAccount', 'UA-36251023-1']);
+    _gaq.push(['_setDomainName', 'jqueryscript.net']);
+    _gaq.push(['_trackPageview']);
+
+    (function() {
+    var ga = document.createElement('script'); ga.type = 'text/javascript'; ga.async = true;
+    ga.src = ('https:' == document.location.protocol ? 'https://ssl' : 'http://www') + '.google-analytics.com/ga.js';
+    var s = document.getElementsByTagName('script')[0]; s.parentNode.insertBefore(ga, s);
+    })();
+
+</script>
+
+</body>
+</html>

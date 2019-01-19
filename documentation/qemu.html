@@ -1,0 +1,187 @@
+<!DOCTYPE html>
+<!--Website created by Arya Bhushan & Aditya Sood-->
+<html>
+    <head>
+        <title>Android-x86 - Porting Android to x86</title>
+        <link rel="stylesheet" type="text/css" href="../master.css">
+		<meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <style>
+    .code-snippet {
+      margin-top: 16px!important;
+      margin-bottom: 16px!important;
+    }
+    .code-snippet {
+      width: auto;
+      background-color: #2b2b2b;
+      padding: 8px 12px;
+      border-left: 4px solid #14b9ff;
+      word-wrap: break-word;
+    }
+
+    .code-snippet {
+      font-family: Consolas,"courier new";
+      font-size: 16px;
+    }
+
+          .code-snippet-inv {
+      margin-top: 16px!important;
+      margin-bottom: 16px!important;
+    }
+    .code-snippet-inv {
+      width: auto;
+      background-color: #b0c9ff;
+      padding: 8px 12px;
+      border-left: 4px solid #000000;
+      word-wrap: break-word;
+    }
+
+    .code-snippet-inv {
+      font-family: Consolas,"courier new";
+      font-size: 16px;
+    }
+</style>
+    </head>
+    <body>
+      <nav>
+        <ul>
+          <a class="navbar-link" href="../index.html">
+            <li>Home</li>
+          </a>
+          <a class="navbar-link" href="https://www.fosshub.com/Android-x86.html">
+            <li>Download</li>
+          </a>
+          <a class="navbar-link" href="../donate.html">
+            <li>Donate</li>
+          </a>
+          <a class="navbar-link" href="../source.html">
+            <li>Get Source</li>
+          </a>
+          <a class="navbar-link" href="../installhowto.html">
+            <li>Installation</li>
+          </a>
+          <a class="navbar-link" href="../screenshots.html">
+            <li>Screenshots</li>
+          </a>
+          <a class="active-navbar-link" href="../documentation.html">
+            <li>Documentation</li>
+          </a>
+          <a class="navbar-link" href="../releases.html">
+            <li>Releases</li>
+          </a>
+          <a class="navbar-link" href="../contact.html">
+            <li>Contact Us</li>
+          </a>
+          <a class="navbar-link" href="../changelog.html">
+            <li>News</li>
+          </a>
+          <a class="navbar-link" href="../credits.html">
+            <li>Credits</li>
+          </a>
+        </ul>
+      </nav>
+      <div class="openNav">
+        <div class="icon"></div>
+      </div>
+<!--HTML of main page-->
+        <div class="wrapper">
+            <section>
+                <h1 id="top" class="heading">Android x86</h1>
+                <h2 class="subheading">Run Android on your PC</h2>
+                <br>
+                <h3>QEMU How To</h3>
+                <p>This article describes how to run eeepc.iso inside Qemu, a generic and open source machine emulator and virtualizer.
+                  <br>The tested version is 0.10.5 on Fedora 11, and 0.9.1 on Debian 5.0.<br><br>
+                  Workable features:
+                  <br>
+                  • Internet access (DHCP mode).<br>
+                  • Audio, playing music.
+                </p>
+                <h3>Details</h3>
+                <p>
+                  Create a script qemu-android like
+                    <div class="code-snippet"><span style="color:#44ffc0">
+                        #!/bin/sh<br>
+                        qemu-kvm -soundhw es1370 -net nic -net user -cdrom \<br>
+	                      ${@:-out/target/product/eeepc/eeepc.iso}
+                      </span></div>
+                      Run it by:
+                      <div class="code-snippet"><span style="color:#44ffc0">
+                        $ qemu-android &lt;path to eeepc.iso&gt;
+                      </span></div>
+                        The script configures the qemu machine to have a sound card es1370, and a network card rtl8139 (the default one), and use the user mode network stack.<br><br>
+                        Note the script runs qemu in <a href="http://www.linux-kvm.org/page/Main_Page">KVM mode</a>.<br>
+                        You must have kvm module (kvm-intel or kvm-amd) installed for your kernel, and the permission of /dev/kvm is set to allow your user to access it.<br>
+                        Otherwise the KVM support will be disabled and it may run very slow.<br>
+                        If you don't have qemu-kvm in your distribution, use qemu.
+                      </p>
+                      <h3>Advanced</h3>
+                        <p>
+                          Like Virtual Box, you can save data to a qemu virtual disk.<br>
+                          First, create a qemu virtual disk (size 1GB) by
+                          <div class="code-snippet"><span style="color:#44ffc0">
+                            $ qemu-img create -f qcow2 android.img 1G
+                            </span></div>
+                          Run
+                          <div class="code-snippet"><span style="color:#44ffc0">
+                            $ qemu-android eeepc.iso -hda android.img -boot d
+                            </span></div>
+                            Then follow the <a href="virtualbox.html">VirtualBoxHowTo</a> for how to mount user data and sdcard on the virtual disk.
+                            <br>You can also follow that article to upload music files and play them.
+                            <br>(Use wget to pull file from the host. Adb push may not work)
+                            </p>
+                        <h3>Known bugs</h3>
+                        <p>
+                          If the Android inside Qemu enters suspend mode, it cannot wake up. So it is better to set the Screen timeout to be Never (Setting -> Sound & display -> Screen timeout).
+                        </p>
+
+    <div id="f-padding"></div>
+        </section>
+        <section class = "bg">
+            <div class="bg"></div>
+        <div class="clearfix"></div>
+        </section>
+
+
+        <footer class="footer">
+            <div class="cap">
+
+              <a href="#" id="scroll-top" class="scroll-to-top">
+                  Back to top
+              </a>
+            </div>
+                  <div class="footer-copyright">
+                    <div class="navbar-link">
+                    &copy; 2019 Android x86 | All Rights Reserved | Website v2.14 by <a class="navbar-link" id="easter" href="mailto:aryabhushan2003@gmail.com">@arya</a> & <a class="navbar-link" id="easter" href="mailto:adityasood22@gmail.com">@sood</a>
+                    </div>
+                  </div>
+                </footer>
+    </div>
+
+      <!--JAVASCRIPT CODE-->
+      <script src="https://code.jquery.com/jquery-2.1.1.min.js"></script>
+
+    <script>
+    $(".openNav").click(function() {
+    $("body").toggleClass("navOpen");
+    $("nav").toggleClass("open");
+    $(".wrapper").toggleClass("open");
+    $(this).toggleClass("open");
+    });
+    </script>
+    <script type="text/javascript">
+
+    var _gaq = _gaq || [];
+    _gaq.push(['_setAccount', 'UA-36251023-1']);
+    _gaq.push(['_setDomainName', 'jqueryscript.net']);
+    _gaq.push(['_trackPageview']);
+
+    (function() {
+    var ga = document.createElement('script'); ga.type = 'text/javascript'; ga.async = true;
+    ga.src = ('https:' == document.location.protocol ? 'https://ssl' : 'http://www') + '.google-analytics.com/ga.js';
+    var s = document.getElementsByTagName('script')[0]; s.parentNode.insertBefore(ga, s);
+    })();
+
+</script>
+
+</body>
+</html>

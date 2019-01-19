@@ -1,0 +1,243 @@
+<!DOCTYPE html>
+<!--Website created by Arya Bhushan & Aditya Sood-->
+<html>
+    <head>
+        <title>Android-x86 - Porting Android to x86</title>
+        <link rel="stylesheet" type="text/css" href="../master.css">
+		<meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <style>
+    .code-snippet {
+      margin-top: 16px!important;
+      margin-bottom: 16px!important;
+    }
+    .code-snippet {
+      width: auto;
+      background-color: #2b2b2b;
+      padding: 8px 12px;
+      border-left: 4px solid #14b9ff;
+      word-wrap: break-word;
+    }
+
+    .code-snippet {
+      font-family: Consolas,"courier new";
+      font-size: 16px;
+    }
+
+          .code-snippet-inv {
+      margin-top: 16px!important;
+      margin-bottom: 16px!important;
+    }
+    .code-snippet-inv {
+      width: auto;
+      background-color: #b0c9ff;
+      padding: 8px 12px;
+      border-left: 4px solid #000000;
+      word-wrap: break-word;
+    }
+
+    .code-snippet-inv {
+      font-family: Consolas,"courier new";
+      font-size: 16px;
+    }
+</style>
+    </head>
+    <body>
+      <nav>
+        <ul>
+          <a class="navbar-link" href="../index.html">
+            <li>Home</li>
+          </a>
+          <a class="navbar-link" href="https://www.fosshub.com/Android-x86.html">
+            <li>Download</li>
+          </a>
+          <a class="navbar-link" href="../donate.html">
+            <li>Donate</li>
+          </a>
+          <a class="navbar-link" href="../source.html">
+            <li>Get Source</li>
+          </a>
+          <a class="navbar-link" href="../installhowto.html">
+            <li>Installation</li>
+          </a>
+          <a class="navbar-link" href="../screenshots.html">
+            <li>Screenshots</li>
+          </a>
+          <a class="active-navbar-link" href="../documentation.html">
+            <li>Documentation</li>
+          </a>
+          <a class="navbar-link" href="../releases.html">
+            <li>Releases</li>
+          </a>
+          <a class="navbar-link" href="../contact.html">
+            <li>Contact Us</li>
+          </a>
+          <a class="navbar-link" href="../changelog.html">
+            <li>News</li>
+          </a>
+          <a class="navbar-link" href="../credits.html">
+            <li>Credits</li>
+          </a>
+        </ul>
+      </nav>
+      <div class="openNav">
+        <div class="icon"></div>
+      </div>
+<!--HTML of main page-->
+        <div class="wrapper">
+            <section>
+                <h1 id="top" class="heading">Android x86</h1>
+                <h2 class="subheading">Run Android on your PC</h2>
+
+                <h2>Debug Howto</h2>
+                <p>This page explains how to use adb and gdbserver with VirtualBox</p>
+                <h3>1. use adb:</h3>
+                <p>
+
+                  • In the VirtualBox network configuration, it is simplest to configure it for Host-Only or Bridged.<br>
+                  • boot up Android iso image on the VirtualBox.<br>
+                  • setup ethernet (normally, it will do DHCP by default)<br>
+                  • find the IP address of the android VM, by going to the console &lt;Alt-F1&gt; and then typing: netcfg<br>
+                  • you can go back to the UI by pressing &lt;Alt-F7&gt;<br>
+                  • on you host machine, cd &lt;android source code root directory&gt;/out/host/linux-x86/bin/<br>
+                  • ./adb kill-server<br>
+                  • ./adb connect &lt;VirtualBox IP address&gt;:5555, after this command, you should see something like below<br>
+
+                  <div class="code-snippet"><span style="color:#44ffc0">
+
+                    * daemon not running. starting it now *<br>
+                    * daemon started successfully *<br>
+                    connected to &lt;VirtualBox IP address&gt;:5555
+            </span></div>
+
+                  • ./adb logcat to dump the debug log
+                </p>
+                <h3>2. using adb with a NAT'ed VM</h3>
+                <p>
+                  • The steps above work nicely if you have a VM which is set up to use Bridged or Host-Only adapters<br>
+                  • However, if you have a NAT'ed VM you cannot connect to the VM IP from the host<br>
+                  • You will need to set up port forwarding for a host port to be forwarded to the VM port 5555 (which is adb)<br>
+                  • VBoxManage modifyvm &lt;VMName&rt; --natpf1 adb,tcp,*,&lt;localport&rt;,*,5555<br>
+                  • Example from one machine:<br>
+                  • VBoxManage modifyvm froyo --natpf1 adb,tcp,*,5555,*,5555<br>
+                  • Once this is done, you should see the local port (i.e. 5555 in this case) bound on the host via netstat -a<br>
+                  • You can now connect to the VM by adb localhost:5555 <br>
+                </p>
+                <h3>2.a using adb with KVM (qemu)</h3>
+                <p>
+                  If you are using KVM instead of Virtualbox you may find the following useful.<br>
+                  Example of running a iso using kvm:
+                  <div class="code-snippet"><span style="color:#44ffc0">
+                    kvm -soundhw es1370 -net nic -net user,hostfwd=tcp::4444-:5555 -cdrom buildname.iso
+                  </span></div>
+
+                  note the networking arguments: this allows "user networking" which doesn't need root access, while still allowing adb connections, by forwarding them on port 4444 of localhost, so to connect you would use:
+
+                  <div class="code-snippet"><span style="color:#44ffc0">
+                    adb connect localhost:4444
+                  </span></div>
+
+                  to disconnect simply (you'll need to do this after stopping/restarting a VM session):
+
+                  <div class="code-snippet"><span style="color:#44ffc0">
+                    adb disconnect
+                  </span></div>
+
+                  Its also possible to pass-through usb devices from the host to android guest running in kvm by adding the parameters:
+
+                  <div class="code-snippet"><span style="color:#44ffc0">
+                    -usb -usbdevice host:2.*
+                  </span></div>
+
+                  where in the above example that would pass through all devices on the number 2 usb host bus.
+                </p>
+
+                <h3>3. how to use gdb with gdbserver:</h3>
+                <p>
+                  Android-x86 comes with a preinstalled gdbserver. And you can find it in /sbin/gdbserver. To use gdb to debug your process, you need to:<br>
+                  • set up host-only network as mentioned earlier<br>
+                  • in the terminal emulator, run su<br>
+                  • in the terminal emulator, run gdbserver<br>&nbsp; &lt;VirtualBox ip address&gt;:1234 [application binary name with the path] or [--attach pid]<br>
+                  • on your host machine, run gdb [path of your application binary]<br>
+                  • gdb > target remote &lt;VirtualBox ip address&gt;:1234<br>
+                  • gdb > set solib-search-path &lt;the path to all the shared library binaries&gt;<br>
+                  • gdb > c
+                </p>
+
+                <h3>4. Stop zygote to run automatically:</h3>
+                <p>
+                  in the vendor/asus/eeepc/init.rc, change following lines
+                  <div class="code-snippet-inv"><span style="color:#000000">
+
+                    service zygote /system/bin/app_process -Xzygote /system/bin --zygote --start-system-server<br>
+                    socket zygote stream 666<br>
+                    onrestart write /sys/android_power/request_state wake<br>
+                    onrestart write /sys/power/state on<br>
+                  </span></div>
+
+
+                  to:
+                  <div class="code-snippet"><span style="color:#44ffc0">
+
+                    service zygote /system/bin/app_process -Xzygote /system/bin --zygote --start-system-server<br>
+                    socket zygote stream 666<br>
+                    onrestart write /sys/android_power/request_state wake<br>
+                    onrestart write /sys/power/state on<br>
+                    disabled<br>
+                    oneshot<br>
+
+                  </span></div>
+
+                  To start zygote manually just do "start zygote" from the command line.
+                </p>
+
+    <div id="f-padding"></div>
+        </section>
+        <section class = "bg">
+            <div class="bg"></div>
+        <div class="clearfix"></div>
+        </section>
+
+
+        <footer class="footer">
+            <div class="cap">
+
+              <a href="#" id="scroll-top" class="scroll-to-top">
+                  Back to top
+              </a>
+            </div>
+                  <div class="footer-copyright">
+                    <div class="navbar-link">
+                    &copy; 2019 Android x86 | All Rights Reserved | Website v2.14 by <a class="navbar-link" id="easter" href="mailto:aryabhushan2003@gmail.com">@arya</a> & <a class="navbar-link" id="easter" href="mailto:adityasood22@gmail.com">@sood</a>
+                    </div>
+                  </div>
+                </footer>
+    </div>
+
+      <!--JAVASCRIPT CODE-->
+
+    <script src="https://code.jquery.com/jquery-2.1.1.min.js"></script>
+    <script>
+    $(".openNav").click(function() {
+    $("body").toggleClass("navOpen");
+    $("nav").toggleClass("open");
+    $(".wrapper").toggleClass("open");
+    $(this).toggleClass("open");
+    });
+    </script>
+    <script type="text/javascript">
+
+    var _gaq = _gaq || [];
+    _gaq.push(['_setAccount', 'UA-36251023-1']);
+    _gaq.push(['_setDomainName', 'jqueryscript.net']);
+    _gaq.push(['_trackPageview']);
+
+    (function() {
+    var ga = document.createElement('script'); ga.type = 'text/javascript'; ga.async = true;
+    ga.src = ('https:' == document.location.protocol ? 'https://ssl' : 'http://www') + '.google-analytics.com/ga.js';
+    var s = document.getElementsByTagName('script')[0]; s.parentNode.insertBefore(ga, s);
+    })();
+
+</script>
+
+</body>
+</html>

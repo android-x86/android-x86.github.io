@@ -1,0 +1,182 @@
+<!DOCTYPE html>
+<!--Website created by Arya Bhushan & Aditya Sood-->
+<html>
+    <head>
+        <title>Android-x86 - Porting Android to x86</title>
+        <link rel="stylesheet" type="text/css" href="../master.css">
+		<meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <style>
+    .code-snippet {
+      margin-top: 16px!important;
+      margin-bottom: 16px!important;
+    }
+    .code-snippet {
+      width: auto;
+      background-color: #2b2b2b;
+      padding: 8px 12px;
+      border-left: 4px solid #14b9ff;
+      word-wrap: break-word;
+    }
+
+    .code-snippet {
+      font-family: Consolas,"courier new";
+      font-size: 16px;
+    }
+
+          .code-snippet-inv {
+      margin-top: 16px!important;
+      margin-bottom: 16px!important;
+    }
+    .code-snippet-inv {
+      width: auto;
+      background-color: #b0c9ff;
+      padding: 8px 12px;
+      border-left: 4px solid #000000;
+      word-wrap: break-word;
+    }
+
+    .code-snippet-inv {
+      font-family: Consolas,"courier new";
+      font-size: 16px;
+    }
+</style>
+    </head>
+    <body>
+      <nav>
+        <ul>
+          <a class="navbar-link" href="../index.html">
+            <li>Home</li>
+          </a>
+          <a class="navbar-link" href="https://www.fosshub.com/Android-x86.html">
+            <li>Download</li>
+          </a>
+          <a class="navbar-link" href="../donate.html">
+            <li>Donate</li>
+          </a>
+          <a class="navbar-link" href="../source.html">
+            <li>Get Source</li>
+          </a>
+          <a class="navbar-link" href="../installhowto.html">
+            <li>Installation</li>
+          </a>
+          <a class="navbar-link" href="../screenshots.html">
+            <li>Screenshots</li>
+          </a>
+          <a class="active-navbar-link" href="../documentation.html">
+            <li>Documentation</li>
+          </a>
+          <a class="navbar-link" href="../releases.html">
+            <li>Releases</li>
+          </a>
+          <a class="navbar-link" href="../contact.html">
+            <li>Contact Us</li>
+          </a>
+          <a class="navbar-link" href="../changelog.html">
+            <li>News</li>
+          </a>
+          <a class="navbar-link" href="../credits.html">
+            <li>Credits</li>
+          </a>
+        </ul>
+      </nav>
+      <div class="openNav">
+        <div class="icon"></div>
+      </div>
+<!--HTML of main page-->
+        <div class="wrapper">
+            <section>
+                <h1 id="top" class="heading">Android x86</h1>
+                <h2 class="subheading">Run Android on your PC</h2>
+                <br>
+                <h2>Uvesafb How To</h2>
+                <h4>This is copied from the email sent by baohaojun@gmail.com to android-x86 discussion group</h4>
+                <p>
+                  Hi, all<br><br>
+
+                  With some poking around, I made the AC97 virtualbox audio device work
+                  with android-x86, here's how:<br><br><br>
+
+                  1. Config kernel, select all PCI audio devices (sorry I don't know which
+                  one is the right one, from lsmod output, it should be snd_intel8x0).<br><br>
+
+                  2. Patch external/alsa-utils/Android.mk with the attached patch, so that
+                  the /system/usr/share/alsa/init/ folder will be populated with those
+                  files from external/alsa-utils/alsactl/init/<br><br>
+
+                  3. Do a clean full build. (Or, make sure that those changes are
+                  effective in the final iso image, i.e., the .ko modues and the alsa/init
+                  files should show up in the system).<br><br>
+
+                  The following modules are loaded on my virtualbox:<br><br>
+
+                     snd_pcsp 8948 0 - Live 0xf8938000<br>
+                     snd_intel8x0 27888 3 - Live 0xf8918000<br>
+                     snd_ac97_codec 94676 1 snd_intel8x0, Live 0xf88e3000<br>
+                     ac97_bus 1300 1 snd_ac97_codec, Live 0xf88bd000<br>
+                     snd_pcm 65144 4 snd_pcsp,snd_intel8x0,snd_ac97_codec, Live 0xf8889000<br>
+                     snd_timer 18940 1 snd_pcm, Live 0xf8865000<br>
+                     snd 50660 10 snd_pcsp,snd_intel8x0,snd_ac97_codec,snd_pcm,snd_timer, Live 0xf884a000<br>
+                     snd_page_alloc 8028 2 snd_intel8x0,snd_pcm, Live 0xf8831000<br><br>
+
+                  4. After the android system boot, run this command<br><br>
+
+                  alsa_ctl restore 0 -f /sdcard/1.txt<br><br>
+
+                  The 1.txt file is also attached, I think mainly it just unmute the audio
+                  volume. You should adb push it onto the sdcard. Or better, come up with
+                  a way to make it run automatically during boot. Also, the sb16 won't
+                  work with my eclair-x86; there is just no sound. I doubt it's because
+                  the same reason (i.e., sound is muted).<br><br><br>
+
+                  2010-07 Updated: The ICH AC97 support has been added to froyo-x86 branch.
+                </p>
+    <div id="f-padding"></div>
+        </section>
+        <section class = "bg">
+            <div class="bg"></div>
+        <div class="clearfix"></div>
+        </section>
+
+
+        <footer class="footer">
+            <div class="cap">
+
+              <a href="#" id="scroll-top" class="scroll-to-top">
+                  Back to top
+              </a>
+            </div>
+                  <div class="footer-copyright">
+                    <div class="navbar-link">
+                    &copy; 2019 Android x86 | All Rights Reserved | Website v2.14 by <a class="navbar-link" id="easter" href="mailto:aryabhushan2003@gmail.com">@arya</a> & <a class="navbar-link" id="easter" href="mailto:adityasood22@gmail.com">@sood</a>
+                    </div>
+                  </footer>
+                  </div>
+
+      <!--JAVASCRIPT CODE-->
+
+    <script src="https://code.jquery.com/jquery-2.1.1.min.js"></script>
+    <script>
+    $(".openNav").click(function() {
+    $("body").toggleClass("navOpen");
+    $("nav").toggleClass("open");
+    $(".wrapper").toggleClass("open");
+    $(this).toggleClass("open");
+    });
+    </script>
+    <script type="text/javascript">
+
+    var _gaq = _gaq || [];
+    _gaq.push(['_setAccount', 'UA-36251023-1']);
+    _gaq.push(['_setDomainName', 'jqueryscript.net']);
+    _gaq.push(['_trackPageview']);
+
+    (function() {
+    var ga = document.createElement('script'); ga.type = 'text/javascript'; ga.async = true;
+    ga.src = ('https:' == document.location.protocol ? 'https://ssl' : 'http://www') + '.google-analytics.com/ga.js';
+    var s = document.getElementsByTagName('script')[0]; s.parentNode.insertBefore(ga, s);
+    })();
+
+</script>
+
+</body>
+</html>
