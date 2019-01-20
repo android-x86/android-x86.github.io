@@ -215,6 +215,7 @@ div.desc {
 }
 
 .heading{
+    text-decoration-style: none;
     font-family: Product Sans;
 }
 
