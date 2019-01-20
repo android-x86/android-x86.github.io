@@ -141,88 +141,88 @@
                     &dollar; dd if=android-x86_64-8.1-r1.iso of=/dev/sdX
                     </span></div>
                 <p>where <tt>/dev/sdX</tt> is the device name of your usb drive.</p>
-                <p>Please read <a href="https://sourceforge.net/p/android-x86/wiki/Installation/">this page</a> about how to install it to the device.<p>Windows's users can use the tool <a href="https://sourceforge.net/projects/win32diskimager/">Win32 Disk Imager</a> to create a bootable usb stick.</p>
+                <p>Windows's users can use the tool <a href="https://sourceforge.net/projects/win32diskimager/">Win32 Disk Imager</a> to create a bootable usb stick.</p>
+                <p>Please read <a href="https://sourceforge.net/p/android-x86/wiki/Installation/">this page</a> about how to install it to the device.
+                    Except the traditional ISO files, we also package android-x86 files into a Linux package <a href="http://rpm.org/">rpm</a>. It allows Linux users to easily install the release into an existing Linux device with a standalone ext4 root partition. On an rpm based device (Fedora/Red Hat/CentOS/SUSE...), just install it like a normal rpm package:</p>
+                <div class="code-snippet"><span style="color:#d1d1d1">
+                    &dollar; sudo rpm -Uvh android-x86-8.1-r1.x86_64.rpm
+                    </span></div>
+                <p>This will update your older installation like 7.1-r2 or 8.1-rc2 if you have.</p><p>On a deb based device (Debian/Ubuntu/LinuxMint/...), please use the <a href="https://wiki.debian.org/Alien"><i>alien</i></a> tool to install it:</p>
+                <div class="code-snippet"><span style="color:#d1d1d1">
+                    &dollar; sudo apt install alien
+                    <br>
+                    &dollar; sudo alien -ci android-x86-8.1-r1.x86_64.rpm
+                    </span></div>
+                <p>All files will be installed to the /android-8.1-rc1/ subdirectory and boot entries will be added to grub2 menu. Reboot and choose android-x86 item from the menu to boot Android-x86. Alternatively, you can launch Android-x86 in a QEMU virtual machine by the installed qemu-android script:</p>
+                <div class="code-snippet"><span style="color:#d1d1d1">
+                    &dollar; sudo qemu-android;
+                    </span></div>
+                <p>Note Android-x86 running in QEMU and the real machine (after rebooting) share the same data sub-folder.</p>
+                To uninstall it :
+                <div class="code-snippet"><span style="color:#d1d1d1">
+                    &dollar; sudo rpm -e android-x86</span></div>
+                or (on Debian/Ubuntu/LinuxMint/...)
 
-                Except the traditional ISO files, we also package android-x86 files into a Linux package <a href="http://rpm.org/">rpm</a>. It allows Linux users to easily install the release into an existing Linux device with a standalone ext4 root partition. On an rpm based device (Fedora/Red Hat/CentOS/SUSE...), just install it like a normal rpm package:</p>
-            <div class="code-snippet"><span style="color:#d1d1d1">
-                &dollar; sudo rpm -Uvh android-x86-8.1-r1.x86_64.rpm
-                </span></div>
-            <p>This will update your older installation like 7.1-r2 or 8.1-rc2 if you have.</p><p>On a deb based device (Debian/Ubuntu/LinuxMint/...), please use the <a href="https://wiki.debian.org/Alien"><i>alien</i></a> tool to install it:</p>
-            <div class="code-snippet"><span style="color:#d1d1d1">
-                &dollar; sudo apt install alien
+                <div class="code-snippet"><span style="color:#d1d1d1">
+                    &dollar; sudo apt-get remove android-x86
+                    </span></div>
+                <h2><b>Known Issues</b></h2>
+                <ul>
+                    <li>Google Play Service may crash sometimes on the 32-bit image.</li>
+                    <li>Suspend and resume doesn't work on some devices.</li>
+                    <li>Nvidia GPU (nouveau) may hang sometimes.</li>
+                    <li>3D support of VMware is broken. (only non-accelerated mode works)</li>
+                    <li>Taking photos doesn't work if Vulkan is enabled.</li>
+                </ul>
                 <br>
-                &dollar; sudo alien -ci android-x86-8.1-r1.x86_64.rpm
-                </span></div>
-            <p>All files will be installed to the /android-8.1-rc1/ subdirectory and boot entries will be added to grub2 menu. Reboot and choose android-x86 item from the menu to boot Android-x86. Alternatively, you can launch Android-x86 in a QEMU virtual machine by the installed qemu-android script:</p>
-            <div class="code-snippet"><span style="color:#d1d1d1">
-                &dollar; sudo qemu-android;
-                </span></div>
-            <p>Note Android-x86 running in QEMU and the real machine (after rebooting) share the same data sub-folder.</p>
-            To uninstall it :
-            <div class="code-snippet"><span style="color:#d1d1d1">
-                &dollar; sudo rpm -e android-x86</span></div>
-            or (on Debian/Ubuntu/LinuxMint/...)
+                <h2><b>Source code</b></h2>
+                The source code is available in the main <a href="https://osdn.net/projects/android-x86/scm/">git server.</a>
+                <div class="code-snippet"><span style="color:#d1d1d1">
+                    $ repo init -u git://git.osdn.net/gitroot/android-<br>x86/manifest -b oreo-x86 -m android-x86-8.1-r1.xml<br>
+                    $ repo sync --no-tags --no-clone-bundle
+                    </span></div>
+                <p>Read <a href="source.html">this page</a> for how to compile source code.</p>
+                <br><br><br>
+                <footer class="footer">
+                    <div class="cap">
 
-            <div class="code-snippet"><span style="color:#d1d1d1">
-                &dollar; sudo apt-get remove android-x86
-                </span></div>
-            <h2><b>Known Issues</b></h2>
-            <ul>
-                <li>Google Play Service may crash sometimes on the 32-bit image.</li>
-                <li>Suspend and resume doesn't work on some devices.</li>
-                <li>Nvidia GPU (nouveau) may hang sometimes.</li>
-                <li>3D support of VMware is broken. (only non-accelerated mode works)</li>
-                <li>Taking photos doesn't work if Vulkan is enabled.</li>
-            </ul>
-            <br>
-<h2><b>Source code</b></h2>
-The source code is available in the main <a href="https://osdn.net/projects/android-x86/scm/">git server.</a>
-            <div class="code-snippet"><span style="color:#d1d1d1">
-                 $ repo init -u git://git.osdn.net/gitroot/android-<br>x86/manifest -b oreo-x86 -m android-x86-8.1-r1.xml<br>
-  $ repo sync --no-tags --no-clone-bundle
-                </span></div>
-            <p>Read <a href="source.html">this page</a> for how to compile source code.</p>
-            <br><br><br>
-            <footer class="footer">
-                <div class="cap">
-
-                    <a href="#" id="scroll-top" class="scroll-to-top">
-                        Back to top
-                    </a>
-                </div>
-                <div class="footer-copyright">
-                    <div class="navbar-link">
-                        &copy; 2019 Android x86 | All Rights Reserved | Website v2.14 by <a class="navbar-link" id="easter" href="mailto:aryabhushan2003@gmail.com">@arya</a> & <a class="navbar-link" id="easter" href="mailto:sood0@outlook.com">@sood</a>
+                        <a href="#" id="scroll-top" class="scroll-to-top">
+                            Back to top
+                        </a>
                     </div>
-                </div>
-            </footer>
+                    <div class="footer-copyright">
+                        <div class="navbar-link">
+                            &copy; 2019 Android x86 | All Rights Reserved | Website v2.14 by <a class="navbar-link" id="easter" href="mailto:aryabhushan2003@gmail.com">@arya</a> & <a class="navbar-link" id="easter" href="mailto:sood0@outlook.com">@sood</a>
+                        </div>
+                    </div>
+                </footer>
 
 
-            <!--JAVASCRIPT CODE-->
+                <!--JAVASCRIPT CODE-->
 
-            <script src="https://code.jquery.com/jquery-2.1.1.min.js"></script>
-            <script>
-                $(".openNav").click(function() {
-                    $("body").toggleClass("navOpen");
-                    $("nav").toggleClass("open");
-                    $(".wrapper").toggleClass("open");
-                    $(this).toggleClass("open");
-                });
-            </script>
-            <script type="text/javascript">
+                <script src="https://code.jquery.com/jquery-2.1.1.min.js"></script>
+                <script>
+                    $(".openNav").click(function() {
+                        $("body").toggleClass("navOpen");
+                        $("nav").toggleClass("open");
+                        $(".wrapper").toggleClass("open");
+                        $(this).toggleClass("open");
+                    });
+                </script>
+                <script type="text/javascript">
 
-                var _gaq = _gaq || [];
-                _gaq.push(['_setAccount', 'UA-36251023-1']);
-                _gaq.push(['_setDomainName', 'jqueryscript.net']);
-                _gaq.push(['_trackPageview']);
+                    var _gaq = _gaq || [];
+                    _gaq.push(['_setAccount', 'UA-36251023-1']);
+                    _gaq.push(['_setDomainName', 'jqueryscript.net']);
+                    _gaq.push(['_trackPageview']);
 
-                (function() {
-                    var ga = document.createElement('script'); ga.type = 'text/javascript'; ga.async = true;
-                    ga.src = ('https:' == document.location.protocol ? 'https://ssl' : 'http://www') + '.google-analytics.com/ga.js';
-                    var s = document.getElementsByTagName('script')[0]; s.parentNode.insertBefore(ga, s);
-                })();
+                    (function() {
+                        var ga = document.createElement('script'); ga.type = 'text/javascript'; ga.async = true;
+                        ga.src = ('https:' == document.location.protocol ? 'https://ssl' : 'http://www') + '.google-analytics.com/ga.js';
+                        var s = document.getElementsByTagName('script')[0]; s.parentNode.insertBefore(ga, s);
+                    })();
 
-            </script>
+                </script>
 
-            </body>
-        </html>
+                </body>
+            </html>
