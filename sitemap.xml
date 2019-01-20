@@ -1,0 +1,287 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<urlset
+      xmlns="http://www.sitemaps.org/schemas/sitemap/0.9"
+      xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+      xsi:schemaLocation="http://www.sitemaps.org/schemas/sitemap/0.9
+            http://www.sitemaps.org/schemas/sitemap/0.9/sitemap.xsd">
+<!-- created with Free Online Sitemap Generator www.xml-sitemaps.com -->
+
+
+<url>
+  <loc>https://android-x86.github.io/</loc>
+  <lastmod>2019-01-20T14:07:32+00:00</lastmod>
+  <priority>1.00</priority>
+</url>
+<url>
+  <loc>https://android-x86.github.io/index.html</loc>
+  <lastmod>2019-01-20T14:07:32+00:00</lastmod>
+  <priority>0.80</priority>
+</url>
+<url>
+  <loc>https://android-x86.github.io/donate.html</loc>
+  <lastmod>2019-01-20T14:07:32+00:00</lastmod>
+  <priority>0.80</priority>
+</url>
+<url>
+  <loc>https://android-x86.github.io/source.html</loc>
+  <lastmod>2019-01-20T14:07:32+00:00</lastmod>
+  <priority>0.80</priority>
+</url>
+<url>
+  <loc>https://android-x86.github.io/installhowto.html</loc>
+  <lastmod>2019-01-20T14:07:32+00:00</lastmod>
+  <priority>0.80</priority>
+</url>
+<url>
+  <loc>https://android-x86.github.io/screenshots.html</loc>
+  <lastmod>2019-01-20T14:07:32+00:00</lastmod>
+  <priority>0.80</priority>
+</url>
+<url>
+  <loc>https://android-x86.github.io/documentation.html</loc>
+  <lastmod>2019-01-20T14:07:32+00:00</lastmod>
+  <priority>0.80</priority>
+</url>
+<url>
+  <loc>https://android-x86.github.io/releases.html</loc>
+  <lastmod>2019-01-20T14:07:32+00:00</lastmod>
+  <priority>0.80</priority>
+</url>
+<url>
+  <loc>https://android-x86.github.io/contact.html</loc>
+  <lastmod>2019-01-20T14:07:32+00:00</lastmod>
+  <priority>0.80</priority>
+</url>
+<url>
+  <loc>https://android-x86.github.io/changelog.html</loc>
+  <lastmod>2019-01-20T14:07:32+00:00</lastmod>
+  <priority>0.80</priority>
+</url>
+<url>
+  <loc>https://android-x86.github.io/credits.html</loc>
+  <lastmod>2019-01-20T14:07:32+00:00</lastmod>
+  <priority>0.80</priority>
+</url>
+<url>
+  <loc>https://android-x86.github.io/documentation/new_target.html</loc>
+  <lastmod>2019-01-20T14:07:32+00:00</lastmod>
+  <priority>0.64</priority>
+</url>
+<url>
+  <loc>https://android-x86.github.io/documentation/analytics.html</loc>
+  <lastmod>2019-01-20T14:07:32+00:00</lastmod>
+  <priority>0.64</priority>
+</url>
+<url>
+  <loc>https://android-x86.github.io/documentation/app_howto.html</loc>
+  <lastmod>2019-01-20T14:07:32+00:00</lastmod>
+  <priority>0.64</priority>
+</url>
+<url>
+  <loc>https://android-x86.github.io/documentation/customize_kernel.html</loc>
+  <lastmod>2019-01-20T14:07:32+00:00</lastmod>
+  <priority>0.64</priority>
+</url>
+<url>
+  <loc>https://android-x86.github.io/documentation/debug.html</loc>
+  <lastmod>2019-01-20T14:07:32+00:00</lastmod>
+  <priority>0.64</priority>
+</url>
+<url>
+  <loc>https://android-x86.github.io/documentation/graphic_card.html</loc>
+  <lastmod>2019-01-20T14:07:32+00:00</lastmod>
+  <priority>0.64</priority>
+</url>
+<url>
+  <loc>https://android-x86.github.io/documentation/vbox_audio.html</loc>
+  <lastmod>2019-01-20T14:07:32+00:00</lastmod>
+  <priority>0.64</priority>
+</url>
+<url>
+  <loc>https://android-x86.github.io/documentation/wake_machine.html</loc>
+  <lastmod>2019-01-20T14:07:32+00:00</lastmod>
+  <priority>0.64</priority>
+</url>
+<url>
+  <loc>https://android-x86.github.io/documentation/battery.html</loc>
+  <lastmod>2019-01-20T14:07:32+00:00</lastmod>
+  <priority>0.64</priority>
+</url>
+<url>
+  <loc>https://android-x86.github.io/documentation/camera.html</loc>
+  <lastmod>2019-01-20T14:07:32+00:00</lastmod>
+  <priority>0.64</priority>
+</url>
+<url>
+  <loc>https://android-x86.github.io/documentation/prebuild_images.html</loc>
+  <lastmod>2019-01-20T14:07:32+00:00</lastmod>
+  <priority>0.64</priority>
+</url>
+<url>
+  <loc>https://android-x86.github.io/documentation/ndk.html</loc>
+  <lastmod>2019-01-20T14:07:32+00:00</lastmod>
+  <priority>0.64</priority>
+</url>
+<url>
+  <loc>https://android-x86.github.io/documentation/nfs.html</loc>
+  <lastmod>2019-01-20T14:07:32+00:00</lastmod>
+  <priority>0.64</priority>
+</url>
+<url>
+  <loc>https://android-x86.github.io/documentation/qemu.html</loc>
+  <lastmod>2019-01-20T14:07:32+00:00</lastmod>
+  <priority>0.64</priority>
+</url>
+<url>
+  <loc>https://android-x86.github.io/documentation/sd_card.html</loc>
+  <lastmod>2019-01-20T14:07:32+00:00</lastmod>
+  <priority>0.64</priority>
+</url>
+<url>
+  <loc>https://android-x86.github.io/documentation/touch_only.html</loc>
+  <lastmod>2019-01-20T14:07:32+00:00</lastmod>
+  <priority>0.64</priority>
+</url>
+<url>
+  <loc>https://android-x86.github.io/documentation/uvesafb.html</loc>
+  <lastmod>2019-01-20T14:07:32+00:00</lastmod>
+  <priority>0.64</priority>
+</url>
+<url>
+  <loc>https://android-x86.github.io/documentation/virtualbox.html</loc>
+  <lastmod>2019-01-20T14:07:32+00:00</lastmod>
+  <priority>0.64</priority>
+</url>
+<url>
+  <loc>https://android-x86.github.io/releasenote-4-4-r1.html</loc>
+  <lastmod>2019-01-20T14:07:32+00:00</lastmod>
+  <priority>0.64</priority>
+</url>
+<url>
+  <loc>https://android-x86.github.io/releasenote-4-4-r2.html</loc>
+  <lastmod>2019-01-20T14:07:32+00:00</lastmod>
+  <priority>0.64</priority>
+</url>
+<url>
+  <loc>https://android-x86.github.io/releasenote-4-4-r3.html</loc>
+  <lastmod>2019-01-20T14:07:32+00:00</lastmod>
+  <priority>0.64</priority>
+</url>
+<url>
+  <loc>https://android-x86.github.io/releasenote-4-4-r4.html</loc>
+  <lastmod>2019-01-20T14:07:32+00:00</lastmod>
+  <priority>0.64</priority>
+</url>
+<url>
+  <loc>https://android-x86.github.io/releasenote-4-4-r5.html</loc>
+  <lastmod>2019-01-20T14:07:32+00:00</lastmod>
+  <priority>0.64</priority>
+</url>
+<url>
+  <loc>https://android-x86.github.io/releasenote-4-4-rc1.html</loc>
+  <lastmod>2019-01-20T14:07:32+00:00</lastmod>
+  <priority>0.64</priority>
+</url>
+<url>
+  <loc>https://android-x86.github.io/releasenote-4-4-rc2.html</loc>
+  <lastmod>2019-01-20T14:07:32+00:00</lastmod>
+  <priority>0.64</priority>
+</url>
+<url>
+  <loc>https://android-x86.github.io/releasenote-5-1-rc1.html</loc>
+  <lastmod>2019-01-20T14:07:32+00:00</lastmod>
+  <priority>0.64</priority>
+</url>
+<url>
+  <loc>https://android-x86.github.io/releasenote-6-0-r1.html</loc>
+  <lastmod>2019-01-20T14:07:32+00:00</lastmod>
+  <priority>0.64</priority>
+</url>
+<url>
+  <loc>https://android-x86.github.io/releasenote-6-0-r2.html</loc>
+  <lastmod>2019-01-20T14:07:32+00:00</lastmod>
+  <priority>0.64</priority>
+</url>
+<url>
+  <loc>https://android-x86.github.io/releasenote-6-0-r3.html</loc>
+  <lastmod>2019-01-20T14:07:32+00:00</lastmod>
+  <priority>0.64</priority>
+</url>
+<url>
+  <loc>https://android-x86.github.io/releasenote-6-0-rc1.html</loc>
+  <lastmod>2019-01-20T14:07:32+00:00</lastmod>
+  <priority>0.64</priority>
+</url>
+<url>
+  <loc>https://android-x86.github.io/releasenote-6-0-rc2.html</loc>
+  <lastmod>2019-01-20T14:07:32+00:00</lastmod>
+  <priority>0.64</priority>
+</url>
+<url>
+  <loc>https://android-x86.github.io/releasenote-7-1-r1.html</loc>
+  <lastmod>2019-01-20T14:07:32+00:00</lastmod>
+  <priority>0.64</priority>
+</url>
+<url>
+  <loc>https://android-x86.github.io/releasenote-7-1-r2.html</loc>
+  <lastmod>2019-01-20T14:07:32+00:00</lastmod>
+  <priority>0.64</priority>
+</url>
+<url>
+  <loc>https://android-x86.github.io/releasenote-7-1-rc1.html</loc>
+  <lastmod>2019-01-20T14:07:32+00:00</lastmod>
+  <priority>0.64</priority>
+</url>
+<url>
+  <loc>https://android-x86.github.io/releasenote-7-1-rc2.html</loc>
+  <lastmod>2019-01-20T14:07:32+00:00</lastmod>
+  <priority>0.64</priority>
+</url>
+<url>
+  <loc>https://android-x86.github.io/releasenote-8-1-rc1.html</loc>
+  <lastmod>2019-01-20T14:07:32+00:00</lastmod>
+  <priority>0.64</priority>
+</url>
+<url>
+  <loc>https://android-x86.github.io/releasenote-cm-x86-13-0-r1.html</loc>
+  <lastmod>2019-01-20T14:07:32+00:00</lastmod>
+  <priority>0.64</priority>
+</url>
+<url>
+  <loc>https://android-x86.github.io/releasenote-cm-x86-13-0-rc1.html</loc>
+  <lastmod>2019-01-20T14:07:32+00:00</lastmod>
+  <priority>0.64</priority>
+</url>
+<url>
+  <loc>https://android-x86.github.io/releasenote-cm-x86-14-1-r1.html</loc>
+  <lastmod>2019-01-20T14:07:32+00:00</lastmod>
+  <priority>0.64</priority>
+</url>
+<url>
+  <loc>https://android-x86.github.io/releasenote-cm-x86-14-1-r2.html</loc>
+  <lastmod>2019-01-20T14:07:32+00:00</lastmod>
+  <priority>0.64</priority>
+</url>
+<url>
+  <loc>https://android-x86.github.io/releasenote-cm-x86-14-1-rc1.html</loc>
+  <lastmod>2019-01-20T14:07:32+00:00</lastmod>
+  <priority>0.64</priority>
+</url>
+<url>
+  <loc>https://android-x86.github.io/releasenote-8-1-r1.html</loc>
+  <lastmod>2019-01-20T14:07:32+00:00</lastmod>
+  <priority>0.64</priority>
+</url>
+<url>
+  <loc>https://android-x86.github.io/releasenote-8-1-rc2.html</loc>
+  <lastmod>2019-01-20T14:07:32+00:00</lastmod>
+  <priority>0.64</priority>
+</url>
+<url>
+  <loc>https://android-x86.github.io/releasenote-4-4-r4</loc>
+  <lastmod>2019-01-20T14:07:32+00:00</lastmod>
+  <priority>0.64</priority>
+</url>
+
+
+</urlset>
