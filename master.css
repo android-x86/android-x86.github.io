@@ -100,6 +100,11 @@ body.dark-theme{
   left: 10px;
 
 }
+
+.openNav:hover{
+    box-shadow: 0 1px grey;
+}
+
 .openNav .icon:before,
 .openNav .icon:after {
   transition-duration: 0.5s;
@@ -248,16 +253,20 @@ div.desc {
     text-decoration: none;
     background-color: #295db2;
     color: white;
+    font-family: Product Sans;
+    font-size: 18px;
     padding: 14px 25px;
     text-align: center;
     text-decoration: none;
     display: inline-block;
     border: 2px solid transparent;
     border-radius: 25px;
-    transition : background-color 0.3s;
+    transition : background-color 0.4s;
+    transition : box-shadow 0.4s;
 }
 #scroll-top:hover{
-    background-color: #042b68;
+    background-color: #4165f4;
+    box-shadow: 0px +1.5px #888888;
 }
 
 a{
@@ -333,7 +342,7 @@ a:hover{
     padding-bottom: 10px;
     bottom:0px;
     width: 100%;
-    background-color: royalblue;
+    background-color: darkblue;
 
 }
 
@@ -401,6 +410,9 @@ a:hover{
 }
 
 
+h1{
+    font-family: Product Sans;
+}
 
 h2{
  	font-family: Product Sans;
