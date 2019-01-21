@@ -1,0 +1,184 @@
+<!DOCTYPE html>
+<html>
+    <head>        
+        <title>Android-x86 - Porting Android to x86</title>
+        <link rel="stylesheet" type="text/css" href="../master.css">
+		<meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <meta name="description" content="Releases | Android x86">
+        <meta name="keywords" content="android x86">
+    <style>
+    .code-snippet {
+      margin-top: 16px!important;
+      margin-bottom: 16px!important;
+    }
+    .code-snippet {
+      width: auto;
+      background-color: #2b2b2b;
+      padding: 8px 12px;
+      border-left: 4px solid #14b9ff;
+      word-wrap: break-word;
+    }
+
+    .code-snippet {
+      font-family: Consolas,"courier new";
+      font-size: 16px;
+    }
+
+          .code-snippet-inv {
+      margin-top: 16px!important;
+      margin-bottom: 16px!important;
+    }
+    .code-snippet-inv {
+      width: auto;
+      background-color: #b0c9ff;
+      padding: 8px 12px;
+      border-left: 4px solid #000000;
+      word-wrap: break-word;
+    }
+
+    .code-snippet-inv {
+      font-family: Consolas,"courier new";
+      font-size: 16px;
+    }
+</style>
+    </head>
+    <body>
+      <nav>
+        <ul>
+          <a class="navbar-link" href="../index.html">
+            <li>Home</li>
+          </a>
+          <a class="navbar-link" href="https://www.fosshub.com/Android-x86.html">
+            <li>Download</li>
+          </a>
+          <a class="navbar-link" href="../donate.html">
+            <li>Donate</li>
+          </a>
+          <a class="navbar-link" href="../source.html">
+            <li>Get Source</li>
+          </a>
+          <a class="navbar-link" href="../installhowto.html">
+            <li>Installation</li>
+          </a>
+          <a class="navbar-link" href="../screenshots.html">
+            <li>Screenshots</li>
+          </a>
+          <a class="navbar-link" href="../documentation.html">
+            <li>Documentation</li>
+          </a>
+          <a class="active-navbar-link" href="../releases.html">
+            <li>Releases</li>
+          </a>
+          <a class="navbar-link" href="../contact.html">
+            <li>Contact Us</li>
+          </a>
+          <a class="navbar-link" href="../changelog.html">
+            <li>News</li>
+          </a>
+          <a class="navbar-link" href="../credits.html">
+            <li>Credits</li>
+          </a>
+        </ul>
+      </nav>
+      <div class="openNav">
+        <div class="icon"></div>
+      </div>
+        <!--HTML of main page-->
+        <div class="wrapper">
+            <section>
+                <h1 id="top" class="heading">Android x86</h1>
+                <h2 class="subheading">Run Android on your PC</h2>
+                <br>
+                <h2>Release Note 4.4-r5
+                </h2>
+                <h3>(2016/02/06)</h3>
+                The Android-x86.org is glad to release the 4.4-r5 to the public. The prebuilt image is available in the following sites:
+                <br>
+                <ul>
+                    <ul>
+                        <li><a href="http://www.fosshub.com/Android-x86.html/">http://www.fosshub.com/Android-x86.html/android-x86-4.4-r5.iso</a></li>
+                        <li><a href="https://osdn.net/rel/android-x86/Release%204.4">https://osdn.net/rel/android-x86/Release%204.4</a></li>
+                    </ul>
+                </ul>
+                <br>
+                <h2><b>Key Features</b></h2>
+                <p>The Android-x86 4.4-r5 is a bugfix of the 4.4-r4 release. It addresses more hazi fonts issue of Mesa 10.5.9 found on Intel Gen5 GPUs. You are encouraged to upgrade to this release if you still encountered the hazi fonts issue.</p>
+                <br><br>
+                <h2><b>Released Files
+
+                    </b></h2>
+                <p>This release contains one file. The file is bootable in devices with legacy BIOS as well as UEFI firmware.</p>
+                <ul>
+                    <li>ISO image: android-x86-4.4-r5.iso&nbsp;
+                        <p>sha1sum: 4c0edceef12bf4b8afb1b8390d94a9af29bbbca8<br>
+                        </p>
+                    </li>
+                </ul>
+
+                <p>The file can be dumped into a usb drive to get a bootable usb stick, like</p>
+
+                <div class="code-snippet"><span style="color:#d1d1d1">
+                    &dollar; dd if=android-x86-4.4-r5.iso of=/dev/sdX
+                    </span></div>
+
+                <p>where <tt>/dev/sdX</tt> is the device name of your usb drive.</p>
+
+
+                <h2><b>Known Issues</b></h2>
+                <ul>
+                    <li>Suspend and resume may have problems on some systems.</li>
+                    <li>The installer can't format ext3 filesystem.</li>
+                </ul>
+                <br>
+                <h2><b>Source code</b></h2>
+                The source code is available in the main <a href="https://osdn.net/projects/android-x86/scm/">git server.</a>
+                <div class="code-snippet"><span style="color:#d1d1d1">
+                    &dollar;repo init -u git://git.osdn.net/gitroot/android-x86/manifest -b android-x86-4.4-r5<br>
+                    &dollar; repo sync
+                    </span></div>
+                <p>Read <a href="source.html">this page</a> for how to compile source code.</p>
+                <br><br><br>
+                <footer class="footer">
+                    <div class="cap">
+
+                        <a href="#" id="scroll-top" class="scroll-to-top">
+                            Back to top
+                        </a>
+                    </div>
+                    <div class="footer-copyright">
+                        <div class="navbar-link">
+                            &copy; 2019 Android x86 | All Rights Reserved | Website v2.14 by <a class="navbar-link" id="easter" href="mailto:aryabhushan2003@gmail.com">@arya</a> & <a class="navbar-link" id="easter" href="mailto:sood0@outlook.com">@sood</a>
+                        </div>
+                    </div>
+                </footer>
+
+
+                <!--JAVASCRIPT CODE-->
+
+                <script src="https://code.jquery.com/jquery-2.1.1.min.js"></script>
+                <script>
+                    $(".openNav").click(function() {
+                        $("body").toggleClass("navOpen");
+                        $("nav").toggleClass("open");
+                        $(".wrapper").toggleClass("open");
+                        $(this).toggleClass("open");
+                    });
+                </script>
+                <script type="text/javascript">
+
+                    var _gaq = _gaq || [];
+                    _gaq.push(['_setAccount', 'UA-36251023-1']);
+                    _gaq.push(['_setDomainName', 'jqueryscript.net']);
+                    _gaq.push(['_trackPageview']);
+
+                    (function() {
+                        var ga = document.createElement('script'); ga.type = 'text/javascript'; ga.async = true;
+                        ga.src = ('https:' == document.location.protocol ? 'https://ssl' : 'http://www') + '.google-analytics.com/ga.js';
+                        var s = document.getElementsByTagName('script')[0]; s.parentNode.insertBefore(ga, s);
+                    })();
+
+                </script>
+
+                </body>
+            </html>
+

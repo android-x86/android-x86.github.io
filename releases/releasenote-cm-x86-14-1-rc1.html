@@ -1,0 +1,206 @@
+<!DOCTYPE html>
+<html>
+    <head>        
+        <title>Android-x86 - Porting Android to x86</title>
+        <link rel="stylesheet" type="text/css" href="../master.css">
+		<meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <meta name="description" content="Releases | Android x86">
+        <meta name="keywords" content="android x86">
+    <style>
+    .code-snippet {
+      margin-top: 16px!important;
+      margin-bottom: 16px!important;
+    }
+    .code-snippet {
+      width: auto;
+      background-color: #2b2b2b;
+      padding: 8px 12px;
+      border-left: 4px solid #14b9ff;
+      word-wrap: break-word;
+    }
+
+    .code-snippet {
+      font-family: Consolas,"courier new";
+      font-size: 16px;
+    }
+
+          .code-snippet-inv {
+      margin-top: 16px!important;
+      margin-bottom: 16px!important;
+    }
+    .code-snippet-inv {
+      width: auto;
+      background-color: #b0c9ff;
+      padding: 8px 12px;
+      border-left: 4px solid #000000;
+      word-wrap: break-word;
+    }
+
+    .code-snippet-inv {
+      font-family: Consolas,"courier new";
+      font-size: 16px;
+    }
+</style>
+    </head>
+    <body>
+      <nav>
+        <ul>
+          <a class="navbar-link" href="../index.html">
+            <li>Home</li>
+          </a>
+          <a class="navbar-link" href="https://www.fosshub.com/Android-x86.html">
+            <li>Download</li>
+          </a>
+          <a class="navbar-link" href="../donate.html">
+            <li>Donate</li>
+          </a>
+          <a class="navbar-link" href="../source.html">
+            <li>Get Source</li>
+          </a>
+          <a class="navbar-link" href="../installhowto.html">
+            <li>Installation</li>
+          </a>
+          <a class="navbar-link" href="../screenshots.html">
+            <li>Screenshots</li>
+          </a>
+          <a class="navbar-link" href="../documentation.html">
+            <li>Documentation</li>
+          </a>
+          <a class="active-navbar-link" href="../releases.html">
+            <li>Releases</li>
+          </a>
+          <a class="navbar-link" href="../contact.html">
+            <li>Contact Us</li>
+          </a>
+          <a class="navbar-link" href="../changelog.html">
+            <li>News</li>
+          </a>
+          <a class="navbar-link" href="../credits.html">
+            <li>Credits</li>
+          </a>
+        </ul>
+      </nav>
+      <div class="openNav">
+        <div class="icon"></div>
+      </div>
+        <!--HTML of main page-->
+        <div class="wrapper">
+            <section>
+                <h1 id="top" class="heading">Android x86</h1>
+                <h2 class="subheading">Run Android on your PC</h2>
+                <br>
+                <h2>Release Note CM-x86-14.1-r2
+                </h2>
+                <h3>(2017/11/15)</h3>
+
+
+                The Android-x86 project is glad to announce cm-x86-14.1-rc1, the first stable release candidate of CyanogenMod 14.1 porting for Android-x86. The prebuilt images are available in the following site:
+                <br>
+                <ul>
+
+                    <li><a href="https://osdn.net/rel/android-x86/CM%20Release%2014.1">https://osdn.net/rel/android-x86/CM%20Release%2014.1</a></li>
+
+                </ul>
+                <br>
+                <h2><b>Key Features</b></h2>
+                <p>
+                    The cm-x86-14.1-rc1 is a porting of LineageOS 14.1 to the Android-x86 platform as the BSP. Based on the Android-x86 7.1-rc2 and the latest LineageOS 14.1, it includes almost all the features from the two open source projects.
+                </p>
+                <h2><b>Released Files
+
+                    </b></h2>
+                <p>This release contains four files. </p>
+                <ul>
+                    <li>32-bit ISO:&nbsp;&nbsp;cm-x86-14.1-rc1.iso
+                        <p>sha1sum: 447444706324db8f3865700cbfa5a4b891d23e85</p>
+                    </li>
+                    <li>64-bit ISO:&nbsp;&nbsp;cm-x86_64-14.1-rc1.iso
+                        <p>sha1sum: ba55bfede402945557bb73baee8d7309ba8cf063</p>
+                    </li>
+                    <li>32-bit rpm:&nbsp;&nbsp;cm-x86-14.1-rc1.i686.rpm
+                        <p>sha1sum: b1c3cbc7c692fca6d10289504db16a5cfbe58c90</p>
+                    </li>
+                    <li>64-bit rpm:&nbsp;&nbsp;cm-x86-14.1-rc1.x86_64.rpm
+                        <p>sha1sum: 8f51feedb404130e017d17c75a1aeeed35cac91d</p>
+                    </li>
+                </ul>
+                <p>You can choose one of these files depends on your devices. In doubt, try the 32-bit ISO for legacy BIOS devices and 64-bit files for UEFI devices.</p>
+                <p>To use an ISO file, Linux users could just dump it into a usb drive to create a bootable usb stick like :</p>
+                <div class="code-snippet"><span style="color:#d1d1d1">
+                    &dollar; dd if=cm-x86_64-14.1-rc1.iso of=/dev/sdX
+                    </span></div>
+                <p>where <tt>/dev/sdX</tt> is the device name of your usb drive.</p>
+                <p>Windows's users can use the tool <a href="https://sourceforge.net/projects/win32diskimager/">Win32 Disk Imager</a> to create a bootable usb stick.</p>
+                <p>Please read <a href="https://sourceforge.net/p/android-x86/wiki/Installation/">this page</a> about how to install it to the device.
+                    Except the traditional ISO files, we also package android-x86 files into a Linux package <a href="http://rpm.org/">rpm</a>. It allows Linux users to easily install the release into an existing Linux device with a standalone ext4 root partition. On an rpm based device (Fedora/Red Hat/CentOS/SUSE...), just install it like a normal rpm package:</p>
+                <div class="code-snippet"><span style="color:#d1d1d1">
+                    &dollar; sudo rpm -Uvh cm-x86-14.1-rc1.x86_64.rpm
+                    </span></div>
+                <p>All files will be installed to the /cm-x86-14.1-rc1/ subdirectory and a boot entry will be added to grub2 menu. Reboot and choose cm-x86 item from the menu to enter the system.</p>
+                To uninstall it:
+                <div class="code-snippet"><span style="color:#d1d1d1">
+                    &dollar; sudo rpm -e</span></div>
+                <p>On a deb based device (Debian/Ubuntu/LinuxMint/...), please use the <a href="https://wiki.debian.org/Alien"><i>alien</i></a> tool to install it:</p>
+                <div class="code-snippet"><span style="color:#d1d1d1">
+                    &dollar; sudo apt install alien
+                    <br>
+                    &dollar; sudo alien -ci android-x86-7.1-rc1.x86_64.rpm
+                    </span></div>
+
+
+                <h2><b>Known Issues</b></h2>
+                <ul>
+                    <li>All known bugs of <a href="releasenote-7-1-r2.html">Android-x86 7.1-rc2 release.</a></li>
+                </ul>
+                <br>
+                <h2><b>Source code</b></h2>
+                The source code is available in the main <a href="https://osdn.net/projects/android-x86/scm/">git server.</a>
+                <div class="code-snippet"><span style="color:#d1d1d1">
+                    $ repo init -u git://git.osdn.net/gitroot/android-<br>x86/manifest -b android-x86-7.1-rc1<br>
+                    $ repo sync --no-tags --no-clone-bundle
+                    </span></div>
+                <p>Read <a href="source.html">this page</a> for how to compile source code.</p>
+                <br><br><br>
+                <footer class="footer">
+                    <div class="cap">
+
+                        <a href="#" id="scroll-top" class="scroll-to-top">
+                            Back to top
+                        </a>
+                    </div>
+                    <div class="footer-copyright">
+                        <div class="navbar-link">
+                            &copy; 2019 Android x86 | All Rights Reserved | Website v2.14 by <a class="navbar-link" id="easter" href="mailto:aryabhushan2003@gmail.com">@arya</a> & <a class="navbar-link" id="easter" href="mailto:sood0@outlook.com">@sood</a>
+                        </div>
+                    </div>
+                </footer>
+
+
+                <!--JAVASCRIPT CODE-->
+
+                <script src="https://code.jquery.com/jquery-2.1.1.min.js"></script>
+                <script>
+                    $(".openNav").click(function() {
+                        $("body").toggleClass("navOpen");
+                        $("nav").toggleClass("open");
+                        $(".wrapper").toggleClass("open");
+                        $(this).toggleClass("open");
+                    });
+                </script>
+                <script type="text/javascript">
+
+                    var _gaq = _gaq || [];
+                    _gaq.push(['_setAccount', 'UA-36251023-1']);
+                    _gaq.push(['_setDomainName', 'jqueryscript.net']);
+                    _gaq.push(['_trackPageview']);
+
+                    (function() {
+                        var ga = document.createElement('script'); ga.type = 'text/javascript'; ga.async = true;
+                        ga.src = ('https:' == document.location.protocol ? 'https://ssl' : 'http://www') + '.google-analytics.com/ga.js';
+                        var s = document.getElementsByTagName('script')[0]; s.parentNode.insertBefore(ga, s);
+                    })();
+
+                </script>
+
+                </body>
+            </html>
