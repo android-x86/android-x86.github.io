@@ -3,131 +3,193 @@
     <head>
         <title>Android-x86 - Porting Android to x86</title>
         <link rel="stylesheet" type="text/css" href="master.css">
-		    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <link rel="icon" type="image/png" href="mobile.png">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
         <style>
             .code-snippet {
-              margin-top: 16px!important;
-              margin-bottom: 16px!important;
+                margin-top: 16px!important;
+                margin-bottom: 16px!important;
             }
             .code-snippet {
-              width: auto;
-              background-color: #2b2b2b;
-              padding: 8px 12px;
-              border-left: 4px solid #14b9ff;
-              word-wrap: break-word;
+                width: auto;
+                background-color: #2b2b2b;
+                padding: 8px 12px;
+                border-left: 4px solid #14b9ff;
+                word-wrap: break-word;
             }
 
             .code-snippet {
-              font-family: Consolas,"courier new";
-              font-size: 16px;
-            }
-
-                  .code-snippet-inv {
-              margin-top: 16px!important;
-              margin-bottom: 16px!important;
-            }
-            .code-snippet-inv {
-              width: auto;
-              background-color: #b0c9ff;
-              padding: 8px 12px;
-              border-left: 4px solid #000000;
-              word-wrap: break-word;
+                font-family: Consolas,"courier new";
+                font-size: 16px;
             }
 
             .code-snippet-inv {
-              font-family: Consolas,"courier new";
-              font-size: 16px;
+                margin-top: 16px!important;
+                margin-bottom: 16px!important;
             }
-    </style>
+            .code-snippet-inv {
+                width: auto;
+                background-color: #b0c9ff;
+                padding: 8px 12px;
+                border-left: 4px solid #000000;
+                word-wrap: break-word;
+            }
+
+            .code-snippet-inv {
+                font-family: Consolas,"courier new";
+                font-size: 16px;
+            }
+        </style>
 
     </head>
     <body>
-      <nav>
-        <ul>
-          <a class="navbar-link" href="index.html">
-            <li>Home</li>
-          </a>
-          <a class="navbar-link" href="https://www.fosshub.com/Android-x86.html">
-            <li>Download</li>
-          </a>
-          <a class="navbar-link" href="donate.html">
-            <li>Donate</li>
-          </a>
-          <a class="active-navbar-link" href="source.html">
-            <li>Get Source</li>
-          </a>
-          <a class="navbar-link" href="installhowto.html">
-            <li>Installation</li>
-          </a>
-          <a class="navbar-link" href="screenshots.html">
-            <li>Screenshots</li>
-          </a>
-          <a class="navbar-link" href="documentation.html">
-            <li>Documentation</li>
-          </a>
-          <a class="navbar-link" href="releases.html">
-            <li>Releases</li>
-          </a>
-          <a class="navbar-link" href="contact.html">
-            <li>Contact Us</li>
-          </a>
-          <a class="navbar-link" href="changelog.html">
-            <li>News</li>
-          </a>
-          <a class="navbar-link" href="credits.html">
-            <li>Credits</li>
-          </a>
-        </ul>
-      </nav>
-      <div class="openNav">
-        <div class="icon"></div>
-      </div>
-<!--HTML of main page-->
-        
-        
-        
-            
-            <!--CODE ENDS-->
-            <br><br><br>
-            <footer class="footer">
-                <div class="cap">
+        <nav>
+            <ul>
+                <a class="navbar-link" href="index.html">
+                    <li>Home</li>
+                </a>
+                <a class="navbar-link" href="https://www.fosshub.com/Android-x86.html">
+                    <li>Download</li>
+                </a>
+                <a class="navbar-link" href="donate.html">
+                    <li>Donate</li>
+                </a>
+                <a class="active-navbar-link" href="source.html">
+                    <li>Get Source</li>
+                </a>
+                <a class="navbar-link" href="installhowto.html">
+                    <li>Installation</li>
+                </a>
+                <a class="navbar-link" href="screenshots.html">
+                    <li>Screenshots</li>
+                </a>
+                <a class="navbar-link" href="documentation.html">
+                    <li>Documentation</li>
+                </a>
+                <a class="navbar-link" href="releases.html">
+                    <li>Releases</li>
+                </a>
+                <a class="navbar-link" href="contact.html">
+                    <li>Contact Us</li>
+                </a>
+                <a class="navbar-link" href="changelog.html">
+                    <li>News</li>
+                </a>
+                <a class="navbar-link" href="credits.html">
+                    <li>Credits</li>
+                </a>
+            </ul>
+        </nav>
+        <div class="openNav">
+            <div class="icon"></div>
+        </div>
+        <!--HTML of main page-->
+        <div class="wrapper">
+            <section>
+                <h1 id="top" class="heading">Android x86</h1>
+                <h2 class="subheading">Run Android on your PC</h2>
+                <br>
+                <h2>Release Note 6.0-rc2
+                </h2>
+                <h3>(2016/08/15)</h3>
+                The Android-x86 project is glad to announce the 6.0-rc2 release to public. This is the second release candidate for Android-x86 6.0 (marshmallow-x86). The prebuilt images are available in the following site: 
+                <br>
+                <ul>
 
-                  <a href="#" id="scroll-top" class="scroll-to-top">
-                      Back to top
-                  </a>
-                </div>
-                      <div class="footer-copyright">
+                    <li><a href="https://osdn.net/rel/android-x86/Release%206.0">https://osdn.net/rel/android-x86/Release%206.0</a></li>
+                </ul>
+                <br>
+                <h2><b>Key Features</b></h2>
+                <p>The 6.0-rc2 release is based on the latest Android Marshmallow-MR2 release (6.0.1_r61) with all AOSP security patches applied. We fixed a lot of issues found in the since 6.0-rc1 and added more features:</p>
+                <ul>
+                    <li>Launch the <a href="http://www.android-x86.org/documents/analytics-program">Android-x86 Analytics Program</a> to collect anonymous data from users.
+                    </li>
+                    <li>Update kernel to 4.4.17 with more upstream patches.</li>
+                    <li>Update Mesa to 12.0.1. The unstable issues of i965/i915/Nvidia GPUs found in 6.0-rc1 are fixed.</li>
+                    <li>Fix software rendering crashing issues on VM like QEMU and VirtualBox.</li>
+                    <li>Fix modules auto loading method to improve hardware compatibility.</li>
+                    <li>Improve audio hal sound card selection.</li>
+                    <li>Auto-mount USB/sdcard with ext4/ntfs/exfat/vfat filesystems.</li>
+                    <li>Add back SDCARD=xxx function to vold 3.0.</li>
+                    <li>RTC time is set to local.</li>
+                </ul>
+                <br><br>
+                <h2><b>Released Files
+
+                    </b></h2>
+                <p>We create universal images for most x86 platforms. This release contains two files. One is the 32-bit x86 ISO and the other is the 64-bit x86_64 ISO. Both can be boot from legacy BIOS and newer UEFI firmware. You can choose one of them depends on your devices. In doubt, try the 32-bit ISO for legacy BIOS devices and 64-bit ISO for UEFI devices.</p>
+                <ul>
+                    <li>32-bit:&nbsp;&nbsp;android-x86-6.0-rc2.iso
+                        <p>sha1sum: d05874e2591d18f45f4463f53b0bcb00b7731e15</p>
+                    </li>
+                    <li>64-bit:&nbsp;&nbsp;android-x86_64-6.0-rc2.iso
+                        <p>sha1sum: 8de2faf6c1cae7eee64dbc4d375bcfe359cbb777</p>
+                    </li>
+                </ul>
+                <p>Both files can be dumped into a usb drive to create a bootable usb stick like :</p>
+                <div class="code-snippet"><span style="color:#d1d1d1">
+                    &dollar; dd if=android-x86-6.0-rc2.iso of=/dev/sdX
+
+                    </span></div>
+                <p>where <tt>/dev/sdX</tt> is the device name of your usb drive.</p>
+                <p>Windows's users can use the tool <a href="https://sourceforge.net/projects/win32diskimager/">Win32 Disk Imager</a> to create a bootable usb stick.</p>
+                <p>Please read <a href="https://sourceforge.net/p/android-x86/wiki/Installation/">this page</a> about how to install it to the device.
+
+
+                <h2><b>Known Issues</b></h2>
+                <ul>
+                    <li>The display of built-in browser messes up sometimes on Skylake GPU.</li>
+                    <li>Suspend and resume doesn't work on some devices.</li>
+                </ul>
+                <br>
+                <h2><b>Source code</b></h2>
+                The source code is available in the main <a href="https://osdn.net/projects/android-x86/scm/">git server.</a>
+                <div class="code-snippet"><span style="color:#d1d1d1">
+                    &dollar; repo init -u git://git.osdn.net/gitroot/android-x86/manifest -b marshmallow-x86<br>
+                    &dollar; repo sync 
+                    </span></div>
+                <p>Read <a href="source.html">this page</a> for how to compile source code.</p>
+                <br><br><br>
+                <footer class="footer">
+                    <div class="cap">
+
+                        <a href="#" id="scroll-top" class="scroll-to-top">
+                            Back to top
+                        </a>
+                    </div>
+                    <div class="footer-copyright">
                         <div class="navbar-link">
-                        &copy; 2019 Android x86 | All Rights Reserved | Website v2.14 by <a class="navbar-link" id="easter" href="mailto:aryabhushan2003@gmail.com">@arya</a> & <a class="navbar-link" id="easter" href="mailto:adityasood22@gmail.com">@sood</a>
+                            &copy; 2019 Android x86 | All Rights Reserved | Website v2.14 by <a class="navbar-link" id="easter" href="mailto:aryabhushan2003@gmail.com">@arya</a> & <a class="navbar-link" id="easter" href="mailto:sood0@outlook.com">@sood</a>
                         </div>
-                      </div>
-                    </footer>
-    
-<!--JAVASCRIPT CODE-->
+                    </div>
+                </footer>
 
-<script src="https://code.jquery.com/jquery-2.1.1.min.js"></script>
-<script>
-$(".openNav").click(function() {
-  $("body").toggleClass("navOpen");
-  $("nav").toggleClass("open");
-  $(".wrapper").toggleClass("open");
-  $(this).toggleClass("open");
-});
-</script>
-<script type="text/javascript">
 
-  var _gaq = _gaq || [];
-  _gaq.push(['_setAccount', 'UA-36251023-1']);
-  _gaq.push(['_setDomainName', 'jqueryscript.net']);
-  _gaq.push(['_trackPageview']);
+                <!--JAVASCRIPT CODE-->
 
-  (function() {
-    var ga = document.createElement('script'); ga.type = 'text/javascript'; ga.async = true;
-    ga.src = ('https:' == document.location.protocol ? 'https://ssl' : 'http://www') + '.google-analytics.com/ga.js';
-    var s = document.getElementsByTagName('script')[0]; s.parentNode.insertBefore(ga, s);
-  })();
+                <script src="https://code.jquery.com/jquery-2.1.1.min.js"></script>
+                <script>
+                    $(".openNav").click(function() {
+                        $("body").toggleClass("navOpen");
+                        $("nav").toggleClass("open");
+                        $(".wrapper").toggleClass("open");
+                        $(this).toggleClass("open");
+                    });
+                </script>
+                <script type="text/javascript">
 
-</script>
+                    var _gaq = _gaq || [];
+                    _gaq.push(['_setAccount', 'UA-36251023-1']);
+                    _gaq.push(['_setDomainName', 'jqueryscript.net']);
+                    _gaq.push(['_trackPageview']);
 
-    </body>
-</html>
+                    (function() {
+                        var ga = document.createElement('script'); ga.type = 'text/javascript'; ga.async = true;
+                        ga.src = ('https:' == document.location.protocol ? 'https://ssl' : 'http://www') + '.google-analytics.com/ga.js';
+                        var s = document.getElementsByTagName('script')[0]; s.parentNode.insertBefore(ga, s);
+                    })();
+
+                </script>
+
+                </body>
+            </html>
