@@ -91,11 +91,12 @@
                 <br>
                 <h2>Release Note 7.1-rc2
                 </h2>
-
+                <h3>(2017/10/10)</h3>
                 The Android-x86 project is glad to announce the 7.1-rc2 release to public. This is the second release candidate for Android-x86 7.1 (nougat-x86). The prebuilt images are available in the following site: 
                 <br>
                 <ul>
                     <li><a href="https://osdn.net/rel/android-x86/Release%207.1">https://osdn.net/rel/android-x86/Release%207.1</a></li>
+                    <li><a href="https://www.fosshub.com/Android-x86.html">https://www.fosshub.com/Android-x86.html</a></li>
 
                 </ul>
                 <br>
@@ -148,7 +149,7 @@
             <p>In doubt, try the 32-bit files for legacy BIOS devices and 64-bit files for UEFI devices. Please read <a href="https://sourceforge.net/p/android-x86/wiki/Installation/">this page</a> about how to install it to the device.</p>
             Except the traditional ISO files, we also package android-x86 files into a Linux package <a href="http://rpm.org/">rpm</a>. It allows Linux users to easily install the release into an existing Linux device with a standalone ext4 root partition. On an rpm based device (Fedora/Red Hat/CentOS/SUSE...), just install it like a normal rpm package:</p>
         <div class="code-snippet"><span style="color:#d1d1d1">
-            &dollar; -Uvh android-x86-7.1-r1.x86_64.rpm
+            &dollar; sudo rpm -Uvh android-x86-7.1-r1.x86_64.rpm
             </span></div>
         <p>This will update your older installation like 6.0-r3 or 7.1-rc2 if you have.</p><p>On a deb based device (Debian/Ubuntu/LinuxMint/...), please use the <a href="https://wiki.debian.org/Alien"><i>alien</i></a> tool to install it:</p>
         <div class="code-snippet"><span style="color:#d1d1d1">
@@ -156,9 +157,9 @@
             <br>
             &dollar; sudo alien -ci android-x86-7.1-r1.x86_64.rpm
             </span></div>
-        <p>All files will be installed to the /android-8.1-rc1/ subdirectory and boot entries will be added to grub2 menu. Reboot and choose android-x86 item from the menu to boot Android-x86. Alternatively, you can launch Android-x86 in a QEMU virtual machine by the installed qemu-android script:</p>
+        <p>All files will be installed to the /android-7.1-rc2/ subdirectory and boot entries will be added to grub2 menu. Reboot and choose android-x86 item from the menu to boot Android-x86. Alternatively, you can launch Android-x86 in a QEMU virtual machine by the installed qemu-android script:</p>
         <div class="code-snippet"><span style="color:#d1d1d1">
-            &dollar; sudo qemu-android;
+            &dollar; sudo qemu-android
             </span></div>
         <p>Note Android-x86 running in QEMU and the real machine (after rebooting) share the same data sub-folder.</p>
         To uninstall it :

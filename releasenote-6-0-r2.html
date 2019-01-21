@@ -89,7 +89,7 @@
                 <h1 id="top" class="heading">Android x86</h1>
                 <h2 class="subheading">Run Android on your PC</h2>
                 <br>
-                <h2>Release Note 6.0-r1
+                <h2>Release Note 6.0-r2
                 </h2>
                 <h3>(2017/01/13)</h3>
                 The Android-x86 project is glad to announce the 6.0-r2 release to public. This is the second stable release of Android-x86 6.0 (marshmallow-x86). The prebuilt images are available in the following site: 
@@ -137,66 +137,66 @@
                 <p>On a deb based device (Debian/Ubuntu/LinuxMint/...), please use the <tt><a href="https://wiki.debian.org/Alien">alien</a></tt> tool to install it:</p>
                 <div class="code-snippet"><span style="color:#d1d1d1">$ sudo apt install alien <br>
                     $ sudo alien -ci android-x86-6.0-r2.x86_64.rpm</span></div>
-        <p>To use an ISO file, Linux users could just dump the it into a usb drive to create a bootable usb stick like</p>
+                <p>To use an ISO file, Linux users could just dump the it into a usb drive to create a bootable usb stick like</p>
                 <div class="code-snippet"><span style="color:#d1d1d1">$ dd if=android-x86-6.0-r2.iso of=/dev/sdX</span></div>
-        <p>where <tt>/dev/sdX</tt> is the device name of your usb drive.</p>
-        <p>Windows's users can use the tool <a href="https://sourceforge.net/projects/win32diskimager/">Win32 Disk Imager</a> to create a bootable usb stick.</p>
-        <p>Please read <a href="https://sourceforge.net/p/android-x86/wiki/Installation/">this page</a> about how to install it to the device.
+                <p>where <tt>/dev/sdX</tt> is the device name of your usb drive.</p>
+                <p>Windows's users can use the tool <a href="https://sourceforge.net/projects/win32diskimager/">Win32 Disk Imager</a> to create a bootable usb stick.</p>
+                <p>Please read <a href="https://sourceforge.net/p/android-x86/wiki/Installation/">this page</a> about how to install it to the device.
 
 
-        <h2><b>Known Issues</b></h2>
-        <ul>
-            <li>Suspend and resume doesn't work on some devices.</li>
-        </ul>
-        <br>
-        <h2><b>Source code</b></h2>
-        The source code is available in the main <a href="https://osdn.net/projects/android-x86/scm/">git server.</a>
-        <div class="code-snippet"><span style="color:#d1d1d1">
-            &dollar; repo init -u git://git.osdn.net/gitroot/android-x86/manifest -b android-x86-6.0-r2<br>
-            &dollar; repo sync --no-tags --no-clone-bundle
-            </span></div>
-        <p>Read <a href="source.html">this page</a> for how to compile source code.</p>
-        <br><br><br>
-        <footer class="footer">
-            <div class="cap">
+                <h2><b>Known Issues</b></h2>
+                <ul>
+                    <li>Suspend and resume doesn't work on some devices.</li>
+                </ul>
+                <br>
+                <h2><b>Source code</b></h2>
+                The source code is available in the main <a href="https://osdn.net/projects/android-x86/scm/">git server.</a>
+                <div class="code-snippet"><span style="color:#d1d1d1">
+                    &dollar; repo init -u git://git.osdn.net/gitroot/android-x86/manifest -b android-x86-6.0-r2<br>
+                    &dollar; repo sync --no-tags --no-clone-bundle
+                    </span></div>
+                <p>Read <a href="source.html">this page</a> for how to compile source code.</p>
+                <br><br><br>
+                <footer class="footer">
+                    <div class="cap">
 
-                <a href="#" id="scroll-top" class="scroll-to-top">
-                    Back to top
-                </a>
-            </div>
-            <div class="footer-copyright">
-                <div class="navbar-link">
-                    &copy; 2019 Android x86 | All Rights Reserved | Website v2.14 by <a class="navbar-link" id="easter" href="mailto:aryabhushan2003@gmail.com">@arya</a> & <a class="navbar-link" id="easter" href="mailto:sood0@outlook.com">@sood</a>
-                </div>
-            </div>
-        </footer>
+                        <a href="#" id="scroll-top" class="scroll-to-top">
+                            Back to top
+                        </a>
+                    </div>
+                    <div class="footer-copyright">
+                        <div class="navbar-link">
+                            &copy; 2019 Android x86 | All Rights Reserved | Website v2.14 by <a class="navbar-link" id="easter" href="mailto:aryabhushan2003@gmail.com">@arya</a> & <a class="navbar-link" id="easter" href="mailto:sood0@outlook.com">@sood</a>
+                        </div>
+                    </div>
+                </footer>
 
 
-        <!--JAVASCRIPT CODE-->
+                <!--JAVASCRIPT CODE-->
 
-        <script src="https://code.jquery.com/jquery-2.1.1.min.js"></script>
-        <script>
-            $(".openNav").click(function() {
-                $("body").toggleClass("navOpen");
-                $("nav").toggleClass("open");
-                $(".wrapper").toggleClass("open");
-                $(this).toggleClass("open");
-            });
-        </script>
-        <script type="text/javascript">
+                <script src="https://code.jquery.com/jquery-2.1.1.min.js"></script>
+                <script>
+                    $(".openNav").click(function() {
+                        $("body").toggleClass("navOpen");
+                        $("nav").toggleClass("open");
+                        $(".wrapper").toggleClass("open");
+                        $(this).toggleClass("open");
+                    });
+                </script>
+                <script type="text/javascript">
 
-            var _gaq = _gaq || [];
-            _gaq.push(['_setAccount', 'UA-36251023-1']);
-            _gaq.push(['_setDomainName', 'jqueryscript.net']);
-            _gaq.push(['_trackPageview']);
+                    var _gaq = _gaq || [];
+                    _gaq.push(['_setAccount', 'UA-36251023-1']);
+                    _gaq.push(['_setDomainName', 'jqueryscript.net']);
+                    _gaq.push(['_trackPageview']);
 
-            (function() {
-                var ga = document.createElement('script'); ga.type = 'text/javascript'; ga.async = true;
-                ga.src = ('https:' == document.location.protocol ? 'https://ssl' : 'http://www') + '.google-analytics.com/ga.js';
-                var s = document.getElementsByTagName('script')[0]; s.parentNode.insertBefore(ga, s);
-            })();
+                    (function() {
+                        var ga = document.createElement('script'); ga.type = 'text/javascript'; ga.async = true;
+                        ga.src = ('https:' == document.location.protocol ? 'https://ssl' : 'http://www') + '.google-analytics.com/ga.js';
+                        var s = document.getElementsByTagName('script')[0]; s.parentNode.insertBefore(ga, s);
+                    })();
 
-        </script>
+                </script>
 
-    </body>
-</html>
+                </body>
+            </html>

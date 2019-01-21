@@ -3,131 +3,205 @@
     <head>
         <title>Android-x86 - Porting Android to x86</title>
         <link rel="stylesheet" type="text/css" href="master.css">
-		    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <link rel="icon" type="image/png" href="mobile.png">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
         <style>
             .code-snippet {
-              margin-top: 16px!important;
-              margin-bottom: 16px!important;
+                margin-top: 16px!important;
+                margin-bottom: 16px!important;
             }
             .code-snippet {
-              width: auto;
-              background-color: #2b2b2b;
-              padding: 8px 12px;
-              border-left: 4px solid #14b9ff;
-              word-wrap: break-word;
+                width: auto;
+                background-color: #2b2b2b;
+                padding: 8px 12px;
+                border-left: 4px solid #14b9ff;
+                word-wrap: break-word;
             }
 
             .code-snippet {
-              font-family: Consolas,"courier new";
-              font-size: 16px;
-            }
-
-                  .code-snippet-inv {
-              margin-top: 16px!important;
-              margin-bottom: 16px!important;
-            }
-            .code-snippet-inv {
-              width: auto;
-              background-color: #b0c9ff;
-              padding: 8px 12px;
-              border-left: 4px solid #000000;
-              word-wrap: break-word;
+                font-family: Consolas,"courier new";
+                font-size: 16px;
             }
 
             .code-snippet-inv {
-              font-family: Consolas,"courier new";
-              font-size: 16px;
+                margin-top: 16px!important;
+                margin-bottom: 16px!important;
             }
-    </style>
+            .code-snippet-inv {
+                width: auto;
+                background-color: #b0c9ff;
+                padding: 8px 12px;
+                border-left: 4px solid #000000;
+                word-wrap: break-word;
+            }
+
+            .code-snippet-inv {
+                font-family: Consolas,"courier new";
+                font-size: 16px;
+            }
+        </style>
 
     </head>
     <body>
-      <nav>
-        <ul>
-          <a class="navbar-link" href="index.html">
-            <li>Home</li>
-          </a>
-          <a class="navbar-link" href="https://www.fosshub.com/Android-x86.html">
-            <li>Download</li>
-          </a>
-          <a class="navbar-link" href="donate.html">
-            <li>Donate</li>
-          </a>
-          <a class="active-navbar-link" href="source.html">
-            <li>Get Source</li>
-          </a>
-          <a class="navbar-link" href="installhowto.html">
-            <li>Installation</li>
-          </a>
-          <a class="navbar-link" href="screenshots.html">
-            <li>Screenshots</li>
-          </a>
-          <a class="navbar-link" href="documentation.html">
-            <li>Documentation</li>
-          </a>
-          <a class="navbar-link" href="releases.html">
-            <li>Releases</li>
-          </a>
-          <a class="navbar-link" href="contact.html">
-            <li>Contact Us</li>
-          </a>
-          <a class="navbar-link" href="changelog.html">
-            <li>News</li>
-          </a>
-          <a class="navbar-link" href="credits.html">
-            <li>Credits</li>
-          </a>
-        </ul>
-      </nav>
-      <div class="openNav">
-        <div class="icon"></div>
-      </div>
-<!--HTML of main page-->
-        
-        
-        
-            
-            <!--CODE ENDS-->
-            <br><br><br>
-            <footer class="footer">
-                <div class="cap">
+        <nav>
+            <ul>
+                <a class="navbar-link" href="index.html">
+                    <li>Home</li>
+                </a>
+                <a class="navbar-link" href="https://www.fosshub.com/Android-x86.html">
+                    <li>Download</li>
+                </a>
+                <a class="navbar-link" href="donate.html">
+                    <li>Donate</li>
+                </a>
+                <a class="active-navbar-link" href="source.html">
+                    <li>Get Source</li>
+                </a>
+                <a class="navbar-link" href="installhowto.html">
+                    <li>Installation</li>
+                </a>
+                <a class="navbar-link" href="screenshots.html">
+                    <li>Screenshots</li>
+                </a>
+                <a class="navbar-link" href="documentation.html">
+                    <li>Documentation</li>
+                </a>
+                <a class="navbar-link" href="releases.html">
+                    <li>Releases</li>
+                </a>
+                <a class="navbar-link" href="contact.html">
+                    <li>Contact Us</li>
+                </a>
+                <a class="navbar-link" href="changelog.html">
+                    <li>News</li>
+                </a>
+                <a class="navbar-link" href="credits.html">
+                    <li>Credits</li>
+                </a>
+            </ul>
+        </nav>
+        <div class="openNav">
+            <div class="icon"></div>
+        </div>
+        <!--HTML of main page-->
+        <div class="wrapper">
+            <section>
+                <h1 id="top" class="heading">Android x86</h1>
+                <h2 class="subheading">Run Android on your PC</h2>
+                <br>
+                <h2>Release Note 6.0-r3
+                </h2>
+                <h3>(2017/04/24)</h3>
+                The Android-x86 project is glad to announce the 6.0-r2 release to public. This is the third stable release of Android-x86 6.0 (marshmallow-x86). The prebuilt images are available in the following site: 
+                <br>
+                <ul>
+                    <li><a href="https://osdn.net/rel/android-x86/Release%206.0">https://osdn.net/rel/android-x86/Release%206.0</a></li>
+                </ul>
+                <br>
+                <h2><b>Key Features</b></h2>
+                <p>The updates since 6.0-r2 include</p>
+                <ul>
+                    <li>CD/DVD auto-mount.</li>
+                    <li>Fix VMware broken since 6.0-r2.</li>
+                    <li>A qemu-android script to launch Android-x86 in QEMU. (only available in RPM installation)</li>
+                    <li>Update to latest Android Marshmallow-MR2 release (6.0.1_r79).</li>
+                    <li>Update kernel to 4.4.62 with more patches from <a href="https://android.googlesource.com/kernel/common/+/android-4.4">AOSP</a>.</li>
+                    <li>Update <a href="http://www.mesa3d.org">Mesa</a> to 17.0.4.</li>
+                    <li>More updates from upstream projects (libdrm, ntfs-3g, exfat, bluez).</li>
+                </ul>
+                <br><br>
+                <h2><b>Released Files
 
-                  <a href="#" id="scroll-top" class="scroll-to-top">
-                      Back to top
-                  </a>
-                </div>
-                      <div class="footer-copyright">
+                    </b></h2>
+                <p>This release contains four file : </p>
+                <ul>
+                    <li>32-bit ISO:&nbsp;&nbsp;android-x86-6.0-r3.iso
+                        <p>sha1sum: 824bf2b11afc41968ed487ae820a3c8fff1c1602</p>
+                    </li>
+                    <li>64-bit ISO:&nbsp;&nbsp;android-x86_64-6.0-r3.iso
+                        <p>sha1sum: bf3d8fc504900831d95621595a33408c4f49de44</p>
+                    </li>
+                    <li>32-bit rpm:&nbsp;&nbsp;android-x86-6.0-r3.i686.rpm
+                        <p>sha1sum: 2fcc1e768d12ebf3e30c7ef8a2a8fedb78756e2e</p>
+                    </li>
+                    <li>64-bit rpm:&nbsp;&nbsp;android-x86-6.0-r3.x86_64.rpm
+                        <p>sha1sum: bd361bcf85e0b64aa0bc03d2b5edc69d8e5a5f7c</p>
+                    </li>
+                </ul>
+                <p>
+                    Except the traditional ISO files, this is the first release we tried to package android-x86 files into a Linux package <a href="http://rpm.org/">rpm</a>. It allows Linux users to easily install the release into an existing Linux device with a standalone ext4 root partition. On an rpm based device (Fedora/Red Hat/CentOS/...), just install it like a normal rpm package:</p>
+                <div class="code-snippet"><span style="color:#d1d1d1">&dollar; sudo rpm -ivh android-x86-6.0-r3.x86_64.rpm</span></div>
+                <p>On a deb based device (Debian/Ubuntu/LinuxMint/...), please use the <tt><a href="https://wiki.debian.org/Alien">alien</a></tt> tool to install it:</p>
+                <div class="code-snippet"><span style="color:#d1d1d1">$ sudo apt install alien <br>
+                    $ sudo alien -ci android-x86-6.0-r3.x86_64.rpm</span></div>
+                <p>All files will be installed to the /android-6.0-r3/ subdirectory and a boot entry will be added to grub2 menu. Reboot and choose android-x86 item from the menu to enter the system. Alternatively, you can launch Android-x86 in a QEMU virtual machine by the qemu-android script:</p>
+                <div class="code-snippet"><span style="color:#d1d1d1">&dollar; sudo qemu-android</span></div> 
+                <p>Note Android-x86 running in QEMU and the real machine (after rebooting) shares the same data sub=folder.</p>
+                To uninstall it :
+                <div class="code-snippet"><span style="color:#d1d1d1">
+                    &dollar; sudo rpm -e android-x86
+                    </span></div>
+
+                <p>To use an ISO file, Linux users could just dump the it into a usb drive to create a bootable usb stick like</p>
+                <div class="code-snippet"><span style="color:#d1d1d1">$ dd if=android-x86-6.0-r2.iso of=/dev/sdX</span></div>
+                <p>where <tt>/dev/sdX</tt> is the device name of your usb drive.</p>
+                <p>Windows's users can use the tool <a href="https://sourceforge.net/projects/win32diskimager/">Win32 Disk Imager</a> to create a bootable usb stick.</p>
+                <p>On a deb based device (Debian/Ubuntu/LinuxMint/...), please use the <tt><a href="https://wiki.debian.org/Alien">alien</a></tt> tool to install it:</p>
+
+
+                <h2><b>Known Issues</b></h2>
+                <ul>
+                    <li>Suspend and resume doesn't work on some devices.</li>
+                </ul>
+                <br>
+                <h2><b>Source code</b></h2>
+                The source code is available in the main <a href="https://osdn.net/projects/android-x86/scm/">git server.</a>
+                <div class="code-snippet"><span style="color:#d1d1d1">
+                    &dollar; repo init -u git://git.osdn.net/gitroot/android-x86/manifest -b android-x86-6.0-r2<br>
+                    &dollar; repo sync --no-tags --no-clone-bundle
+                    </span></div>
+                <p>Read <a href="source.html">this page</a> for how to compile source code.</p>
+                <br><br><br>
+                <footer class="footer">
+                    <div class="cap">
+
+                        <a href="#" id="scroll-top" class="scroll-to-top">
+                            Back to top
+                        </a>
+                    </div>
+                    <div class="footer-copyright">
                         <div class="navbar-link">
-                        &copy; 2019 Android x86 | All Rights Reserved | Website v2.14 by <a class="navbar-link" id="easter" href="mailto:aryabhushan2003@gmail.com">@arya</a> & <a class="navbar-link" id="easter" href="mailto:adityasood22@gmail.com">@sood</a>
+                            &copy; 2019 Android x86 | All Rights Reserved | Website v2.14 by <a class="navbar-link" id="easter" href="mailto:aryabhushan2003@gmail.com">@arya</a> & <a class="navbar-link" id="easter" href="mailto:sood0@outlook.com">@sood</a>
                         </div>
-                      </div>
-                    </footer>
-    
-<!--JAVASCRIPT CODE-->
+                    </div>
+                </footer>
 
-<script src="https://code.jquery.com/jquery-2.1.1.min.js"></script>
-<script>
-$(".openNav").click(function() {
-  $("body").toggleClass("navOpen");
-  $("nav").toggleClass("open");
-  $(".wrapper").toggleClass("open");
-  $(this).toggleClass("open");
-});
-</script>
-<script type="text/javascript">
 
-  var _gaq = _gaq || [];
-  _gaq.push(['_setAccount', 'UA-36251023-1']);
-  _gaq.push(['_setDomainName', 'jqueryscript.net']);
-  _gaq.push(['_trackPageview']);
+                <!--JAVASCRIPT CODE-->
 
-  (function() {
-    var ga = document.createElement('script'); ga.type = 'text/javascript'; ga.async = true;
-    ga.src = ('https:' == document.location.protocol ? 'https://ssl' : 'http://www') + '.google-analytics.com/ga.js';
-    var s = document.getElementsByTagName('script')[0]; s.parentNode.insertBefore(ga, s);
-  })();
+                <script src="https://code.jquery.com/jquery-2.1.1.min.js"></script>
+                <script>
+                    $(".openNav").click(function() {
+                        $("body").toggleClass("navOpen");
+                        $("nav").toggleClass("open");
+                        $(".wrapper").toggleClass("open");
+                        $(this).toggleClass("open");
+                    });
+                </script>
+                <script type="text/javascript">
 
-</script>
+                    var _gaq = _gaq || [];
+                    _gaq.push(['_setAccount', 'UA-36251023-1']);
+                    _gaq.push(['_setDomainName', 'jqueryscript.net']);
+                    _gaq.push(['_trackPageview']);
 
-    </body>
-</html>
+                    (function() {
+                        var ga = document.createElement('script'); ga.type = 'text/javascript'; ga.async = true;
+                        ga.src = ('https:' == document.location.protocol ? 'https://ssl' : 'http://www') + '.google-analytics.com/ga.js';
+                        var s = document.getElementsByTagName('script')[0]; s.parentNode.insertBefore(ga, s);
+                    })();
+
+                </script>
+
+                </body>
+            </html>
