@@ -101,56 +101,63 @@
                 <h1 id="top" class="heading">Android x86</h1>
                 <h2 class="subheading">Run Android on your PC</h2>
 
-                <p>This page has (hopefully) the latest information about how to build Android for x86 platform like Eee PC. The built images run well on a real hardware as well as virtual machines (like qemu or virtual box).
-                    <br>Now it is very easy easy to compile Android for x86 platform from our git repositories. You need not to apply any patch. Just follow the below instructions.
+                <p>This page has (hopefully) the latest information about how to build Android for x86 platform. The built images should run well on a real hardware as well as virtual machines (like qemu or virtual box).
+                <br><br>It is very easy to compile Android for x86 platform from our git repositories. Just follow the below instructions.
                 </p>
                 <h2><b>The branches in Android-x86 tree</b></h2>
-                <p>Since <a href="source.android.com">AOSP</a> evolves very quickly, we have created different branches corresponding to different releases of AOSP</p>
+                <p>Since <a href="http://source.android.com">AOSP</a> evolves very quickly, we created different branches corresponding to different releases of AOSP:</p>
                 <ul>
-                    <li>oreo-x86
-                        <br>Based on Android 8.0 release (Oreo)
+                    <li><b>oreo-x86</b>
+                        <br>Based on Android 8.1 release (Oreo MR1)
                     </li>
-                    <li>nougat-x86
-                        <br>Based on Android 7.1 release (Nougat-MR2)
+                    <li><b>nougat-x86</b>
+                        <br>Based on Android 7.1 release (Nougat MR2)
                     </li>
-                    <li>marshmallow-x86
+                    <li><b>marshmallow-x86</b>
                         <br>Based on Android 6.0 release (Marshmallow)
                     </li>
-                    <li>lollipop-x86
+                    <li><b>lollipop-x86</b>
                         <br>Based on Android 5.1 release (Lollipop)
                     </li>
-                    <li>kitkat-x86
+                    <li><b>kitkat-x86</b>
                         <br>Based on Android 4.4 release (KitKat)
                     </li>
-                    <li>jb-x86
+                    <li><b>jb-x86</b>
                         <br>Based on Android 4.3 release (Jelly Bean)
                     </li>
-                    <li>ics-x86
+                    <li><b>ics-x86</b>
                         <br>Based on Android 4.0 release (Ice Cream Sandwich)
                     </li>
-                    <li>honeycomb-x86
+                    <li><b>honeycomb-x86</b>
                         <br>Based on Android 3.2 release (Honeycomb)
                     </li>
-                    <li>gingerbread-x86
+                    <li><b>gingerbread-x86</b>
                         <br>Based on Android 2.3 release (Gingerbread)
                     </li>
-                    <li>froyo-x86
+                    <li><b>froyo-x86</b>
                         <br>Based on Android 2.2 release (Froyo)
                     </li>
-                    <li>eclair-x86
+                    <li><b>eclair-x86</b>
                         <br>Based on Android 2.1 release (Eclair)
                     </li>
-                    <li>donut-x86
+                    <li><b>donut-x86</b>
                         <br>Based on Android 1.6 release (Donut)
                     </li>
-                    <li>cupcake-x86 (aka android-x86-b0.9)
+                    <li><b>cupcake-x86</b> (aka android-x86-b0.9)
                         <br>Based on Android 1.5 release (Cupcake)
                     </li>
                 </ul>
                 <br><br>
                 <h2><b>Getting Android-x86 source code</b></h2>
-                <p>Fistly, follow the AOSP page <a href="http://source.android.com/source/initializing.html">"Establishing a Build Environment"</a> to configure your build environment. Then,</p>
+                <p>Fistly, refer to the AOSP page <a href="http://source.android.com/source/initializing.html">"Establishing a Build Environment"</a> to configure your build environment. For Ubuntu 18.04, install the following required packages:</p>
+                <div class="code-snippet"><span style="color:#d1d1d1">
+                    &dollar; sudo apt -y install git gcc curl make repo xmllint<br>
+                    &dollar; sudo apt -y install openjdk-8-jdk  lib32stdc++6<br>
+                    &dollar; sudo apt -y install flex libelf-dev m4 libssl-dev<br>
+                    &dollar; sudo apt -y install python-mako syslinux-utils<br>
+                    </span></div>
 
+                <p>Then pull down the Android-x86 source tree to your working directory from the repositories:</p>
                 <div class="code-snippet"><span style="color:#d1d1d1">
 
                     &dollar; mkdir android-x86<br>
@@ -225,7 +232,6 @@
                     <br><br>Since jb-x86 we tried to use <i>android_x86</i> as a universal target for all x86 devices. However, it may not optimized for a particular target device. If you are a developer, you can create a target based on android_x86 for your device.
                     <br><br>If you want to add new target for your x86 device, refer to <a href="http://www.android-x86.org/documents/how-to-add-new-x86-platforms">this article</a>.</p>
 
-                <br><br>
                 <h2><b>Using lunch commnd (recommended)</b></h2>
                 <p>You can source the file <i>build/envsetup.sh</i> into your bash environment to get some shell functions to help the building:</p>
 
@@ -248,10 +254,16 @@
                 <div class="code-snippet"><span style="color:#d1d1d1">
                     &dollar; m -jX iso_img
                     </span></div>
-                <p>m command is equivalent to make, but you can use it in any subdirectory of the android-x86 tree.<br>
+                <p><b>m</b> command is equivalent to make, but you can use it in any subdirectory of the android-x86 tree.
+                Replace X by the number of processors you have. For example, if you have a quad core CPU, replace X with 4:</p>
+                <div class="code-snippet"><span style="color:#d1d1d1">
+
+                    &dollar; m -j4 iso_img
+                    </span></div>
                     <br>Since froyo-x86, we also add menu selection to lunch command. Just type lunch, and you will get a list of available targets. Choose a target by inputting its number. Alternatively, just type lunch $number.</p>
-                <br><br><h2><b>Building directly</b></h2>
-                <p>To build a live cdrom iso image for target android_x86, type:</p>
+
+                <h2><b>Building directly</b></h2>
+                <p>You man specify the target to be built by TARGET_PRODUCT variable. For example, to build a live cdrom iso image for target android_x86, type:</p>
                 <div class="code-snippet"><span style="color:#d1d1d1">
 
                     &dollar; make iso_img TARGET_PRODUCT=android_x86
@@ -261,32 +273,24 @@
 
                     &dollar; make iso_img TARGET_PRODUCT=tegav2
                     </span></div>
-                <p>Then you will get an iso file out/target/product/x86/android_x86.iso, etc.<br>
-                    If the computer you build on has more then one processor or core, you can take advantage of multiprocessing (or make jobs) by adding -jX to the beginning of your make command:</p>
-                <div class="code-snippet"><span style="color:#d1d1d1">
+                <p>Then you will get an iso file out/target/product/x86/android_x86.iso, etc.</p>
 
-                    &dollar; make -jX iso_img TARGET_PRODUCT=android_x86
-                    </span></div>
-                <p>Replace X by the number of processors you have.<br> For example, if you have a quad core CPU, replace X with 4:</p>
-                <div class="code-snippet"><span style="color:#d1d1d1">
-
-                    &dollar; make -j4 iso_img TARGET_PRODUCT=android_x86
-                    </span></div>
-                <br><br><h2><b>Using buildspec.mk</b></h2>
+                <h2><b>Using buildspec.mk</b></h2>
                 <p>You can create a buildspec.mk in your android-x86 directory to remember a particular target product you build often:</p>
 
                 <div class="code-snippet"><span style="color:#d1d1d1">
 
-                    TARGET_PRODUCT:=android_x86<br>
-                    TARGET_BUILD_VARIANT:=userdebug<br>
-                    TARGET_BUILD_TYPE:=release<br>
-                    TARGET_KERNEL_CONFIG:=android-x86_defconfig
+                    TARGET_PRODUCT := android_x86_64<br>
+                    TARGET_BUILD_VARIANT := userdebug<br>
+                    TARGET_BUILD_TYPE := release<br>
+                    TARGET_KERNEL_CONFIG := android-x86_64_defconfig
                     </span></div>
-                <p>With your <i>buildspec.mk</i> file in your android-x86 directory, you can just make by</p>
+                <p>With the <i>buildspec.mk</i> file in your android-x86 working directory, you can just make by</p>
                 <div class="code-snippet"><span style="color:#d1d1d1">
 
                     &dollar; make -jX iso_img
                     </span></div>
+
                 <br><br><h2><b>Build smaller image</b></h2>
 
                 <p>Since marshmallow-x86, the generated Android-x86 core filesystem will be compressed by <a href="https://en.wikipedia.org/wiki/SquashFS">squashfs</a> by default. Before that, squashfs is used only if you have squashfs-tools 4.0 (older version <b>will not work</b>) installed in your host. The generated iso file is much smaller (only about 30-40%). However, if you hope to disable it for some reasons, add <tt>USE_SQUASHFS=0</tt> to make. You can put it to buildspec.mk:</p>
@@ -299,7 +303,7 @@
 
                     TARGET_STRIP := 1
                     </span></div>
-                <p>Since gingerbread-x86, the debugging symbols are stripped by default. <b>Do not use this option anymore.</b></p>
+                <p>Since gingerbread-x86, the debugging symbols are stripped by default. So the option is unnecessary.</p>
 
                 <h2><b>Testing</b></h2>
                 <p>The generated image is located at</p>
@@ -351,19 +355,19 @@
                     <br><li>Add this section to menu.lst</li>
                     <div class="code-snippet"><span style="color:#d1d1d1">
                         title Run Android-x86<br>
-                        &nbsp;&nbsp;&nbsp;&nbsp;kernel /android/kernel root=/dev/ram0 androidboot.hardware=android_x86 SRC=/android<br>
+                        &nbsp;&nbsp;&nbsp;&nbsp;kernel /android/kernel root=/dev/ram0 androidboot.selinux=permissive SRC=/android<br>
                         &nbsp;&nbsp;&nbsp;&nbsp;initrd /android/initrd.img<br>
 
                         title Run Android-x86 (VESA mode)<br>
-                        &nbsp;&nbsp;&nbsp;&nbsp;kernel /android/kernel root=/dev/ram0 androidboot.hardware=android_x86 vga=788 SRC=/android<br>
+                        &nbsp;&nbsp;&nbsp;&nbsp;kernel /android/kernel root=/dev/ram0 androidboot.selinux=permissive vga=788 SRC=/android<br>
                         &nbsp;&nbsp;&nbsp;&nbsp;initrd /android/initrd.img<br>
 
                         title Run Android-x86 (Debug mode)<br>
-                        &nbsp;&nbsp;&nbsp;&nbsp;kernel /android/kernel root=/dev/ram0 androidboot.hardware=android_x86 vga=788 SRC=/android DEBUG=1<br>
+                        &nbsp;&nbsp;&nbsp;&nbsp;kernel /android/kernel root=/dev/ram0 androidboot.selinux=permissive vga=788 SRC=/android DEBUG=1<br>
                         &nbsp;&nbsp;&nbsp;&nbsp;initrd /android/initrd.img<br>
 
                         </span></div>
-                    <p>Note <strong>androidboot.hardware=</strong> must be set to the target name of the built image.<br>
+                    <p>Note <strong>androidboot.selinux=permissive</strong> must be added since nougat-x86. Besides, before marshmallow-x86, <strong>androidboot.hardware=&lt;target&gt;</strong> must be added to specify the target name of the built image.<br>
                         <br>Since kitkat-x86 the SRC= parameter may be omitted if the system image is in the same directory as the kernel.</p>
                     <li>Create /android directory in the USB disk, and copy the four files kernel initrd.img ramdisk.img system.sfs (or system.img if you set USE_SQUASHFS=0) to it.</li>
                 </ol>
@@ -390,7 +394,7 @@
                     <li>You modify your tree locally.</li>
                     <li>The upstream changed. Since we usually keep syncing with original Android repository, sometimes we have to rebase with it. That changes the history and may cause conflicts.</li>
                 </ul>
-                <br>2<p>In this section we assume you have conflicts due to the upstream changed. That is, you don't have local modifications. If you do, you have to solve conflicts yourself. If you follow the procedures in this section, you may lose your local modifications.<br><br>Here is an example of a conflict in mainfest:</p>
+                <br><p>In this section we assume you have conflicts due to the upstream changed. That is, you don't have local modifications. If you do, you have to solve conflicts yourself. If you follow the procedures in this section, you may lose your local modifications.<br><br>Here is an example of a conflict in mainfest:</p>
 
                 <div class="code-snippet"><span style="color:red">
                     &dollar; repo sync<br>
