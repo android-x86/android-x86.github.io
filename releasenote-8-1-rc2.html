@@ -1,0 +1,216 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <title>Android-x86 - Porting Android to x86</title>
+        <link rel="stylesheet" type="text/css" href="master.css">
+        <link rel="icon" type="image/png" href="mobile.png">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <style>
+            .code-snippet {
+                margin-top: 16px!important;
+                margin-bottom: 16px!important;
+            }
+            .code-snippet {
+                width: auto;
+                background-color: #2b2b2b;
+                padding: 8px 12px;
+                border-left: 4px solid #14b9ff;
+                word-wrap: break-word;
+            }
+
+            .code-snippet {
+                font-family: Consolas,"courier new";
+                font-size: 16px;
+            }
+
+            .code-snippet-inv {
+                margin-top: 16px!important;
+                margin-bottom: 16px!important;
+            }
+            .code-snippet-inv {
+                width: auto;
+                background-color: #b0c9ff;
+                padding: 8px 12px;
+                border-left: 4px solid #000000;
+                word-wrap: break-word;
+            }
+
+            .code-snippet-inv {
+                font-family: Consolas,"courier new";
+                font-size: 16px;
+            }
+        </style>
+
+    </head>
+    <body>
+        <nav>
+            <ul>
+                <a class="navbar-link" href="index.html">
+                    <li>Home</li>
+                </a>
+                <a class="navbar-link" href="https://www.fosshub.com/Android-x86.html">
+                    <li>Download</li>
+                </a>
+                <a class="navbar-link" href="donate.html">
+                    <li>Donate</li>
+                </a>
+                <a class="active-navbar-link" href="source.html">
+                    <li>Get Source</li>
+                </a>
+                <a class="navbar-link" href="installhowto.html">
+                    <li>Installation</li>
+                </a>
+                <a class="navbar-link" href="screenshots.html">
+                    <li>Screenshots</li>
+                </a>
+                <a class="navbar-link" href="documentation.html">
+                    <li>Documentation</li>
+                </a>
+                <a class="navbar-link" href="releases.html">
+                    <li>Releases</li>
+                </a>
+                <a class="navbar-link" href="contact.html">
+                    <li>Contact Us</li>
+                </a>
+                <a class="navbar-link" href="changelog.html">
+                    <li>News</li>
+                </a>
+                <a class="navbar-link" href="credits.html">
+                    <li>Credits</li>
+                </a>
+            </ul>
+        </nav>
+        <div class="openNav">
+            <div class="icon"></div>
+        </div>
+        <!--HTML of main page-->
+        <div class="wrapper">
+            <section>
+                <h1 id="top" class="heading">Android x86</h1>
+                <h2 class="subheading">Run Android on your PC</h2>
+                <br>
+                <h2>Release Note 8.1-rc2
+                </h2>
+                <h3>(2018/10/18)</h3>
+                The Android-x86 project is glad to announce the 8.1-rc2 release to public. This is the second release candidate for Android-x86 8.1 (oreo-x86). The prebuilt images are available in the following site:
+                <br>
+                <ul>
+                    <li><a href="https://osdn.net/rel/android-x86/Release%208.1">https://osdn.net/rel/android-x86/Release%208.1</a></li>
+                    <li><a href="https://www.fosshub.com/Android-x86.html">https://www.fosshub.com/Android-x86.html</a></li>
+                </ul>
+                <br>
+                <h2><b>Key Features</b></h2>
+                <p>The 8.1-r1 release is based on the latest Android 8.1.0 Oreo MR1 release (8.1.0_r48). We fixed issues found in the since 8.1-rc1 and upgraded some important components:</p>
+                <ul>
+                    <li>Update to the latest stable kernel 4.18.14.</li>
+                    <li>Update Mesa to 18.2.2 with LLVM 7.0.</li>
+                    <li>Allow to set resolution via standard video=&lt;xres&gt;x&lt;yres&gt; kernel cmdline for all GPUs.</li>
+                    <li>Fix apk can't be installed on 9p filesystem.</li>
+                </ul>
+                <br><br>
+                <h2><b>Released Files
+
+                    </b></h2>
+                <p>This release contains four files. You can choose one of these files depends on your devices. Most modern devices should be able to run the 64-bit ISO. For older devices with legacy BIOS, you may try the 32-bit ISO.</p>
+                <ul>
+                    <li>64-bit ISO:&nbsp;&nbsp;android-x86_64-8.1-rc2.iso
+                        <p>sha1sum: 6d33b54e35ab4592216c1d0a589c5f4bd4e88912</p>
+                    </li>
+                    <li>32-bit ISO:&nbsp;&nbsp;android-x86-8.1-rc2.iso
+                        <p>sha1sum: 56189142ba8777896ea54621c45b325e2bf604c7</p>
+                    </li>
+                    <li>64-bit rpm:&nbsp;&nbsp;android-x86-8.1-rc2.x86_64.rpm
+                        <p>sha1sum: 62331e5c9da89971618db1de9641e11e6dbfb1ec</p>
+                    </li>
+                    <li>32-bit rpm:&nbsp;&nbsp;android-x86-8.1-rc2.i686.rpm
+                        <p>sha1sum: 8dba7656aec698be8243f6485ba0bff476a608a2</p>
+                    </li>
+                </ul>
+                <p>To use an ISO file, Linux users could just dump it into a usb drive to create a bootable usb stick like :</p>
+                <div class="code-snippet"><span style="color:#d1d1d1">
+                    &dollar; dd if=android-x86_64-8.1-rc2.iso of=/dev/sdX
+                    </span></div>
+                <p>where <tt>/dev/sdX</tt> is the device name of your usb drive.</p>
+                <p>Windows's users can use the tool <a href="https://sourceforge.net/projects/win32diskimager/">Win32 Disk Imager</a> to create a bootable usb stick.</p>
+                <p>Please read <a href="https://sourceforge.net/p/android-x86/wiki/Installation/">this page</a> about how to install it to the device.
+                    Except the traditional ISO files, we also package android-x86 files into a Linux package <a href="http://rpm.org/">rpm</a>. It allows Linux users to easily install the release into an existing Linux device with a standalone ext4 root partition. On an rpm based device (Fedora/Red Hat/CentOS/SUSE...), just install it like a normal rpm package:</p>
+                <div class="code-snippet"><span style="color:#d1d1d1">
+                    &dollar; sudo rpm -Uvh android-x86-8.1-rc2.x86_64.rpm
+                    </span></div>
+                <p>This will update your older installation like 7.1-r2 or 8.1-rc1 if you have.</p><p>On a deb based device (Debian/Ubuntu/LinuxMint/...), please use the <a href="https://wiki.debian.org/Alien"><i>alien</i></a> tool to install it:</p>
+                <div class="code-snippet"><span style="color:#d1d1d1">
+                    &dollar; sudo apt install alien
+                    <br>
+                    &dollar; sudo alien -ci android-x86-8.1-rc2.x86_64.rpm
+
+                    </span></div>
+                <p>All files will be installed to the /android-8.1-rc2/ subdirectory and boot entries will be added to grub2 menu. Reboot and choose android-x86 item from the menu to boot Android-x86. Alternatively, you can launch Android-x86 in a QEMU virtual machine by the installed qemu-android script:</p>
+                <div class="code-snippet"><span style="color:#d1d1d1">
+                    &dollar; sudo qemu-android;
+                    </span></div>
+                <p>Note Android-x86 running in QEMU and the real machine (after rebooting) share the same data sub-folder.</p>
+                To uninstall it :
+                <div class="code-snippet"><span style="color:#d1d1d1">
+                    &dollar; sudo rpm -e android-x86</span></div>
+                or (on Debian/Ubuntu/LinuxMint/...)
+
+                <div class="code-snippet"><span style="color:#d1d1d1">
+                    &dollar; sudo apt-get remove android-x86
+                    </span></div>
+                <h2><b>Known Issues</b></h2>
+                <ul>
+                    <li>Google Play Service may crash sometimes on the 32-bit image.</li>
+                    <li>Suspend and resume doesn't work on some devices.</li>
+                </ul>
+                <br>
+                <h2><b>Source code</b></h2>
+                The source code is available in the main <a href="https://osdn.net/projects/android-x86/scm/">git server.</a>
+                <div class="code-snippet"><span style="color:#d1d1d1">
+                    $ repo init -u git://git.osdn.net/gitroot/android-<br>x86/manifest -b oreo-x86 -m android-x86-8.1-r1.xml<br>
+                    $ repo sync --no-tags --no-clone-bundle
+                    </span></div>
+                <p>Read <a href="source.html">this page</a> for how to compile source code.</p>
+                <br><br><br>
+                <footer class="footer">
+                    <div class="cap">
+
+                        <a href="#" id="scroll-top" class="scroll-to-top">
+                            Back to top
+                        </a>
+                    </div>
+                    <div class="footer-copyright">
+                        <div class="navbar-link">
+                            &copy; 2019 Android x86 | All Rights Reserved | Website v2.14 by <a class="navbar-link" id="easter" href="mailto:aryabhushan2003@gmail.com">@arya</a> & <a class="navbar-link" id="easter" href="mailto:sood0@outlook.com">@sood</a>
+                        </div>
+                    </div>
+                </footer>
+
+
+                <!--JAVASCRIPT CODE-->
+
+                <script src="https://code.jquery.com/jquery-2.1.1.min.js"></script>
+                <script>
+                    $(".openNav").click(function() {
+                        $("body").toggleClass("navOpen");
+                        $("nav").toggleClass("open");
+                        $(".wrapper").toggleClass("open");
+                        $(this).toggleClass("open");
+                    });
+                </script>
+                <script type="text/javascript">
+
+                    var _gaq = _gaq || [];
+                    _gaq.push(['_setAccount', 'UA-36251023-1']);
+                    _gaq.push(['_setDomainName', 'jqueryscript.net']);
+                    _gaq.push(['_trackPageview']);
+
+                    (function() {
+                        var ga = document.createElement('script'); ga.type = 'text/javascript'; ga.async = true;
+                        ga.src = ('https:' == document.location.protocol ? 'https://ssl' : 'http://www') + '.google-analytics.com/ga.js';
+                        var s = document.getElementsByTagName('script')[0]; s.parentNode.insertBefore(ga, s);
+                    })();
+
+                </script>
+
+                </body>
+            </html>

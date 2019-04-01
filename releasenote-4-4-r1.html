@@ -1,0 +1,195 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <title>Android-x86 - Porting Android to x86</title>
+        <link rel="stylesheet" type="text/css" href="master.css">
+        <link rel="icon" type="image/png" href="mobile.png">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <style>
+            .code-snippet {
+                margin-top: 16px!important;
+                margin-bottom: 16px!important;
+            }
+            .code-snippet {
+                width: auto;
+                background-color: #2b2b2b;
+                padding: 8px 12px;
+                border-left: 4px solid #14b9ff;
+                word-wrap: break-word;
+            }
+
+            .code-snippet {
+                font-family: Consolas,"courier new";
+                font-size: 16px;
+            }
+
+            .code-snippet-inv {
+                margin-top: 16px!important;
+                margin-bottom: 16px!important;
+            }
+            .code-snippet-inv {
+                width: auto;
+                background-color: #b0c9ff;
+                padding: 8px 12px;
+                border-left: 4px solid #000000;
+                word-wrap: break-word;
+            }
+
+            .code-snippet-inv {
+                font-family: Consolas,"courier new";
+                font-size: 16px;
+            }
+        </style>
+
+    </head>
+    <body>
+        <nav>
+            <ul>
+              <a class="active-navbar-link" href="index.html">
+                  <li>Home</li>
+              </a>
+              <a class="navbar-link" href="https://www.fosshub.com/Android-x86.html">
+                  <li>Download</li>
+              </a>
+              <a class="navbar-link" href="credits.html">
+                  <li>Credits</li>
+              </a>
+              <a class="navbar-link" href="donate.html">
+                  <li>Donate</li>
+              </a>
+              <a class="navbar-link" href="source.html">
+                  <li>Get Source</li>
+              </a>
+              <a class="navbar-link" href="installhowto.html">
+                  <li>Installation</li>
+              </a>
+              <a class="navbar-link" href="screenshots.html">
+                  <li>Screenshots</li>
+              </a>
+              <a class="navbar-link" href="documentation.html">
+                  <li>Documentation</li>
+              </a>
+              <a class="navbar-link" href="releases.html">
+                  <li>Releases</li>
+              </a>
+              <a class="navbar-link" href="contact.html">
+                  <li>Contact Us</li>
+              </a>
+              <a class="navbar-link" href="changelog.html">
+                  <li>News</li>
+              </a>
+            </ul>
+        </nav>
+        <div class="openNav">
+            <div class="icon"></div>
+        </div>
+        <!--HTML of main page-->
+        <div class="wrapper">
+            <section>
+                <h1 id="top" class="heading">Android x86</h1>
+                <h2 class="subheading">Run Android on your PC</h2>
+                <br>
+                <h2>Release Note 4.4-r1
+                </h2>
+                <h3>(2014/08/08)</h3>
+                The Android-x86.org is glad to announce the 4.4-r1 release to public. This is the first stable release Android-x86 4.4 (kitkat-x86). A live CD ISO is available in the following site:
+                <br>
+                <ul>
+                    <li><a href="http://www.fosshub.com/Android-x86.html/">http://www.fosshub.com/Android-x86.html/</a></li>
+                    <li><a href="https://sourceforge.net/projects/android-x86/files/Release%204.4/">https://sourceforge.net/projects/android-x86/files/Release 4.4/</a></li>
+                </ul>
+                <br>
+                <h2><b>Key Features</b></h2>
+                <p>The 4.4-r1 release is based on the Android 4.4.2 (KitKat-MR1 release). We have fixed and added x86 specified code to let the system runs smoothly on x86 platforms, especially for tablets and netbooks. The key features contain</p>
+                <ul>
+                    <li><b>Integrate the ffmpeg as the stagefright-plugins to support much more multimedia files. Now we can play HD and full HD videos in apps.</b></li>
+                    <li>Use the latest longterm stable kernel 3.10.52 with more drivers enabled. Most netbooks can run Android-x86 in the native resolution.</li>
+                    <li>OpenGL ES hardware acceleration for AMD Radeon and Intel chipsets (PowerVR chips are NOT supported).</li>
+                    <li>Enhance the installer to support upgrade from previous versions (since ics-x86). The text based GUI installer supports ext3/ext2/ntfs/fat32 filesystems.</li>
+                    <li>KitKat style lanucher (Trebuchet).</li>
+                    <li>Support Multi-touch, Wifi, Audio, Bluetooth, G-sensor and Camera.</li>
+                    <li>Support Huawei 3G modem.<br>
+                    </li>
+                    <li>Simulate sdcard by internal storage.</li>
+                    <li>External usb drive and sdcard are auto mounted to /storage/usbX on plugging. Support filesystem vfat/ntfs/exfat/ext4.</li>
+                    <li>Support hybrid mode of iso images.</li>
+                    <li>Multi-user support (max 8).</li>
+                    <li>Support Ethernet (DHCP only).</li>
+                    <li>Support 5-point touch calibration on some devices.</li>
+                    <li>Support VM like Qemu and VMware.</li>
+                </ul>
+                <br><br>
+                <h2><b>Released Files
+
+                    </b></h2>
+                <p>We tried to create a universal image for most x86 platforms for the kitkat-x86 release. The plan is still in an experimental stage. Please report bugs to the android-x86 forum with detailed specs of your machine and error logs.</p>
+                <ul>
+                    <li>android-x86-4.4-r1.iso&nbsp;
+                        <p>sha1sum: dce96b2ff7e81cc7c2a884f6028f114ca3133c20</p>
+                    </li>
+                </ul>
+                <p>The iso file is<font size="3"> </font>hybrid format. That means you can dump the iso into a usb drive and get a bootable usb stick, like</p>
+                <div class="code-snippet"><span style="color:#d1d1d1">
+                    &dollar; dd if=android-x86-4.4-r1.iso of=/dev/sdX
+                    </span></div>
+
+                <p>where <tt>/dev/sdX</tt> is the device name of your usb drive.</p>
+
+
+                <h2><b>Known Issues</b></h2>
+                <ul>
+                    <li>Suspend and resume may not work on some systems.</li>
+                    <li>The installer can't format ext3 filesystem.</li>
+                </ul>
+                <br>
+                <h2><b>Source code</b></h2>
+                The source code is available in the main <a href="https://osdn.net/projects/android-x86/scm/">git server.</a>
+                <div class="code-snippet"><span style="color:#d1d1d1">
+                    &dollar; repo init -u git://gitscm.sf.net/gitroot/android-x86/manifest -b android-x86-4.4-r1<br>
+                    &dollar; repo sync
+                    </span></div>
+                <p>Read <a href="source.html">this page</a> for how to compile source code.</p>
+                <br><br><br>
+                <footer class="footer">
+                    <div class="cap">
+
+                        <a href="#" id="scroll-top" class="scroll-to-top">
+                            Back to top
+                        </a>
+                    </div>
+                    <div class="footer-copyright">
+                        <div class="navbar-link">
+                            &copy; 2019 Android x86 | All Rights Reserved | Website v2.14 by <a class="navbar-link" id="easter" href="mailto:aryabhushan2003@gmail.com">@arya</a> & <a class="navbar-link" id="easter" href="mailto:sood0@outlook.com">@sood</a>
+                        </div>
+                    </div>
+                </footer>
+
+
+                <!--JAVASCRIPT CODE-->
+
+                <script src="https://code.jquery.com/jquery-2.1.1.min.js"></script>
+                <script>
+                    $(".openNav").click(function() {
+                        $("body").toggleClass("navOpen");
+                        $("nav").toggleClass("open");
+                        $(".wrapper").toggleClass("open");
+                        $(this).toggleClass("open");
+                    });
+                </script>
+                <script type="text/javascript">
+
+                    var _gaq = _gaq || [];
+                    _gaq.push(['_setAccount', 'UA-36251023-1']);
+                    _gaq.push(['_setDomainName', 'jqueryscript.net']);
+                    _gaq.push(['_trackPageview']);
+
+                    (function() {
+                        var ga = document.createElement('script'); ga.type = 'text/javascript'; ga.async = true;
+                        ga.src = ('https:' == document.location.protocol ? 'https://ssl' : 'http://www') + '.google-analytics.com/ga.js';
+                        var s = document.getElementsByTagName('script')[0]; s.parentNode.insertBefore(ga, s);
+                    })();
+
+                </script>
+
+                </body>
+            </html>
