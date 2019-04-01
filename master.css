@@ -457,13 +457,14 @@ h3{
 .code-snippet {
   margin-top: 16px!important;
   margin-bottom: 16px!important;
+  white-space: nowrap;
 }
 .code-snippet {
   width: auto;
   background-color: #2b2b2b;
   padding: 8px 12px;
   border-left: 4px solid #14b9ff;
-  word-wrap: break-word;
+  white-space: nowrap;
   font-family: Consolas,"courier new";
   font-size: 16px;
 }
@@ -477,7 +478,7 @@ h3{
   background-color: #b0c9ff;
   padding: 8px 12px;
   border-left: 4px solid #000000;
-  word-wrap: break-word;
+  white-space: nowrap;
 }
 
 .code-snippet-inv {

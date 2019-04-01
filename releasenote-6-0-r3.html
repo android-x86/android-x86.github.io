@@ -15,8 +15,10 @@
                 background-color: #2b2b2b;
                 padding: 8px 12px;
                 border-left: 4px solid #14b9ff;
-                word-wrap: break-word;
-            }
+                word-wrap: normal;
+                overflow: scroll;
+                white-space: nowrap;
+              }
 
             .code-snippet {
                 font-family: Consolas,"courier new";
@@ -32,8 +34,10 @@
                 background-color: #b0c9ff;
                 padding: 8px 12px;
                 border-left: 4px solid #000000;
-                word-wrap: break-word;
-            }
+                word-wrap: normal;
+                overflow: scroll;
+                white-space: nowrap;
+              }
 
             .code-snippet-inv {
                 font-family: Consolas,"courier new";
@@ -92,7 +96,7 @@
                 <h2>Release Note 6.0-r3
                 </h2>
                 <h3>(2017/04/24)</h3>
-                The Android-x86 project is glad to announce the 6.0-r2 release to public. This is the third stable release of Android-x86 6.0 (marshmallow-x86). The prebuilt images are available in the following site: 
+                The Android-x86 project is glad to announce the 6.0-r2 release to public. This is the third stable release of Android-x86 6.0 (marshmallow-x86). The prebuilt images are available in the following site:
                 <br>
                 <ul>
                     <li><a href="https://osdn.net/rel/android-x86/Release%206.0">https://osdn.net/rel/android-x86/Release%206.0</a></li>
@@ -135,7 +139,7 @@
                 <div class="code-snippet"><span style="color:#d1d1d1">$ sudo apt install alien <br>
                     $ sudo alien -ci android-x86-6.0-r3.x86_64.rpm</span></div>
                 <p>All files will be installed to the /android-6.0-r3/ subdirectory and a boot entry will be added to grub2 menu. Reboot and choose android-x86 item from the menu to enter the system. Alternatively, you can launch Android-x86 in a QEMU virtual machine by the qemu-android script:</p>
-                <div class="code-snippet"><span style="color:#d1d1d1">&dollar; sudo qemu-android</span></div> 
+                <div class="code-snippet"><span style="color:#d1d1d1">&dollar; sudo qemu-android</span></div>
                 <p>Note Android-x86 running in QEMU and the real machine (after rebooting) shares the same data sub=folder.</p>
                 To uninstall it :
                 <div class="code-snippet"><span style="color:#d1d1d1">

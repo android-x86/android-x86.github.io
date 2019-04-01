@@ -15,8 +15,10 @@
                 background-color: #2b2b2b;
                 padding: 8px 12px;
                 border-left: 4px solid #14b9ff;
-                word-wrap: break-word;
-            }
+                word-wrap: normal;
+                overflow: scroll;
+                white-space: nowrap;
+              }
 
             .code-snippet {
                 font-family: Consolas,"courier new";
@@ -32,8 +34,10 @@
                 background-color: #b0c9ff;
                 padding: 8px 12px;
                 border-left: 4px solid #000000;
-                word-wrap: break-word;
-            }
+                word-wrap: normal;
+                overflow: scroll;
+                white-space: nowrap;
+              }
 
             .code-snippet-inv {
                 font-family: Consolas,"courier new";
@@ -92,7 +96,7 @@
                 <h2>Release Note CM-x86-14.1-r1
                 </h2>
                 <h3>(2018/02/14)</h3>
-                Happy Valentine's Day! The Android-x86 project is glad to announce cm-x86-14.1-r1. This is the first stable release of <a href="https://www.lineageos.org">LineageOS</a> (formerly CyanogenMod) 14.1 porting for Android-x86. The prebuilt images are available in the following site: 
+                Happy Valentine's Day! The Android-x86 project is glad to announce cm-x86-14.1-r1. This is the first stable release of <a href="https://www.lineageos.org">LineageOS</a> (formerly CyanogenMod) 14.1 porting for Android-x86. The prebuilt images are available in the following site:
                 <br>
                 <ul>
                     <li><a href="https://www.fosshub.com/Android-x86.html">https://www.fosshub.com/Android-x86.html</a></li>
@@ -122,7 +126,7 @@
                         <p>sha1sum: 69727b76ea3924663cfa6155a0c4006609f71d59</p>
                     </li>
                 </ul>
-                
+
                 <p>You can choose one of these files depends on your devices. In doubt, try the 32-bit ISO for legacy BIOS devices and 64-bit files for UEFI devices.</p>
                 <p>To use an ISO file, Linux users could just dump the it into a usb drive to create a bootable usb stick like</p>
                 <div class="code-snippet"><span style="color:#d1d1d1">
@@ -159,7 +163,7 @@
                     $ repo sync --no-tags --no-clone-bundle
                     </span></div>
                 <p>Read <a href="source.html">this page</a> for how to compile source code.</p>
-                
+
                 <h2>Credit</h2>
                 <p>The cm-14.1-x86 branch is mainly ported and maintained by Jaap Jan Meijer.</p>
                 <br><br><br>

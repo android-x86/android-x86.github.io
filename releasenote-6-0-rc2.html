@@ -15,8 +15,10 @@
                 background-color: #2b2b2b;
                 padding: 8px 12px;
                 border-left: 4px solid #14b9ff;
-                word-wrap: break-word;
-            }
+                word-wrap: normal;
+                overflow: scroll;
+                white-space: nowrap;
+              }
 
             .code-snippet {
                 font-family: Consolas,"courier new";
@@ -32,8 +34,10 @@
                 background-color: #b0c9ff;
                 padding: 8px 12px;
                 border-left: 4px solid #000000;
-                word-wrap: break-word;
-            }
+                word-wrap: normal;
+                overflow: scroll;
+                white-space: nowrap;
+              }
 
             .code-snippet-inv {
                 font-family: Consolas,"courier new";
@@ -92,7 +96,7 @@
                 <h2>Release Note 6.0-rc2
                 </h2>
                 <h3>(2016/08/15)</h3>
-                The Android-x86 project is glad to announce the 6.0-rc2 release to public. This is the second release candidate for Android-x86 6.0 (marshmallow-x86). The prebuilt images are available in the following site: 
+                The Android-x86 project is glad to announce the 6.0-rc2 release to public. This is the second release candidate for Android-x86 6.0 (marshmallow-x86). The prebuilt images are available in the following site:
                 <br>
                 <ul>
 
@@ -146,7 +150,7 @@
                 The source code is available in the main <a href="https://osdn.net/projects/android-x86/scm/">git server.</a>
                 <div class="code-snippet"><span style="color:#d1d1d1">
                     &dollar; repo init -u git://git.osdn.net/gitroot/android-x86/manifest -b marshmallow-x86<br>
-                    &dollar; repo sync 
+                    &dollar; repo sync
                     </span></div>
                 <p>Read <a href="source.html">this page</a> for how to compile source code.</p>
                 <br><br><br>
