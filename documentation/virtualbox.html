@@ -6,6 +6,15 @@
         <link rel="stylesheet" type="text/css" href="../master.css">
 		<meta name="viewport" content="width=device-width, initial-scale=1.0">
     <style>
+    .bold {
+      font-weight: bold;
+    }
+    sup {
+      font-size: x-small;
+    }
+    .refs {
+      font-size: smaller;
+    }
     #da_table{
       overflow-x: auto;
     }
@@ -154,12 +163,17 @@
                     Tested on VirtualBox 64-bit for Windows, version 5.2.0. Android-x86 version 6.0-r3, both 32-bit and 64-bit.
                     <br><br>Select your machine, then click the Settings button and refer to the below recommended configuration to make sure your settings match.
                     <ul>
-                    <li>[System] Optional: Processor(s) may be set above 1 if you have more than one virtual processor in your host system. It is uncertain whether or not this has any affect on Android-x86, be it positive or negative.</li>
-                    <li>[Display] Optional: Video Memory may be increased beyond the minimum selected automatically. Again, the affects of this are unknown.</li>
-                    <li>[Display] Optional: Enable 3D Acceleration may be checked. The Linux Guest Additions may need to be installed to get any benefit from this.</li>
-                    <li>[Storage] Find the first "Empty" item (this should have an icon of a CD). In the Attributes, click on the CD icon with a small down arrow, and pick "Choose Optical Virtual Disk File...". Specify the Android-x86 ISO that you downloaded.</li>
-                    <li>[Audio] Intel HD Audio seems to be natively supported in Android-x86.</li>
-                    <li>[Network] By default, your installation of Android-x86 will be able to automatically connect to the internet. If you do not want this, uncheck Enable Network Adapter under the Adapter 1 tab.</li>
+                    <li><span class="bold">[System]</span> <span class="bold">Recommended:</span> Processor(s) should be set above 1 if you have more than one virtual processor in your host system. Failure to do so means every single app (like Google Chrome) might crush if you try to use it.</li>
+                    <li><span class="bold">[Display]</span>:
+			    <ul>
+				    <li>Optional: Video Memory may be increased beyond the minimum selected automatically. The affects of this are unknown.</li>
+		                    <li>Optional: Enable 3D Acceleration may be checked. The Linux Guest Additions may need to be installed<sup><a href="#ref1">[1]</a></sup> to get any benefit from this.</li>
+				    <li><span class="bold">Mandatory:</span> Unless guest additions are installed<sup><a href="#ref1">[1]</a></sup>, change the default <span class="bold">VMSVGA</span> to <span class="bold">VBoxVGA</span>.
+		    			<br />Failure to do so means you won't even be able to launch Android-X86 in the first place.<sup><a href="#ref2">[2]</a></sup>
+			    </ul>
+                    <li><span class="bold">[Storage]</span> Find the first "Empty" item (this should have an icon of a CD). In the Attributes, click on the CD icontsm with a small down arrow, and pick "Choose Optical Virtual Disk File...". Specify the Android-x86 ISO that you downloaded.</li>
+                    <li><span class="bold">[Audio]</span> Intel HD Audio seems to be natively supported in Android-x86.</li>
+                    <li><span class="bold">[Network]</span> By default, your installation of Android-x86 will be able to automatically connect to the internet. If you do not want this, uncheck Enable Network Adapter under the Adapter 1 tab.</li>
                   </ul>
                 </p>
                 <h3>Install</h3>
@@ -243,6 +257,12 @@
               Then type exit to enter Android.
             </p>
 
+	<h3>References</h3>
+    <ol class="refs">
+	<li><a name="ref1"></a>VirtualBox currently <a href="https://www.virtualbox.org/manual/ch04.html#additions-linux" target="_blank">has no Guest Additions for Android.</a></li>
+	<li><a name="ref2"></a>VirtualBox states: <a href="https://docs.oracle.com/cd/E97728_01/F12470/html/gui-changes.html" target="_blank">"Note that you must install the Guest Additions on the guest VM to specify the VBoxSVGA or VMSVGA graphics controller."</a></li>
+    </ol>
+	    
     <div id="f-padding"></div>
         </section>
         <section class = "bg">
