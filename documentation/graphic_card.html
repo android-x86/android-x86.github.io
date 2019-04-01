@@ -15,7 +15,9 @@
       background-color: #2b2b2b;
       padding: 8px 12px;
       border-left: 4px solid #14b9ff;
-      word-wrap: break-word;
+      word-wrap: normal;
+      overflow: scroll;
+      white-space: nowrap;
     }
 
     .code-snippet {
@@ -32,7 +34,9 @@
       background-color: #b0c9ff;
       padding: 8px 12px;
       border-left: 4px solid #000000;
-      word-wrap: break-word;
+      word-wrap: normal;
+      overflow: scroll;
+      white-space: nowrap;
     }
 
     .code-snippet-inv {
@@ -47,7 +51,7 @@
           <a class="navbar-link" href="../index.html">
             <li>Home</li>
           </a>
-          <a class="navbar-link" href="https://www.fosshub.com/Android-x86.html">
+          <a class="navbar-link" href="../download.html">
             <li>Download</li>
           </a>
           <a class="navbar-link" href="../donate.html">
@@ -152,20 +156,7 @@
     $(this).toggleClass("open");
     });
     </script>
-    <script type="text/javascript">
-
-    var _gaq = _gaq || [];
-    _gaq.push(['_setAccount', 'UA-36251023-1']);
-    _gaq.push(['_setDomainName', 'jqueryscript.net']);
-    _gaq.push(['_trackPageview']);
-
-    (function() {
-    var ga = document.createElement('script'); ga.type = 'text/javascript'; ga.async = true;
-    ga.src = ('https:' == document.location.protocol ? 'https://ssl' : 'http://www') + '.google-analytics.com/ga.js';
-    var s = document.getElementsByTagName('script')[0]; s.parentNode.insertBefore(ga, s);
-    })();
-
-</script>
+  
 
 </body>
 </html>

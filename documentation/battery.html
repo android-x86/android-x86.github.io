@@ -15,8 +15,11 @@
               background-color: #2b2b2b;
               padding: 8px 12px;
               border-left: 4px solid #14b9ff;
-              word-wrap: break-word;
+              word-wrap: normal;
+              overflow: scroll;
+              white-space: nowrap;
             }
+
 
             .code-snippet {
               font-family: Consolas,"courier new";
@@ -32,8 +35,11 @@
               background-color: #b0c9ff;
               padding: 8px 12px;
               border-left: 4px solid #000000;
-              word-wrap: break-word;
+              word-wrap: normal;
+              overflow: scroll;
+              white-space: nowrap;
             }
+
 
             .code-snippet-inv {
               font-family: Consolas,"courier new";
@@ -48,7 +54,7 @@
           <a class="navbar-link" href="../index.html">
             <li>Home</li>
           </a>
-          <a class="navbar-link" href="https://www.fosshub.com/Android-x86.html">
+          <a class="navbar-link" href="../download.html">
             <li>Download</li>
           </a>
           <a class="navbar-link" href="../donate.html">
@@ -112,7 +118,7 @@
                   #ro.sys.fs.power_supply.bat.features.bat.health is not supported<br>
                   #ro.sys.fs.power_supply.bat.features.bat.temperature is not supported
 
-						</span></div>
+        					</span></div>
 
                   In essence, these entries tell the Android battery service code to look for the information in the correct place.</p>
 
@@ -123,7 +129,7 @@
                   <div class="code-snippet"><span style="color:#d1d1d1">
                         ro.power_supply.uevent.name.capacity.now=POWER_SUPPLY_CHARGE_NOW<br>
                         ro.power_supply.uevent.name.capacity.full=POWER_SUPPLY_CHARGE_FULL
-						</span></div>
+          					</span></div>
                     After installation, the system.prop will be installed in /system/build.prop. The user can modify this file during run time and reboot the system, allowing the change to take effect.
                   </p>
 
@@ -162,7 +168,7 @@
             </div>
                   <div class="footer-copyright">
                     <div class="navbar-link">
-                    &copy; 2019 Android x86 | Website by <a class="navbar-link" id="easter" href="mailto:aryabhushan2003@gmail.com">@arya</a> & <a class="navbar-link" id="easter" href="mailto:adityasood22@gmail.com">@sood</a>
+                    &copy; 2009-2019 Android x86 | <a class="navbar-link" id="easter" href="mailto:aryabhushan2003@gmail.com">@arya</a> & <a class="navbar-link" id="easter" href="mailto:adityasood22@gmail.com">@sood</a>
                     </div>
                   </div>
                 </footer>
@@ -179,20 +185,7 @@
     $(this).toggleClass("open");
     });
     </script>
-    <script type="text/javascript">
 
-    var _gaq = _gaq || [];
-    _gaq.push(['_setAccount', 'UA-36251023-1']);
-    _gaq.push(['_setDomainName', 'jqueryscript.net']);
-    _gaq.push(['_trackPageview']);
-
-    (function() {
-    var ga = document.createElement('script'); ga.type = 'text/javascript'; ga.async = true;
-    ga.src = ('https:' == document.location.protocol ? 'https://ssl' : 'http://www') + '.google-analytics.com/ga.js';
-    var s = document.getElementsByTagName('script')[0]; s.parentNode.insertBefore(ga, s);
-    })();
-
-</script>
 
 </body>
 </html>
