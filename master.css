@@ -283,14 +283,14 @@ a:hover{
   position: relative;
 
   display: block;
-  margin: 18px auto;
+  margin: 30px auto;
   padding: 0;
   font-family: Product Sans;
   overflow: hidden;
 
   border-width: 0;
   outline: none;
-  border-radius: 12px;
+  border-radius: 2px;
   box-shadow: 0 1px 4px rgba(0, 0, 0, .6);
   font-size: 14px;
   background-color: #2e56cc;
@@ -446,14 +446,20 @@ h3{
 }
 
 #box1 {
-  width:800px;
-  height:510px;
-  position: static;
-  padding: 22px;;
+  width: auto;
+  height: auto;
+  padding: 15px;
+  word-wrap: normal;
+  overflow: auto;
+  white-space: nowrap;
+  -webkit-box-shadow: 0px 4px 7px 0px #ccc;
+  -moz-box-shadow: 0px 4px 7px 0px #ccc;
+  box-shadow: 0px 4px 7px 0px #ccc;
+  border: 2px solid #e9e9ea!important;
   background: #ffffff;
-  border: 2px solid #ccc!important;
   border-radius: 15px;
 }
+
 
 .themebtn{
   position: relative;

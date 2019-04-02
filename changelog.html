@@ -1,271 +1,279 @@
 <!DOCTYPE html>
 <html>
 
-    <head>
-        <title>Android-x86 - Porting Android to x86</title>
-        <link rel="stylesheet" type="text/css" href="master.css">
-        <link rel="icon" type="image/png" href="mobile.png">
-        <meta name="viewport" content="width=device-width, initial-scale=1.0">
-        <meta name="description" content="changelogs updated regularly with each new release. " />
-        <meta name="keywords" content="android x86" />
-    </head>
-    <body>
-        <nav>
-            <ul>
-              <a class="active-navbar-link" href="index.html">
-                  <li>Home</li>
-              </a>
-              <a class="navbar-link" href="download.html">
-                  <li>Download</li>
-              </a>
-              <a class="navbar-link" href="credits.html">
-                  <li>Credits</li>
-              </a>
-              <a class="navbar-link" href="donate.html">
-                  <li>Donate</li>
-              </a>
-              <a class="navbar-link" href="source.html">
-                  <li>Get Source</li>
-              </a>
-              <a class="navbar-link" href="installhowto.html">
-                  <li>Installation</li>
-              </a>
-              <a class="navbar-link" href="screenshots.html">
-                  <li>Screenshots</li>
-              </a>
-              <a class="navbar-link" href="documentation.html">
-                  <li>Documentation</li>
-              </a>
-              <a class="navbar-link" href="releases.html">
-                  <li>Releases</li>
-              </a>
-              <a class="navbar-link" href="contact.html">
-                  <li>Contact Us</li>
-              </a>
-              <a class="navbar-link" href="changelog.html">
-                  <li>News</li>
-              </a>
-            </ul>
-        </nav>
-        <div class="openNav">
-            <div class="icon"></div>
-        </div>
-        <!--HTML of main page-->
-        <div class="wrapper">
-            <section>
-                <h1 id="top" class="heading">Android x86</h1>
-                <h2 class="subheading">Run Android on your PC</h2>
-                <br>
+<head>
+  <title>Android-x86 - Porting Android to x86</title>
+  <link rel="stylesheet" type="text/css" href="master.css" title="default">
+  <link rel="alternate stylesheet" type="text/css" href="dark.css" title="alternate">
+  <script type="text/javascript" src="styleswitcher.js"></script>
+  <link rel="icon" type="image/png" href="mobile.png">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="description" content="changelogs updated regularly with each new release. " />
+  <meta name="keywords" content="android x86" />
+</head>
+<body>
+  <nav>
+    <ul>
+      <a class="active-navbar-link" href="index.html">
+        <li>Home</li>
+      </a>
+      <a class="navbar-link" href="download.html">
+        <li>Download</li>
+      </a>
+      <a class="navbar-link" href="credits.html">
+        <li>Credits</li>
+      </a>
+      <a class="navbar-link" href="donate.html">
+        <li>Donate</li>
+      </a>
+      <a class="navbar-link" href="source.html">
+        <li>Get Source</li>
+      </a>
+      <a class="navbar-link" href="installhowto.html">
+        <li>Installation</li>
+      </a>
+      <a class="navbar-link" href="screenshots.html">
+        <li>Screenshots</li>
+      </a>
+      <a class="navbar-link" href="documentation.html">
+        <li>Documentation</li>
+      </a>
+      <a class="navbar-link" href="releases.html">
+        <li>Releases</li>
+      </a>
+      <a class="navbar-link" href="contact.html">
+        <li>Contact Us</li>
+      </a>
+      <a class="navbar-link" href="changelog.html">
+        <li>News</li>
+      </a>
+    </ul>
+  </nav>
+  <div class="openNav">
+    <div class="icon"></div>
+  </div>
+  <!--HTML of main page-->
+  <div class="wrapper">
+    <section>
+      <h1 id="top" class="heading">Android x86</h1>
+      <h2 class="subheading">Run Android on your PC</h2>
+      <br>
 
-                <ul>
-                    <li>2019-01-31: Android-x86 website has been shifted from the legacy site to <a href="https://android-x86.github.io/">GithubPages here.</a></li>
-                    <li>2019-01-15: <a href="releasenote-8-1-r1.html">The Android-x86 8.1-r1 released</a> (the first stable release of oreo-x86).</li>
-                    <li>2018-10-18: <a href="releasenote-8-1-rc2.html">The Android-x86 8.1-rc2 released</a> (the second release candidate of oreo-x86).</li>
-                    <li>2018-09-28: Mauro Rossi talks about <a href="https://www.x.org/wiki/Events/XDC2018/Talks/#mauro">Android-x86 status update and graphics stack evolution</a> in <a href="https://www.x.org/wiki/Events/XDC2018/">XDC2018</a>.</li>
-                    <li>2018-06-18: <a href="releasenote-8-1-rc1.html">The Android-x86 8.1-rc1 released</a> (the first release candidate of oreo-x86).</li>
-                    <li>2018-05-03: <a href="releasenote-cm-x86-14-1-r2.html">The cm-x86-14.1-r2 is released</a> (the second stable release of cm-14.1-x86).</li>
-                    <li>2018-05-02: <a href="releasenote-7-1-r2.html">The Android-x86 7.1-r2 released</a> (the second stable release of nougat-x86).</li>
-                    <li>2018-02-14: <a href="releasenote-cm-x86-14-1-r1.html">The cm-x86-14.1-r1 is released</a> (the first stable release of cm-14.1-x86).</li>
-                    <li>2018-02-06: <a href="releasenote-7-1-r1.html">The Android-x86 7.1-r1 released</a> (the first stable release of nougat-x86).</li>
-                    <li>2017-11-15: <a href="releasenote-cm-x86-14-1-rc1.html">The cm-x86-14.1-rc1 is released</a> (the first release candidate of cm-14.1-x86).</li>
-                    <li>2017-10-10: <a href="releasenote-7-1-rc2.html">The Android-x86 7.1-rc2 released</a> (the second release candidate of nougat-x86).</li>
-                    <li>2017-09-10: The <a href="source.html">oreo-x86 branch is ready</a> for developers.</li>
-                    <li>2017-06-08: <a href="releasenote-7-1-rc1.html">The Android-x86 7.1-rc1 released</a> (the first release candidate of nougat-x86).</li>
-                    <li>2017-04-24: <a href="releasenote-6-0-r3.html">The Android-x86 6.0-r3 released</a> (the third stable release of marshmallow-x86).</li>
-                    <li>2017-01-17: <a href="releasenote-cm-x86-13-0-r1.html">The cm-x86-13.0-r1 is released</a> (the first stable release of cm-13.0-x86).</li>
-                    <li>2017-01-13: <a href="releasenote-6-0-r2.html">The Android-x86 6.0-r2 released</a> (the second stable release of marshmallow-x86).</li>
-                    <li>2016-10-12: <a href="http://www.jide.com/remixos-for-pc#downloadNow" rel="nofollow">Remix OS for PC version: 3.0.206 is available for download.</a></li>
-                    <li>2016-10-04: The git hosting is <a href="https://groups.google.com/d/msg/android-x86/VdjtBT89jGU/4obs0Vc7CwAJ" rel="nofollow">moved to OSDN</a>.</li>
-                    <li>2016-09-30: <a href="releasenote-cm-x86-13-0-rc1.html">The cm-x86-13.0-rc1 is released</a> (the first release candidate of cm-13.0-x86).</li>
-                    <li>2016-09-13: <a href="releasenote-6-0-r1.html">The Android-x86 6.0-r1 released</a> (the first stable release of marshmallow-x86).</li>
-                    <li>2016-08-26: The <a href="source.html">nougat-x86 branch is ready</a> for developers.</li>
-                    <li>2016-08-24: Google released the source code of <a href="http://source.android.com/">Android 7.0</a> (Nougat).</li>
-                    <li>2016-08-17:&nbsp;<a href="http://www.jide.com/remixos-for-pc#downloadNow" rel="nofollow">Remix OS for PC - Android M rc2 (version: 3.0.201) on Android-x86 project is available for download.</a></li>
-                    <li>2016-08-15: <a href="releasenote-6-0-rc2.html">The Android-x86 6.0-rc2 released</a> (the second release candidate of marshmallow-x86).</li>
-                    <li>2016-08-11: <a href="http://www.android-x86.org/documents/analytics-program">The Android-x86 Analytics Program</a> is launched.</li>
-                    <li>2016-07-26:&nbsp;<a href="http://www.jide.com/remixos-for-pc#downloadNow" rel="nofollow">Remix OS for PC - Android M Version on Android-x86 project is available for download.</a></li>
-                    <li>2016-07-06:&nbsp;<a href="http://www.jide.com/remixos-for-pc#downloadNow" rel="nofollow">Remix OS for PC - Latest version built (version: 2.0.402) on Android-x86 project is available for download.</a></li>
-
-
-
-
-
-                    <li>2016-06-08: <a href="releasenote-6-0-rc1.html">The Android-x86 6.0-rc1 released</a> (the first release candidate of marshmallow-x86).</li>
-                    <li>2016-04-23: <a href="http://osdn.org/">OSDN</a> offers <a href="http://osdn.org/projects/android-x86/releases/">a download page for Android-x86</a>.</li>
-                    <li>2016-03-02: <a href="http://www.jide.com/remixos-for-pc#downloadNow" rel="nofollow">Remix OS for PC - Beta version built on Android-x86 project is available for download.&nbsp;</a></li>
-                    <li>2016-02-06: <a href="releasenote-4-4-r5.html">The Android-x86 4.4-r5 released</a> (the fifth stable release of kitkat-x86).</li>
-                    <li>2016-02-05: <a href="http://www.fosshub.com/">FossHub</a> offers <a href="http://www.fosshub.com/Android-x86.html">a download page for Android-x86</a>.</li>
-                    <li>2016-01-29: <a href="https://sourceforge.net/projects/android-x86/files/Testing/">An updated test image of marshmallow-x86</a> is available to download.</li>
-                    <li>2016-01-27: The <a href="https://sourceforge.net/p/android-x86/kernel/ci/kernel-4.4/tree/">kernel-4.4</a> branch is pushed to the git server.</li>
+      <!--Style Switcher-->
+      <div class=themebtn>
+      <button class="button" onclick="setActiveStyleSheet('default'); return false;"><img src="light_theme.png" height="20px" width"20px" title='Toggle Theme'/> </button>
+      <button class="button" onclick="setActiveStyleSheet('alternate'); return false;" ><img src="dark_theme.png" height="20px" width"20px" title="Toggle Theme"/></button>
+    </div>
+    
+      <ul>
+        <li>2019-01-31: Android-x86 website has been shifted from the legacy site to <a href="https://android-x86.github.io/">GithubPages here.</a></li>
+        <li>2019-01-15: <a href="releasenote-8-1-r1.html">The Android-x86 8.1-r1 released</a> (the first stable release of oreo-x86).</li>
+        <li>2018-10-18: <a href="releasenote-8-1-rc2.html">The Android-x86 8.1-rc2 released</a> (the second release candidate of oreo-x86).</li>
+        <li>2018-09-28: Mauro Rossi talks about <a href="https://www.x.org/wiki/Events/XDC2018/Talks/#mauro">Android-x86 status update and graphics stack evolution</a> in <a href="https://www.x.org/wiki/Events/XDC2018/">XDC2018</a>.</li>
+        <li>2018-06-18: <a href="releasenote-8-1-rc1.html">The Android-x86 8.1-rc1 released</a> (the first release candidate of oreo-x86).</li>
+        <li>2018-05-03: <a href="releasenote-cm-x86-14-1-r2.html">The cm-x86-14.1-r2 is released</a> (the second stable release of cm-14.1-x86).</li>
+        <li>2018-05-02: <a href="releasenote-7-1-r2.html">The Android-x86 7.1-r2 released</a> (the second stable release of nougat-x86).</li>
+        <li>2018-02-14: <a href="releasenote-cm-x86-14-1-r1.html">The cm-x86-14.1-r1 is released</a> (the first stable release of cm-14.1-x86).</li>
+        <li>2018-02-06: <a href="releasenote-7-1-r1.html">The Android-x86 7.1-r1 released</a> (the first stable release of nougat-x86).</li>
+        <li>2017-11-15: <a href="releasenote-cm-x86-14-1-rc1.html">The cm-x86-14.1-rc1 is released</a> (the first release candidate of cm-14.1-x86).</li>
+        <li>2017-10-10: <a href="releasenote-7-1-rc2.html">The Android-x86 7.1-rc2 released</a> (the second release candidate of nougat-x86).</li>
+        <li>2017-09-10: The <a href="source.html">oreo-x86 branch is ready</a> for developers.</li>
+        <li>2017-06-08: <a href="releasenote-7-1-rc1.html">The Android-x86 7.1-rc1 released</a> (the first release candidate of nougat-x86).</li>
+        <li>2017-04-24: <a href="releasenote-6-0-r3.html">The Android-x86 6.0-r3 released</a> (the third stable release of marshmallow-x86).</li>
+        <li>2017-01-17: <a href="releasenote-cm-x86-13-0-r1.html">The cm-x86-13.0-r1 is released</a> (the first stable release of cm-13.0-x86).</li>
+        <li>2017-01-13: <a href="releasenote-6-0-r2.html">The Android-x86 6.0-r2 released</a> (the second stable release of marshmallow-x86).</li>
+        <li>2016-10-12: <a href="http://www.jide.com/remixos-for-pc#downloadNow" rel="nofollow">Remix OS for PC version: 3.0.206 is available for download.</a></li>
+        <li>2016-10-04: The git hosting is <a href="https://groups.google.com/d/msg/android-x86/VdjtBT89jGU/4obs0Vc7CwAJ" rel="nofollow">moved to OSDN</a>.</li>
+        <li>2016-09-30: <a href="releasenote-cm-x86-13-0-rc1.html">The cm-x86-13.0-rc1 is released</a> (the first release candidate of cm-13.0-x86).</li>
+        <li>2016-09-13: <a href="releasenote-6-0-r1.html">The Android-x86 6.0-r1 released</a> (the first stable release of marshmallow-x86).</li>
+        <li>2016-08-26: The <a href="source.html">nougat-x86 branch is ready</a> for developers.</li>
+        <li>2016-08-24: Google released the source code of <a href="http://source.android.com/">Android 7.0</a> (Nougat).</li>
+        <li>2016-08-17:&nbsp;<a href="http://www.jide.com/remixos-for-pc#downloadNow" rel="nofollow">Remix OS for PC - Android M rc2 (version: 3.0.201) on Android-x86 project is available for download.</a></li>
+        <li>2016-08-15: <a href="releasenote-6-0-rc2.html">The Android-x86 6.0-rc2 released</a> (the second release candidate of marshmallow-x86).</li>
+        <li>2016-08-11: <a href="http://www.android-x86.org/documents/analytics-program">The Android-x86 Analytics Program</a> is launched.</li>
+        <li>2016-07-26:&nbsp;<a href="http://www.jide.com/remixos-for-pc#downloadNow" rel="nofollow">Remix OS for PC - Android M Version on Android-x86 project is available for download.</a></li>
+        <li>2016-07-06:&nbsp;<a href="http://www.jide.com/remixos-for-pc#downloadNow" rel="nofollow">Remix OS for PC - Latest version built (version: 2.0.402) on Android-x86 project is available for download.</a></li>
 
 
-                    <li>2016-01-23: <a href="/releasenote-4-4-r4">The Android-x86 4.4-r4 released</a> (the fourth stable release of kitkat-x86).</li>
-                    <li>2016-01-13:&nbsp;<span style="color:rgb(0,0,0);font-family:Helvetica"><a href="http://www.jide.com/remixos-for-pc#downloadNow">Remix OS for PC (Alpha version) built on Android-x86 project is available for download.&nbsp;</a></span></li>
-                    <li>2016-01-07: The marshmallow-x86 branch is updated to Android 6.0.1_r10 release (Marshmallow-MR1).</li>
-                    <li>2015-12-25: The marshmallow-x86 branch is updated to Android 6.0.1_r3 release (Marshmallow-MR1).</li>
-                    <li>2015-12-12: <a href="https://groups.google.com/d/msg/android-x86/qkWG2TwVBqs/tW1Rm9u9DAAJ"><b>The "Console OS" is a scam which makes use of Android-x86 now. Please help to stop it.</b></a></li>
-                    <li>2015-12-02: <a href="https://sourceforge.net/projects/android-x86/files/Testing/">A test image of marshmallow-x86</a> is available to download.</li>
-                    <li>2015-11-28: <a href="https://drive.google.com/open?id=1mND8K-AXbMMl8-wOTe75NOpM0xOcJbVy8UorryHOWsY">Android-x86.org gives a talk</a> at <a href="http://soft.cs.tsinghua.edu.cn/os2atc2015/index.html">OS2ATC 2015</a>.</li>
-                    <li>2015-10-13: The official git server is moved to <a href="http://sourceforge.net/p/android-x86/_list/git">SourceForge</a>.</li>
-                    <li>2015-10-10: The <a href="source.html">marshmallow-x86 branch is ready</a> for developers.</li>
-                    <li>2015-10-07: <a href="releasenote-5-1-rc1.html">The Android-x86 5.1-rc1 released</a> (the first release candidate of lollipop-x86).</li>
-                    <li>2015-10-06: Google released the source code of <a href="http://source.android.com/">Android 6.0</a> (Marshmallow).</li>
-                    <li>2015-07-17: <a href="releasenote-4-4-r3.html">The Android-x86 4.4-r3 released</a> (the third stable release of kitkat-x86).</li>
-                    <li>2015-04-14: The new kernel branch android-4.0 based on vanilla kernel 4.0 is ready for testing.</li>
-                    <li>2015-04-07: The git server <a href="http://git.android-x86.org/">git.android-x86.org</a> is back.</li>
-                    <li>2015-03-31: <a href="https://groups.google.com/d/msg/android-x86/7iLBuR662hU/71cEA06ZcIoJ">The git server was down</a>. We are sorry for it.</li>
-                    <li>2015-03-18: The lollipop-x86 branch is updated to Android 5.1.0_r1 release (Lollipop-MR1).</li>
-                    <li>2015-01-01: <a href="releasenote-4-4-r2.html">The Android-x86 4.4-r2 released</a> (the second stable release of kitkat-x86).</li>
-                    <li>2014-12-25: The new kernel branch android-3.18 is available in the git server for testing.</li>
-                    <li>2014-11-06: The <a href="source.html">lollipop-x86 branch is ready</a> for developers.</li>
-                    <li>2014-11-04: Google released the source code of <a href="http://source.android.com/">Android 5.0</a> (Lollipop).</li>
-                    <li>2014-09-14: <a href="https://groups.google.com/d/msg/android-x86/FUiFCtrgc6I/Fqt8Rg-fpQkJ">An image for ASUS Transformer Book T100TA</a> is released for testing.</li>
-                    <li>2014-08-28: The kitkat-x86 branch is updated to Android 4.4.4_r2 release (Kitkat-MR2.2).</li>
-                    <li>2014-08-08: <a href="releasenote-4-4-r1.html">The Android-x86 4.4-r1 released</a> (kitkat-x86).</li>
-                    <li>2014-07-31: The installer now supports read-write mode installation on ntfs and vfat.</li>
-                    <li>2014-05-20: <a href="releasenote-4-4-rc2.html">The Android-x86 4.4-RC2 released</a> (kitkat-x86).</li>
-                    <li>2014-04-18: Add ntfs/exfat/ext4 support to vold.</li>
-                    <li>2014-02-14: <a href="releasenote-4-4-rc1.html">The Android-x86 4.4-RC1 released</a> (kitkat-x86).</li>
-                    <li>2013-12-17: The kitkat-x86 branch is updated to Android 4.4.2 release (kitkat-mr1).</li>
-                    <li>2013-12-10: The kitkat-x86 branch is updated to Android 4.4.1 release.</li>
-                    <li>2013-11-04: The kitkat-x86 branch is ready in <a href="http://git.android-x86.org/">git.android-x86.org</a>. It's in early stage and buggy. Call for developers.</li>
-                    <li>2013-11-01: Google announced <a href="http://source.android.com/">Android 4.4</a>, the KitKat release.</li>
-                    <li>2013-07-25: Test build 20130725 of jb-x86 based on Android 4.3 is ready for downloading.</li>
-                    <li>2013-07-24: Google announced <a href="http://source.android.com/">Android 4.3.</a> The source code is released.</li>
-                    <li>2013-06-23: Android-x86 4.0-r1 is released.</li>
-                    <li>2013-06-08: Joe Spencer created <a href="https://docs.google.com/spreadsheet/ccc?key=0AjREKzGKF9TDdEd1MW9SR1pSeGdzbUk0RTZuV1Z2SVE&amp;usp=sharing">a supported device list</a>.</li>
-                    <li>2013-02-28: A new test build of jb-x86is available for downloading.</li>
-                    <li>2013-01-16: The jb-x86 source tree is ready for downloading.</li>
-                    <li>2013-01-02: <a href="https://groups.google.com/d/msg/android-x86/-rjzvmc-W_E/naTs0wGAvHEJ">Android-x86 at Google code is unbanned</a>. Thanks to everyone who help this.</li>
-                    <li>2013-01-01: <b>IMPORTANT!! Android-x86 was blocked by Google code</b></li>
-                    <li>2012-12-25: Merry Christmas! The <a href="http://code.google.com/p/android-x86/downloads/detail?name=android-x86-4.2-20121225.iso&amp;can=2&amp;q=">first test release of jb-x86</a> is available for downloading.</li>
-                    <li>2012-11-20: We begin the jb-x86 porting based on Android 4.2.</li>
-                    <li>2012-07-15: Android-x86 4.0-RC2 is released.
-                    </li>
-                    <li>2012-07-11: Intel contributes x86 Dalvik JIT support to AOSP.</li>
-                    <li>2012-06-26: Dalvik patch for arm translator from BuilDroid is merged.</li>
-                    <li>2012-04-10: The ics-x86 branch is updated to Android 4.0.4.</li>
-                    <li>2012-02-27: Android-x86 4.0-RC1 is released.
-                    </li>
-                    <li>2012-01-01: Test build 20120101 is released.
-                    </li>
-                    <li>2011-12-25: New testing ics-x86 isos supporting <a href="source.html">hybrid format</a> are available.
-                    </li>
-                    <li>2011-12-24: The git.android-x86.org is back and supports smart http transport.
-                    </li>
-                    <li>2011-12-20: The git.android-x86.org is down for maintenance. In the meantime please use the SourceForge mirror.
-                    </li>
-                    <li>2011-12-10: Display issue of Intel i915/i965 for ics-x86 is solved. <a href="https://www.fosshub.com/Android-x86.html">More ics-x86 images are available.</a></li>
-                    <li>2011-12-01: The ics-x86 branch is ready for developers. <a href="https://www.fosshub.com/Android-x86.html">Download the testing iso for AMD tablet</a>...</li>
-                    <li>2011-11-23: Android-x86 3.2-RC2 (honeycomb-x86) is released.</li>
-                    <li>2011-10-31: New target amd_persimmon is added (contributed by AMD).</li>
-                    <li>2011-10-30: The gingerbread-x86 branch is updated to Android 2.3.7.</li>
-                    <li>2011-08-28: Android-x86 2.3 RC1 (Test build 20110828) is released. </li>
-                    <li>2011-08-08: The gingerbread-x86 branch is updated to Android 2.3.5, hardware acceleration enabled for some targets.</li>
-                    <li>2011-07-04: The ethernet support is added to gingerbread-x86 branch.</li>
-                    <li>2011-06-28: Android-x86 2.2-r2 is released.</li>
-                    <li>2011-05-10: The mouse patch is added to gingerbread-x86 branch.</li>
-                    <li>2011-05-05: The gingerbread-x86 branch is updated to Android 2.3.4, API level 10.</li>
-                    <li>2011-04-20: The gingerbread-x86 branch is updated to Android 2.3.3.</li>
-                    <li>2011-04-08: The froyo-x86 branch is updated to Android 2.2.2 based.</li>
-                    <li>2011-04-02: We have 4 million pageviews now, and around 242,275 pageviews&nbsp;come from android-x86 installed machines. Check out "<a href="http://blog.android-x86.org/2011/04/some-statistics-about-android-x86org.html" target="_blank">Some Statistics about Android-x86.org Project</a>"
-                        for more details. </li>
-                    <li>2011-04-02: AMD donates T56N/E1 development boards to Android-x86.org</li>
-                    <li>2011-03-30: The build break in gingerbread-x86 branch has been fixed. The patch is in the download section.</li>
-                    <li>2011-02-10: TegaTech donates three Tega v2 tablets to Android-x86.org</a>.</li>
-            <li>2011-01-26: <a href="source.html">Gingerbread-x86 branch</a> is ready to download.</li>
-            <li>2011-01-13:Android-x86 2.2</a> is released.</li>
-    <li>2011-01-01: Test build 20110101</a> is released. </li>
-<li>2010-12-29: Add mesa i965c support and a new target asus_laptop. </li>
-<li>2010-12-19: The installer supports read-write installation </li>
-<li>2010-12-13: Froyo-x86 is ported to Dell Inspiron Mini Duo </li>
-<li>2010-12-02: Mushishi (rudolff.vang@gmail.com) has helped to created a <a href="http://android-x86.moonman.dk">nightly build server</a> </li>
-<li>2010-11-20: <a href="/documentation/sd_card.html">Sdcard HowTo</a> is updated for froyo-x86 </li>
-<li>2010-11-19: Mplayer is added to Android-x86 repositories </li>
-<li>2010-11-18: <a href="https://www.fosshub.com/Android-x86.html">IEEE paper: Virtual Smartphone over IP</a> using Android-x86 </li>
-<li>2010-11-11: Two issues on rotated screen are fixed </li>
-<li>2010-11-09: Froyo-x86 is ported to ViewSonic ViewPad 10 </li>
-<li>2010-10-25: The app2sd issue is fixed </li>
-<li>2010-10-21: 3D hardware acceleration for froyo-x86 is available for testing </li>
-<li>2010-09-30: Froyo-x86 performance issue is solved (temporary) </li>
-<li>2010-09-14: <a href="http://groups.google.com/group/android-x86/browse_thread/thread/ea5ed149e4680301#">Atom optimization</a> is added </li>
-<li>2010-09-13: 3G USB dongle support is added to froyo-x86 branch </li>
-<li>2010-09-06: Wifi support in froyo-x86 branch is ready </li>
-<li>2010-08-23: Target 'eeepc' is available for froyo-x86 branch </li>
-<li>2010-08-15: Android-x86 talks in <a href="http://coscup.org">COSCUP 2010</a> </li>
-<li>2010-08-12: A testing build for virtual machine is released </li>
-<li>2010-08-01: The branch 'froyo-x86' in <a href="http://android-x86.git.sourceforge.net/git/gitweb-index.cgi">SourceForge mirror</a> is ready to download </li>
-<li>2010-07-12: New target 'vm' is added to froyo-x86 branch </li>
-<li>2010-07-07: The branch 'froyo-x86' is ready to download </li>
-<li>2010-06-30: Android 2.2 has been merged to Android-x86 git repo</li>
-<li>2010-06-29: Android-x86 joins <a href="http://www.oesf.jp/en">OESF</a> as an open source partner</li>
-<li>2010-06-24: Okwon(pinebud@gmail.com) has contributed <a href="http://www.android-x86.org/download">Viliv S5 port</a></li>
-<li>2010-06-04: Android-x86 talks in <a href="http://www.oesf.jp/en">OESF</a> Android Steps Ahead 2010/Taipei</li>
-<li>2010-04-23: Android-x86 talks in <a href="http://www.oesf.jp/en">OESF</a> Android Steps Ahead 2010/Tokyo</li>
-<li>2010-04-18: 'eclair-x86' branch is updated</li>
-<li>2010-03-19: Android-x86 1.6-r2 is released</a></li>
-<li>2010-03-18: Busybox is added into android-x86 source tree</li>
-<li>2010-03-15: 3G support has been added into dount branch</li>
-<li>2010-03-10: LIME package is added into android-x86 source tree</li>
-<li>2010-02-25: MirBSD Korn shell has been added to android-x86</li>
-<li>2010-02-17: A page is created to track the hardware supports</li>
-<li>2010-02-05: The crashes in Live wallpapers have been fixed</li>
-<li>2010-02-02: Eclair 2.1 has been merged to branch eclair-x86</li>
-<li>2010-01-27: The audio recording issue with camcorder has been fixed</li>
-<li>2010-01-25: Merging to Eclair 2.1</li>
-<li>2010-01-20: The camcorder crash has been fixed. You can shot your own video now.</li>
-<li>2010-01-15: New test build 20100115 is released</li>
-<li>2010-01-13: Fixed the touch screen issue with EeePC T91 and added user configurable calibration support.</li>
-<li>2010-01-12: Fixed the Camera crash when taking a picture.</li>
-<li>2010-01-06: Fixed the keyguard window to make it looks better. The resume/sleep hack is finally removed.</li>
-<li>2009-12-18: Kernel 2.6.32 is supported</li>
-<li>2009-12-15: Merged software keyboard support to Eclair</li>
-<li>2009-12-13: Merged code changes from mid policy to phone policy</li>
-<li>2009-12-12: switched to use phone policy in Eclair build. It gives us a lot new features.</li>
-<li>2009-12-10: Wifi changes have been merged to Eclair.</li>
-<li>2009-12-10: multi-platform support has been added.</li>
-<li>2009-12-07: Mouse and Battery supports are merged to Eclair.</li>
-<li>2009-12-06: Fixed framebuffer issue on Eclair, now, VESA and I915 work correctly.</li>
-<li>2009-12-02: We have been able to boot up Eclair on VirtualBox, see the <a href="http://blog.android-x86.org/" rel="nofollow">android-x86 blog</a> for screenshots</li>
-<li>2009-12-01: Samsung Q1U is officially supported</li>
-<br>
-</ul>
 
 
-<div id="f-padding"></div>
-</section>
-<section class="bg">
-    <div class="bg"></div>
-    <div class="clearfix"></div>
-</section>
 
-<footer class="footer">
-    <div class="cap">
+        <li>2016-06-08: <a href="releasenote-6-0-rc1.html">The Android-x86 6.0-rc1 released</a> (the first release candidate of marshmallow-x86).</li>
+        <li>2016-04-23: <a href="http://osdn.org/">OSDN</a> offers <a href="http://osdn.org/projects/android-x86/releases/">a download page for Android-x86</a>.</li>
+        <li>2016-03-02: <a href="http://www.jide.com/remixos-for-pc#downloadNow" rel="nofollow">Remix OS for PC - Beta version built on Android-x86 project is available for download.&nbsp;</a></li>
+        <li>2016-02-06: <a href="releasenote-4-4-r5.html">The Android-x86 4.4-r5 released</a> (the fifth stable release of kitkat-x86).</li>
+        <li>2016-02-05: <a href="http://www.fosshub.com/">FossHub</a> offers <a href="http://www.fosshub.com/Android-x86.html">a download page for Android-x86</a>.</li>
+        <li>2016-01-29: <a href="https://sourceforge.net/projects/android-x86/files/Testing/">An updated test image of marshmallow-x86</a> is available to download.</li>
+        <li>2016-01-27: The <a href="https://sourceforge.net/p/android-x86/kernel/ci/kernel-4.4/tree/">kernel-4.4</a> branch is pushed to the git server.</li>
 
-        <a href="#" id="scroll-top" class="scroll-to-top">
+
+        <li>2016-01-23: <a href="/releasenote-4-4-r4">The Android-x86 4.4-r4 released</a> (the fourth stable release of kitkat-x86).</li>
+        <li>2016-01-13:&nbsp;<span style="color:rgb(0,0,0);font-family:Helvetica"><a href="http://www.jide.com/remixos-for-pc#downloadNow">Remix OS for PC (Alpha version) built on Android-x86 project is available for download.&nbsp;</a></span></li>
+        <li>2016-01-07: The marshmallow-x86 branch is updated to Android 6.0.1_r10 release (Marshmallow-MR1).</li>
+        <li>2015-12-25: The marshmallow-x86 branch is updated to Android 6.0.1_r3 release (Marshmallow-MR1).</li>
+        <li>2015-12-12: <a href="https://groups.google.com/d/msg/android-x86/qkWG2TwVBqs/tW1Rm9u9DAAJ"><b>The "Console OS" is a scam which makes use of Android-x86 now. Please help to stop it.</b></a></li>
+        <li>2015-12-02: <a href="https://sourceforge.net/projects/android-x86/files/Testing/">A test image of marshmallow-x86</a> is available to download.</li>
+        <li>2015-11-28: <a href="https://drive.google.com/open?id=1mND8K-AXbMMl8-wOTe75NOpM0xOcJbVy8UorryHOWsY">Android-x86.org gives a talk</a> at <a href="http://soft.cs.tsinghua.edu.cn/os2atc2015/index.html">OS2ATC 2015</a>.</li>
+        <li>2015-10-13: The official git server is moved to <a href="http://sourceforge.net/p/android-x86/_list/git">SourceForge</a>.</li>
+        <li>2015-10-10: The <a href="source.html">marshmallow-x86 branch is ready</a> for developers.</li>
+        <li>2015-10-07: <a href="releasenote-5-1-rc1.html">The Android-x86 5.1-rc1 released</a> (the first release candidate of lollipop-x86).</li>
+        <li>2015-10-06: Google released the source code of <a href="http://source.android.com/">Android 6.0</a> (Marshmallow).</li>
+        <li>2015-07-17: <a href="releasenote-4-4-r3.html">The Android-x86 4.4-r3 released</a> (the third stable release of kitkat-x86).</li>
+        <li>2015-04-14: The new kernel branch android-4.0 based on vanilla kernel 4.0 is ready for testing.</li>
+        <li>2015-04-07: The git server <a href="http://git.android-x86.org/">git.android-x86.org</a> is back.</li>
+        <li>2015-03-31: <a href="https://groups.google.com/d/msg/android-x86/7iLBuR662hU/71cEA06ZcIoJ">The git server was down</a>. We are sorry for it.</li>
+        <li>2015-03-18: The lollipop-x86 branch is updated to Android 5.1.0_r1 release (Lollipop-MR1).</li>
+        <li>2015-01-01: <a href="releasenote-4-4-r2.html">The Android-x86 4.4-r2 released</a> (the second stable release of kitkat-x86).</li>
+        <li>2014-12-25: The new kernel branch android-3.18 is available in the git server for testing.</li>
+        <li>2014-11-06: The <a href="source.html">lollipop-x86 branch is ready</a> for developers.</li>
+        <li>2014-11-04: Google released the source code of <a href="http://source.android.com/">Android 5.0</a> (Lollipop).</li>
+        <li>2014-09-14: <a href="https://groups.google.com/d/msg/android-x86/FUiFCtrgc6I/Fqt8Rg-fpQkJ">An image for ASUS Transformer Book T100TA</a> is released for testing.</li>
+        <li>2014-08-28: The kitkat-x86 branch is updated to Android 4.4.4_r2 release (Kitkat-MR2.2).</li>
+        <li>2014-08-08: <a href="releasenote-4-4-r1.html">The Android-x86 4.4-r1 released</a> (kitkat-x86).</li>
+        <li>2014-07-31: The installer now supports read-write mode installation on ntfs and vfat.</li>
+        <li>2014-05-20: <a href="releasenote-4-4-rc2.html">The Android-x86 4.4-RC2 released</a> (kitkat-x86).</li>
+        <li>2014-04-18: Add ntfs/exfat/ext4 support to vold.</li>
+        <li>2014-02-14: <a href="releasenote-4-4-rc1.html">The Android-x86 4.4-RC1 released</a> (kitkat-x86).</li>
+        <li>2013-12-17: The kitkat-x86 branch is updated to Android 4.4.2 release (kitkat-mr1).</li>
+        <li>2013-12-10: The kitkat-x86 branch is updated to Android 4.4.1 release.</li>
+        <li>2013-11-04: The kitkat-x86 branch is ready in <a href="http://git.android-x86.org/">git.android-x86.org</a>. It's in early stage and buggy. Call for developers.</li>
+        <li>2013-11-01: Google announced <a href="http://source.android.com/">Android 4.4</a>, the KitKat release.</li>
+        <li>2013-07-25: Test build 20130725 of jb-x86 based on Android 4.3 is ready for downloading.</li>
+        <li>2013-07-24: Google announced <a href="http://source.android.com/">Android 4.3.</a> The source code is released.</li>
+        <li>2013-06-23: Android-x86 4.0-r1 is released.</li>
+        <li>2013-06-08: Joe Spencer created <a href="https://docs.google.com/spreadsheet/ccc?key=0AjREKzGKF9TDdEd1MW9SR1pSeGdzbUk0RTZuV1Z2SVE&amp;usp=sharing">a supported device list</a>.</li>
+        <li>2013-02-28: A new test build of jb-x86is available for downloading.</li>
+        <li>2013-01-16: The jb-x86 source tree is ready for downloading.</li>
+        <li>2013-01-02: <a href="https://groups.google.com/d/msg/android-x86/-rjzvmc-W_E/naTs0wGAvHEJ">Android-x86 at Google code is unbanned</a>. Thanks to everyone who help this.</li>
+        <li>2013-01-01: <b>IMPORTANT!! Android-x86 was blocked by Google code</b></li>
+        <li>2012-12-25: Merry Christmas! The <a href="http://code.google.com/p/android-x86/downloads/detail?name=android-x86-4.2-20121225.iso&amp;can=2&amp;q=">first test release of jb-x86</a> is available for downloading.</li>
+        <li>2012-11-20: We begin the jb-x86 porting based on Android 4.2.</li>
+        <li>2012-07-15: Android-x86 4.0-RC2 is released.
+        </li>
+        <li>2012-07-11: Intel contributes x86 Dalvik JIT support to AOSP.</li>
+        <li>2012-06-26: Dalvik patch for arm translator from BuilDroid is merged.</li>
+        <li>2012-04-10: The ics-x86 branch is updated to Android 4.0.4.</li>
+        <li>2012-02-27: Android-x86 4.0-RC1 is released.
+        </li>
+        <li>2012-01-01: Test build 20120101 is released.
+        </li>
+        <li>2011-12-25: New testing ics-x86 isos supporting <a href="source.html">hybrid format</a> are available.
+        </li>
+        <li>2011-12-24: The git.android-x86.org is back and supports smart http transport.
+        </li>
+        <li>2011-12-20: The git.android-x86.org is down for maintenance. In the meantime please use the SourceForge mirror.
+        </li>
+        <li>2011-12-10: Display issue of Intel i915/i965 for ics-x86 is solved. <a href="https://www.fosshub.com/Android-x86.html">More ics-x86 images are available.</a></li>
+        <li>2011-12-01: The ics-x86 branch is ready for developers. <a href="https://www.fosshub.com/Android-x86.html">Download the testing iso for AMD tablet</a>...</li>
+        <li>2011-11-23: Android-x86 3.2-RC2 (honeycomb-x86) is released.</li>
+        <li>2011-10-31: New target amd_persimmon is added (contributed by AMD).</li>
+        <li>2011-10-30: The gingerbread-x86 branch is updated to Android 2.3.7.</li>
+        <li>2011-08-28: Android-x86 2.3 RC1 (Test build 20110828) is released. </li>
+        <li>2011-08-08: The gingerbread-x86 branch is updated to Android 2.3.5, hardware acceleration enabled for some targets.</li>
+        <li>2011-07-04: The ethernet support is added to gingerbread-x86 branch.</li>
+        <li>2011-06-28: Android-x86 2.2-r2 is released.</li>
+        <li>2011-05-10: The mouse patch is added to gingerbread-x86 branch.</li>
+        <li>2011-05-05: The gingerbread-x86 branch is updated to Android 2.3.4, API level 10.</li>
+        <li>2011-04-20: The gingerbread-x86 branch is updated to Android 2.3.3.</li>
+        <li>2011-04-08: The froyo-x86 branch is updated to Android 2.2.2 based.</li>
+        <li>2011-04-02: We have 4 million pageviews now, and around 242,275 pageviews&nbsp;come from android-x86 installed machines. Check out "<a href="http://blog.android-x86.org/2011/04/some-statistics-about-android-x86org.html" target="_blank">Some Statistics about Android-x86.org Project</a>"
+          for more details. </li>
+          <li>2011-04-02: AMD donates T56N/E1 development boards to Android-x86.org</li>
+          <li>2011-03-30: The build break in gingerbread-x86 branch has been fixed. The patch is in the download section.</li>
+          <li>2011-02-10: TegaTech donates three Tega v2 tablets to Android-x86.org</a>.</li>
+          <li>2011-01-26: <a href="source.html">Gingerbread-x86 branch</a> is ready to download.</li>
+          <li>2011-01-13:Android-x86 2.2</a> is released.</li>
+          <li>2011-01-01: Test build 20110101</a> is released. </li>
+          <li>2010-12-29: Add mesa i965c support and a new target asus_laptop. </li>
+          <li>2010-12-19: The installer supports read-write installation </li>
+          <li>2010-12-13: Froyo-x86 is ported to Dell Inspiron Mini Duo </li>
+          <li>2010-12-02: Mushishi (rudolff.vang@gmail.com) has helped to created a <a href="http://android-x86.moonman.dk">nightly build server</a> </li>
+          <li>2010-11-20: <a href="/documentation/sd_card.html">Sdcard HowTo</a> is updated for froyo-x86 </li>
+          <li>2010-11-19: Mplayer is added to Android-x86 repositories </li>
+          <li>2010-11-18: <a href="https://www.fosshub.com/Android-x86.html">IEEE paper: Virtual Smartphone over IP</a> using Android-x86 </li>
+          <li>2010-11-11: Two issues on rotated screen are fixed </li>
+          <li>2010-11-09: Froyo-x86 is ported to ViewSonic ViewPad 10 </li>
+          <li>2010-10-25: The app2sd issue is fixed </li>
+          <li>2010-10-21: 3D hardware acceleration for froyo-x86 is available for testing </li>
+          <li>2010-09-30: Froyo-x86 performance issue is solved (temporary) </li>
+          <li>2010-09-14: <a href="http://groups.google.com/group/android-x86/browse_thread/thread/ea5ed149e4680301#">Atom optimization</a> is added </li>
+          <li>2010-09-13: 3G USB dongle support is added to froyo-x86 branch </li>
+          <li>2010-09-06: Wifi support in froyo-x86 branch is ready </li>
+          <li>2010-08-23: Target 'eeepc' is available for froyo-x86 branch </li>
+          <li>2010-08-15: Android-x86 talks in <a href="http://coscup.org">COSCUP 2010</a> </li>
+          <li>2010-08-12: A testing build for virtual machine is released </li>
+          <li>2010-08-01: The branch 'froyo-x86' in <a href="http://android-x86.git.sourceforge.net/git/gitweb-index.cgi">SourceForge mirror</a> is ready to download </li>
+          <li>2010-07-12: New target 'vm' is added to froyo-x86 branch </li>
+          <li>2010-07-07: The branch 'froyo-x86' is ready to download </li>
+          <li>2010-06-30: Android 2.2 has been merged to Android-x86 git repo</li>
+          <li>2010-06-29: Android-x86 joins <a href="http://www.oesf.jp/en">OESF</a> as an open source partner</li>
+          <li>2010-06-24: Okwon(pinebud@gmail.com) has contributed <a href="http://www.android-x86.org/download">Viliv S5 port</a></li>
+          <li>2010-06-04: Android-x86 talks in <a href="http://www.oesf.jp/en">OESF</a> Android Steps Ahead 2010/Taipei</li>
+          <li>2010-04-23: Android-x86 talks in <a href="http://www.oesf.jp/en">OESF</a> Android Steps Ahead 2010/Tokyo</li>
+          <li>2010-04-18: 'eclair-x86' branch is updated</li>
+          <li>2010-03-19: Android-x86 1.6-r2 is released</a></li>
+          <li>2010-03-18: Busybox is added into android-x86 source tree</li>
+          <li>2010-03-15: 3G support has been added into dount branch</li>
+          <li>2010-03-10: LIME package is added into android-x86 source tree</li>
+          <li>2010-02-25: MirBSD Korn shell has been added to android-x86</li>
+          <li>2010-02-17: A page is created to track the hardware supports</li>
+          <li>2010-02-05: The crashes in Live wallpapers have been fixed</li>
+          <li>2010-02-02: Eclair 2.1 has been merged to branch eclair-x86</li>
+          <li>2010-01-27: The audio recording issue with camcorder has been fixed</li>
+          <li>2010-01-25: Merging to Eclair 2.1</li>
+          <li>2010-01-20: The camcorder crash has been fixed. You can shot your own video now.</li>
+          <li>2010-01-15: New test build 20100115 is released</li>
+          <li>2010-01-13: Fixed the touch screen issue with EeePC T91 and added user configurable calibration support.</li>
+          <li>2010-01-12: Fixed the Camera crash when taking a picture.</li>
+          <li>2010-01-06: Fixed the keyguard window to make it looks better. The resume/sleep hack is finally removed.</li>
+          <li>2009-12-18: Kernel 2.6.32 is supported</li>
+          <li>2009-12-15: Merged software keyboard support to Eclair</li>
+          <li>2009-12-13: Merged code changes from mid policy to phone policy</li>
+          <li>2009-12-12: switched to use phone policy in Eclair build. It gives us a lot new features.</li>
+          <li>2009-12-10: Wifi changes have been merged to Eclair.</li>
+          <li>2009-12-10: multi-platform support has been added.</li>
+          <li>2009-12-07: Mouse and Battery supports are merged to Eclair.</li>
+          <li>2009-12-06: Fixed framebuffer issue on Eclair, now, VESA and I915 work correctly.</li>
+          <li>2009-12-02: We have been able to boot up Eclair on VirtualBox, see the <a href="http://blog.android-x86.org/" rel="nofollow">android-x86 blog</a> for screenshots</li>
+          <li>2009-12-01: Samsung Q1U is officially supported</li>
+          <br>
+        </ul>
+
+
+        <div id="f-padding"></div>
+      </section>
+      <section class="bg">
+        <div class="bg"></div>
+        <div class="clearfix"></div>
+      </section>
+
+      <footer class="footer">
+        <div class="cap">
+
+          <a href="#" id="scroll-top" class="scroll-to-top">
             Back to top
-        </a>
-    </div>
-    <div class="footer-copyright">
-        <div class="navbar-link">
-              &copy; 2009-2019 Android x86 | <a class="navbar-link" id="easter" href="mailto:aryabhushan2003@gmail.com">@arya</a> & <a class="navbar-link" id="easter" href="mailto:adityasood22@gmail.com">@sood</a>
+          </a>
         </div>
+        <div class="footer-copyright">
+          <div class="navbar-link">
+            &copy; 2009-2019 Android x86 | <a class="navbar-link" id="easter" href="mailto:aryabhushan2003@gmail.com">@arya</a> & <a class="navbar-link" id="easter" href="mailto:adityasood22@gmail.com">@sood</a>
+          </div>
+        </div>
+      </footer>
     </div>
-</footer>
-</div>
 
-<!--JAVASCRIPT CODE-->
+    <!--JAVASCRIPT CODE-->
 
-<script src="https://code.jquery.com/jquery-2.1.1.min.js"></script>
-<script>
+    <script src="https://code.jquery.com/jquery-2.1.1.min.js"></script>
+    <script>
     $(".openNav").click(function() {
-        $("body").toggleClass("navOpen");
-        $("nav").toggleClass("open");
-        $(".wrapper").toggleClass("open");
-        $(this).toggleClass("open");
+      $("body").toggleClass("navOpen");
+      $("nav").toggleClass("open");
+      $(".wrapper").toggleClass("open");
+      $(this).toggleClass("open");
     });
-</script>
+    </script>
 
-</body>
+  </body>
 
-</html>
+  </html>

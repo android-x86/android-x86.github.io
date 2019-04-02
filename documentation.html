@@ -2,7 +2,9 @@
 <html>
     <head>
         <title>Android-x86 - Porting Android to x86</title>
-        <link rel="stylesheet" type="text/css" href="master.css">
+        <link rel="stylesheet" type="text/css" href="master.css" title="default">
+        <link rel="alternate stylesheet" type="text/css" href="dark.css" title="alternate">
+        <script type="text/javascript" src="styleswitcher.js"></script>
     	  <meta name="viewport" content="width=device-width, initial-scale=1.0">
         <link rel="icon" type="image/png" href="mobile.png">
 	</head>
@@ -53,7 +55,13 @@
                 <h1 class="top">Android x86</h1>
                 <h2 class="subheading">Run Android on your PC</h2>
 
-                <br><br><br>
+                <!--Style Switcher-->
+                <div class=themebtn>
+                <button class="button" onclick="setActiveStyleSheet('default'); return false;"><img src="light_theme.png" height="20px" width"20px" title='Toggle Theme'/> </button>
+                <button class="button" onclick="setActiveStyleSheet('alternate'); return false;" ><img src="dark_theme.png" height="20px" width"20px" title="Toggle Theme"/></button>
+              </div>
+
+                <br>
                 <h2 id="documentation">Documentation</h2>
           <div id="box1">
                   <div class="doc_link">
@@ -152,7 +160,7 @@
       $(this).toggleClass("open");
     });
     </script>
-  
+
     <script>
         $(".doc_link").click(function() {
           window.location = $(this).find("a").attr("href");

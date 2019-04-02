@@ -1,175 +1,183 @@
 <!DOCTYPE html>
 <html>
 
-    <head>
-        <title>Android-x86 - Porting Android to x86</title>
-        <link rel="stylesheet" type="text/css" href="master.css">
-        <link rel="icon" type="image/png" href="mobile.png">
-        <meta name="viewport" content="width=device-width, initial-scale=1.0">
-        <style>
-            .code-snippet {
-                margin-top: 16px!important;
-                margin-bottom: 16px!important;
-            }
-            .code-snippet {
-                width: auto;
-                background-color: #2b2b2b;
-                padding: 8px 12px;
-                border-left: 4px solid #14b9ff;
-                word-wrap: normal;
-                overflow: scroll;
-                white-space: nowrap;
-            }
+<head>
+  <title>Android-x86 - Porting Android to x86</title>
+  <link rel="stylesheet" type="text/css" href="master.css" title="default">
+  <link rel="alternate stylesheet" type="text/css" href="dark.css" title="alternate">
+  <script type="text/javascript" src="styleswitcher.js"></script>
+  <link rel="icon" type="image/png" href="mobile.png">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <style>
+  .code-snippet {
+    margin-top: 16px!important;
+    margin-bottom: 16px!important;
+  }
+  .code-snippet {
+    width: auto;
+    background-color: #2b2b2b;
+    padding: 8px 12px;
+    border-left: 4px solid #14b9ff;
+    word-wrap: normal;
+    overflow: auto;
+    white-space: nowrap;
+  }
 
-            .code-snippet {
-                font-family: Consolas,"courier new";
-                font-size: 16px;
-            }
+  .code-snippet {
+    font-family: Consolas,"courier new";
+    font-size: 16px;
+  }
 
-            .code-snippet-inv {
-                margin-top: 16px!important;
-                margin-bottom: 16px!important;
-            }
-            .code-snippet-inv {
-                width: auto;
-                background-color: #b0c9ff;
-                padding: 8px 12px;
-                border-left: 4px solid #000000;
-                word-wrap: normal;
-                overflow: scroll;
-                white-space: nowrap;
-            }
+  .code-snippet-inv {
+    margin-top: 16px!important;
+    margin-bottom: 16px!important;
+  }
+  .code-snippet-inv {
+    width: auto;
+    background-color: #b0c9ff;
+    padding: 8px 12px;
+    border-left: 4px solid #000000;
+    word-wrap: normal;
+    overflow: auto;
+    white-space: nowrap;
+  }
 
-            .code-snippet-inv {
-                font-family: Consolas,"courier new";
-                font-size: 16px;
-            }
-        </style>
+  .code-snippet-inv {
+    font-family: Consolas,"courier new";
+    font-size: 16px;
+  }
+  </style>
 
-    </head>
+</head>
 
-    <body>
-        <nav>
-            <ul>
-              <a class="active-navbar-link" href="index.html">
-                  <li>Home</li>
-              </a>
-              <a class="navbar-link" href="download.html">
-                  <li>Download</li>
-              </a>
-              <a class="navbar-link" href="credits.html">
-                  <li>Credits</li>
-              </a>
-              <a class="navbar-link" href="donate.html">
-                  <li>Donate</li>
-              </a>
-              <a class="navbar-link" href="source.html">
-                  <li>Get Source</li>
-              </a>
-              <a class="navbar-link" href="installhowto.html">
-                  <li>Installation</li>
-              </a>
-              <a class="navbar-link" href="screenshots.html">
-                  <li>Screenshots</li>
-              </a>
-              <a class="navbar-link" href="documentation.html">
-                  <li>Documentation</li>
-              </a>
-              <a class="navbar-link" href="releases.html">
-                  <li>Releases</li>
-              </a>
-              <a class="navbar-link" href="contact.html">
-                  <li>Contact Us</li>
-              </a>
-              <a class="navbar-link" href="changelog.html">
-                  <li>News</li>
-              </a>
-            </ul>
-        </nav>
-        <div class="openNav">
-            <div class="icon"></div>
+<body>
+  <nav>
+    <ul>
+      <a class="active-navbar-link" href="index.html">
+        <li>Home</li>
+      </a>
+      <a class="navbar-link" href="download.html">
+        <li>Download</li>
+      </a>
+      <a class="navbar-link" href="credits.html">
+        <li>Credits</li>
+      </a>
+      <a class="navbar-link" href="donate.html">
+        <li>Donate</li>
+      </a>
+      <a class="navbar-link" href="source.html">
+        <li>Get Source</li>
+      </a>
+      <a class="navbar-link" href="installhowto.html">
+        <li>Installation</li>
+      </a>
+      <a class="navbar-link" href="screenshots.html">
+        <li>Screenshots</li>
+      </a>
+      <a class="navbar-link" href="documentation.html">
+        <li>Documentation</li>
+      </a>
+      <a class="navbar-link" href="releases.html">
+        <li>Releases</li>
+      </a>
+      <a class="navbar-link" href="contact.html">
+        <li>Contact Us</li>
+      </a>
+      <a class="navbar-link" href="changelog.html">
+        <li>News</li>
+      </a>
+    </ul>
+  </nav>
+  <div class="openNav">
+    <div class="icon"></div>
+  </div>
+  <!--HTML of main page-->
+  <div class="wrapper">
+    <section>
+      <h1 id="top" class="heading">Android x86</h1>
+      <h2 class="subheading">Run Android on your PC</h2>
+      <br>
+
+      <!--Theme Switcher-->
+      <div class=themebtn>
+        <button class="button" onclick="setActiveStyleSheet('default'); return false;"><img src="light_theme.png" height="20px" width"20px" title='Toggle Theme'/> </button>
+        <button class="button" onclick="setActiveStyleSheet('alternate'); return false;" ><img src="dark_theme.png" height="20px" width"20px" title="Toggle Theme"/></button>
+      </div>
+
+      <h2>Google group (mailing list)</h2>
+      <span>To participate this project, send your test reports, patches or suggestions to the discussion group:</span>
+      <br>
+      <br>
+      <ul>
+        <li><a href="http://groups.google.com/group/android-x86">http://groups.google.com/group/android-x86</a></li>
+      </ul>
+      <br>
+
+      <p>Before sending technical problems to the mailing list, make sure you have read all related documents carefully, and did some study yourself (e.g., ask google). If you want to ask a troubleshooting issue, please provide enough information, including
+        what your target device is, what branches you tried, and debug messages like output of dmesg and logcat.</p>
+        <span><strong>Do not ask if we support your device or not.</strong> We usually don't have a chance to test it (unless you'd like to donate one). Just try it yourself. If it doesn't work well, let us know.</span>
+        <br>
+        <br>
+
+        <h2>Issues tracker</h2>
+        <span>Send bug reports or features request to the issues tracker</span>
+        <ul>
+          <li><a href="http://code.google.com/p/android-x86/issues/list">http://code.google.com/p/android-x86/issues/list</a></li>
+        </ul>
+        <br>
+        <br>
+        <h2>IRC channel</h2>
+        <span>To communicate with us real-time, joinn the irx channel #android-x86 at <a href="http://freenode.net/">irc.freenode..net</a></span>
+        <br>
+        <span>You need an iirc client, like irssi, a Linux text mode client. Here is a simple instruction:</span>
+        <br>
+        <div class="code-snippet"><span style="color:#d1d1d1">
+
+          $ mkdir android-x86<br>
+          $ cd android-x86<br>
+          $ repo init -u git://git.osdn.net/gitroot/android-x86/manifest -b $branch<br>
+          $ repo sync --no-tags --no-clone-bundle
+        </span></div>
+
+        <div class="code-snippet"><span style="color:#d1d1d1">$ irssi -c irc.freenode.net <br><br> /nick --your nickname--- <br> /john #android-x86</span></div>
+        <br>
+
+        <!-----END--->
+        <div id="f-padding"></div>
+      </section>
+      <section class="bg">
+        <div class="bg"></div>
+        <div class="clearfix"></div>
+      </section>
+
+      <footer class="footer">
+        <div class="cap">
+
+          <a href="#" id="scroll-top" class="scroll-to-top">
+            Back to top
+          </a>
         </div>
-        <!--HTML of main page-->
-        <div class="wrapper">
-            <section>
-                <h1 id="top" class="heading">Android x86</h1>
-                <h2 class="subheading">Run Android on your PC</h2>
-                <br>
-
-                <h2>Google group (mailing list)</h2>
-                <span>To participate this project, send your test reports, patches or suggestions to the discussion group:</span>
-                <br>
-                <br>
-                <ul>
-                    <li><a href="http://groups.google.com/group/android-x86">http://groups.google.com/group/android-x86</a></li>
-                </ul>
-                <br>
-
-                <p>Before sending technical problems to the mailing list, make sure you have read all related documents carefully, and did some study yourself (e.g., ask google). If you want to ask a troubleshooting issue, please provide enough information, including
-                    what your target device is, what branches you tried, and debug messages like output of dmesg and logcat.</p>
-                <span><strong>Do not ask if we support your device or not.</strong> We usually don't have a chance to test it (unless you'd like to donate one). Just try it yourself. If it doesn't work well, let us know.</span>
-                <br>
-                <br>
-
-                <h2>Issues tracker</h2>
-                <span>Send bug reports or features request to the issues tracker</span>
-                <ul>
-                    <li><a href="http://code.google.com/p/android-x86/issues/list">http://code.google.com/p/android-x86/issues/list</a></li>
-                </ul>
-                <br>
-                <br>
-                <h2>IRC channel</h2>
-                <span>To communicate with us real-time, joinn the irx channel #android-x86 at <a href="http://freenode.net/">irc.freenode..net</a></span>
-                <br>
-                <span>You need an iirc client, like irssi, a Linux text mode client. Here is a simple instruction:</span>
-                <br>
-                <div class="code-snippet"><span style="color:#d1d1d1">
-
-                    $ mkdir android-x86<br>
-                    $ cd android-x86<br>
-                    $ repo init -u git://git.osdn.net/gitroot/android-x86/manifest -b $branch<br>
-                    $ repo sync --no-tags --no-clone-bundle
-                    </span></div>
-
-                <div class="code-snippet"><span style="color:#d1d1d1">$ irssi -c irc.freenode.net <br><br> /nick --your nickname--- <br> /john #android-x86</span></div>
-                <br>
-
-                <!-----END--->
-                <div id="f-padding"></div>
-            </section>
-            <section class="bg">
-                <div class="bg"></div>
-                <div class="clearfix"></div>
-            </section>
-
-            <footer class="footer">
-                <div class="cap">
-
-                    <a href="#" id="scroll-top" class="scroll-to-top">
-                        Back to top
-                    </a>
-                </div>
-                <div class="footer-copyright">
-                    <div class="navbar-link">
-                        &copy; 2019 Android x86 | <a class="navbar-link" id="easter" href="mailto:aryabhushan2003@gmail.com">@arya</a> & <a class="navbar-link" id="easter" href="mailto:adityasood22@gmail.com">@sood</a>
-                    </div>
-                </div>
-            </footer>
+        <div class="footer-copyright">
+          <div class="navbar-link">
+            &copy; 2019 Android x86 | <a class="navbar-link" id="easter" href="mailto:aryabhushan2003@gmail.com">@arya</a> & <a class="navbar-link" id="easter" href="mailto:adityasood22@gmail.com">@sood</a>
+          </div>
         </div>
+      </footer>
+    </div>
 
-        <!--JAVASCRIPT CODE-->
+    <!--JAVASCRIPT CODE-->
 
-        <script src="https://code.jquery.com/jquery-2.1.1.min.js"></script>
-        <script>
-            $(".openNav").click(function() {
-                $("body").toggleClass("navOpen");
-                $("nav").toggleClass("open");
-                $(".wrapper").toggleClass("open");
-                $(this).toggleClass("open");
-            });
-        </script>
-      
+    <script src="https://code.jquery.com/jquery-2.1.1.min.js"></script>
+    <script>
+    $(".openNav").click(function() {
+      $("body").toggleClass("navOpen");
+      $("nav").toggleClass("open");
+      $(".wrapper").toggleClass("open");
+      $(this).toggleClass("open");
+    });
+    </script>
 
-    </body>
 
-</html>
+  </body>
+
+  </html>

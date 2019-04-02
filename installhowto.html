@@ -1,191 +1,200 @@
 <!DOCTYPE html>
 <html>
-    <head>
-        <title>Android-x86 - Porting Android to x86</title>
-        <link rel="stylesheet" type="text/css" href="master.css">
-        <meta name="viewport" content="width=device-width, initial-scale=1.0">
-        <link rel="icon" type="image/png" href="mobile.png">
-        <style>
-            .code-snippet {
-                margin-top: 16px!important;
-                margin-bottom: 16px!important;
-            }
-            .code-snippet {
-                width: auto;
-                background-color: #2b2b2b;
-                padding: 8px 12px;
-                border-left: 4px solid #14b9ff;
-                word-wrap: normal;
-                overflow: scroll;
-                white-space: nowrap;
-            }
+<head>
+  <title>Android-x86 - Porting Android to x86</title>
+  <link rel="stylesheet" type="text/css" href="master.css" title="default">
+  <link rel="alternate stylesheet" type="text/css" href="dark.css" title="alternate">
+  <script type="text/javascript" src="styleswitcher.js"></script>
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <link rel="icon" type="image/png" href="mobile.png">
+  <style>
+  .code-snippet {
+    margin-top: 16px!important;
+    margin-bottom: 16px!important;
+  }
+  .code-snippet {
+    width: auto;
+    background-color: #2b2b2b;
+    padding: 8px 12px;
+    border-left: 4px solid #14b9ff;
+    word-wrap: normal;
+    overflow: auto;
+    white-space: nowrap;
+  }
 
-            .code-snippet {
-                font-family: Consolas,"courier new";
-                font-size: 16px;
-            }
+  .code-snippet {
+    font-family: Consolas,"courier new";
+    font-size: 16px;
+  }
 
-            .code-snippet-inv {
-                margin-top: 16px!important;
-                margin-bottom: 16px!important;
-            }
-            .code-snippet-inv {
-                width: auto;
-                background-color: #b0c9ff;
-                padding: 8px 12px;
-                border-left: 4px solid #000000;
-                word-wrap: normal;
-                overflow: scroll;
-                white-space: nowrap;
-            }
+  .code-snippet-inv {
+    margin-top: 16px!important;
+    margin-bottom: 16px!important;
+  }
+  .code-snippet-inv {
+    width: auto;
+    background-color: #b0c9ff;
+    padding: 8px 12px;
+    border-left: 4px solid #000000;
+    word-wrap: normal;
+    overflow: auto;
+    white-space: nowrap;
+  }
 
-            .code-snippet-inv {
-                font-family: Consolas,"courier new";
-                font-size: 16px;
-            }
+  .code-snippet-inv {
+    font-family: Consolas,"courier new";
+    font-size: 16px;
+  }
 
 
 
-            *:before, *:after {
-                box-sizing: inherit;
-            }
-        </style>
+  *:before, *:after {
+    box-sizing: inherit;
+  }
+  </style>
 
-    </head>
-    <body>
-        <nav>
-            <ul>
-              <a class="active-navbar-link" href="index.html">
-                  <li>Home</li>
-              </a>
-              <a class="navbar-link" href="download.html">
-                  <li>Download</li>
-              </a>
-              <a class="navbar-link" href="credits.html">
-                  <li>Credits</li>
-              </a>
-              <a class="navbar-link" href="donate.html">
-                  <li>Donate</li>
-              </a>
-              <a class="navbar-link" href="source.html">
-                  <li>Get Source</li>
-              </a>
-              <a class="navbar-link" href="installhowto.html">
-                  <li>Installation</li>
-              </a>
-              <a class="navbar-link" href="screenshots.html">
-                  <li>Screenshots</li>
-              </a>
-              <a class="navbar-link" href="documentation.html">
-                  <li>Documentation</li>
-              </a>
-              <a class="navbar-link" href="releases.html">
-                  <li>Releases</li>
-              </a>
-              <a class="navbar-link" href="contact.html">
-                  <li>Contact Us</li>
-              </a>
-              <a class="navbar-link" href="changelog.html">
-                  <li>News</li>
-              </a>
-            </ul>
-        </nav>
-        <div class="openNav">
-            <div class="icon"></div>
-        </div>
-        <!--HTML of main page-->
-        <div class="wrapper">
-            <section>
-                <h1 id="top" class="heading">Android x86</h1>
+</head>
+<body>
+  <nav>
+    <ul>
+      <a class="active-navbar-link" href="index.html">
+        <li>Home</li>
+      </a>
+      <a class="navbar-link" href="download.html">
+        <li>Download</li>
+      </a>
+      <a class="navbar-link" href="credits.html">
+        <li>Credits</li>
+      </a>
+      <a class="navbar-link" href="donate.html">
+        <li>Donate</li>
+      </a>
+      <a class="navbar-link" href="source.html">
+        <li>Get Source</li>
+      </a>
+      <a class="navbar-link" href="installhowto.html">
+        <li>Installation</li>
+      </a>
+      <a class="navbar-link" href="screenshots.html">
+        <li>Screenshots</li>
+      </a>
+      <a class="navbar-link" href="documentation.html">
+        <li>Documentation</li>
+      </a>
+      <a class="navbar-link" href="releases.html">
+        <li>Releases</li>
+      </a>
+      <a class="navbar-link" href="contact.html">
+        <li>Contact Us</li>
+      </a>
+      <a class="navbar-link" href="changelog.html">
+        <li>News</li>
+      </a>
+    </ul>
+  </nav>
+  <div class="openNav">
+    <div class="icon"></div>
+  </div>
+  <!--HTML of main page-->
+  <div class="wrapper">
+    <section>
+      <h1 id="top" class="heading">Android x86</h1>
+      <h2 class="subheading">Run Android on your PC</h2>
 
-                <h2>Installation</h2>
-               <br>
-                <h2>Introduction</h2>
-                We have implemented an easy installer to install Android-x86 to a harddisk. The supported filesystems are
-                <ul>
-                    <li>ext3</li>
-                    <li>ext2</li>
-                    <li>ntfs</li>
-                    <li>fat32</li></ul>
-                <p>You can install Android-x86 to an NTFS filesystem to co-exist with Windows. See the <a href="#Advanced">Advanced Section</a> for more details.</p>
+      <!--Style Switcher-->
+      <div class=themebtn>
+        <button class="button" onclick="setActiveStyleSheet('default'); return false;"><img src="light_theme.png" height="20px" width"20px" title='Toggle Theme'/> </button>
+        <button class="button" onclick="setActiveStyleSheet('alternate'); return false;" ><img src="dark_theme.png" height="20px" width"20px" title="Toggle Theme"/></button>
+      </div>
 
-                <h2>Step by Step</h2>
-                <ul>
-                    <li>Burn the iso image to cdrom, or create a bootable USB disk (recommended). See the Advanced section for details.</li><br>
-                    <li>Boot from the Android-x86 installation CD/USB, choose the 'Install Android to harddisk' item, as show below</li><br>
-                    <li>After seconds of booting, you will see a partition selection dialog. You can choose an existing partition to install Android-x86, or you can create or modify partitions by choosing 'Create/Modify partitions'. Note you can install Android-x86 to an external disk like USB drive. If the target drive is not shown, try 'Detect devices'.</li><br>
-                    <li>Android-x86 can co-exist with other operating system or data in the chosen partition. If the partition is formatted, you may choose 'Do not format' to keep existing data. Otherwise, choose a filesystem type to format. Note the type you chosen must match the partition id, or the boot loader will fail to boot.</li><br>
-                    <li>Also note if you choose to format to fat32, you will see a warning that android cannot save data to fat32. You can still proceed to install, but the installed android system will work like a live cd system. That is, all data will lose after power off. Therefore we do not recommend to install Android-x86 to a fat32 partition.</li><br>
-                    <li>Next question is whether to install boot loader Grub. Usually you should answer yes, unless you want to install boot loader by hand yourself. Note the installer only creates boot items for Android-x86. If you hope to boot other operating systems, you need to add the item to /grub/menu.lst manually. See the Advanced section for how to do this.</li><br>
-                    <li>If you are lucky, the installation will begin, and you will see the progress bar.</li><br>
-                    <li>If you see this screen, the installation is complete. Congratulations! Now you can run Andrond-x86 directly, or you can reboot and run it.</li><br><br></ul>
+      <h2>Installation</h2>
+      <br>
+      <h2>Introduction</h2>
+      We have implemented an easy installer to install Android-x86 to a harddisk. The supported filesystems are
+      <ul>
+        <li>ext3</li>
+        <li>ext2</li>
+        <li>ntfs</li>
+        <li>fat32</li></ul>
+        <p>You can install Android-x86 to an NTFS filesystem to co-exist with Windows. See the <a href="#Advanced">Advanced Section</a> for more details.</p>
 
-                <h1 id="Advanced">Advanced</h1>
-                <h2>How to create  a bootable USB stick for Android-x86?</h2><br>
-                <ul>
-                    <li>Use the USB image
-                        Download the compressed USB image, uncompress and dump it to a USB stick. On a Linux host, you can use the command
-                        <!-----CODE BOX--->
-                        <div class="code-snippet"><span style="color:#d1d1d1"># zcat android-x86-1.6-r2_usb.img.gz | dd of=/dev/sdc
-                            </span></div>
-                        <br>where /dev/sdc is the device name of the target USB disk. However, some broken BIOS may fail to boot such a USB disk.</li>
-                    <li>Create a bootable USB stick by iso
-                        There are some open source tools that can convert an iso into a bootable USB disk, say</li></ul>
+        <h2>Step by Step</h2>
+        <ul>
+          <li>Burn the iso image to cdrom, or create a bootable USB disk (recommended). See the Advanced section for details.</li><br>
+          <li>Boot from the Android-x86 installation CD/USB, choose the 'Install Android to harddisk' item, as show below</li><br>
+          <li>After seconds of booting, you will see a partition selection dialog. You can choose an existing partition to install Android-x86, or you can create or modify partitions by choosing 'Create/Modify partitions'. Note you can install Android-x86 to an external disk like USB drive. If the target drive is not shown, try 'Detect devices'.</li><br>
+          <li>Android-x86 can co-exist with other operating system or data in the chosen partition. If the partition is formatted, you may choose 'Do not format' to keep existing data. Otherwise, choose a filesystem type to format. Note the type you chosen must match the partition id, or the boot loader will fail to boot.</li><br>
+          <li>Also note if you choose to format to fat32, you will see a warning that android cannot save data to fat32. You can still proceed to install, but the installed android system will work like a live cd system. That is, all data will lose after power off. Therefore we do not recommend to install Android-x86 to a fat32 partition.</li><br>
+          <li>Next question is whether to install boot loader Grub. Usually you should answer yes, unless you want to install boot loader by hand yourself. Note the installer only creates boot items for Android-x86. If you hope to boot other operating systems, you need to add the item to /grub/menu.lst manually. See the Advanced section for how to do this.</li><br>
+          <li>If you are lucky, the installation will begin, and you will see the progress bar.</li><br>
+          <li>If you see this screen, the installation is complete. Congratulations! Now you can run Andrond-x86 directly, or you can reboot and run it.</li><br><br></ul>
+
+          <h1 id="Advanced">Advanced</h1>
+          <h2>How to create  a bootable USB stick for Android-x86?</h2><br>
+          <ul>
+            <li>Use the USB image
+              Download the compressed USB image, uncompress and dump it to a USB stick. On a Linux host, you can use the command
+              <!-----CODE BOX--->
+              <div class="code-snippet"><span style="color:#d1d1d1"># zcat android-x86-1.6-r2_usb.img.gz | dd of=/dev/sdc
+              </span></div>
+              <br>where /dev/sdc is the device name of the target USB disk. However, some broken BIOS may fail to boot such a USB disk.</li>
+              <li>Create a bootable USB stick by iso
+                There are some open source tools that can convert an iso into a bootable USB disk, say</li></ul>
                 <ul><li><a href="http://www.linuxliveusb.com/">Linux Live USB Creator ( LiLi ) -- officially support Android-x86</a></li>
-                    <li><a href="http://unetbootin.sourceforge.net/">UNetbootin</a> -- see the <a href="http://www.youtube.com/v/HPYQEOUr9fE">demo video</a></li><br></ul>
-                <h2>Multi-Boot</h2>
-                <p>To boot other operating systems, you have to add items for them to /grub/menu.lst. For example, to boot Windows, add the following:</p>
-                <div class="code-snippet"><span style="color:#d1d1d1">title Windows<br>rootnoverify (hd0,0)<br>chainloader +1</span></div>
-                <p>This assumes the Windows is installed to the first partition of the first hard disk. Or you need to change rootnoverify to the appropriate value. See <a href="http://www.gnu.org/software/grub/manual/grub.html">Grub Manual</a> for details.</p>
-                <h3>Updated (2010)</h3>Since froyo-x86, if there is an NTFS partition in the installed disk, the installer will ask if you want to create a boot item for Windows, as show below.<br><br>
+                  <li><a href="http://unetbootin.sourceforge.net/">UNetbootin</a> -- see the <a href="http://www.youtube.com/v/HPYQEOUr9fE">demo video</a></li><br></ul>
+                  <h2>Multi-Boot</h2>
+                  <p>To boot other operating systems, you have to add items for them to /grub/menu.lst. For example, to boot Windows, add the following:</p>
+                  <div class="code-snippet"><span style="color:#d1d1d1">title Windows<br>rootnoverify (hd0,0)<br>chainloader +1</span></div>
+                  <p>This assumes the Windows is installed to the first partition of the first hard disk. Or you need to change rootnoverify to the appropriate value. See <a href="http://www.gnu.org/software/grub/manual/grub.html">Grub Manual</a> for details.</p>
+                  <h3>Updated (2010)</h3>Since froyo-x86, if there is an NTFS partition in the installed disk, the installer will ask if you want to create a boot item for Windows, as show below.<br><br>
 
-                <h1>Issues</h1>
-                <h3>VMware</h3>
-                <p>You have to change your virtual disk type to be IDE because the default type in VMware is SCSI, and Android-x86 kernel is not configured to support SCSI. You can follow these steps:<br>
-                </p>
-                <ul>
+                  <h1>Issues</h1>
+                  <h3>VMware</h3>
+                  <p>You have to change your virtual disk type to be IDE because the default type in VMware is SCSI, and Android-x86 kernel is not configured to support SCSI. You can follow these steps:<br>
+                  </p>
+                  <ul>
                     <li>Create a virtual machine.</li>
                     <li>Edit virtual machine settings after the virtual machine created.</li>
                     <li>Choose the hard disk and remove it.</li>
                     <li>Add a hard disk to create a new virtual disk, then you can choose IDE as your virtual disk type.</li>
                     <li>When finished, you can install android-x86 normally.</li>
-                </ul>
-                <br>
-                <!--End of Content-->
-                <div id="f-padding"></div>
-            </section>
-            <section class = "bg">
-                <div class="bg"></div>
-                <div class="clearfix"></div>
-            </section>
+                  </ul>
+                  <br>
+                  <!--End of Content-->
+                  <div id="f-padding"></div>
+                </section>
+                <section class = "bg">
+                  <div class="bg"></div>
+                  <div class="clearfix"></div>
+                </section>
 
-            <footer class="footer">
-                <div class="cap">
+                <footer class="footer">
+                  <div class="cap">
 
                     <a href="#" id="scroll-top" class="scroll-to-top">
-                        Back to top
+                      Back to top
                     </a>
-                </div>
-                <div class="footer-copyright">
+                  </div>
+                  <div class="footer-copyright">
                     <div class="navbar-link">
                       &copy; 2009-2019 Android x86 | <a class="navbar-link" id="easter" href="mailto:aryabhushan2003@gmail.com">@arya</a> & <a class="navbar-link" id="easter" href="mailto:adityasood22@gmail.com">@sood</a>
                     </div>
-                </div>
-            </footer>
-        </div>
+                  </div>
+                </footer>
+              </div>
 
-        <!--JAVASCRIPT CODE-->
+              <!--JAVASCRIPT CODE-->
 
-        <script src="https://code.jquery.com/jquery-2.1.1.min.js"></script>
-        <script>
-            $(".openNav").click(function() {
+              <script src="https://code.jquery.com/jquery-2.1.1.min.js"></script>
+              <script>
+              $(".openNav").click(function() {
                 $("body").toggleClass("navOpen");
                 $("nav").toggleClass("open");
                 $(".wrapper").toggleClass("open");
                 $(this).toggleClass("open");
-            });
-        </script>
-      
+              });
+              </script>
 
-    </body>
-</html>
+
+            </body>
+            </html>

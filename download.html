@@ -3,44 +3,46 @@
 
 <head>
   <title>Android-x86 - Porting Android to x86</title>
-  <link rel="stylesheet" type="text/css" href="master.css">
+  <link rel="stylesheet" type="text/css" href="master.css" title="default">
+  <link rel="alternate stylesheet" type="text/css" href="dark.css" title="alternate">
+  <script type="text/javascript" src="styleswitcher.js"></script>
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <link rel="icon" type="image/png" href="mobile.png">
-<style>
-            .code-snippet {
-              margin-top: 16px!important;
-              margin-bottom: 16px!important;
-            }
-            .code-snippet {
-              width: auto;
-              background-color: #2b2b2b;
-              padding: 8px 12px;
-              border-left: 4px solid #14b9ff;
-              word-wrap: break-word;
-            }
+  <link rel="icon" type="image/png" href="mobile.png">
+  <style>
+  .code-snippet {
+    margin-top: 16px!important;
+    margin-bottom: 16px!important;
+  }
+  .code-snippet {
+    width: auto;
+    background-color: #2b2b2b;
+    padding: 8px 12px;
+    border-left: 4px solid #14b9ff;
+    word-wrap: break-word;
+  }
 
-            .code-snippet {
-              font-family: Consolas,"courier new";
-              font-size: 16px;
-            }
+  .code-snippet {
+    font-family: Consolas,"courier new";
+    font-size: 16px;
+  }
 
-                  .code-snippet-inv {
-              margin-top: 16px!important;
-              margin-bottom: 16px!important;
-            }
-            .code-snippet-inv {
-              width: auto;
-              background-color: #b0c9ff;
-              padding: 8px 12px;
-              border-left: 4px solid #000000;
-              word-wrap: break-word;
-            }
+  .code-snippet-inv {
+    margin-top: 16px!important;
+    margin-bottom: 16px!important;
+  }
+  .code-snippet-inv {
+    width: auto;
+    background-color: #b0c9ff;
+    padding: 8px 12px;
+    border-left: 4px solid #000000;
+    word-wrap: break-word;
+  }
 
-            .code-snippet-inv {
-              font-family: Consolas,"courier new";
-              font-size: 16px;
-            }
-    </style>
+  .code-snippet-inv {
+    font-family: Consolas,"courier new";
+    font-size: 16px;
+  }
+  </style>
 
 </head>
 
@@ -48,37 +50,37 @@
   <nav>
     <ul>
       <a class="active-navbar-link" href="index.html">
-          <li>Home</li>
+        <li>Home</li>
       </a>
       <a class="navbar-link" href="download.html">
-          <li>Download</li>
+        <li>Download</li>
       </a>
       <a class="navbar-link" href="credits.html">
-          <li>Credits</li>
+        <li>Credits</li>
       </a>
       <a class="navbar-link" href="donate.html">
-          <li>Donate</li>
+        <li>Donate</li>
       </a>
       <a class="navbar-link" href="source.html">
-          <li>Get Source</li>
+        <li>Get Source</li>
       </a>
       <a class="navbar-link" href="installhowto.html">
-          <li>Installation</li>
+        <li>Installation</li>
       </a>
       <a class="navbar-link" href="screenshots.html">
-          <li>Screenshots</li>
+        <li>Screenshots</li>
       </a>
       <a class="navbar-link" href="documentation.html">
-          <li>Documentation</li>
+        <li>Documentation</li>
       </a>
       <a class="navbar-link" href="releases.html">
-          <li>Releases</li>
+        <li>Releases</li>
       </a>
       <a class="navbar-link" href="contact.html">
-          <li>Contact Us</li>
+        <li>Contact Us</li>
       </a>
       <a class="navbar-link" href="changelog.html">
-          <li>News</li>
+        <li>News</li>
       </a>
     </ul>
   </nav>
@@ -90,16 +92,24 @@
     <section>
       <h1 id="top" class="heading">Android x86</h1>
       <h2 class="subheading">Run Android on your PC</h2>
+
+
+      <!--Style Switcher-->
+      <div class=themebtn>
+        <button class="button" onclick="setActiveStyleSheet('default'); return false;"><img src="light_theme.png" height="20px" width"20px" title='Toggle Theme'/> </button>
+        <button class="button" onclick="setActiveStyleSheet('alternate'); return false;" ><img src="dark_theme.png" height="20px" width"20px" title="Toggle Theme"/></button>
+      </div>
+
       <br>
       <h2>Download</h2>
 
       <p>Choose your mirror :</p>
       <ul>
-        <li><br><a href="https://osdn.net/pkg/android-x86/Android-x86"><img src="OSDN_logo.png" width="350" height="125"></a></li>
-          <li><br><a href="https://www.fosshub.com/Android-x86.html"><img src="FOSSHUB_logo.png" width="350" height="120"></a></li>
-        </ul>
-        <br>
-        <br>
+        <li><br><a href="https://osdn.net/projects/android-x86/releases/p1499"><img src="OSDN_logo.png" width="350" height="125"></a></li>
+        <li><br><a href="download.html"><img src="FOSSHUB_logo.png" width="350" height="120"></a></li>
+      </ul>
+      <br>
+      <br>
       <!--End of Content-->
       <div id="f-padding"></div>
     </section>
@@ -112,12 +122,12 @@
       <div class="cap">
 
         <a href="#" id="scroll-top" class="scroll-to-top">
-                      Back to top
-                  </a>
+          Back to top
+        </a>
       </div>
       <div class="footer-copyright">
         <div class="navbar-link">
-        &copy; 2009-2019 Android x86 | <a class="navbar-link" id="easter" href="mailto:aryabhushan2003@gmail.com">@arya</a> & <a class="navbar-link" id="easter" href="mailto:adityasood22@gmail.com">@sood</a>
+          &copy; 2009-2019 Android x86 | <a class="navbar-link" id="easter" href="mailto:aryabhushan2003@gmail.com">@arya</a> & <a class="navbar-link" id="easter" href="mailto:adityasood22@gmail.com">@sood</a>
         </div>
       </div>
     </footer>
@@ -127,14 +137,14 @@
 
   <script src="https://code.jquery.com/jquery-2.1.1.min.js"></script>
   <script>
-    $(".openNav").click(function() {
-      $("body").toggleClass("navOpen");
-      $("nav").toggleClass("open");
-      $(".wrapper").toggleClass("open");
-      $(this).toggleClass("open");
-    });
+  $(".openNav").click(function() {
+    $("body").toggleClass("navOpen");
+    $("nav").toggleClass("open");
+    $(".wrapper").toggleClass("open");
+    $(this).toggleClass("open");
+  });
   </script>
-  
+
 
 </body>
 

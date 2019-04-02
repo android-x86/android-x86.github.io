@@ -1,186 +1,185 @@
 <!DOCTYPE html>
 <html>
-    <head>
-        <title>Android-x86 - Porting Android to x86</title>
-        <link rel="stylesheet" type="text/css" href="master.css">
-        <meta name="viewport" content="width=device-width, initial-scale=1.0">
-        <link rel="icon" type="image/png" href="mobile.png">
+<head>
+  <title>Android-x86 - Porting Android to x86</title>
+  <link rel="stylesheet" type="text/css" href="master.css" title="default">
+  <link rel="alternate stylesheet" type="text/css" href="dark.css" title="alternate">
+  <script type="text/javascript" src="styleswitcher.js"></script>
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <link rel="icon" type="image/png" href="mobile.png">
 
-    </head>
-    <body>
-        <nav>
+</head>
+<body>
+  <nav>
+    <ul>
+      <a class="active-navbar-link" href="/index.html">
+        <li>Home</li>
+      </a>
+      <a class="navbar-link" href="/download.html">
+        <li>Download</li>
+      </a>
+      <a class="navbar-link" href="/credits.html">
+        <li>Credits</li>
+      </a>
+      <a class="navbar-link" href="/donate.html">
+        <li>Donate</li>
+      </a>
+      <a class="navbar-link" href="/source.html">
+        <li>Get Source</li>
+      </a>
+      <a class="navbar-link" href="/installhowto.html">
+        <li>Installation</li>
+      </a>
+      <a class="navbar-link" href="/screenshots.html">
+        <li>Screenshots</li>
+      </a>
+      <a class="navbar-link" href="/documentation.html">
+        <li>Documentation</li>
+      </a>
+      <a class="navbar-link" href="/releases.html">
+        <li>Releases</li>
+      </a>
+      <a class="navbar-link" href="/contact.html">
+        <li>Contact Us</li>
+      </a>
+      <a class="navbar-link" href="/changelog.html">
+        <li>News</li>
+      </a>
+    </ul>
+  </nav>
+  <div class="openNav">
+    <div class="icon"></div>
+  </div>
+  <!--HTML of main page-->
+  <div class="wrapper">
+    <section>
+      <h1 id="top" class="heading">Android x86</h1>
+      <h2 class="subheading">Run Android on your PC</h2>
+
+      <!--Style Switcher-->
+      <div class=themebtn>
+        <button class="button" onclick="setActiveStyleSheet('default'); return false;"><img src="light_theme.png" height="20px" width"20px" title='Toggle Theme'/> </button>
+        <button class="button" onclick="setActiveStyleSheet('alternate'); return false;" ><img src="dark_theme.png" height="20px" width"20px" title="Toggle Theme"/></button>
+      </div>
+      <br>
+      <ul>
+        <!--OREO-->
+        <li><h3>Android-x86 Oreo 8.1</h3></li>
+        <ul>
+          <li class=""><div style="padding-left: 5px;"><a href="releases/releasenote-8-1-r1.html" >ReleaseNote 8.1-r1</a> </div></li>
+          <li class=""><div style="padding-left: 5px;"><a href="releases/releasenote-8-1-rc2.html" >ReleaseNote 8.1-rc2</a>
+          </div></li>
+          <li class=""><div style="padding-left: 5px;"><a href="releases/releasenote-8-1-rc1.html" >ReleaseNote 8.1-rc1</a>
+          </div></li>
+        </ul>
+        <!--LINEAGE OS 14.0-->
+        <li><h3>Android-x86 Lineage OS 14.0</h3>
+          <ul> <li class=""><div style="padding-left: 5px;"><a href="releases/releasenote-cm-x86-14-1-r1.html" >ReleaseNote CM-x86-14.1-r1</a>
+          </div></li>
+          <li class=""><div style="padding-left: 5px;"><a href="releases/releasenote-cm-x86-14-1-r2.html" >ReleaseNote CM-x86-14.1-r2</a>
+          </div></li>
+          <li class=""><div style="padding-left: 5px;"><a href="releases/releasenote-cm-x86-14-1-rc1.html"> ReleaseNote CM-x86-14.1-rc1</a>
+          </div></li></ul></li>
+
+          <!--NOUGAT-->
+          <li><h3>Android-x86 Nougat 7.1</h3>
             <ul>
-              <a class="active-navbar-link" href="index.html">
-                  <li>Home</li>
-              </a>
-              <a class="navbar-link" href="download.html">
-                  <li>Download</li>
-              </a>
-              <a class="navbar-link" href="credits.html">
-                  <li>Credits</li>
-              </a>
-              <a class="navbar-link" href="donate.html">
-                  <li>Donate</li>
-              </a>
-              <a class="navbar-link" href="source.html">
-                  <li>Get Source</li>
-              </a>
-              <a class="navbar-link" href="installhowto.html">
-                  <li>Installation</li>
-              </a>
-              <a class="navbar-link" href="screenshots.html">
-                  <li>Screenshots</li>
-              </a>
-              <a class="navbar-link" href="documentation.html">
-                  <li>Documentation</li>
-              </a>
-              <a class="navbar-link" href="releases.html">
-                  <li>Releases</li>
-              </a>
-              <a class="navbar-link" href="contact.html">
-                  <li>Contact Us</li>
-              </a>
-              <a class="navbar-link" href="changelog.html">
-                  <li>News</li>
-              </a>
+              <li class=""><div style="padding-left: 5px;"><a href="releases/releasenote-7-1-r1.html"> ReleaseNote 7.1-r1</a>
+              </div></li>
+              <li class=""><div style="padding-left: 5px;"><a href="releases/releasenote-7-1-r2.html"> ReleaseNote 7.1-r2</a>
+              </div></li>
+              <li class=""><div style="padding-left: 5px;"><a href="releases/releasenote-7-1-rc1.html"> ReleaseNote 7.1-rc1</a>
+              </div></li>
+              <li class=""><div style="padding-left: 5px;"><a href="releases/releasenote-7-1-rc2.html"> ReleaseNote 7.1-rc2</a>
+              </div></li>
             </ul>
-        </nav>
-        <div class="openNav">
-            <div class="icon"></div>
-        </div>
-        <!--HTML of main page-->
-        <div class="wrapper">
-            <section>
-                <h1 id="top" class="heading">Android x86</h1>
-                <h2 class="subheading">Run Android on your PC</h2><br>
+          </li>
+
+          <!--LINEAGE OS 13.0-->
+          <li><h3>Android-x86 Lineage OS 13.0</h3><ul>
+            <li class=""><div style="padding-left: 5px;"><a href="releases/releasenote-cm-x86-13-0-r1.html" >ReleaseNote CM-x86-13.0-r1</a>
+            </div></li>
+            <li class=""><div style="padding-left: 5px;"><a href="releases/releasenote-cm-x86-13-0-rc1.html" >ReleaseNote CM-x86-13.0-rc1</a>
+            </div></li>
+          </ul>
+
+          <!--MARSHMALLOW-->
+          <li><h3>Android-x86 Marshmallow 6.0</h3>
+            <ul>
+              <li class=""><div dir="ltr" style="padding-left: 5px;"><a href="releases/releasenote-6-0-r1.html" >ReleaseNote 6.0-r1</a>
+              </div></li>
+              <li class=""><div dir="ltr" style="padding-left: 5px;"><a href="releases/releasenote-6-0-r2.html" >ReleaseNote 6.0-r2</a>
+              </div></li>
+              <li class=""><div dir="ltr" style="padding-left: 5px;"><a href="releases/releasenote-6-0-r3.html" >ReleaseNote 6.0-r3</a>
+              </div></li>
+              <li class=""><div dir="ltr" style="padding-left: 5px;"><a href="releases/releasenote-6-0-rc1.html" >ReleaseNote 6.0-rc1</a>
+              </div></li>
+              <li class=""><div style="padding-left: 5px;"><a href="releases/releasenote-6-0-rc2.html"> ReleaseNote 6.0-rc2</a>
+              </div></li></ul>
+            </li>
+
+            <!--LOLLIPOP-->
+            <li><h3>Android-x86 Lollipop 5.1</h3>
+              <ul>
+                <li class=""><div dir="ltr" style="padding-left: 5px;"><a href="releases/releasenote-5-1-rc1.html">ReleaseNote 5.1-rc1</a>
+                </div></li></ul></li>
 
 
-                <ul>
-                    <!--OREO-->
-                    <li><h3>Android-x86 Oreo 8.1</h3></li>
-                    <ul>
-                        <li class=""><div style="padding-left: 5px;"><a href="releases/releasenote-8-1-r1.html" >ReleaseNote 8.1-r1</a> </div></li>
-                        <li class=""><div style="padding-left: 5px;"><a href="releases/releasenote-8-1-rc2.html" >ReleaseNote 8.1-rc2</a>
-                            </div></li>
-                        <li class=""><div style="padding-left: 5px;"><a href="releases/releasenote-8-1-rc1.html" >ReleaseNote 8.1-rc1</a>
-                            </div></li>
-                    </ul>
-                    <!--LINEAGE OS 14.0-->
-                    <li><h3>Android-x86 Lineage OS 14.0</h3>
-                        <ul> <li class=""><div style="padding-left: 5px;"><a href="releases/releasenote-cm-x86-14-1-r1.html" >ReleaseNote CM-x86-14.1-r1</a>
-                            </div></li>
-                            <li class=""><div style="padding-left: 5px;"><a href="releases/releasenote-cm-x86-14-1-r2.html" >ReleaseNote CM-x86-14.1-r2</a>
-                                </div></li>
-                            <li class=""><div style="padding-left: 5px;"><a href="releases/releasenote-cm-x86-14-1-rc1.html"> ReleaseNote CM-x86-14.1-rc1</a>
-                                </div></li></ul></li>
+                <!--KITKAT-->
+                <li><h3>Android-x86 KitKat 4.4 </h3><ul>
+                  <li class=""><div dir="ltr" style="padding-left: 5px;"><a href="releases/releasenote-4-4-r1.html" >ReleaseNote 4.4-r1</a>
+                  </div></li>
+                  <li class=""><div dir="ltr" style="padding-left: 5px;"><a href="releases/releasenote-4-4-r2.html" >ReleaseNote 4.4-r2</a>
+                  </div></li>
+                  <li class=""><div dir="ltr" style="padding-left: 5px;"><a href="releases/releasenote-4-4-r3.html" >ReleaseNote 4.4-r3</a>
+                  </div></li>
+                  <li class=""><div dir="ltr" style="padding-left: 5px;"><a href="releases/releasenote-4-4-r4.html">ReleaseNote 4.4-r4</a>
+                  </div></li>
+                  <li class=""><div dir="ltr" style="padding-left: 5px;"><a href="releases/releasenote-4-4-r5.html">ReleaseNote 4.4-r5</a>
+                  </div></li>
+                  <li class=""><div dir="ltr" style="padding-left: 5px;"><a href="releases/releasenote-4-4-rc1.html" >ReleaseNote 4.4-RC1</a>
+                  </div></li>
+                  <li class=""><div dir="ltr" style="padding-left: 5px;"><a href="releases/releasenote-4-4-rc2.html" >ReleaseNote 4.4-RC2</a>
+                  </div></li>
+                </ul>
+              </li>
+              <br>
 
-                    <!--NOUGAT-->
-                    <li><h3>Android-x86 Nougat 7.1</h3>
-                        <ul>
-                            <li class=""><div style="padding-left: 5px;"><a href="releases/releasenote-7-1-r1.html"> ReleaseNote 7.1-r1</a>
-                                </div></li>
-                            <li class=""><div style="padding-left: 5px;"><a href="releases/releasenote-7-1-r2.html"> ReleaseNote 7.1-r2</a>
-                                </div></li>
-                            <li class=""><div style="padding-left: 5px;"><a href="releases/releasenote-7-1-rc1.html"> ReleaseNote 7.1-rc1</a>
-                                </div></li>
-                            <li class=""><div style="padding-left: 5px;"><a href="releases/releasenote-7-1-rc2.html"> ReleaseNote 7.1-rc2</a>
-                                </div></li>
-                        </ul>
-                    </li>
+              <!--End of Content-->
+              <div id="f-padding"></div>
+            </section>
+            <section class = "bg">
+              <div class="bg"></div>
+              <div class="clearfix"></div>
+            </section>
 
-                    <!--LINEAGE OS 13.0-->
-                    <li><h3>Android-x86 Lineage OS 13.0</h3><ul>
-                        <li class=""><div style="padding-left: 5px;"><a href="releases/releasenote-cm-x86-13-0-r1.html" >ReleaseNote CM-x86-13.0-r1</a>
-                            </div></li>
-                        <li class=""><div style="padding-left: 5px;"><a href="releases/releasenote-cm-x86-13-0-rc1.html" >ReleaseNote CM-x86-13.0-rc1</a>
-                            </div></li>
-                        </ul>
+            <footer class="footer">
+              <div class="cap">
 
-                        <!--MARSHMALLOW-->
-                    <li><h3>Android-x86 Marshmallow 6.0</h3>
-                        <ul>
-                            <li class=""><div dir="ltr" style="padding-left: 5px;"><a href="releases/releasenote-6-0-r1.html" >ReleaseNote 6.0-r1</a>
-                                </div></li>
-                            <li class=""><div dir="ltr" style="padding-left: 5px;"><a href="releases/releasenote-6-0-r2.html" >ReleaseNote 6.0-r2</a>
-                                </div></li>
-                            <li class=""><div dir="ltr" style="padding-left: 5px;"><a href="releases/releasenote-6-0-r3.html" >ReleaseNote 6.0-r3</a>
-                                </div></li>
-                            <li class=""><div dir="ltr" style="padding-left: 5px;"><a href="releases/releasenote-6-0-rc1.html" >ReleaseNote 6.0-rc1</a>
-                                </div></li>
-                            <li class=""><div style="padding-left: 5px;"><a href="releases/releasenote-6-0-rc2.html"> ReleaseNote 6.0-rc2</a>
-                                </div></li></ul>
-                    </li>
-
-                    <!--LOLLIPOP-->
-                    <li><h3>Android-x86 Lollipop 5.1</h3>
-                        <ul>
-                            <li class=""><div dir="ltr" style="padding-left: 5px;"><a href="releases/releasenote-5-1-rc1.html">ReleaseNote 5.1-rc1</a>
-                                </div></li></ul></li>
-
-
-                    <!--KITKAT-->
-                    <li><h3>Android-x86 KitKat 4.4 </h3><ul>
-                        <li class=""><div dir="ltr" style="padding-left: 5px;"><a href="releases/releasenote-4-4-r1.html" >ReleaseNote 4.4-r1</a>
-                            </div></li>
-                        <li class=""><div dir="ltr" style="padding-left: 5px;"><a href="releases/releasenote-4-4-r2.html" >ReleaseNote 4.4-r2</a>
-                            </div></li>
-                        <li class=""><div dir="ltr" style="padding-left: 5px;"><a href="releases/releasenote-4-4-r3.html" >ReleaseNote 4.4-r3</a>
-                            </div></li>
-                        <li class=""><div dir="ltr" style="padding-left: 5px;"><a href="releases/releasenote-4-4-r4.html">ReleaseNote 4.4-r4</a>
-                            </div></li>
-                        <li class=""><div dir="ltr" style="padding-left: 5px;"><a href="releases/releasenote-4-4-r5.html">ReleaseNote 4.4-r5</a>
-                            </div></li>
-                        <li class=""><div dir="ltr" style="padding-left: 5px;"><a href="releases/releasenote-4-4-rc1.html" >ReleaseNote 4.4-RC1</a>
-                            </div></li>
-                        <li class=""><div dir="ltr" style="padding-left: 5px;"><a href="releases/releasenote-4-4-rc2.html" >ReleaseNote 4.4-RC2</a>
-                            </div></li>
-                        </ul>
-                    </li>
-
-
-
-
-
-
-                    <br>
-
-
-
-                    <!--End of Content-->
-                    <div id="f-padding"></div>
-                    </section>
-                <section class = "bg">
-                    <div class="bg"></div>
-                    <div class="clearfix"></div>
-                </section>
-
-                <footer class="footer">
-                    <div class="cap">
-
-                        <a href="#" id="scroll-top" class="scroll-to-top">
-                            Back to top
-                        </a>
-                    </div>
-                    <div class="footer-copyright">
-                        <div class="navbar-link">
-                          &copy; 2009-2019 Android x86 | <a class="navbar-link" id="easter" href="mailto:aryabhushan2003@gmail.com">@arya</a> & <a class="navbar-link" id="easter" href="mailto:adityasood22@gmail.com">@sood</a>
-                        </div>
-                    </div>
-                </footer>
+                <a href="#" id="scroll-top" class="scroll-to-top">
+                  Back to top
+                </a>
+              </div>
+              <div class="footer-copyright">
+                <div class="navbar-link">
+                  &copy; 2009-2019 Android x86 | <a class="navbar-link" id="easter" href="mailto:aryabhushan2003@gmail.com">@arya</a> & <a class="navbar-link" id="easter" href="mailto:adityasood22@gmail.com">@sood</a>
                 </div>
+              </div>
+            </footer>
+          </div>
 
-            <!--JAVASCRIPT CODE-->
+          <!--JAVASCRIPT CODE-->
 
-            <script src="https://code.jquery.com/jquery-2.1.1.min.js"></script>
-            <script>
-                $(".openNav").click(function() {
-                    $("body").toggleClass("navOpen");
-                    $("nav").toggleClass("open");
-                    $(".wrapper").toggleClass("open");
-                    $(this).toggleClass("open");
-                });
-            </script>
+          <script src="https://code.jquery.com/jquery-2.1.1.min.js"></script>
+          <script>
+          $(".openNav").click(function() {
+            $("body").toggleClass("navOpen");
+            $("nav").toggleClass("open");
+            $(".wrapper").toggleClass("open");
+            $(this).toggleClass("open");
+          });
+          </script>
 
 
-            </body>
+        </body>
         </html>

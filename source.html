@@ -1,316 +1,325 @@
 <!DOCTYPE html>
 <html>
-    <head>
-        <title>Android-x86 - Porting Android to x86</title>
-        <link rel="stylesheet" type="text/css" href="master.css">
-        <link rel="icon" type="image/png" href="mobile.png">
-        <meta name="viewport" content="width=device-width, initial-scale=1.0">
-        <style>
-            .code-snippet {
-                margin-top: 16px!important;
-                margin-bottom: 16px!important;
-            }
-            .code-snippet {
-                width: auto;
-                background-color: #2b2b2b;
-                padding: 8px 12px;
-                border-left: 4px solid #14b9ff;
-                word-wrap: normal;
-                overflow: scroll;
-                white-space: nowrap;
-            }
+<head>
+  <title>Android-x86 - Porting Android to x86</title>
+  <link rel="stylesheet" type="text/css" href="master.css" title="default">
+  <link rel="alternate stylesheet" type="text/css" href="dark.css" title="alternate">
+  <script type="text/javascript" src="styleswitcher.js"></script>
+  <link rel="icon" type="image/png" href="mobile.png">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <style>
+  .code-snippet {
+    margin-top: 16px!important;
+    margin-bottom: 16px!important;
+  }
+  .code-snippet {
+    width: auto;
+    background-color: #2b2b2b;
+    padding: 8px 12px;
+    border-left: 4px solid #14b9ff;
+    word-wrap: normal;
+    overflow: auto;
+    white-space: nowrap;
+  }
 
-            .code-snippet {
-                font-family: Consolas,"courier new";
-                font-size: 16px;
-            }
+  .code-snippet {
+    font-family: Consolas,"courier new";
+    font-size: 16px;
+  }
 
-            .code-snippet-inv {
-                margin-top: 16px!important;
-                margin-bottom: 16px!important;
-            }
-            .code-snippet-inv {
-                width: auto;
-                background-color: #b0c9ff;
-                padding: 8px 12px;
-                border-left: 4px solid #000000;
-                word-wrap: normal;
-                overflow: scroll;
-                white-space: nowrap;
-            }
+  .code-snippet-inv {
+    margin-top: 16px!important;
+    margin-bottom: 16px!important;
+  }
+  .code-snippet-inv {
+    width: auto;
+    background-color: #b0c9ff;
+    padding: 8px 12px;
+    border-left: 4px solid #000000;
+    word-wrap: normal;
+    overflow: auto;
+    white-space: nowrap;
+  }
 
-            .code-snippet-inv {
-                font-family: Consolas,"courier new";
-                font-size: 16px;
-            }
-        </style>
+  .code-snippet-inv {
+    font-family: Consolas,"courier new";
+    font-size: 16px;
+  }
+  </style>
 
-    </head>
-    <body>
-        <nav>
-            <ul>
-              <a class="active-navbar-link" href="index.html">
-                  <li>Home</li>
-              </a>
-              <a class="navbar-link" href="download.html">
-                  <li>Download</li>
-              </a>
-              <a class="navbar-link" href="credits.html">
-                  <li>Credits</li>
-              </a>
-              <a class="navbar-link" href="donate.html">
-                  <li>Donate</li>
-              </a>
-              <a class="navbar-link" href="source.html">
-                  <li>Get Source</li>
-              </a>
-              <a class="navbar-link" href="installhowto.html">
-                  <li>Installation</li>
-              </a>
-              <a class="navbar-link" href="screenshots.html">
-                  <li>Screenshots</li>
-              </a>
-              <a class="navbar-link" href="documentation.html">
-                  <li>Documentation</li>
-              </a>
-              <a class="navbar-link" href="releases.html">
-                  <li>Releases</li>
-              </a>
-              <a class="navbar-link" href="contact.html">
-                  <li>Contact Us</li>
-              </a>
-              <a class="navbar-link" href="changelog.html">
-                  <li>News</li>
-              </a>
+</head>
+<body>
+  <nav>
+    <ul>
+      <a class="active-navbar-link" href="index.html">
+        <li>Home</li>
+      </a>
+      <a class="navbar-link" href="download.html">
+        <li>Download</li>
+      </a>
+      <a class="navbar-link" href="credits.html">
+        <li>Credits</li>
+      </a>
+      <a class="navbar-link" href="donate.html">
+        <li>Donate</li>
+      </a>
+      <a class="navbar-link" href="source.html">
+        <li>Get Source</li>
+      </a>
+      <a class="navbar-link" href="installhowto.html">
+        <li>Installation</li>
+      </a>
+      <a class="navbar-link" href="screenshots.html">
+        <li>Screenshots</li>
+      </a>
+      <a class="navbar-link" href="documentation.html">
+        <li>Documentation</li>
+      </a>
+      <a class="navbar-link" href="releases.html">
+        <li>Releases</li>
+      </a>
+      <a class="navbar-link" href="contact.html">
+        <li>Contact Us</li>
+      </a>
+      <a class="navbar-link" href="changelog.html">
+        <li>News</li>
+      </a>
+    </ul>
+  </nav>
+  <div class="openNav">
+    <div class="icon"></div>
+  </div>
+  <!--HTML of main page-->
+  <div class="wrapper">
+    <section>
+      <h1 id="top" class="heading">Android x86</h1>
+      <h2 class="subheading">Run Android on your PC</h2>
+
+      <!--Style Switcher-->
+      <div class=themebtn>
+        <button class="button" onclick="setActiveStyleSheet('default'); return false;"><img src="light_theme.png" height="20px" width"20px" title='Toggle Theme'/> </button>
+        <button class="button" onclick="setActiveStyleSheet('alternate'); return false;" ><img src="dark_theme.png" height="20px" width"20px" title="Toggle Theme"/></button>
+      </div>
+
+
+      <p>This page has (hopefully) the latest information about how to build Android for x86 platform like Eee PC. The built images run well on a real hardware as well as virtual machines (like qemu or virtual box).
+        <br>Now it is very easy easy to compile Android for x86 platform from our git repositories. You need not to apply any patch. Just follow the below instructions.
+      </p>
+      <h2><b>The branches in Android-x86 tree</b></h2>
+      <p>Since <a href="source.android.com">AOSP</a> evolves very quickly, we have created different branches corresponding to different releases of AOSP</p>
+      <ul>
+        <li>oreo-x86
+          <br>Based on Android 8.0 release (Oreo)
+        </li>
+        <li>nougat-x86
+          <br>Based on Android 7.1 release (Nougat-MR2)
+        </li>
+        <li>marshmallow-x86
+          <br>Based on Android 6.0 release (Marshmallow)
+        </li>
+        <li>lollipop-x86
+          <br>Based on Android 5.1 release (Lollipop)
+        </li>
+        <li>kitkat-x86
+          <br>Based on Android 4.4 release (KitKat)
+        </li>
+        <li>jb-x86
+          <br>Based on Android 4.3 release (Jelly Bean)
+        </li>
+        <li>ics-x86
+          <br>Based on Android 4.0 release (Ice Cream Sandwich)
+        </li>
+        <li>honeycomb-x86
+          <br>Based on Android 3.2 release (Honeycomb)
+        </li>
+        <li>gingerbread-x86
+          <br>Based on Android 2.3 release (Gingerbread)
+        </li>
+        <li>froyo-x86
+          <br>Based on Android 2.2 release (Froyo)
+        </li>
+        <li>eclair-x86
+          <br>Based on Android 2.1 release (Eclair)
+        </li>
+        <li>donut-x86
+          <br>Based on Android 1.6 release (Donut)
+        </li>
+        <li>cupcake-x86 (aka android-x86-b0.9)
+          <br>Based on Android 1.5 release (Cupcake)
+        </li>
+      </ul>
+      <br><br>
+      <h2><b>Getting Android-x86 source code</b></h2>
+      <p>Fistly, follow the AOSP page <a href="http://source.android.com/source/initializing.html">"Establishing a Build Environment"</a> to configure your build environment. Then,</p>
+
+      <div class="code-snippet"><span style="color:#d1d1d1">
+
+        &dollar; mkdir android-x86<br>
+        &dollar; cd android-x86<br>
+        &dollar; repo init -u git://git.osdn.net/gitroot/android-x86/manifest -b &dollar;branch<br>
+        &dollar; repo sync --no-tags --no-clone-bundle
+      </span></div>
+      <p>Where $branch is any branch name described in the previous section. This will point the projects created or modified by android-x86 to our git server. All the other projects still point to <a href="https://android.googlesource.com/">AOSP</a>.
+        <br><br>If you have issues to sync from the git protocol, try the alternative http one
+      </p>
+
+      <div class="code-snippet"><span style="color:#d1d1d1">
+
+        &dollar; repo init -u http://scm.osdn.net/gitroot/android-x86/manifest -b &dollar;branch<br>
+        &dollar; repo sync --no-tags --no-clone-bundle
+
+      </span></div>
+      <p>If you hope to keep syncing your tree with Android-x86 repository, just do repo sync. No need to do repo init again. However, sometimes you may see conflicts during repo sync. See the section "How to Solve Conflicts" for how to solve this situation.
+        <br><br>Note: The Android-x86 repository is very big (about > 10GB). If you encounter problems of sync it, it's likely a network problem or our server is too busy. Repeatedly run 'repo sync' until it succeeds without any error. Do not bother us with any of the syncing problem.</p>
+
+        <h2><b>Building the Image</b></h2>
+        <p>Once the repo sync is complete, you can build a cdrom iso image. You need Oracle java 1.6 (OpenJDK may not work) to build branches before (includes) kitkat-x86. <b>Since lollipop-x86, java 1.7 is required</b> and OpenJDK is supported. Since <b>nougat-x86, OpenJDK 1.8 is required</b>.<br><br>
+          <b>Note:</b> Before froyo-x86 (included), you can build on either a 32-bit or 64-bit host. Since gingerbread-x86, a 64-bit build environment is recommended.</p>
+
+          <h2><b>Choose a target</b></h2>
+          <p>You need to choose a target for the x86 device you want to use/test. We provides several targets for different branches:</p>
+          <ul>
+            <li><h4>oreo-x86 / nougat-x86 / marshmallow-x86 / lollipop-x86</h4></li>
+            <ul style="list-style-type: none;">
+              <li>&nbsp;&nbsp;&nbsp;&nbsp;android_x86: for 32-bit x86 platform</li>
+              <li>&nbsp;&nbsp;&nbsp;&nbsp;android_x86_64: for 64-bit x86_64 platform</li>
             </ul>
-        </nav>
-        <div class="openNav">
-            <div class="icon"></div>
-        </div>
-        <!--HTML of main page-->
-        <div class="wrapper">
-            <section>
-                <h1 id="top" class="heading">Android x86</h1>
-                <h2 class="subheading">Run Android on your PC</h2>
+            <br><li><h4>kitkat-x86 / jb-x86</h4></li>
+            <ul style="list-style-type: none;">
+              <li>&nbsp;&nbsp;&nbsp;&nbsp;android_x86: for x86 platform</li>
+            </ul>
+            <br><li><h4>ics-x86 / honeycomb-x86</h4></li>
+            <ul style="list-style-type: none;">
+              <li>&nbsp;&nbsp;&nbsp;&nbsp;generic_x86: for generic x86 PC/notebook</li>
+              <li>&nbsp;&nbsp;&nbsp;&nbsp;amd_brazos: for AMD Brazos platform</li>
+              <li>&nbsp;&nbsp;&nbsp;&nbsp;eeepc: for ASUS EeePC family only</li>
+              <li>&nbsp;&nbsp;&nbsp;&nbsp;asus_laptop: for some ASUS laptops</li>
+              <li>&nbsp;&nbsp;&nbsp;&nbsp;tegav2: for Tegatech Tegav2 (may work with other Atom N45x based tablets)</li>
+            </ul>
+            <br><li><h4>gingerbread-x86 / froyo-x86</h4></li>
+            <ul style="list-style-type: none;">
+              <li>&nbsp;&nbsp;&nbsp;&nbsp;generic_x86: for generic x86 PC/notebook</li>
+              <li>&nbsp;&nbsp;&nbsp;&nbsp;eeepc: for ASUS EeePC family only</li>
+              <li>&nbsp;&nbsp;&nbsp;&nbsp;asus_laptop: for some ASUS laptops</li>
+              <li>&nbsp;&nbsp;&nbsp;&nbsp;tegav2: for Tegatech Tegav2 (may work with other Atom N45x based tablets)</li>
+              <li>&nbsp;&nbsp;&nbsp;&nbsp;sparta: for Dell Inspiron Mini Duo platform</li>
+              <li>&nbsp;&nbsp;&nbsp;&nbsp;vm: for virtual machine (virtual box, qemu, vmware)</li>
+              <li>&nbsp;&nbsp;&nbsp;&nbsp;motion_m1400: for Motion M1400 (Intel Centrino M based with Intel PRO/Wireless)</li>
+            </ul>
+            <br><li><h4>eclair-x86</h4></li>
+            <ul style="list-style-type: none;">
+              <li>&nbsp;&nbsp;&nbsp;&nbsp;android_x86: for 32-bit x86 platform</li>
+              <li>&nbsp;&nbsp;&nbsp;&nbsp;eeepc: for ASUS EeePC family only</li>
+              <li>&nbsp;&nbsp;&nbsp;&nbsp;q1u: for Samsung Q1U</li>
+              <li>&nbsp;&nbsp;&nbsp;&nbsp;s5: for Viliv S5</li>
+            </ul>
+            <br><li><h4>donut-x86</h4></li>
+            <ul style="list-style-type: none;">
+              <li>&nbsp;&nbsp;&nbsp;&nbsp;eeepc: for ASUS EeePC family only</li>
+              <li>&nbsp;&nbsp;&nbsp;&nbsp;q1u: for Samsung Q1U</li>
+              <li>&nbsp;&nbsp;&nbsp;&nbsp;s5: for Viliv S5</li>
+            </ul>
+          </ul>
+          <br><br>
+          <p>Actually, for historical reason, you have to use <i>eeepc</i> for a generic x86 PC, notebook or netbook before (includes) donut-x86 branch. Since eclair-x86 branch, <i>eeepc</i> is changed to serve ASUS EeePC family only. Do not use it if you are not using an EeePC.
+            <br><br>In short, if you don't know how to choose, use <i>eeepc</i> for donut-x86 branch, and use <i>generic_x86</i> for eclair-x86 to ics-x86 branches. But note <i>generic_x86</i> is just a base for other targets. It doesn't have some advanced features like hardware acceleration.
+            <br><br>Since jb-x86 we tried to use <i>android_x86</i> as a universal target for all x86 devices. However, it may not optimized for a particular target device. If you are a developer, you can create a target based on android_x86 for your device.
+            <br><br>If you want to add new target for your x86 device, refer to <a href="http://www.android-x86.org/documents/how-to-add-new-x86-platforms">this article</a>.</p>
 
-                <p>This page has (hopefully) the latest information about how to build Android for x86 platform like Eee PC. The built images run well on a real hardware as well as virtual machines (like qemu or virtual box).
-                    <br>Now it is very easy easy to compile Android for x86 platform from our git repositories. You need not to apply any patch. Just follow the below instructions.
-                </p>
-                <h2><b>The branches in Android-x86 tree</b></h2>
-                <p>Since <a href="source.android.com">AOSP</a> evolves very quickly, we have created different branches corresponding to different releases of AOSP</p>
-                <ul>
-                    <li>oreo-x86
-                        <br>Based on Android 8.0 release (Oreo)
-                    </li>
-                    <li>nougat-x86
-                        <br>Based on Android 7.1 release (Nougat-MR2)
-                    </li>
-                    <li>marshmallow-x86
-                        <br>Based on Android 6.0 release (Marshmallow)
-                    </li>
-                    <li>lollipop-x86
-                        <br>Based on Android 5.1 release (Lollipop)
-                    </li>
-                    <li>kitkat-x86
-                        <br>Based on Android 4.4 release (KitKat)
-                    </li>
-                    <li>jb-x86
-                        <br>Based on Android 4.3 release (Jelly Bean)
-                    </li>
-                    <li>ics-x86
-                        <br>Based on Android 4.0 release (Ice Cream Sandwich)
-                    </li>
-                    <li>honeycomb-x86
-                        <br>Based on Android 3.2 release (Honeycomb)
-                    </li>
-                    <li>gingerbread-x86
-                        <br>Based on Android 2.3 release (Gingerbread)
-                    </li>
-                    <li>froyo-x86
-                        <br>Based on Android 2.2 release (Froyo)
-                    </li>
-                    <li>eclair-x86
-                        <br>Based on Android 2.1 release (Eclair)
-                    </li>
-                    <li>donut-x86
-                        <br>Based on Android 1.6 release (Donut)
-                    </li>
-                    <li>cupcake-x86 (aka android-x86-b0.9)
-                        <br>Based on Android 1.5 release (Cupcake)
-                    </li>
-                </ul>
-                <br><br>
-                <h2><b>Getting Android-x86 source code</b></h2>
-                <p>Fistly, follow the AOSP page <a href="http://source.android.com/source/initializing.html">"Establishing a Build Environment"</a> to configure your build environment. Then,</p>
+            <br><br>
+            <h2><b>Using lunch commnd (recommended)</b></h2>
+            <p>You can source the file <i>build/envsetup.sh</i> into your bash environment to get some shell functions to help the building:</p>
 
+            <div class="code-snippet"><span style="color:#d1d1d1">
+
+              &dollar; . build/envsetup.sh
+            </span></div>
+            <p>Now you can select a target by lunch command:</p>
+            <div class="code-snippet"><span style="color:#d1d1d1">
+
+              &dollar; lunch $TARGET_PRODUCT-$TARGET_BUILD_VARIANT
+            </span></div>
+            <p>where &dollar;TARGET_PRODUCT is any target described in the previous section, and possible values of &dollar;TARGET_BUILD_VARIANT are eng, user, userdebug. For example,</p>
+
+            <div class="code-snippet"><span style="color:#d1d1d1">
+              &dollar; lunch android_x86-userdebug
+            </span></div>
+            <p>Then you can build by m command:</p>
+
+            <div class="code-snippet"><span style="color:#d1d1d1">
+              &dollar; m -jX iso_img
+            </span></div>
+            <p>m command is equivalent to make, but you can use it in any subdirectory of the android-x86 tree.<br>
+              <br>Since froyo-x86, we also add menu selection to lunch command. Just type lunch, and you will get a list of available targets. Choose a target by inputting its number. Alternatively, just type lunch $number.</p>
+              <br><br><h2><b>Building directly</b></h2>
+              <p>To build a live cdrom iso image for target android_x86, type:</p>
+              <div class="code-snippet"><span style="color:#d1d1d1">
+
+                &dollar; make iso_img TARGET_PRODUCT=android_x86
+              </span></div>
+              <p>To generate a live cdrom iso for tegav2, type</p>
+              <div class="code-snippet"><span style="color:#d1d1d1">
+
+                &dollar; make iso_img TARGET_PRODUCT=tegav2
+              </span></div>
+              <p>Then you will get an iso file out/target/product/x86/android_x86.iso, etc.<br>
+                If the computer you build on has more then one processor or core, you can take advantage of multiprocessing (or make jobs) by adding -jX to the beginning of your make command:</p>
                 <div class="code-snippet"><span style="color:#d1d1d1">
 
-                    &dollar; mkdir android-x86<br>
-                    &dollar; cd android-x86<br>
-                    &dollar; repo init -u git://git.osdn.net/gitroot/android-x86/manifest -b &dollar;branch<br>
-                    &dollar; repo sync --no-tags --no-clone-bundle
-                    </span></div>
-                <p>Where $branch is any branch name described in the previous section. This will point the projects created or modified by android-x86 to our git server. All the other projects still point to <a href="https://android.googlesource.com/">AOSP</a>.
-                    <br><br>If you have issues to sync from the git protocol, try the alternative http one
-                </p>
-
-                <div class="code-snippet"><span style="color:#d1d1d1">
-
-                    &dollar; repo init -u http://scm.osdn.net/gitroot/android-x86/manifest -b &dollar;branch<br>
-                    &dollar; repo sync --no-tags --no-clone-bundle
-
-                    </span></div>
-                <p>If you hope to keep syncing your tree with Android-x86 repository, just do repo sync. No need to do repo init again. However, sometimes you may see conflicts during repo sync. See the section "How to Solve Conflicts" for how to solve this situation.
-                    <br><br>Note: The Android-x86 repository is very big (about > 10GB). If you encounter problems of sync it, it's likely a network problem or our server is too busy. Repeatedly run 'repo sync' until it succeeds without any error. Do not bother us with any of the syncing problem.</p>
-
-                <h2><b>Building the Image</b></h2>
-                <p>Once the repo sync is complete, you can build a cdrom iso image. You need Oracle java 1.6 (OpenJDK may not work) to build branches before (includes) kitkat-x86. <b>Since lollipop-x86, java 1.7 is required</b> and OpenJDK is supported. Since <b>nougat-x86, OpenJDK 1.8 is required</b>.<br><br>
-                    <b>Note:</b> Before froyo-x86 (included), you can build on either a 32-bit or 64-bit host. Since gingerbread-x86, a 64-bit build environment is recommended.</p>
-
-                <h2><b>Choose a target</b></h2>
-                <p>You need to choose a target for the x86 device you want to use/test. We provides several targets for different branches:</p>
-                <ul>
-                    <li><h4>oreo-x86 / nougat-x86 / marshmallow-x86 / lollipop-x86</h4></li>
-                    <ul style="list-style-type: none;">
-                        <li>&nbsp;&nbsp;&nbsp;&nbsp;android_x86: for 32-bit x86 platform</li>
-                        <li>&nbsp;&nbsp;&nbsp;&nbsp;android_x86_64: for 64-bit x86_64 platform</li>
-                    </ul>
-                    <br><li><h4>kitkat-x86 / jb-x86</h4></li>
-                    <ul style="list-style-type: none;">
-                        <li>&nbsp;&nbsp;&nbsp;&nbsp;android_x86: for x86 platform</li>
-                    </ul>
-                    <br><li><h4>ics-x86 / honeycomb-x86</h4></li>
-                    <ul style="list-style-type: none;">
-                        <li>&nbsp;&nbsp;&nbsp;&nbsp;generic_x86: for generic x86 PC/notebook</li>
-                        <li>&nbsp;&nbsp;&nbsp;&nbsp;amd_brazos: for AMD Brazos platform</li>
-                        <li>&nbsp;&nbsp;&nbsp;&nbsp;eeepc: for ASUS EeePC family only</li>
-                        <li>&nbsp;&nbsp;&nbsp;&nbsp;asus_laptop: for some ASUS laptops</li>
-                        <li>&nbsp;&nbsp;&nbsp;&nbsp;tegav2: for Tegatech Tegav2 (may work with other Atom N45x based tablets)</li>
-                    </ul>
-                    <br><li><h4>gingerbread-x86 / froyo-x86</h4></li>
-                    <ul style="list-style-type: none;">
-                        <li>&nbsp;&nbsp;&nbsp;&nbsp;generic_x86: for generic x86 PC/notebook</li>
-                        <li>&nbsp;&nbsp;&nbsp;&nbsp;eeepc: for ASUS EeePC family only</li>
-                        <li>&nbsp;&nbsp;&nbsp;&nbsp;asus_laptop: for some ASUS laptops</li>
-                        <li>&nbsp;&nbsp;&nbsp;&nbsp;tegav2: for Tegatech Tegav2 (may work with other Atom N45x based tablets)</li>
-                        <li>&nbsp;&nbsp;&nbsp;&nbsp;sparta: for Dell Inspiron Mini Duo platform</li>
-                        <li>&nbsp;&nbsp;&nbsp;&nbsp;vm: for virtual machine (virtual box, qemu, vmware)</li>
-                        <li>&nbsp;&nbsp;&nbsp;&nbsp;motion_m1400: for Motion M1400 (Intel Centrino M based with Intel PRO/Wireless)</li>
-                    </ul>
-                    <br><li><h4>eclair-x86</h4></li>
-                    <ul style="list-style-type: none;">
-                        <li>&nbsp;&nbsp;&nbsp;&nbsp;android_x86: for 32-bit x86 platform</li>
-                        <li>&nbsp;&nbsp;&nbsp;&nbsp;eeepc: for ASUS EeePC family only</li>
-                        <li>&nbsp;&nbsp;&nbsp;&nbsp;q1u: for Samsung Q1U</li>
-                        <li>&nbsp;&nbsp;&nbsp;&nbsp;s5: for Viliv S5</li>
-                    </ul>
-                    <br><li><h4>donut-x86</h4></li>
-                    <ul style="list-style-type: none;">
-                        <li>&nbsp;&nbsp;&nbsp;&nbsp;eeepc: for ASUS EeePC family only</li>
-                        <li>&nbsp;&nbsp;&nbsp;&nbsp;q1u: for Samsung Q1U</li>
-                        <li>&nbsp;&nbsp;&nbsp;&nbsp;s5: for Viliv S5</li>
-                    </ul>
-                </ul>
-                <br><br>
-                <p>Actually, for historical reason, you have to use <i>eeepc</i> for a generic x86 PC, notebook or netbook before (includes) donut-x86 branch. Since eclair-x86 branch, <i>eeepc</i> is changed to serve ASUS EeePC family only. Do not use it if you are not using an EeePC.
-                    <br><br>In short, if you don't know how to choose, use <i>eeepc</i> for donut-x86 branch, and use <i>generic_x86</i> for eclair-x86 to ics-x86 branches. But note <i>generic_x86</i> is just a base for other targets. It doesn't have some advanced features like hardware acceleration.
-                    <br><br>Since jb-x86 we tried to use <i>android_x86</i> as a universal target for all x86 devices. However, it may not optimized for a particular target device. If you are a developer, you can create a target based on android_x86 for your device.
-                    <br><br>If you want to add new target for your x86 device, refer to <a href="http://www.android-x86.org/documents/how-to-add-new-x86-platforms">this article</a>.</p>
-
-                <br><br>
-                <h2><b>Using lunch commnd (recommended)</b></h2>
-                <p>You can source the file <i>build/envsetup.sh</i> into your bash environment to get some shell functions to help the building:</p>
-
-                <div class="code-snippet"><span style="color:#d1d1d1">
-
-                    &dollar; . build/envsetup.sh
-                    </span></div>
-                <p>Now you can select a target by lunch command:</p>
-                <div class="code-snippet"><span style="color:#d1d1d1">
-
-                    &dollar; lunch $TARGET_PRODUCT-$TARGET_BUILD_VARIANT
-                    </span></div>
-                <p>where &dollar;TARGET_PRODUCT is any target described in the previous section, and possible values of &dollar;TARGET_BUILD_VARIANT are eng, user, userdebug. For example,</p>
-
-                <div class="code-snippet"><span style="color:#d1d1d1">
-                    &dollar; lunch android_x86-userdebug
-                    </span></div>
-                <p>Then you can build by m command:</p>
-
-                <div class="code-snippet"><span style="color:#d1d1d1">
-                    &dollar; m -jX iso_img
-                    </span></div>
-                <p>m command is equivalent to make, but you can use it in any subdirectory of the android-x86 tree.<br>
-                    <br>Since froyo-x86, we also add menu selection to lunch command. Just type lunch, and you will get a list of available targets. Choose a target by inputting its number. Alternatively, just type lunch $number.</p>
-                <br><br><h2><b>Building directly</b></h2>
-                <p>To build a live cdrom iso image for target android_x86, type:</p>
-                <div class="code-snippet"><span style="color:#d1d1d1">
-
-                    &dollar; make iso_img TARGET_PRODUCT=android_x86
-                    </span></div>
-                <p>To generate a live cdrom iso for tegav2, type</p>
-                <div class="code-snippet"><span style="color:#d1d1d1">
-
-                    &dollar; make iso_img TARGET_PRODUCT=tegav2
-                    </span></div>
-                <p>Then you will get an iso file out/target/product/x86/android_x86.iso, etc.<br>
-                    If the computer you build on has more then one processor or core, you can take advantage of multiprocessing (or make jobs) by adding -jX to the beginning of your make command:</p>
-                <div class="code-snippet"><span style="color:#d1d1d1">
-
-                    &dollar; make -jX iso_img TARGET_PRODUCT=android_x86
-                    </span></div>
+                  &dollar; make -jX iso_img TARGET_PRODUCT=android_x86
+                </span></div>
                 <p>Replace X by the number of processors you have.<br> For example, if you have a quad core CPU, replace X with 4:</p>
                 <div class="code-snippet"><span style="color:#d1d1d1">
 
-                    &dollar; make -j4 iso_img TARGET_PRODUCT=android_x86
-                    </span></div>
+                  &dollar; make -j4 iso_img TARGET_PRODUCT=android_x86
+                </span></div>
                 <br><br><h2><b>Using buildspec.mk</b></h2>
                 <p>You can create a buildspec.mk in your android-x86 directory to remember a particular target product you build often:</p>
 
                 <div class="code-snippet"><span style="color:#d1d1d1">
 
-                    TARGET_PRODUCT:=android_x86<br>
-                    TARGET_BUILD_VARIANT:=userdebug<br>
-                    TARGET_BUILD_TYPE:=release<br>
-                    TARGET_KERNEL_CONFIG:=android-x86_defconfig
-                    </span></div>
+                  TARGET_PRODUCT:=android_x86<br>
+                  TARGET_BUILD_VARIANT:=userdebug<br>
+                  TARGET_BUILD_TYPE:=release<br>
+                  TARGET_KERNEL_CONFIG:=android-x86_defconfig
+                </span></div>
                 <p>With your <i>buildspec.mk</i> file in your android-x86 directory, you can just make by</p>
                 <div class="code-snippet"><span style="color:#d1d1d1">
 
-                    &dollar; make -jX iso_img
-                    </span></div>
+                  &dollar; make -jX iso_img
+                </span></div>
                 <br><br><h2><b>Build smaller image</b></h2>
 
                 <p>Since marshmallow-x86, the generated Android-x86 core filesystem will be compressed by <a href="https://en.wikipedia.org/wiki/SquashFS">squashfs</a> by default. Before that, squashfs is used only if you have squashfs-tools 4.0 (older version <b>will not work</b>) installed in your host. The generated iso file is much smaller (only about 30-40%). However, if you hope to disable it for some reasons, add <tt>USE_SQUASHFS=0</tt> to make. You can put it to buildspec.mk:</p>
                 <div class="code-snippet"><span style="color:#d1d1d1">
 
-                    USE_SQUASHFS := 0
-                    </span></div>
+                  USE_SQUASHFS := 0
+                </span></div>
                 <p>Before froyo-x86 (included), If you hope to get a more smaller image, you may remove the debugging symbols by adding</p>
                 <div class="code-snippet"><span style="color:#d1d1d1">
 
-                    TARGET_STRIP := 1
-                    </span></div>
+                  TARGET_STRIP := 1
+                </span></div>
                 <p>Since gingerbread-x86, the debugging symbols are stripped by default. <b>Do not use this option anymore.</b></p>
 
                 <h2><b>Testing</b></h2>
                 <p>The generated image is located at</p>
                 <div class="code-snippet"><span style="color:#d1d1d1">
 
-                    out/target/product/$TARGET_PRODUCT/$TARGET_PRODUCT.iso
-                    </span></div>
+                  out/target/product/$TARGET_PRODUCT/$TARGET_PRODUCT.iso
+                </span></div>
 
                 <p>You can easily test the iso file by <a href="http://www.android-x86.org/documents/virtualboxhowto">a virtual box</a> or <a href="http://www.android-x86.org/documents/qemuhowto">qemu</a>. On the booting screen, select the VESA or debug mode to boot.<br>
-                    <br>Of course you can burn the iso to a CD disk and test it on a real hardware. On booting it will automatically detect your hardware and load necessary modules. If you have problem with the default frame buffer driver, you may try the VESA mode (select second item on boot screen).
-                    <br><br>Since honeycomb-x86, we supports the&nbsp;<b>hybrid iso format</b>. That is, the iso could be dumped to a usb disk directly.&nbsp;You may create a bootable USB disk by</p>
+                  <br>Of course you can burn the iso to a CD disk and test it on a real hardware. On booting it will automatically detect your hardware and load necessary modules. If you have problem with the default frame buffer driver, you may try the VESA mode (select second item on boot screen).
+                  <br><br>Since honeycomb-x86, we supports the&nbsp;<b>hybrid iso format</b>. That is, the iso could be dumped to a usb disk directly.&nbsp;You may create a bootable USB disk by</p>
 
-                <div class="code-snippet"><span style="color:#d1d1d1">
+                  <div class="code-snippet"><span style="color:#d1d1d1">
 
                     out/target/product/$TARGET_PRODUCT/$TARGET_PRODUCT.iso
-                    </span></div>
-                <p>Some broken BIOS (e.g., Acer AO) is unable to boot a USB disk created in this way. If so, you may try to create bootable USB drive from the iso file by unetbootin. For both linux and windows user, here are the steps (suggested by <span>Gregory Gee</span>) :</p>
+                  </span></div>
+                  <p>Some broken BIOS (e.g., Acer AO) is unable to boot a USB disk created in this way. If so, you may try to create bootable USB drive from the iso file by unetbootin. For both linux and windows user, here are the steps (suggested by <span>Gregory Gee</span>) :</p>
 
-                <div class="code-snippet-inv"><span style="color:#000000">
+                  <div class="code-snippet-inv"><span style="color:#000000">
 
                     1. Download the ISO image of android-x86. <br>
                     2. Download UNetbootin from <a style="color: blanchedalmond" href="http://unetbootin.sourceforge.net/">here</a>. <br>
@@ -321,170 +330,170 @@
                     &nbsp;&nbsp;&nbsp;&nbsp;Click ok and wait. <br>
                     It should take a minute to do.  If it only took UNetbootin a few seconds to copy to USB, like my first attempt, then it didn't work.  So remember on future upgrades to reformat your USB key before each android install.<br>
                     So now you should be able to boot from the USB key.  Well, at least it worked for me.  The UNetbootin is an interesting tool too.
-                    </span></div>
-                <p>Another choice is the <a href="http://www.linuxliveusb.com">Linux Live USB Creator ( LiLi ) project</a>, which officially support Android-x86.</p>
-                <h2><strong>Advanced</strong></h2>
-                <p>This section describes some useful information for advanced users. You may need good linux expertise to complete it.</p>
-                <h2>Install to USB disk</h2>
+                  </span></div>
+                  <p>Another choice is the <a href="http://www.linuxliveusb.com">Linux Live USB Creator ( LiLi ) project</a>, which officially support Android-x86.</p>
+                  <h2><strong>Advanced</strong></h2>
+                  <p>This section describes some useful information for advanced users. You may need good linux expertise to complete it.</p>
+                  <h2>Install to USB disk</h2>
 
-                <p>For advanced linux users, you may create a bootable USB disk by hand. Here are the steps:</p>
-                <ol>
+                  <p>For advanced linux users, you may create a bootable USB disk by hand. Here are the steps:</p>
+                  <ol>
                     <li>Install grub to your USB disk</li>
                     <ul style="list-style: none">
-                        <li>&nbsp;&nbsp;&nbsp;&nbsp;find a linux machine with the latest grub installed</li>
-                        <li>&nbsp;&nbsp;&nbsp;&nbsp;partition your USB drive with fdisk or gpartd and mark the partition as bootable</li>
-                        <li>&nbsp;&nbsp;&nbsp;&nbsp;format that partition to ext3 (recommended) or vfat.</li>
-                        <li>&nbsp;&nbsp;&nbsp;&nbsp;mount your usb drive to /mnt</li>
-                        <li>&nbsp;&nbsp;&nbsp;&nbsp;cd /mnt</li>
-                        <li>&nbsp;&nbsp;&nbsp;&nbsp;grub-install --root-directory=. --no-floppy /dev/&lt;your usb device node name></li>
-                        <li>&nbsp;&nbsp;&nbsp;&nbsp;cd /boot/grub</li>
-                        <li>&nbsp;&nbsp;&nbsp;&nbsp;create your menu.lst based on the next section</li>
+                      <li>&nbsp;&nbsp;&nbsp;&nbsp;find a linux machine with the latest grub installed</li>
+                      <li>&nbsp;&nbsp;&nbsp;&nbsp;partition your USB drive with fdisk or gpartd and mark the partition as bootable</li>
+                      <li>&nbsp;&nbsp;&nbsp;&nbsp;format that partition to ext3 (recommended) or vfat.</li>
+                      <li>&nbsp;&nbsp;&nbsp;&nbsp;mount your usb drive to /mnt</li>
+                      <li>&nbsp;&nbsp;&nbsp;&nbsp;cd /mnt</li>
+                      <li>&nbsp;&nbsp;&nbsp;&nbsp;grub-install --root-directory=. --no-floppy /dev/&lt;your usb device node name></li>
+                      <li>&nbsp;&nbsp;&nbsp;&nbsp;cd /boot/grub</li>
+                      <li>&nbsp;&nbsp;&nbsp;&nbsp;create your menu.lst based on the next section</li>
                     </ul>
                     <br><li>Add this section to menu.lst</li>
                     <div class="code-snippet"><span style="color:#d1d1d1">
-                        title Run Android-x86<br>
-                        &nbsp;&nbsp;&nbsp;&nbsp;kernel /android/kernel root=/dev/ram0 androidboot.hardware=android_x86 SRC=/android<br>
-                        &nbsp;&nbsp;&nbsp;&nbsp;initrd /android/initrd.img<br>
+                      title Run Android-x86<br>
+                      &nbsp;&nbsp;&nbsp;&nbsp;kernel /android/kernel root=/dev/ram0 androidboot.hardware=android_x86 SRC=/android<br>
+                      &nbsp;&nbsp;&nbsp;&nbsp;initrd /android/initrd.img<br>
 
-                        title Run Android-x86 (VESA mode)<br>
-                        &nbsp;&nbsp;&nbsp;&nbsp;kernel /android/kernel root=/dev/ram0 androidboot.hardware=android_x86 vga=788 SRC=/android<br>
-                        &nbsp;&nbsp;&nbsp;&nbsp;initrd /android/initrd.img<br>
+                      title Run Android-x86 (VESA mode)<br>
+                      &nbsp;&nbsp;&nbsp;&nbsp;kernel /android/kernel root=/dev/ram0 androidboot.hardware=android_x86 vga=788 SRC=/android<br>
+                      &nbsp;&nbsp;&nbsp;&nbsp;initrd /android/initrd.img<br>
 
-                        title Run Android-x86 (Debug mode)<br>
-                        &nbsp;&nbsp;&nbsp;&nbsp;kernel /android/kernel root=/dev/ram0 androidboot.hardware=android_x86 vga=788 SRC=/android DEBUG=1<br>
-                        &nbsp;&nbsp;&nbsp;&nbsp;initrd /android/initrd.img<br>
+                      title Run Android-x86 (Debug mode)<br>
+                      &nbsp;&nbsp;&nbsp;&nbsp;kernel /android/kernel root=/dev/ram0 androidboot.hardware=android_x86 vga=788 SRC=/android DEBUG=1<br>
+                      &nbsp;&nbsp;&nbsp;&nbsp;initrd /android/initrd.img<br>
 
-                        </span></div>
+                    </span></div>
                     <p>Note <strong>androidboot.hardware=</strong> must be set to the target name of the built image.<br>
-                        <br>Since kitkat-x86 the SRC= parameter may be omitted if the system image is in the same directory as the kernel.</p>
-                    <li>Create /android directory in the USB disk, and copy the four files kernel initrd.img ramdisk.img system.sfs (or system.img if you set USE_SQUASHFS=0) to it.</li>
-                </ol>
-                <p>Then you can boot from the USB disk and enjoy Android. Note all data are saved to the ramdisk, so all will lose after power off. If you hope to save data to disk, see the next section.</p>
+                      <br>Since kitkat-x86 the SRC= parameter may be omitted if the system image is in the same directory as the kernel.</p>
+                      <li>Create /android directory in the USB disk, and copy the four files kernel initrd.img ramdisk.img system.sfs (or system.img if you set USE_SQUASHFS=0) to it.</li>
+                    </ol>
+                    <p>Then you can boot from the USB disk and enjoy Android. Note all data are saved to the ramdisk, so all will lose after power off. If you hope to save data to disk, see the next section.</p>
 
-                <br><br><h2>Install to hard disk</h2>
-                <p>Install to a hard disk is just the same as install to a USB disk. Even you do not need to create a new partition. Just copy android files into an existing partition, install grub to the hard disk (if not done yet), and modify the menu.lst.<br><br>
-                    People still ask, what if my hard disk is empty? How to install grub and copy files into it? There are several ways to do it. I provide two here:</p>
-                <ul>
-                    <li>Boot from any rescue cd like <a href="http://www.sysresccd.org">systemrescuecd</a>, and follow the instructions in the previous section.</li>
-                    <li>Install your favorite linux distribution, then copy android files and modify the grub menu.</li>
-                </ul>
-                <br>
-                <h2>Save data to USB/hard disk</h2>
-                <p>We support two ways to save data to your disk:</p>
-                <ul>
-                    <li>Create a subdirectory named data in your /android directory. The user data will be directly saved to that directory. This method only works for ext3 partition.</li>
-                    <li>Create a separate partition and save data to it. You have to add DATA=&lt;device_name> to the boot option. For example, suppose your data partition is /dev/sda2, then add DATA=sda2 to the boot option.
-                    </li>
-                </ul>
-                <br><br><h2>Solving conflicts</h2>
-                <p>There are several reason to have conflicts during repo sync, say</p>
-                <ul>
-                    <li>You modify your tree locally.</li>
-                    <li>The upstream changed. Since we usually keep syncing with original Android repository, sometimes we have to rebase with it. That changes the history and may cause conflicts.</li>
-                </ul>
-                <br>2<p>In this section we assume you have conflicts due to the upstream changed. That is, you don't have local modifications. If you do, you have to solve conflicts yourself. If you follow the procedures in this section, you may lose your local modifications.<br><br>Here is an example of a conflict in mainfest:</p>
+                    <br><br><h2>Install to hard disk</h2>
+                    <p>Install to a hard disk is just the same as install to a USB disk. Even you do not need to create a new partition. Just copy android files into an existing partition, install grub to the hard disk (if not done yet), and modify the menu.lst.<br><br>
+                      People still ask, what if my hard disk is empty? How to install grub and copy files into it? There are several ways to do it. I provide two here:</p>
+                      <ul>
+                        <li>Boot from any rescue cd like <a href="http://www.sysresccd.org">systemrescuecd</a>, and follow the instructions in the previous section.</li>
+                        <li>Install your favorite linux distribution, then copy android files and modify the grub menu.</li>
+                      </ul>
+                      <br>
+                      <h2>Save data to USB/hard disk</h2>
+                      <p>We support two ways to save data to your disk:</p>
+                      <ul>
+                        <li>Create a subdirectory named data in your /android directory. The user data will be directly saved to that directory. This method only works for ext3 partition.</li>
+                        <li>Create a separate partition and save data to it. You have to add DATA=&lt;device_name> to the boot option. For example, suppose your data partition is /dev/sda2, then add DATA=sda2 to the boot option.
+                        </li>
+                      </ul>
+                      <br><br><h2>Solving conflicts</h2>
+                      <p>There are several reason to have conflicts during repo sync, say</p>
+                      <ul>
+                        <li>You modify your tree locally.</li>
+                        <li>The upstream changed. Since we usually keep syncing with original Android repository, sometimes we have to rebase with it. That changes the history and may cause conflicts.</li>
+                      </ul>
+                      <br>2<p>In this section we assume you have conflicts due to the upstream changed. That is, you don't have local modifications. If you do, you have to solve conflicts yourself. If you follow the procedures in this section, you may lose your local modifications.<br><br>Here is an example of a conflict in mainfest:</p>
 
-                <div class="code-snippet"><span style="color:red">
-                    &dollar; repo sync<br>
-                    remote: Counting objects: 71, done.<br>
-                    remote: Compressing objects: 100% (41/41), done.<br>
-                    remote: Total 65 (delta 25), reused 28 (delta 9)<br>
-                    Unpacking objects: 100% (65/65), done.<br>
-                    From git://git.tarot.com.tw/android-x86/platform/manifest<br>
-                    &nbsp;&nbsp;&nbsp;&nbsp;  d53e6c1..2de7a11  android-1.5r2 -> origin/android-1.5r2<br>
-                    &nbsp;&nbsp;&nbsp;&nbsp;* [new branch]      android-1.5r3 -> origin/android-1.5r3<br>
-                    &nbsp;&nbsp;&nbsp;&nbsp;* [new branch]      android-sdk-1.5_r3 -> origin/android-sdk-1.5_r3<br>
-                    &nbsp;&nbsp;&nbsp;&nbsp;  d53e6c1..c544020  cupcake    -> origin/cupcake<br>
-                    &nbsp;&nbsp;&nbsp;&nbsp;* [new branch]      cupcake-release -> origin/cupcake-release<br>
-                    &nbsp;&nbsp;&nbsp;&nbsp;  f4d79b1..6f7e0dd  donut      -> origin/donut<br>
-                    &nbsp;&nbsp;&nbsp;&nbsp;+ 7308d31...4a4f936 lan        -> origin/lan  (forced update)<br>
-                    &nbsp;&nbsp;&nbsp;&nbsp;+ b480a6d...d82496e local      -> origin/local  (forced update)<br>
-                    &nbsp;&nbsp;&nbsp;&nbsp;+ 11c9d96...84345fb master     -> origin/master  (forced update)<br>
-                    &nbsp;&nbsp;&nbsp;&nbsp;+ 5bcbf93...66e92cc mirror     -> origin/mirror  (forced update)<br>
-                    &nbsp;&nbsp;&nbsp;&nbsp;+ 9f3092f...665f9e8 ssh        -> origin/ssh  (forced update)<br>
-                    &nbsp;&nbsp;&nbsp;&nbsp;+ c6037be...d70927f ssh-mirror -> origin/ssh-mirror  (forced update)<br>
-                    &nbsp;&nbsp;&nbsp;&nbsp;+ 00a823f...3ddaf66 test       -> origin/test  (forced update)<br>
-                    &nbsp;&nbsp;&nbsp;&nbsp;* [new tag]         android-1.5r3 -> android-1.5r3<br>
-                    &nbsp;&nbsp;&nbsp;&nbsp;* [new tag]         android-sdk-1.5_r3 -> android-sdk-1.5_r3<br>
-                    Fetching projects: 100% (128/128), done.<br>
-                    project .repo/manifests/<br>
-                    First, rewinding head to replay your work on top of it...<br>
-                    Applying: merge donut, change or add the projects to x86 port<br>
-                    error: patch failed: default.xml:3<br>
-                    error: default.xml: patch does not apply<br>
-                    Using index info to reconstruct a base tree...<br>
-                    Falling back to patching base and 3-way merge...<br>
-                    Auto-merging default.xml<br>
-                    CONFLICT (content): Merge conflict in default.xml<br>
-                    Failed to merge in the changes.<br>
-                    Patch failed at 0001 merge donut, change or add the projects to x86 port<br><br>
+                      <div class="code-snippet"><span style="color:red">
+                        &dollar; repo sync<br>
+                        remote: Counting objects: 71, done.<br>
+                        remote: Compressing objects: 100% (41/41), done.<br>
+                        remote: Total 65 (delta 25), reused 28 (delta 9)<br>
+                        Unpacking objects: 100% (65/65), done.<br>
+                        From git://git.tarot.com.tw/android-x86/platform/manifest<br>
+                        &nbsp;&nbsp;&nbsp;&nbsp;  d53e6c1..2de7a11  android-1.5r2 -> origin/android-1.5r2<br>
+                        &nbsp;&nbsp;&nbsp;&nbsp;* [new branch]      android-1.5r3 -> origin/android-1.5r3<br>
+                        &nbsp;&nbsp;&nbsp;&nbsp;* [new branch]      android-sdk-1.5_r3 -> origin/android-sdk-1.5_r3<br>
+                        &nbsp;&nbsp;&nbsp;&nbsp;  d53e6c1..c544020  cupcake    -> origin/cupcake<br>
+                        &nbsp;&nbsp;&nbsp;&nbsp;* [new branch]      cupcake-release -> origin/cupcake-release<br>
+                        &nbsp;&nbsp;&nbsp;&nbsp;  f4d79b1..6f7e0dd  donut      -> origin/donut<br>
+                        &nbsp;&nbsp;&nbsp;&nbsp;+ 7308d31...4a4f936 lan        -> origin/lan  (forced update)<br>
+                        &nbsp;&nbsp;&nbsp;&nbsp;+ b480a6d...d82496e local      -> origin/local  (forced update)<br>
+                        &nbsp;&nbsp;&nbsp;&nbsp;+ 11c9d96...84345fb master     -> origin/master  (forced update)<br>
+                        &nbsp;&nbsp;&nbsp;&nbsp;+ 5bcbf93...66e92cc mirror     -> origin/mirror  (forced update)<br>
+                        &nbsp;&nbsp;&nbsp;&nbsp;+ 9f3092f...665f9e8 ssh        -> origin/ssh  (forced update)<br>
+                        &nbsp;&nbsp;&nbsp;&nbsp;+ c6037be...d70927f ssh-mirror -> origin/ssh-mirror  (forced update)<br>
+                        &nbsp;&nbsp;&nbsp;&nbsp;+ 00a823f...3ddaf66 test       -> origin/test  (forced update)<br>
+                        &nbsp;&nbsp;&nbsp;&nbsp;* [new tag]         android-1.5r3 -> android-1.5r3<br>
+                        &nbsp;&nbsp;&nbsp;&nbsp;* [new tag]         android-sdk-1.5_r3 -> android-sdk-1.5_r3<br>
+                        Fetching projects: 100% (128/128), done.<br>
+                        project .repo/manifests/<br>
+                        First, rewinding head to replay your work on top of it...<br>
+                        Applying: merge donut, change or add the projects to x86 port<br>
+                        error: patch failed: default.xml:3<br>
+                        error: default.xml: patch does not apply<br>
+                        Using index info to reconstruct a base tree...<br>
+                        Falling back to patching base and 3-way merge...<br>
+                        Auto-merging default.xml<br>
+                        CONFLICT (content): Merge conflict in default.xml<br>
+                        Failed to merge in the changes.<br>
+                        Patch failed at 0001 merge donut, change or add the projects to x86 port<br><br>
 
-                    When you have resolved this problem run "git rebase --continue".<br>
-                    If you would prefer to skip this patch, instead run "git rebase --skip".<br>
-                    To restore the original branch and stop rebasing run "git rebase --abort".<br>
+                        When you have resolved this problem run "git rebase --continue".<br>
+                        If you would prefer to skip this patch, instead run "git rebase --skip".<br>
+                        To restore the original branch and stop rebasing run "git rebase --abort".<br>
 
-                    </span></div>
-                <p>repo sync stopped on conflicts. Since we don't have local modifications, just ignore it by git rebase --skip:</p>
-                <div class="code-snippet"><span style="color:#d1d1d1">
-                    &dollar; cd .repo/manifests<br>
-                    &dollar; git rebase --skip<br>
-                    HEAD is now at 4a4f936 add branch for local lan<br>
-                    Applying: add platform/frameworks/policies/base to x86<br>
-                    error: patch failed: default.xml:18<br>
-                    error: default.xml: patch does not apply<br>
-                    Using index info to reconstruct a base tree...<br>
-                    Falling back to patching base and 3-way merge...<br>
-                    Auto-merging default.xml<br>
-                    No changes -- Patch already applied.<br>
-                    Applying: add branch for local lan<br>
-                    error: patch failed: default.xml:1<br>
-                    error: default.xml: patch does not apply<br>
-                    Using index info to reconstruct a base tree...<br>
-                    Falling back to patching base and 3-way merge...<br>
-                    Auto-merging default.xml<br>
-                    No changes -- Patch already applied.<br>
-                    </span></div>
-                <p>If it complains about another conflict, do git rebase --skip again, until the rebase procedure completes. Usually it is enough, but if you hope to be absolute clean, you can ignore this branch and checkout a new one:</p>
-                <div class="code-snippet"><span style="color:#d1d1d1">
-                    &dollar; git checkout -t kitkat-x86 m/kitkat-x86
-                    </span></div>
+                      </span></div>
+                      <p>repo sync stopped on conflicts. Since we don't have local modifications, just ignore it by git rebase --skip:</p>
+                      <div class="code-snippet"><span style="color:#d1d1d1">
+                        &dollar; cd .repo/manifests<br>
+                        &dollar; git rebase --skip<br>
+                        HEAD is now at 4a4f936 add branch for local lan<br>
+                        Applying: add platform/frameworks/policies/base to x86<br>
+                        error: patch failed: default.xml:18<br>
+                        error: default.xml: patch does not apply<br>
+                        Using index info to reconstruct a base tree...<br>
+                        Falling back to patching base and 3-way merge...<br>
+                        Auto-merging default.xml<br>
+                        No changes -- Patch already applied.<br>
+                        Applying: add branch for local lan<br>
+                        error: patch failed: default.xml:1<br>
+                        error: default.xml: patch does not apply<br>
+                        Using index info to reconstruct a base tree...<br>
+                        Falling back to patching base and 3-way merge...<br>
+                        Auto-merging default.xml<br>
+                        No changes -- Patch already applied.<br>
+                      </span></div>
+                      <p>If it complains about another conflict, do git rebase --skip again, until the rebase procedure completes. Usually it is enough, but if you hope to be absolute clean, you can ignore this branch and checkout a new one:</p>
+                      <div class="code-snippet"><span style="color:#d1d1d1">
+                        &dollar; git checkout -t kitkat-x86 m/kitkat-x86
+                      </span></div>
 
-                <p>This may not be the best approach to solve conflicts, but should be easy enough for beginners. If you have better suggestions, just tell us.</p>
+                      <p>This may not be the best approach to solve conflicts, but should be easy enough for beginners. If you have better suggestions, just tell us.</p>
 
-                <h2>Customize Kernel</h2>
-                <p>If you'd like to customize the kernel for your hardware, read <a href="http://www.android-x86.org/documents/customizekernel">this article</a> for details. <br></p>
+                      <h2>Customize Kernel</h2>
+                      <p>If you'd like to customize the kernel for your hardware, read <a href="customizekernel.HTML">this article</a> for details. <br></p>
 
 
 
-            </section>
-            <br><br><br>
-            <footer class="footer">
-                <div class="cap">
+                    </section>
+                    <br><br><br>
+                    <footer class="footer">
+                      <div class="cap">
 
-                    <a href="#" id="scroll-top" class="scroll-to-top">
-                        Back to top
-                    </a>
-                </div>
-                <div class="footer-copyright">
-                    <div class="navbar-link">
-                        &copy; 2009-2019 Android x86 | <a class="navbar-link" id="easter" href="mailto:aryabhushan2003@gmail.com">@arya</a> & <a class="navbar-link" id="easter" href="mailto:adityasood22@gmail.com">@sood</a>
-                    </div>
-                </div>
-            </footer>
-        </div>
+                        <a href="#" id="scroll-top" class="scroll-to-top">
+                          Back to top
+                        </a>
+                      </div>
+                      <div class="footer-copyright">
+                        <div class="navbar-link">
+                          &copy; 2009-2019 Android x86 | <a class="navbar-link" id="easter" href="mailto:aryabhushan2003@gmail.com">@arya</a> & <a class="navbar-link" id="easter" href="mailto:adityasood22@gmail.com">@sood</a>
+                        </div>
+                      </div>
+                    </footer>
+                  </div>
 
-        <!--JAVASCRIPT CODE-->
+                  <!--JAVASCRIPT CODE-->
 
-        <script src="https://code.jquery.com/jquery-2.1.1.min.js"></script>
-        <script>
-            $(".openNav").click(function() {
-                $("body").toggleClass("navOpen");
-                $("nav").toggleClass("open");
-                $(".wrapper").toggleClass("open");
-                $(this).toggleClass("open");
-            });
-        </script>
-      
+                  <script src="https://code.jquery.com/jquery-2.1.1.min.js"></script>
+                  <script>
+                  $(".openNav").click(function() {
+                    $("body").toggleClass("navOpen");
+                    $("nav").toggleClass("open");
+                    $(".wrapper").toggleClass("open");
+                    $(this).toggleClass("open");
+                  });
+                  </script>
 
-    </body>
-</html>
+
+                </body>
+                </html>

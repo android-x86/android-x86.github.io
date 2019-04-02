@@ -146,7 +146,7 @@ nav ul {
 
 
 nav li {
-  transition :0.3s;
+  transition :0.4s;
   display: block;
   padding: 10px 40px;
   color: #e5e6e8;
@@ -282,14 +282,14 @@ a:hover{
   border-radius: 2px;
   box-shadow: 0 1px 4px rgba(0, 0, 0, .6);
   font-size: 14px;
-  background-color: #2e56cc;
-  color: white;
+  background-color: #15c170;
+  color: #ecf0f1;
 
 
 }
 
 .download-btn:hover, .btn:focus {
-  background-color: royalblue;
+  background-color: #27ae60;
 }
 
 .download-btn > * {
@@ -370,7 +370,7 @@ a:hover{
 
 
 #download-button-home{
-  color: white;
+  color: #010e02;
 }
 
 .sites-codeblock {

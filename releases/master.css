@@ -10,10 +10,12 @@ body{
   width: 100%;
   margin: 0;
   font-family: Arial;
-  color: #dad7d7;
+  color: #666666;
   line-height: 1.5em;
 }
-
+body.dark-theme{
+  color:white;
+}
 
 @font-face {
   font-family: 'Product Sans';
@@ -29,11 +31,20 @@ body{
 .wrapper{
   transition-duration: 0.5s;
   transition-timing-function: swing;
-  background-color: #080e16;
+  background-color: white;
   width: 100%;
   height: 100%;
   position: relative;
   padding: 100px 40px;
+}
+.wrapperDark{
+  transition-duration: 0.5s;
+  transition-timing-function: swing;
+  width: 100%;
+  height: 100%;
+  position: relative;
+  padding: 100px 40px;
+  background-color: #171717;
 }
 
 .wrapper.open,
@@ -146,7 +157,7 @@ nav ul {
 
 
 nav li {
-  transition :0.3s;
+  transition :0.4s;
   display: block;
   padding: 10px 40px;
   color: #e5e6e8;
@@ -228,7 +239,7 @@ div.desc {
 .cap {
   padding-left: 32px;
   padding-right: 32px;
-  background-color:#080e16;
+  background-color: #fff;
   line-height: 1.25rem;
   padding: 90px 24px 24px;
   text-align: right;
@@ -282,14 +293,14 @@ a:hover{
   border-radius: 2px;
   box-shadow: 0 1px 4px rgba(0, 0, 0, .6);
   font-size: 14px;
-  background-color: #2e56cc;
-  color: white;
+  background-color: #15c170;
+  color: #ecf0f1;
 
 
 }
 
 .download-btn:hover, .btn:focus {
-  background-color: royalblue;
+  background-color: #27ae60;
 }
 
 .download-btn > * {
@@ -370,7 +381,7 @@ a:hover{
 
 
 #download-button-home{
-  color: white;
+  color: azure;
 }
 
 .sites-codeblock {
@@ -441,11 +452,11 @@ h3{
   word-wrap: normal;
   overflow: auto;
   white-space: nowrap;
-  -webkit-box-shadow: 0px 1px 10px -6px #ccc;
-  -moz-box-shadow: 0px 1px 10px -6px #ccc;
-  box-shadow: 0px 1px 10px -6px #545151;
-  border: 2px solid #0d0d0e!important;
-  background: #0e0c0c;
+  -webkit-box-shadow: 0px 4px 7px 0px #ccc;
+  -moz-box-shadow: 0px 4px 7px 0px #ccc;
+  box-shadow: 0px 4px 7px 0px #ccc;
+  border: 2px solid #e9e9ea!important;
+  background: #ffffff;
   border-radius: 15px;
 }
 
@@ -460,10 +471,10 @@ h3{
 
 .button
 {
+  background-color: transparent;
+  outline: none;
+  cursor: pointer;
   padding: 0;
   border: none;
   background: none;
-  cursor: pointer;
-  background-color: transparent;
-  outline: none;
 }
