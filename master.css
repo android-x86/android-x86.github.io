@@ -283,24 +283,24 @@ a:hover{
   position: relative;
 
   display: block;
-  margin: 30px auto;
+  margin: 18px auto;
   padding: 0;
   font-family: Product Sans;
   overflow: hidden;
 
   border-width: 0;
   outline: none;
-  border-radius: 2px;
+  border-radius: 12px;
   box-shadow: 0 1px 4px rgba(0, 0, 0, .6);
   font-size: 14px;
-  background-color: #15c170;
+  background-color: #2e56cc;
   color: #ecf0f1;
 
 
 }
 
 .download-btn:hover, .btn:focus {
-  background-color: #27ae60;
+  background-color: royalblue;
 }
 
 .download-btn > * {
