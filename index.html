@@ -1,222 +1,211 @@
 <!DOCTYPE html>
 <html>
 
-    <head>
-        <title>Android-x86 - Porting Android to x86</title>
-        <link rel="stylesheet" type="text/css" href="master.css">
-        <link rel="icon" type="image/png" href="mobile.png">
-        <meta name="viewport" content="width=device-width, initial-scale=1.0">
-        <meta name="description" content="Android x86 is an Android Open Source Project licensed under Apache Public License 2.0. Some components are licensed under GNU General Public License (GPL) 2.0 or later. " />
-    </head>
+<head>
+  <title>Android-x86 - Porting Android to x86</title>
+  <link rel="stylesheet" type="text/css" href="master.css" title="default">
+  <link rel="alternate stylesheet" type="text/css" href="dark.css" title="alternate">
+  <link rel="icon" type="image/png" href="mobile.png">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="description" content="Android x86 is an Android Open Source Project licensed under Apache Public License 2.0. Some components are licensed under GNU General Public License (GPL) 2.0 or later. " />
+  <script type="text/javascript" src="styleswitcher.js"></script>
+</head>
 
-    <body>
-        <nav>
-            <ul>
-                <a class="active-navbar-link" href="index.html">
-                    <li>Home</li>
-                </a>
-                <a class="navbar-link" href="download.html">
-                    <li>Download</li>
-                </a>
-                <a class="navbar-link" href="credits.html">
-                    <li>Credits</li>
-                </a>
-                <a class="navbar-link" href="donate.html">
-                    <li>Donate</li>
-                </a>
-                <a class="navbar-link" href="source.html">
-                    <li>Get Source</li>
-                </a>
-                <a class="navbar-link" href="installhowto.html">
-                    <li>Installation</li>
-                </a>
-                <a class="navbar-link" href="screenshots.html">
-                    <li>Screenshots</li>
-                </a>
-                <a class="navbar-link" href="documentation.html">
-                    <li>Documentation</li>
-                </a>
-                <a class="navbar-link" href="releases.html">
-                    <li>Releases</li>
-                </a>
-                <a class="navbar-link" href="contact.html">
-                    <li>Contact Us</li>
-                </a>
-                <a class="navbar-link" href="changelog.html">
-                    <li>News</li>
-                </a>
-            </ul>
-        </nav>
-        <div class="openNav">
-            <div class="icon"></div>
+<body>
+  <nav>
+    <ul>
+      <a class="active-navbar-link" href="index.html">
+        <li>Home</li>
+      </a>
+      <a class="navbar-link" href="download.html">
+        <li>Download</li>
+      </a>
+      <a class="navbar-link" href="credits.html">
+        <li>Credits</li>
+      </a>
+      <a class="navbar-link" href="donate.html">
+        <li>Donate</li>
+      </a>
+      <a class="navbar-link" href="source.html">
+        <li>Get Source</li>
+      </a>
+      <a class="navbar-link" href="installhowto.html">
+        <li>Installation</li>
+      </a>
+      <a class="navbar-link" href="screenshots.html">
+        <li>Screenshots</li>
+      </a>
+      <a class="navbar-link" href="documentation.html">
+        <li>Documentation</li>
+      </a>
+      <a class="navbar-link" href="releases.html">
+        <li>Releases</li>
+      </a>
+      <a class="navbar-link" href="contact.html">
+        <li>Contact Us</li>
+      </a>
+      <a class="navbar-link" href="changelog.html">
+        <li>News</li>
+      </a>
+    </ul>
+  </nav>
+  <div class="openNav">
+    <div class="icon"></div>
+  </div>
+  <!--HTML of main page-->
+  <div class="wrapper" >
+    <section>
+      <h1 id="top" class="heading">Android x86</h1>
+      <h2 class="subheading">Run Android on your PC</h2>
+
+      <div class=themebtn>
+      <button class="button" onclick="setActiveStyleSheet('default'); return false;"><img src="light_theme.png" height="20px" width"20px" title='Toggle Theme'/> </button>
+      <button class="button" onclick="setActiveStyleSheet('alternate'); return false;" ><img src="dark_theme.png" height="20px" width"20px" title="Toggle Theme"/></button>
+    </div>
+
+      <p>This is a project to port <a href="http://source.android.com/">Android open source project</a> to x86 platform, formerly known as "<a href="http://code.google.com/p/patch-hosting-for-android-x86-support/">patch hosting for android x86 support</a>".
+        The original plan is to host different patches for android x86 support from open source community. A few months after we created the project, we found out that we could do much more than just hosting patches. So we decide to create our code base
+        to provide support on different x86 platforms, and set up a git server to host it.</p>
+
+        <p>This is an open source project licensed under Apache Public License 2.0. Some components are licensed under GNU General Public License (GPL) 2.0 or later. If you think we did something great, consider <a href="donate.html">making a donation</a>.</p>
+
+        <button class="download-btn" type="button"><a id="download-button-home" href="download.html"><span>Download</span></a></button>
+
+        <h2 class="subheading">What is new?</h2>
+        <p> See <a href="#development">what we are doing</a> now...</p>
+        <h2 class="subheading">Project Goal</h2>
+        <p>To provide complete solution for Android on Eee PC platforms first and then to provide solutions for common x86 platforms as well.</p>
+        <h2 class="subheading">Screenshots</h2>
+
+        <div class="responsive">
+          <div class="gallery">
+            <a target="_blank" href="http://lh3.ggpht.com/_bThy5DH7GQI/SqeUBUE-v4I/AAAAAAAAAVo/iqvAI6sjWU4/s288/Slashdot.org.png.jpg">
+              <img src="http://lh3.ggpht.com/_bThy5DH7GQI/SqeUBUE-v4I/AAAAAAAAAVo/iqvAI6sjWU4/s288/Slashdot.org.png.jpg" alt="Surf the Internet" width="300" height="200">
+            </a>
+            <div class="desc">Surf the Internet</div>
+          </div>
         </div>
-        <!--HTML of main page-->
-        <div class="wrapper" id="change-theme">
-            <section>
-                <h1 id="top" class="heading">Android x86</h1>
-                <h2 class="subheading">Run Android on your PC</h2>
-                <br>
-                <p>This is a project to port <a href="http://source.android.com/">Android open source project</a> to x86 platform, formerly known as "<a href="http://code.google.com/p/patch-hosting-for-android-x86-support/">patch hosting for android x86 support</a>".
-                    The original plan is to host different patches for android x86 support from open source community. A few months after we created the project, we found out that we could do much more than just hosting patches. So we decide to create our code base
-                    to provide support on different x86 platforms, and set up a git server to host it.</p>
-
-                <p>This is an open source project licensed under Apache Public License 2.0. Some components are licensed under GNU General Public License (GPL) 2.0 or later. If you think we did something great, consider <a href="donate.html">making a donation</a>.</p>
-
-                <button class="download-btn" type="button"><a id="download-button-home" href="download.html"><span>Download</span></a></button>
-
-                <h2 class="subheading">What is new?</h2>
-                <p> See <a href="#development">what we are doing</a> now...</p>
-                <h2 class="subheading">Project Goal</h2>
-                <p>To provide complete solution for Android on Eee PC platforms first and then to provide solutions for common x86 platforms as well.</p>
-          
-                <h2>Sponsors</h2>
-      <ul>
-        <li>Sponsored by <a href="https://microsoftsupports.net">Microsoft Support</a></li>
-        <li>Sponsored by <a href="https://www.stickeryou.com/">StickerYou.com</a>, manufacturers of quality <a href="https://www.stickeryou.com/products/custom-stickers/335/">Custom Stickers</a> and <a href="https://www.stickeryou.com/products/labels/654/">Custom Labels</a>.</li>
-        <li>Sponsored by <a href="https://crumbles.co/showbox-apk-download/">Showbox</a> and <a href="https://babasupport.org/">Customer Service Number</a></li>
-        <li><a href="http://www.acuitytraining.co.uk">Acuity Training</a> for various technical advice.</li>
-        <li>Sponsored by <a href="https://9appsapk.net.in">9APPS APK DOWNLOAD</a> &amp; <a href="https://droidmoda.com">Android Apps Free Download</a>.</li>
-        <li>Sponsored by <a href="http://kikonline.tips/tutuapp/">TutuApp</a>.</li>
-        <li>Sponsored by <a href="https://luckypatcherappdownload.com/">Lucky Patcher Apk</a> <a href="http://freedomapkdld.com/">Freedom Apk</a>.</li>
-        <li>Sponsored by <a href="https://luckypatcher.playstoredownloads.org">Lucky Patcher</a>.</li>
-        <li>Supported by <a href="http://www.showboxappz.com/">Official ShowBox Website</a>, <a href="http://showboxappdownload.co/showbox-apk/">ShowBox APK</a> and <a href="http://www.bloomtimes.com/facetime-for-pc-windows-and-mac/">FaceTime for PC</a>.</li>
-        <li>Sponsored by <a href="https://showboxa.com/showbox-app/">ShowBox for Android</a> &amp; <a href="https://showboxa.com/showbox-apk/">ShowBox APK file</a>.</li>
-        <li>Sebastian Albrecht from <a href="http://yourvancouverrealestate.ca/vancouver-special/">Vancouver special</a>, <a href="http://foliovision.com/2013/02/lorne-marr">Lorne Marr</a>, <a href="http://ellidavis.com/">Toronto Realtor</a> Elli Davis, and
-          Chantal Marr from <a href="http://nomedicallifeinsurance.ca/">No medical life insurance</a> for their support.</li>
-
-      </ul> 
-                <br>               
-                <h2 class="subheading">Screenshots</h2>
-                <div class="responsive">
-                    <div class="gallery">
-                        <a target="_blank" href="http://lh3.ggpht.com/_bThy5DH7GQI/SqeUBUE-v4I/AAAAAAAAAVo/iqvAI6sjWU4/s288/Slashdot.org.png.jpg">
-                            <img src="http://lh3.ggpht.com/_bThy5DH7GQI/SqeUBUE-v4I/AAAAAAAAAVo/iqvAI6sjWU4/s288/Slashdot.org.png.jpg" alt="Surf the Internet" width="300" height="200">
-                        </a>
-                        <div class="desc">Surf the Internet</div>
-                    </div>
-                </div>
 
 
-                <div class="responsive">
-                    <div class="gallery">
-                        <a target="_blank" href="http://lh5.ggpht.com/_bThy5DH7GQI/Sq4gDP9OX3I/AAAAAAAAAak/jVA-IXGaUpw/s288/PlayHarryPotter.png.jpg">
-                            <img src="http://lh5.ggpht.com/_bThy5DH7GQI/Sq4gDP9OX3I/AAAAAAAAAak/jVA-IXGaUpw/s288/PlayHarryPotter.png.jpg" alt="Play Video" width="600" height="400">
-                        </a>
-                        <div class="desc">Play Video</div>
-                    </div>
-                </div>
+        <div class="responsive">
+          <div class="gallery">
+            <a target="_blank" href="http://lh5.ggpht.com/_bThy5DH7GQI/Sq4gDP9OX3I/AAAAAAAAAak/jVA-IXGaUpw/s288/PlayHarryPotter.png.jpg">
+              <img src="http://lh5.ggpht.com/_bThy5DH7GQI/Sq4gDP9OX3I/AAAAAAAAAak/jVA-IXGaUpw/s288/PlayHarryPotter.png.jpg" alt="Play Video" width="600" height="400">
+            </a>
+            <div class="desc">Play Video</div>
+          </div>
+        </div>
 
-                <div class="responsive">
-                    <div class="gallery">
-                        <a target="_blank" href="http://lh5.ggpht.com/_bThy5DH7GQI/SqTg2miayYI/AAAAAAAAAJw/yeZ-G0UFPqQ/s288/ViewThumbnail.png.jpg">
-                            <img src="http://lh5.ggpht.com/_bThy5DH7GQI/SqTg2miayYI/AAAAAAAAAJw/yeZ-G0UFPqQ/s288/ViewThumbnail.png.jpg" alt="View Photos" width="600" height="400">
-                        </a>
-                        <div class="desc">View Photos</div>
-                    </div>
-                </div>
+        <div class="responsive">
+          <div class="gallery">
+            <a target="_blank" href="http://lh5.ggpht.com/_bThy5DH7GQI/SqTg2miayYI/AAAAAAAAAJw/yeZ-G0UFPqQ/s288/ViewThumbnail.png.jpg">
+              <img src="http://lh5.ggpht.com/_bThy5DH7GQI/SqTg2miayYI/AAAAAAAAAJw/yeZ-G0UFPqQ/s288/ViewThumbnail.png.jpg" alt="View Photos" width="600" height="400">
+            </a>
+            <div class="desc">View Photos</div>
+          </div>
+        </div>
 
-                <div class="responsive">
-                    <div class="gallery">
-                        <a target="_blank" href="http://lh5.ggpht.com/_bThy5DH7GQI/SqeCDx16k9I/AAAAAAAAATA/6rP7a7MCMCc/s288/WifiInfo.png.jpg">
-                            <img src="http://lh5.ggpht.com/_bThy5DH7GQI/SqeCDx16k9I/AAAAAAAAATA/6rP7a7MCMCc/s288/WifiInfo.png.jpg" alt="WiFi Status" width="600" height="400">
-                        </a>
-                        <div class="desc">WiFi Status</div>
-                    </div>
-                    <br>
-                    <br>
-                </div>
-                <p>More screenshots can be found <a href="screenshots.html">here</a></p>
-                <h2 class="subheading">Tested Platforms</h2>
-                <p>The tests are done by the project members and others from android-porting group.</p>
-                <ul>
-                    <li>ASUS Eee PCs/Laptops</li>
-                    <li>Viewsonic Viewpad 10</li>
-                    <li>Dell Inspiron Mini Duo</li>
-                    <li>Samsung Q1U</li>
-                    <li>Viliv S5</li>
-                    <li>Lenovo ThinkPad x61 Tablet</li>
-                </ul>
-                <br>         
-                <p>
-                    <br>Most of the models can run the native resolutions via i915 driver. Thanks to the kernel mode setting (kms) feature introduced since kernel 2.6.29.</p>
-                <h2 class="subheading">Features</h2>
-                <p>The following features are available in the <a href="download.html">latest release</a>.</p>
-                <ul>
-                    <li>Kernel 4.9, KMS enable</li>
-                    <li>Wifi support with GUI</li>
-                    <li>Better disk installer</li>
-                    <li>Power Suspend/resume (S3 mode)</li>
-                    <li>Battery Status</li>
-                    <li>Software mouse cursor</li>
-                    <li>Mouse wheel</li>
-                    <li>Support netbook native resolution</li>
-                    <li>Audio (ALSA)</li>
-                    <li>V4l2 Camera support</li>
-                    <li>Mirror mode on external monitors</li>
-                    <li>External storage auto mount support</li>
-                    <li>Support external keyboard</li>
-                    <li>Debug mode with busybox</li>
-                    <li>Bluetooth</li>
-                    <li>G-sensor</li>
-                </ul>
-                <br>
-                <h2 class="subheading">Source Code</h2>
-                <p>We provide a complete, compilable and workable source tree. Read <a href="source.html">Source Code</a> and how to use it.<br>
-                    You can also <a href="https://sourceforge.net/p/android-x86/_list/git">browse code online</a></p>
-                <h2>Development (2018/06)</h2>
-                <h3 id="development">What we are working on now</h3>
-                <ul>
-                    <li>Android 8.1 (Oreo) porting (oreo-x86 branch)</li>
-                    <li>Upgrade kernel to 4.18</li>
-                    <li>OpenGL ES hardware acceleration for intel/radeon/nvidia/amdgpu (pstglia, mauro) and virgl(robh) GPUs.</li>
-                    <li>HDMI audio (cwhuang)</li>
-                    <li>LineageOS integration (jjm)</li>
-                    <li>Hardware accelerated codecs</li>
-                </ul>
-                <br>
-                <h2>To-Do List</h2>
-                <ul>
-                    <li>Multiple displays support</li>
-                    <li>Better power management</li>
-                    <li>Miracast</li>
-                </ul>
-                <br>
-                <div id="f-padding"></div>
-            </section>
-            <section class="bg">
-                <div class="bg"></div>
-                <div class="clearfix"></div>
-            </section>
+        <div class="responsive">
+          <div class="gallery">
+            <a target="_blank" href="http://lh5.ggpht.com/_bThy5DH7GQI/SqeCDx16k9I/AAAAAAAAATA/6rP7a7MCMCc/s288/WifiInfo.png.jpg">
+              <img src="http://lh5.ggpht.com/_bThy5DH7GQI/SqeCDx16k9I/AAAAAAAAATA/6rP7a7MCMCc/s288/WifiInfo.png.jpg" alt="WiFi Status" width="600" height="400">
+            </a>
+            <div class="desc">WiFi Status</div>
+          </div>
+          <br>
+          <br>
+        </div>
+        <p>More screenshots can be found <a href="screenshots.html">here</a></p>
+        <h2 class="subheading">Tested Platforms</h2>
+        <p>The tests are done by the project members and others from android-porting group.</p>
+        <ul>
+          <li>ASUS Eee PCs/Laptops</li>
+          <li>Viewsonic Viewpad 10</li>
+          <li>Dell Inspiron Mini Duo</li>
+          <li>Samsung Q1U</li>
+          <li>Viliv S5</li>
+          <li>Lenovo ThinkPad x61 Tablet</li>
+        </ul>
+        <p>
+          <br>Most of the models can run the native resolutions via i915 driver. Thanks to the kernel mode setting (kms) feature introduced since kernel 2.6.29.</p>
+          <h2 class="subheading">Features</h2>
+          <p>The following features are available in the <a href="download.html">latest release</a>.</p>
+          <ul>
+            <li>Kernel 4.9, KMS enable</li>
+            <li>Wifi support with GUI</li>
+            <li>Better disk installer</li>
+            <li>Power Suspend/resume (S3 mode)</li>
+            <li>Battery Status</li>
+            <li>Software mouse cursor</li>
+            <li>Mouse wheel</li>
+            <li>Support netbook native resolution</li>
+            <li>Audio (ALSA)</li>
+            <li>V4l2 Camera support</li>
+            <li>Mirror mode on external monitors</li>
+            <li>External storage auto mount support</li>
+            <li>Support external keyboard</li>
+            <li>Debug mode with busybox</li>
+            <li>Bluetooth</li>
+            <li>G-sensor</li>
+          </ul>
+          <br>
+          <h2 class="subheading">Source Code</h2>
+          <p>We provide a complete, compilable and workable source tree. Read <a href="source.html">Source Code</a> and how to use it.<br>
+            You can also <a href="https://sourceforge.net/p/android-x86/_list/git">browse code online</a></p>
+            <h2>Development (2018/06)</h2>
+            <h3 id="development">What we are working on now</h3>
+            <ul>
+              <li>Android 8.1 (Oreo) porting (oreo-x86 branch)</li>
+              <li>Upgrade kernel to 4.18</li>
+              <li>OpenGL ES hardware acceleration for intel/radeon/nvidia/amdgpu (pstglia, mauro) and virgl(robh) GPUs.</li>
+              <li>HDMI audio (cwhuang)</li>
+              <li>LineageOS integration (jjm)</li>
+              <li>Hardware accelerated codecs</li>
+            </ul>
+            <br>
+            <h2>To-Do List</h2>
+            <ul>
+              <li>Multiple displays support</li>
+              <li>Better power management</li>
+              <li>Miracast</li>
+            </ul>
+            <br>
+            <div id="f-padding"></div>
+          </section>
+          <section class="bg">
+            <div class="bg"></div>
+            <div class="clearfix"></div>
+          </section>
 
-            <footer class="footer">
-                <div class="cap">
+          <footer class="footer">
+            <div class="cap">
 
-                    <a href="#" id="scroll-top" class="scroll-to-top">
-                        Back to top
-                    </a>
-                </div>
-                <div class="footer-copyright">
-                    <div class="navbar-link">
-                        &copy; 2009-2019 Android x86 | <a class="navbar-link" id="easter" href="mailto:aryabhushan2003@gmail.com">@arya</a> & <a class="navbar-link" id="easter" href="mailto:adityasood22@gmail.com">@sood</a>
-                    </div>
-                </div>
-            </footer>
+              <a href="#" id="scroll-top" class="scroll-to-top">
+                Back to top
+              </a>
+            </div>
+            <div class="footer-copyright">
+              <div class="navbar-link">
+                &copy; 2009-2019 Android x86 | <a class="navbar-link" id="easter" href="mailto:aryabhushan2003@gmail.com">@arya</a> & <a class="navbar-link" id="easter" href="mailto:adityasood22@gmail.com">@sood</a>
+              </div>
+            </div>
+          </footer>
         </div>
 
         <!--JAVASCRIPT CODE-->
 
         <script src="https://code.jquery.com/jquery-2.1.1.min.js"></script>
         <script>
-            $(".openNav").click(function() {
-                $("body").toggleClass("navOpen");
-                $("nav").toggleClass("open");
-                $(".wrapper").toggleClass("open");
-                $(".wrapperDark").toggleClass("open");
-                $(this).toggleClass("open");
-            });
+        $(".openNav").click(function() {
+          $("body").toggleClass("navOpen");
+          $("nav").toggleClass("open");
+          $(".wrapper").toggleClass("open");
+          $(".wrapperDark").toggleClass("open");
+          $(this).toggleClass("open");
+        });
         </script>
 
 
-    </body>
+      </body>
 
-</html>
+      </html>
