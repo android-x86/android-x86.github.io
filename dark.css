@@ -441,11 +441,12 @@ h3{
   word-wrap: normal;
   overflow: auto;
   white-space: nowrap;
-  -webkit-box-shadow: 0px 1px 10px -6px #ccc;
+  transition: background-color 0.3;
+  -webkit-box-shadow: 0px 1px 10px -6px #ccc; 
   -moz-box-shadow: 0px 1px 10px -6px #ccc;
-  box-shadow: 0px 1px 10px -6px #545151;
-  border: 2px solid #0d0d0e!important;
-  background: #0e0c0c;
+  box-shadow: -1px 4px 10px -6px #e4dede;
+  border: 1px solid #4a4a4c!important;
+  background: #333232;
   border-radius: 15px;
 }
 
