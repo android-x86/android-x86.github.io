@@ -279,7 +279,7 @@ a:hover{
 
   border-width: 0;
   outline: none;
-  border-radius: 20px;
+  border-radius: 2px;
   box-shadow: 0 1px 4px rgba(0, 0, 0, .6);
   font-size: 14px;
   background-color: #2e56cc;

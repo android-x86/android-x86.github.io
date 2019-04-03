@@ -1,153 +1,150 @@
 <!DOCTYPE html>
 <html>
-    <head>
-        <title>Android-x86 - Porting Android to x86</title>
-        <link rel="stylesheet" type="text/css" href="master.css" title="default">
-        <link rel="alternate stylesheet" type="text/css" href="dark.css" title="alternate">
-        <script type="text/javascript" src="styleswitcher.js"></script>
-    	  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-        <link rel="icon" type="image/png" href="mobile.png">
-	</head>
-    <body>
-      <nav>
-        <ul>
-          <a class="active-navbar-link" href="index.html">
-              <li>Home</li>
-          </a>
-          <a class="navbar-link" href="download.html">
-              <li>Download</li>
-          </a>
-          <a class="navbar-link" href="credits.html">
-              <li>Credits</li>
-          </a>
-          <a class="navbar-link" href="donate.html">
-              <li>Donate</li>
-          </a>
-          <a class="navbar-link" href="source.html">
-              <li>Get Source</li>
-          </a>
-          <a class="navbar-link" href="installhowto.html">
-              <li>Installation</li>
-          </a>
-          <a class="navbar-link" href="screenshots.html">
-              <li>Screenshots</li>
-          </a>
-          <a class="navbar-link" href="documentation.html">
-              <li>Documentation</li>
-          </a>
-          <a class="navbar-link" href="releases.html">
-              <li>Releases</li>
-          </a>
-          <a class="navbar-link" href="contact.html">
-              <li>Contact Us</li>
-          </a>
-          <a class="navbar-link" href="changelog.html">
-              <li>News</li>
-          </a>
-        </ul>
-      </nav>
-      <div class="openNav">
-        <div class="icon"></div>
+<head>
+  <title>Android-x86 - Porting Android to x86</title>
+  <link rel="stylesheet" type="text/css" href="master.css" title="default">
+  <link rel="alternate stylesheet" type="text/css" href="dark.css" title="alternate">
+  <script type="text/javascript" src="styleswitcher.js"></script>
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <link rel="icon" type="image/png" href="mobile.png">
+</head>
+<body>
+  <nav>
+    <ul>
+      <a class="active-navbar-link" href="index.html">
+        <li>Home</li>
+      </a>
+      <a class="navbar-link" href="download.html">
+        <li>Download</li>
+      </a>
+      <a class="navbar-link" href="credits.html">
+        <li>Credits</li>
+      </a>
+      <a class="navbar-link" href="donate.html">
+        <li>Donate</li>
+      </a>
+      <a class="navbar-link" href="source.html">
+        <li>Get Source</li>
+      </a>
+      <a class="navbar-link" href="installhowto.html">
+        <li>Installation</li>
+      </a>
+      <a class="navbar-link" href="screenshots.html">
+        <li>Screenshots</li>
+      </a>
+      <a class="navbar-link" href="documentation.html">
+        <li>Documentation</li>
+      </a>
+      <a class="navbar-link" href="releases.html">
+        <li>Releases</li>
+      </a>
+      <a class="navbar-link" href="contact.html">
+        <li>Contact Us</li>
+      </a>
+      <a class="navbar-link" href="changelog.html">
+        <li>News</li>
+      </a>
+    </ul>
+  </nav>
+  <div class="openNav">
+    <div class="icon"></div>
+  </div>
+  <!--HTML of main page-->
+  <div class="wrapper">
+    <section>
+      <h1 class="top">Android x86</h1>
+      <h2 class="subheading">Run Android on your PC</h2>
+
+      <!--Style Switcher-->
+      <div class=themebtn>
+        <button class="button" onclick="setActiveStyleSheet('default'); return false;"><img src="light_theme.png" height="20px" width"20px" title='Toggle Theme'/> </button>
+        <button class="button" onclick="setActiveStyleSheet('alternate'); return false;" ><img src="dark_theme.png" height="20px" width"20px" title="Toggle Theme"/></button>
       </div>
-<!--HTML of main page-->
-        <div class="wrapper">
-            <section>
-                <h1 class="top">Android x86</h1>
-                <h2 class="subheading">Run Android on your PC</h2>
 
-                <!--Style Switcher-->
-                <div class=themebtn>
-                <button class="button" onclick="setActiveStyleSheet('default'); return false;"><img src="light_theme.png" height="20px" width"20px" title='Toggle Theme'/> </button>
-                <button class="button" onclick="setActiveStyleSheet('alternate'); return false;" ><img src="dark_theme.png" height="20px" width"20px" title="Toggle Theme"/></button>
-              </div>
-
-                <br>
-                <h2 id="documentation">Documentation</h2>
-          <div id="box1">
-                  <div class="doc_link">
-                    <a href="documentation/new_target.html">Add new target</a>
-                  </div>
-                  <div class="doc_link">
-                    <a href="documentation/analytics.html">Android-x86 Analytics Program</a>
-                  </div>
-                  <div class="doc_link">
-                    <a href="documentation/app_howto.html">App How-To</a>
-                  </div>
-                  <div class="doc_link">
-                    <a href="documentation/customize_kernel.html">Customize Kernel</a>
-                  </div>
-                  <div class="doc_link">
-                    <a href="documentation/debug.html">Debug How-To</a>
-                  </div>
-                  <div class="doc_link">
-                    <a href="documentation/graphic_card.html">Graphic Card Problems</a>
-                  </div>
-                  <div class="doc_link">
-                    <a href="documentation/vbox_audio.html">How to make virtualbox ICH AC97 audio to work with android eclair-x86</a>
-                  </div>
-                  <div class="doc_link">
-                    <a href="documentation/wake_machine.html">How to wake up the machine</a>
-                  </div>
-                  <div class="doc_link">
-                    <a href="documentation/battery.html">How to configure battery service</a>
-                  </div>
-                  <div class="doc_link">
-                    <a href="documentation/camera.html">How to make camera work</a>
-                  </div>
-                  <div class="doc_link">
-                    <a href="documentation/prebuild_images.html">How to use prebuild images</a>
-                  </div>
-                  <div class="doc_link">
-                  <a href="documentation/installation.html">Installation</a>
-                  </div>
-                  <div class="doc_link">
-                    <a href="documentation/ndk.html">NDK How-To</a>
-                  </div>
-                  <div class="doc_link">
-                    <a href="documentation/nfs.html">NFS How-To</a>
-                  </div>
-                  <div class="doc_link">
-                    <a href="documentation/qemu.html">QEMU How-To</a>
-                  </div>
-                  <div class="doc_link">
-                    <a href="documentation/sd_card.html">SD Card How-To</a>
-                  </div>
-                  <div class="doc_link">
-                    <a href="documentation/touch_only.html">Touch-only device How-To</a>
-                  </div>
-                  <div class="doc_link">
-                    <a href="documentation/uvesafb.html">Uvesafb How-To</a>
-                  </div>
-                  <div class="doc_link">
-                    <a href="documentation/virtualbox.html">VirtualBox How-To</a>
-                  </div>
+      <br>
+      <h2 id="documentation">Documentation</h2>
+      <div id="box1">
+        <div class="doc_link">
+          <a href="documentation/new_target.html">Add new target</a>
+        </div>
+        <div class="doc_link">
+          <a href="documentation/analytics.html">Android-x86 Analytics Program</a>
+        </div>
+        <div class="doc_link">
+          <a href="documentation/app_howto.html">App How-To</a>
+        </div>
+        <div class="doc_link">
+          <a href="documentation/customize_kernel.html">Customize Kernel</a>
+        </div>
+        <div class="doc_link">
+          <a href="documentation/debug.html">Debug How-To</a>
+        </div>
+        <div class="doc_link">
+          <a href="documentation/graphic_card.html">Graphic Card Problems</a>
+        </div>
+        <div class="doc_link">
+          <a href="documentation/vbox_audio.html">How to make virtualbox ICH AC97 audio to work with android eclair-x86</a>
+        </div>
+        <div class="doc_link">
+          <a href="documentation/wake_machine.html">How to wake up the machine</a>
+        </div>
+        <div class="doc_link">
+          <a href="documentation/battery.html">How to configure battery service</a>
+        </div>
+        <div class="doc_link">
+          <a href="documentation/camera.html">How to make camera work</a>
+        </div>
+        <div class="doc_link">
+          <a href="documentation/prebuild_images.html">How to use prebuild images</a>
+        </div>
+        <div class="doc_link">
+          <a href="documentation/ndk.html">NDK How-To</a>
+        </div>
+        <div class="doc_link">
+          <a href="documentation/nfs.html">NFS How-To</a>
+        </div>
+        <div class="doc_link">
+          <a href="documentation/qemu.html">QEMU How-To</a>
+        </div>
+        <div class="doc_link">
+          <a href="documentation/sd_card.html">SD Card How-To</a>
+        </div>
+        <div class="doc_link">
+          <a href="documentation/touch_only.html">Touch-only device How-To</a>
+        </div>
+        <div class="doc_link">
+          <a href="documentation/uvesafb.html">Uvesafb How-To</a>
+        </div>
+        <div class="doc_link">
+          <a href="documentation/virtualbox.html">VirtualBox How-To</a>
+        </div>
 
 
+      </div>
+
+
+
+      <br><br><br><br><br>
+      <section class = "bg">
+        <div class="bg"></div>
+        <div class="clearfix"></div>
+      </section>
+
+
+      <footer class="footer">
+        <div class="cap">
+
+          <a href="#" id="scroll-top" class="scroll-to-top">
+            Back to top
+          </a>
+        </div>
+        <div class="footer-copyright">
+          <div class="navbar-link">
+            &copy; 2009-2019 Android x86 | <a class="navbar-link" id="easter" href="mailto:aryabhushan2003@gmail.com">@arya</a> & <a class="navbar-link" id="easter" href="mailto:adityasood22@gmail.com">@sood</a>
           </div>
-
-
-
-<br><br><br><br><br>
-                <section class = "bg">
-                    <div class="bg"></div>
-                <div class="clearfix"></div>
-                </section>
-
-
-                <footer class="footer">
-                    <div class="cap">
-
-                      <a href="#" id="scroll-top" class="scroll-to-top">
-                          Back to top
-                      </a>
-                    </div>
-                          <div class="footer-copyright">
-                            <div class="navbar-link">
-                            &copy; 2009-2019 Android x86 | <a class="navbar-link" id="easter" href="mailto:aryabhushan2003@gmail.com">@arya</a> & <a class="navbar-link" id="easter" href="mailto:adityasood22@gmail.com">@sood</a>
-                            </div>
-                          </div>
-                        </footer>
-            </div>
+        </div>
+      </footer>
+    </div>
 
     <!--JAVASCRIPT CODE-->
 
@@ -162,10 +159,10 @@
     </script>
 
     <script>
-        $(".doc_link").click(function() {
-          window.location = $(this).find("a").attr("href");
-          return false;
-        });
-        </script>
-        </body>
-    </html>
+    $(".doc_link").click(function() {
+      window.location = $(this).find("a").attr("href");
+      return false;
+    });
+    </script>
+  </body>
+  </html>
