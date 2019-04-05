@@ -172,12 +172,12 @@ nav li:hover {
 }
 /*SCREENSHOTS GALLERRY*/
 div.gallery {
-  border: 1px solid black;
-  border-radius: 0.5em;
+  border: 1px solid white;
 }
 
 div.gallery:hover {
-  border: 1px solid #777;
+    box-shadow: 0px 0.5px 5px 0.2px black;
+    transition: box-shadow 0.2s;
 }
 
 div.gallery img {
