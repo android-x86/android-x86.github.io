@@ -162,11 +162,11 @@ nav li:hover {
 /*SCREENSHOTS GALLERRY*/
 div.gallery {
   border: 1px solid black;
-  border-radius: 0.5em;
 }
 
 div.gallery:hover {
-  border: 1px solid #777;
+    box-shadow: 0px 0.5px 5px 0.2px grey;
+    transition: box-shadow 0.3s;
 }
 
 div.gallery img {
