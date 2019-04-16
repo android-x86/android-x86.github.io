@@ -442,7 +442,7 @@ h3{
   overflow: auto;
   white-space: nowrap;
   transition: background-color 0.3;
-  -webkit-box-shadow: 0px 1px 10px -6px #ccc; 
+  -webkit-box-shadow: 0px 1px 10px -6px #ccc;
   -moz-box-shadow: 0px 1px 10px -6px #ccc;
   box-shadow: -1px 4px 10px -6px #e4dede;
   border: 1px solid #4a4a4c!important;
