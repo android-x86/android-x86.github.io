@@ -72,7 +72,7 @@ body.dark-theme{
 }
 .wrapper section p,
 .wrapperDark section p{
-  margin-bottom: 40px;
+  margin-bottom: 1em;
 }
 .openNav {
   transition-duration: 0.5s;
