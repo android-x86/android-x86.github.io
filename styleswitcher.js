@@ -76,6 +76,19 @@ function includeHTML() {
   }
 }
 
+function loadScript(url) {
+  var script = document.createElement("script");
+  script.src = url;
+  script.async = true;
+  document.head.appendChild(script);
+}
+
+loadScript("https://www.googletagmanager.com/gtag/js?id=UA-10249025-10");
+window.dataLayer = window.dataLayer || [];
+function gtag(){dataLayer.push(arguments);}
+gtag('js', new Date());
+gtag('config', 'UA-10249025-10');
+
 window.onload = function(e) {
   var cookie = readCookie("style");
   var title = cookie ? cookie : getPreferredStyleSheet();
