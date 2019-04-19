@@ -46,43 +46,7 @@
 
     </head>
     <body>
-      <nav>
-        <ul>
-          <a class="active-navbar-link" href="index.html">
-              <li>Home</li>
-          </a>
-          <a class="navbar-link" href="https://www.fosshub.com/Android-x86.html">
-              <li>Download</li>
-          </a>
-          <a class="navbar-link" href="credits.html">
-              <li>Credits</li>
-          </a>
-          <a class="navbar-link" href="donate.html">
-              <li>Donate</li>
-          </a>
-          <a class="navbar-link" href="source.html">
-              <li>Get Source</li>
-          </a>
-          <a class="navbar-link" href="installhowto.html">
-              <li>Installation</li>
-          </a>
-          <a class="navbar-link" href="screenshots.html">
-              <li>Screenshots</li>
-          </a>
-          <a class="navbar-link" href="documentation.html">
-              <li>Documentation</li>
-          </a>
-          <a class="navbar-link" href="releases.html">
-              <li>Releases</li>
-          </a>
-          <a class="navbar-link" href="contact.html">
-              <li>Contact Us</li>
-          </a>
-          <a class="navbar-link" href="changelog.html">
-              <li>News</li>
-          </a>
-        </ul>
-      </nav>
+      <div w3-include-html="navbar.html"></div>
       <div class="openNav">
         <div class="icon"></div>
       </div>
@@ -111,6 +75,7 @@
 
 <script src="https://code.jquery.com/jquery-2.1.1.min.js"></script>
 <script>
+includeHTML();
 $(".openNav").click(function() {
   $("body").toggleClass("navOpen");
   $("nav").toggleClass("open");
