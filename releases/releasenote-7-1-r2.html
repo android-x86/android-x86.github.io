@@ -1,10 +1,11 @@
 <!DOCTYPE html>
 <html>
 <head>
+  <base href="..">
   <title>Android-x86 - Porting Android to x86</title>
   <link rel="stylesheet" type="text/css" href="master.css" title="default">
   <link rel="alternate stylesheet" type="text/css" href="dark.css" title="alternate">
-  <script type="text/javascript" src="../styleswitcher.js"></script>
+  <script type="text/javascript" src="styleswitcher.js"></script>
   <link rel="icon" type="image/png" href="mobile.png">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <style>
@@ -49,43 +50,7 @@
 
 </head>
 <body>
-  <nav>
-    <ul>
-      <a class="navbar-link" href="../index.html">
-        <li>Home</li>
-      </a>
-      <a class="navbar-link" href="../download.html">
-        <li>Download</li>
-      </a>
-      <a class="navbar-link" href="../donate.html">
-        <li>Donate</li>
-      </a>
-      <a class="active-navbar-link" href="../source.html">
-        <li>Get Source</li>
-      </a>
-      <a class="navbar-link" href="../installhowto.html">
-        <li>Installation</li>
-      </a>
-      <a class="navbar-link" href="../screenshots.html">
-        <li>Screenshots</li>
-      </a>
-      <a class="navbar-link" href="../documentation.html">
-        <li>Documentation</li>
-      </a>
-      <a class="navbar-link" href="../releases.html">
-        <li>Releases</li>
-      </a>
-      <a class="navbar-link" href="../contact.html">
-        <li>Contact Us</li>
-      </a>
-      <a class="navbar-link" href="../changelog.html">
-        <li>News</li>
-      </a>
-      <a class="navbar-link" href="../credits.html">
-        <li>Credits</li>
-      </a>
-    </ul>
-  </nav>
+  <div w3-include-html="navbar.html"></div>
   <div class="openNav">
     <div class="icon"></div>
   </div>
@@ -190,7 +155,7 @@
           $ repo init -u git://git.osdn.net/gitroot/android-<br>x86/manifest -b android-x86-7.1-r2<br>
           $ repo sync --no-tags --no-clone-bundle
         </span></div>
-        <p>Read <a href="../source.html">this page</a> for how to compile source code.</p>
+        <p>Read <a href="source.html">this page</a> for how to compile source code.</p>
         <br><br><br>
         <footer class="footer">
           <div class="cap">
@@ -211,6 +176,7 @@
 
         <script src="https://code.jquery.com/jquery-2.1.1.min.js"></script>
         <script>
+        includeHTML();
         $(".openNav").click(function() {
           $("body").toggleClass("navOpen");
           $("nav").toggleClass("open");

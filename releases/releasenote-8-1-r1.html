@@ -2,6 +2,7 @@
 <html>
 <head>
   <base href="..">
+  <base href="..">
   <title>Android-x86 - Porting Android to x86</title>
   <link rel="stylesheet" type="text/css" href="master.css" title="default">
   <link rel="alternate stylesheet" type="text/css" href="dark.css" title="alternate">
@@ -161,7 +162,7 @@
             $ repo init -u git://git.osdn.net/gitroot/android-<br>x86/manifest -b oreo-x86 -m android-x86-8.1-r1.xml<br>
             $ repo sync --no-tags --no-clone-bundle
           </span></div>
-          <p>Read <a href="../source.html">this page</a> for how to compile source code.</p>
+          <p>Read <a href="source.html">this page</a> for how to compile source code.</p>
           <br><br><br>
           <footer class="footer">
             <div class="cap">
@@ -181,6 +182,7 @@
 
             <script src="https://code.jquery.com/jquery-2.1.1.min.js"></script>
             <script>
+            includeHTML();
             includeHTML();
             $(".openNav").click(function() {
               $("body").toggleClass("navOpen");
