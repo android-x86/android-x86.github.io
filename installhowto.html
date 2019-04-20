@@ -111,9 +111,10 @@
               </span></div>
               <br>where /dev/sdc is the device name of the target USB disk. However, some broken BIOS may fail to boot such a USB disk.</li>
               <li>Create a bootable USB stick by iso
-                There are some open source tools that can convert an iso into a bootable USB disk, say</li></ul>
-                <ul><li><a href="http://www.linuxliveusb.com/">Linux Live USB Creator ( LiLi ) -- officially support Android-x86</a></li>
+                There are some open source tools that can convert an iso into a bootable USB disk, such as:
+                <ul><li><a href="http://www.linuxliveusb.com/">Linux Live USB Creator ( LiLi ) -- officially supports Android-x86</a></li>
                   <li><a href="http://unetbootin.sourceforge.net/">UNetbootin</a> -- see the <a href="http://www.youtube.com/v/HPYQEOUr9fE">demo video</a></li></ul>
+              </ul>				  
                   <h2>Multi-Boot</h2>
                   <p>To boot other operating systems, you have to add items for them to /grub/menu.lst. For example, to boot Windows, add the following:</p>
                   <div class="code-snippet"><span style="color:#d1d1d1">title Windows<br>rootnoverify (hd0,0)<br>chainloader +1</span></div>
