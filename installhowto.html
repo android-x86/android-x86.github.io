@@ -84,14 +84,22 @@
 
         <h2>Step by Step</h2>
         <ul>
-          <li>Burn the iso image to cdrom, or create a bootable USB disk (recommended). See the Advanced section for details.</li><br>
-          <li>Boot from the Android-x86 installation CD/USB, choose the 'Install Android to harddisk' item, as show below</li><br>
-          <li>After seconds of booting, you will see a partition selection dialog. You can choose an existing partition to install Android-x86, or you can create or modify partitions by choosing 'Create/Modify partitions'. Note you can install Android-x86 to an external disk like USB drive. If the target drive is not shown, try 'Detect devices'.</li><br>
-          <li>Android-x86 can co-exist with other operating system or data in the chosen partition. If the partition is formatted, you may choose 'Do not format' to keep existing data. Otherwise, choose a filesystem type to format. Note the type you chosen must match the partition id, or the boot loader will fail to boot.</li><br>
-          <li>Also note if you choose to format to fat32, you will see a warning that android cannot save data to fat32. You can still proceed to install, but the installed android system will work like a live cd system. That is, all data will lose after power off. Therefore we do not recommend to install Android-x86 to a fat32 partition.</li><br>
-          <li>Next question is whether to install boot loader Grub. Usually you should answer yes, unless you want to install boot loader by hand yourself. Note the installer only creates boot items for Android-x86. If you hope to boot other operating systems, you need to add the item to /grub/menu.lst manually. See the Advanced section for how to do this.</li><br>
-          <li>If you are lucky, the installation will begin, and you will see the progress bar.</li><br>
-          <li>If you see this screen, the installation is complete. Congratulations! Now you can run Andrond-x86 directly, or you can reboot and run it.</li><br><br></ul>
+          <li>Burn the iso image to cdrom, or create a bootable USB disk (recommended). See the Advanced section for details.</li>
+          <li>Boot from the Android-x86 installation CD/USB, choose the 'Install Android to harddisk' item, as shown below:
+			<br /><blockquote><img src="screenshots/InstallBootSelect.png"></blockquote></li>
+          <li>After seconds of booting, you will see a partition selection dialog. You can choose an existing partition to install Android-x86, or you can create or modify partitions by choosing 'Create/Modify partitions'. Note you can install Android-x86 to an external disk like USB drive. If the target drive is not shown, try 'Detect devices'.
+			<br /><blockquote><img src="screenshots/InstallChoosePartition.png"></blockquote></li>
+          <li>Android-x86 can co-exist with other operating system or data in the chosen partition. If the partition is formatted, you may choose 'Do not format' to keep existing data. Otherwise, choose a filesystem type to format. Note the type you chosen must match the partition id, or the boot loader will fail to boot.
+			<br /><blockquote><img src="screenshots/InstallChooseFilesystem.png"></blockquote></li>
+          <li>Also note if you choose to format to fat32, you will see a warning that android cannot save data to fat32. You can still proceed to install, but the installed android system will work like a live cd system. That is, all data will lose after power off. Therefore we do not recommend to install Android-x86 to a fat32 partition.</li>
+          <li>Next question is whether to install boot loader Grub. Usually you should answer yes, unless you want to install boot loader by hand yourself. Note the installer only creates boot items for Android-x86. If you hope to boot other operating systems, you need to add the item to /grub/menu.lst manually. See the Advanced section for how to do this.
+			<br /><blockquote><img src="screenshots/InstallGrubConfirm.png">
+</blockquote></li>
+          <li>If you are lucky, the installation will begin, and you will see the progress bar.
+			<br /><blockquote><img src="screenshots/InstallProgress.png"></blockquote></li>
+          <li>If you see the following screen, the installation is complete. Congratulations! Now you can run Andrond-x86 directly, or you can reboot and run it:
+			<br /><blockquote><img src="screenshots/InstallComplete.png"></blockquote>
+        </ul>
 
           <h1 id="Advanced">Advanced</h1>
           <h2>How to create  a bootable USB stick for Android-x86?</h2><br>
@@ -109,8 +117,9 @@
                   <h2>Multi-Boot</h2>
                   <p>To boot other operating systems, you have to add items for them to /grub/menu.lst. For example, to boot Windows, add the following:</p>
                   <div class="code-snippet"><span style="color:#d1d1d1">title Windows<br>rootnoverify (hd0,0)<br>chainloader +1</span></div>
-                  <p>This assumes the Windows is installed to the first partition of the first hard disk. Or you need to change rootnoverify to the appropriate value. See <a href="http://www.gnu.org/software/grub/manual/grub.html">Grub Manual</a> for details.</p>
-                  <h3>Updated (2010)</h3>Since froyo-x86, if there is an NTFS partition in the installed disk, the installer will ask if you want to create a boot item for Windows, as show below.<br><br>
+                  <p>This assumes the Windows is installed to the first partition of the first hard disk. Or you need to change rootnoverify to the appropriate value. See <a href="https://www.gnu.org/software/grub/manual/grub/grub.html">Grub Manual</a> for details.</p>
+                  <h3>Updated (2010)</h3>Since <a href="https://en.wikipedia.org/wiki/Android_Froyo">froyo</a>-x86, if there is an NTFS partition in the installed disk, the installer will ask if you want to create a boot item for Windows, as shown below.
+                  <br /><blockquote><img src="screenshots/Dialog-for-creating-Windows-item.png"></blockquote>
 
                   <h1>Issues</h1>
                   <h3>VMware</h3>
