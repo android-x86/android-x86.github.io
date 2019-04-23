@@ -238,8 +238,11 @@ div.desc {
   color: aliceblue;
 }
 
-#scroll-top{
-  text-decoration: none;
+.scroll-to-top {
+  position: fixed;
+  z-index: 9999;
+  right: 24px;
+  bottom: 60px;
   background-color: #295db2;
   color: white;
   font-family: Product Sans;
@@ -247,15 +250,21 @@ div.desc {
   padding: 14px 25px;
   text-align: center;
   text-decoration: none;
-  display: inline-block;
+  display: none;
+  cursor: pointer;
   border: 2px solid transparent;
   border-radius: 25px;
-  transition : background-color 0.4s;
   transition : box-shadow 0.4s;
 }
-#scroll-top:hover{
+
+.scroll-to-top:hover {
+  color: white;
   background-color: #4165f4;
   box-shadow: 0px +1.5px #888888;
+}
+
+.scroll-to-top-show {
+  display: block;
 }
 
 a{

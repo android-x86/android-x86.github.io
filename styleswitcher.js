@@ -76,6 +76,30 @@ function includeHTML() {
   }
 }
 
+function backToTop() {
+  if (window.pageYOffset > 0) {
+    window.scrollBy(0, -80);
+    setTimeout(backToTop, 0);
+  }
+}
+
+function trackScroll() {
+  if (typeof this.topBtn == 'undefined') {
+    this.topBtn = document.querySelector('.scroll-to-top');
+    this.topBtn.addEventListener('click', backToTop);
+  }
+  if (this.topBtn != null) {
+    var scrolled = window.pageYOffset;
+    var coords = document.documentElement.clientHeight;
+
+    if (scrolled > coords) {
+      this.topBtn.classList.add('scroll-to-top-show');
+    } else {
+      this.topBtn.classList.remove('scroll-to-top-show');
+    }
+  }
+}
+
 function loadScript(url) {
   var script = document.createElement("script");
   script.src = url;
@@ -93,6 +117,7 @@ window.onload = function(e) {
   var cookie = readCookie("style");
   var title = cookie ? cookie : getPreferredStyleSheet();
   setActiveStyleSheet(title);
+  window.addEventListener('scroll', trackScroll);
 }
 
 window.onunload = function(e) {
