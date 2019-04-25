@@ -70,14 +70,14 @@
       <h2>Release Note 6.0-r3
       </h2>
       <h3>(2017/04/24)</h3>
-      The Android-x86 project is glad to announce the 6.0-r2 release to public. This is the third stable release of Android-x86 6.0 (marshmallow-x86). The prebuilt images are available in the following site:
-      <br>
+      The Android-x86 project is glad to announce the 6.0-r3 release to public. This is the third stable release of Android-x86 6.0 (marshmallow-x86). The prebuilt images are available in the following site:
+      <p>
       <ul>
         <li><a href="https://osdn.net/rel/android-x86/Release%206.0">https://osdn.net/rel/android-x86/Release%206.0</a></li>
       </ul>
-      <br>
+      </p>
       <h2><b>Key Features</b></h2>
-      <p>The updates since 6.0-r2 include</p>
+      <p>The updates since <a href="releases/releasenote-6-0-r2.html">6.0-r2</a> include</p>
       <ul>
         <li>CD/DVD auto-mount.</li>
         <li>Fix VMware broken since 6.0-r2.</li>
@@ -108,20 +108,20 @@
       </ul>
       <p>
         Except the traditional ISO files, this is the first release we tried to package android-x86 files into a Linux package <a href="http://rpm.org/">rpm</a>. It allows Linux users to easily install the release into an existing Linux device with a standalone ext4 root partition. On an rpm based device (Fedora/Red Hat/CentOS/...), just install it like a normal rpm package:</p>
-        <div class="code-snippet"><span style="color:#d1d1d1">&dollar; sudo rpm -ivh android-x86-6.0-r3.x86_64.rpm</span></div>
+        <div class="code-snippet"><span style="color:#d1d1d1"><code class="code-shell">sudo rpm -ivh android-x86-6.0-r3.x86_64.rpm</code></span></div>
         <p>On a deb based device (Debian/Ubuntu/LinuxMint/...), please use the <tt><a href="https://wiki.debian.org/Alien">alien</a></tt> tool to install it:</p>
-        <div class="code-snippet"><span style="color:#d1d1d1">$ sudo apt install alien <br>
-          $ sudo alien -ci android-x86-6.0-r3.x86_64.rpm</span></div>
+        <div class="code-snippet"><span style="color:#d1d1d1"><code class="code-shell">sudo apt install alien <br></code>
+          <code class="code-shell">sudo alien -ci android-x86-6.0-r3.x86_64.rpm</code></span></div>
           <p>All files will be installed to the /android-6.0-r3/ subdirectory and a boot entry will be added to grub2 menu. Reboot and choose android-x86 item from the menu to enter the system. Alternatively, you can launch Android-x86 in a QEMU virtual machine by the qemu-android script:</p>
-          <div class="code-snippet"><span style="color:#d1d1d1">&dollar; sudo qemu-android</span></div>
+          <div class="code-snippet"><span style="color:#d1d1d1"><code class="code-shell">sudo qemu-android</code></span></div>
           <p>Note Android-x86 running in QEMU and the real machine (after rebooting) shares the same data sub=folder.</p>
           To uninstall it :
           <div class="code-snippet"><span style="color:#d1d1d1">
-            &dollar; sudo rpm -e android-x86
+            <code class="code-shell">sudo rpm -e android-x86</code>
           </span></div>
 
           <p>To use an ISO file, Linux users could just dump the it into a usb drive to create a bootable usb stick like</p>
-          <div class="code-snippet"><span style="color:#d1d1d1">$ dd if=android-x86-6.0-r2.iso of=/dev/sdX</span></div>
+          <div class="code-snippet"><span style="color:#d1d1d1"><code class="code-shell">dd if=android-x86-6.0-r3.iso of=/dev/sdX</code></span></div>
           <p>where <tt>/dev/sdX</tt> is the device name of your usb drive.</p>
           <p>Windows's users can use the tool <a href="https://sourceforge.net/projects/win32diskimager/">Win32 Disk Imager</a> to create a bootable usb stick.</p>
           <p>On a deb based device (Debian/Ubuntu/LinuxMint/...), please use the <tt><a href="https://wiki.debian.org/Alien">alien</a></tt> tool to install it:</p>
@@ -135,8 +135,8 @@
           <h2><b>Source code</b></h2>
           The source code is available in the main <a href="https://osdn.net/projects/android-x86/scm/">git server.</a>
           <div class="code-snippet"><span style="color:#d1d1d1">
-            &dollar; repo init -u git://git.osdn.net/gitroot/android-x86/manifest -b android-x86-6.0-r2<br>
-            &dollar; repo sync --no-tags --no-clone-bundle
+            <code class="code-shell">repo init -u git://git.osdn.net/gitroot/android-x86/manifest -b android-x86-6.0-r3<br></code>
+            <code class="code-shell">repo sync --no-tags --no-clone-bundle</code>
           </span></div>
           <p>Read <a href="source.html">this page</a> for how to compile source code.</p>
           <br><br><br>

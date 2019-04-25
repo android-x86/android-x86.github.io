@@ -64,12 +64,12 @@
                 </h2>
                 <h3>(2015/10/07)</h3>
                 The The Android-x86 project is glad to announce 5.1-rc1 release to public. This is the first release candidate for Android-x86 5.1 (lollipop-x86) stable release. The prebuilt images are available in the following site:
-                <br>
+                <p>
                 <ul>
                     <li><a href="http://www.fosshub.com/Android-x86.html/">http://www.fosshub.com/Android-x86.html/</a></li>
                     <li><a href="https://osdn.net/rel/android-x86/Release%205.1">https://osdn.net/rel/android-x86/Release%205.1</a></li>
                 </ul>
-                <br>
+                </p>
                 <h2><b>Key Features</b></h2>
                 <p>The 5.1-rc1 release is based on the Android 5.1.1_r24. We added many x86 specified code and fixed issues to let the system runs smoothly on x86 platforms, especially for netbooks or tablets. The key features contain </p>
                 <ul>
@@ -98,7 +98,7 @@
                 </ul>
                 <p>Both files can be dumped into a usb drive to create a bootable usb stick like :</p>
                 <div class="code-snippet"><span style="color:#d1d1d1">
-                    &dollar; dd if=android-x86-5.1-rc1.iso of=/dev/sdX
+                    <code class="code-shell">dd if=android-x86-5.1-rc1.iso of=/dev/sdX</code>
                     </span></div>
 
                 <p>where <tt>/dev/sdX</tt> is the device name of your usb drive.</p>
@@ -115,8 +115,8 @@
                 <h2><b>Source code</b></h2>
                 The source code is available in the main <a href="https://osdn.net/projects/android-x86/scm/">git server.</a>
                 <div class="code-snippet"><span style="color:#d1d1d1">
-                    &dollar; repo init -u git://git.osdn.net/gitroot/android-x86/manifest -b lollipop-x86<br>
-                    &dollar; repo sync
+                    <code class="code-shell">repo init -u git://git.osdn.net/gitroot/android-x86/manifest -b lollipop-x86<br></code>
+                    <code class="code-shell">repo sync</code>
                     </span></div>
                 <p>Read <a href="source.html">this page</a> for how to compile source code.</p>
                 <br><br><br>

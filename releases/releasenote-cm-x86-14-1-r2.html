@@ -72,16 +72,14 @@
       <h3>(2018/05/03)</h3>
 
       The Android-x86 project is glad to announce cm-x86-14.1-r2. This is the second stable release of <a href="https://www.lineageos.org/">Lineage OS</a> (formerly CyanogenMod) 14.1 porting for Android-x86. The prebuilt images are available in the following site:
-      <br>
+      <p>
       <ul>
-        <li><a href="download.html">download.html</a></li>
         <li><a href="https://osdn.net/rel/android-x86/CM%20Release%2014.1">https://osdn.net/rel/android-x86/CM%20Release%2014.1</a></li>
-
       </ul>
-      <br>
+      </p>
       <h2><b>Key Features</b></h2>
       <p>
-        The cm-x86-14.1-r2 is an update of cm-x86-14.1-r1. It's based on the Android-x86 7.1-r2 and the latest LineageOS 14.1.
+      The cm-x86-14.1-r2 is an update of <a href="releases/releasenote-cm-x86-14-1-r1.html">cm-x86-14.1-r1</a>. It's based on the <a href="releases/releasenote-7-1-r2.html">Android-x86 7.1-r2</a> and the latest LineageOS 14.1.
       </p>
       <h2><b>Released Files
 
@@ -104,37 +102,37 @@
       <p>You can choose one of these files depends on your devices. In doubt, try the 32-bit ISO for legacy BIOS devices and 64-bit files for UEFI devices.</p>
       <p>To use an ISO file, Linux users could just dump it into a usb drive to create a bootable usb stick like :</p>
       <div class="code-snippet"><span style="color:#d1d1d1">
-        &dollar; dd if=cm-x86_64-14.1-r2.iso of=/dev/sdX
+        <code class="code-shell">dd if=cm-x86_64-14.1-r2.iso of=/dev/sdX</code>
       </span></div>
       <p>where <tt>/dev/sdX</tt> is the device name of your usb drive.</p>
       <p>Windows's users can use the tool <a href="https://sourceforge.net/projects/win32diskimager/">Win32 Disk Imager</a> to create a bootable usb stick.</p>
       <p>Please read <a href="https://sourceforge.net/p/android-x86/wiki/Installation/">this page</a> about how to install it to the device.
         Except the traditional ISO files, we also package android-x86 files into a Linux package <a href="http://rpm.org/">rpm</a>. It allows Linux users to easily install the release into an existing Linux device with a standalone ext4 root partition. On an rpm based device (Fedora/Red Hat/CentOS/SUSE...), just install it like a normal rpm package:</p>
         <div class="code-snippet"><span style="color:#d1d1d1">
-          &dollar; sudo rpm -Uvh cm-x86-14.1-r2.x86_64.rpm
+          <code class="code-shell">sudo rpm -Uvh cm-x86-14.1-r2.x86_64.rpm</code>
         </span></div>
         <p>All files will be installed to the /cm-x86-14.1-r2/ subdirectory and a boot entry will be added to grub2 menu. Reboot and choose cm-x86 item from the menu to enter the system.</p>
         To uninstall it:
         <div class="code-snippet"><span style="color:#d1d1d1">
-          &dollar; sudo rpm -e</span></div>
+          <code class="code-shell">sudo rpm -e cm-x86</code></span></div>
           <p>On a deb based device (Debian/Ubuntu/LinuxMint/...), please use the <a href="https://wiki.debian.org/Alien"><i>alien</i></a> tool to install it:</p>
           <div class="code-snippet"><span style="color:#d1d1d1">
-            &dollar; sudo apt install alien
+            <code class="code-shell">sudo apt install alien</code>
             <br>
-            &dollar; sudo alien -ci android-x86-7.1-r2.x86_64.rpm
+            <code class="code-shell">sudo alien -ci cm-x86-14.1-r2.x86_64.rpm</code>
           </span></div>
 
 
           <h2><b>Known Issues</b></h2>
           <ul>
-            <li>All known bugs of <a href="releasenote-7-1-r2.html">Android-x86 7.1-r2 release.</a></li>
+            <li>All known bugs of <a href="releases/releasenote-7-1-r2.html">Android-x86 7.1-r2 release.</a></li>
           </ul>
           <br>
           <h2><b>Source code</b></h2>
           The source code is available in the main <a href="https://osdn.net/projects/android-x86/scm/">git server.</a>
           <div class="code-snippet"><span style="color:#d1d1d1">
-            $ repo init -u git://git.osdn.net/gitroot/android-<br>x86/manifest -b android-x86-7.1-r2<br>
-            $ repo sync --no-tags --no-clone-bundle
+            <code class="code-shell">repo init -u git://git.osdn.net/gitroot/android-x86/manifest -b cm-x86-14.1-r2<br></code>
+            <code class="code-shell">repo sync --no-tags --no-clone-bundle</code>
           </span></div>
           <p>Read <a href="source.html">this page</a> for how to compile source code.</p>
           <br><br><br>

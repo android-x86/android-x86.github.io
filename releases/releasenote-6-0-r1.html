@@ -71,14 +71,13 @@
       </h2>
       <h3>(2016/09/13)</h3>
       The Android-x86 project is glad to announce the 6.0-r1 release to public. This is the first release for Android-x86 6.0 (marshmallow-x86). The prebuilt images are available in the following site:
-      <br>
+      <p>
       <ul>
-
         <li><a href="https://osdn.net/rel/android-x86/Release%206.0">https://osdn.net/rel/android-x86/Release%206.0</a></li>
       </ul>
-      <br>
+      </p>
       <h2><b>Key Features</b></h2>
-      <p>The 6.0-r1 release is based on the the Android Marshmallow-MR2 release (6.0.1_r66) with latest AOSP security updates. In addition to all key features since 6.0-rc2 it includes:</p>
+      <p>The 6.0-r1 release is based on the the Android Marshmallow-MR2 release (6.0.1_r66) with latest AOSP security updates. In addition to all key features since <a href="releases/releasenote-6-0-rc2.html">6.0-rc2</a>, it includes:</p>
       <ul>
         <li>Update kernel to 4.4.20 with more patches from <a href="https://android.googlesource.com/kernel/common/+/android-4.4.y">AOSP</a>.</li>
         <li>Update <a href="http://www.mesa3d.org">Mesa</a> to 12.0.2.</li>
@@ -102,7 +101,7 @@
       </ul>
       <p>Both files can be dumped into a usb drive to create a bootable usb stick like :</p>
       <div class="code-snippet"><span style="color:#d1d1d1">
-        &dollar; dd if=android-x86-6.0-r1.iso of=/dev/sdX
+        <code class="code-shell">dd if=android-x86-6.0-r1.iso of=/dev/sdX</code>
       </span></div>
 
       <p>where <tt>/dev/sdX</tt> is the device name of your usb drive.</p>
@@ -119,8 +118,8 @@
         <h2><b>Source code</b></h2>
         The source code is available in the main <a href="https://osdn.net/projects/android-x86/scm/">git server.</a>
         <div class="code-snippet"><span style="color:#d1d1d1">
-          &dollar; repo init -u git://git.osdn.net/gitroot/android-x86/manifest -b android-x86-6.0-r1<br>
-          &dollar; repo sync --no-tags --no-clone-bundle
+          <code class="code-shell">repo init -u git://git.osdn.net/gitroot/android-x86/manifest -b android-x86-6.0-r1<br></code>
+          <code class="code-shell">repo sync --no-tags --no-clone-bundle</code>
         </span></div>
         <p>Read <a href="source.html">this page</a> for how to compile source code.</p>
         <br><br><br>

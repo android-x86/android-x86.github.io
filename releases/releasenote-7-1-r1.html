@@ -71,13 +71,12 @@
       </h2>
       <h3>(2018/02/06)</h3>
       The Android-x86 project is glad to announce the 7.1-r1 release to public. This is the first stable release for Android-x86 7.1 (nougat-x86). The prebuilt images are available in the following site:
-      <br>
+      <p>
       <ul>
         <li><a href="https://www.fosshub.com/Android-x86.html">https://www.fosshub.com/Android-x86.html</a></li>
         <li><a href="https://osdn.net/rel/android-x86/Release%207.1">https://osdn.net/rel/android-x86/Release%207.1</a></li>
-
       </ul>
-      <br>
+      </p>
       <h2><b>Key Features</b></h2>
       <p>The 7.1-r1 release is based on the latest Android Nougat-MR2 release (7.1.2_r36). We have fixed most issues found in the since 7.1-rc2 and added more features:</p>
       <ul>
@@ -115,7 +114,7 @@
       </ul>
       <p>To use an ISO file, Linux users could just dump it into a usb drive to create a bootable usb stick like :</p>
       <div class="code-snippet"><span style="color:#d1d1d1">
-        &dollar; dd if=android-x86-7.1-r1.iso of=/dev/sdX
+        <code class="code-shell">dd if=android-x86-7.1-r1.iso of=/dev/sdX</code>
       </span></div>
       <p>where <tt>/dev/sdX</tt> is the device name of your usb drive.</p>
       <p>Windows's users can use the tool <a href="https://sourceforge.net/projects/win32diskimager/">Win32 Disk Imager</a> to create a bootable usb stick.</p>
@@ -123,26 +122,26 @@
         <p>In doubt, try the 32-bit files for legacy BIOS devices and 64-bit files for UEFI devices. Please read <a href="https://sourceforge.net/p/android-x86/wiki/Installation/">this page</a> about how to install it to the device.</p>
         Except the traditional ISO files, we also package android-x86 files into a Linux package <a href="http://rpm.org/">rpm</a>. It allows Linux users to easily install the release into an existing Linux device with a standalone ext4 root partition. On an rpm based device (Fedora/Red Hat/CentOS/SUSE...), just install it like a normal rpm package:</p>
         <div class="code-snippet"><span style="color:#d1d1d1">
-          &dollar; -Uvh android-x86-7.1-r1.x86_64.rpm
+          <code class="code-shell">sudo rpm -Uvh android-x86-7.1-r1.x86_64.rpm</code>
         </span></div>
         <p>This will update your older installation like 6.0-r3 or 7.1-rc2 if you have.</p><p>On a deb based device (Debian/Ubuntu/LinuxMint/...), please use the <a href="https://wiki.debian.org/Alien"><i>alien</i></a> tool to install it:</p>
         <div class="code-snippet"><span style="color:#d1d1d1">
-          &dollar; sudo apt install alien
+          <code class="code-shell">sudo apt install alien</code>
           <br>
-          &dollar; sudo alien -ci android-x86-7.1-r1.x86_64.rpm
+          <code class="code-shell">sudo alien -ci android-x86-7.1-r1.x86_64.rpm</code>
         </span></div>
         <p>All files will be installed to the /android-7.1-r1/ subdirectory and boot entries will be added to grub2 menu. Reboot and choose android-x86 item from the menu to boot Android-x86. Alternatively, you can launch Android-x86 in a QEMU virtual machine by the installed qemu-android script:</p>
         <div class="code-snippet"><span style="color:#d1d1d1">
-          &dollar; sudo qemu-android;
+          <code class="code-shell">sudo qemu-android</code>
         </span></div>
         <p>Note Android-x86 running in QEMU and the real machine (after rebooting) share the same data sub-folder.</p>
         To uninstall it :
         <div class="code-snippet"><span style="color:#d1d1d1">
-          &dollar; sudo rpm -e android-x86</span></div>
+          <code class="code-shell">sudo rpm -e android-x86</code></span></div>
           or (on Debian/Ubuntu/LinuxMint/...)
 
           <div class="code-snippet"><span style="color:#d1d1d1">
-            &dollar; sudo apt-get remove android-x86
+            <code class="code-shell">sudo apt-get remove android-x86</code>
           </span></div>
           <h2><b>Known Issues</b></h2>
           <ul>
@@ -153,8 +152,8 @@
           <h2><b>Source code</b></h2>
           The source code is available in the main <a href="https://osdn.net/projects/android-x86/scm/">git server.</a>
           <div class="code-snippet"><span style="color:#d1d1d1">
-            &dollar; repo init -u git://git.osdn.net/gitroot/android-<br>x86/manifest -b oreo-x86 -m android-x86-7.1-r1<br>
-            &dollar; repo sync --no-tags --no-clone-bundle
+            <code class="code-shell">repo init -u git://git.osdn.net/gitroot/android-x86/manifest -b android-x86-7.1-r1<br></code>
+            <code class="code-shell">repo sync --no-tags --no-clone-bundle</code>
           </span></div>
           <p>Read <a href="source.html">this page</a> for how to compile source code.</p>
           <br><br><br>

@@ -71,14 +71,14 @@
       </h2>
       <h3>(2015/07/17)</h3>
       The Android-x86.org is glad to announce the 4.4-r3 release to public. This is the third stable release Android-x86 4.4 (kitkat-x86). A live CD ISO is available in the following site:
-      <br>
+      <p>
       <ul>
         <li><a href="http://www.fosshub.com/Android-x86.html/">http://www.fosshub.com/Android-x86.html/</a></li>
         <li><a href="https://sourceforge.net/projects/android-x86/files/Release%204.4/">https://sourceforge.net/projects/android-x86/files/Release 4.4/</a></li>
       </ul>
-      <br>
+      </p>
       <h2><b>Key Features</b></h2>
-      <p>The 4.4-r3 release is based on the Android 4.4.4_r2.0.1 (KTU84Q) release. We have fixed and added x86 specified code to let the system runs smoothly on x86 platforms, especially for tablets and netbooks. There are a lot of improvements since the 4.4-r2 release including</p>
+      <p>The 4.4-r3 release is based on the Android 4.4.4_r2.0.1 (KTU84Q) release. We have fixed and added x86 specified code to let the system runs smoothly on x86 platforms, especially for tablets and netbooks. There are a lot of improvements since the <a href="releases/releasenote-4-4-r2.html">4.4-r2</a> release including</p>
       <ul>
         <li>Upgrade the kernel to 4.0.8 with more drivers enabled to support modern hardware. Baytrail platform is well supported.</li>
         <li> Replace Bluedroid by the Bluez stack. Bluetooth is more stable and usable.</li>
@@ -106,7 +106,7 @@
       <p>Both files can be dumped into a usb drive to get a bootable usb stick, like</p>
 
       <div class="code-snippet"><span style="color:#d1d1d1">
-        &dollar; dd if=android-x86-4.4-r3.img of=/dev/sdX
+        <code class="code-shell">dd if=android-x86-4.4-r3.img of=/dev/sdX</code>
       </span></div>
 
       <p>where <tt>/dev/sdX</tt> is the device name of your usb drive.</p>
@@ -121,8 +121,8 @@
       <h2><b>Source code</b></h2>
       The source code is available in the main <a href="https://osdn.net/projects/android-x86/scm/">git server.</a>
       <div class="code-snippet"><span style="color:#d1d1d1">
-        &dollar; repo init -u git://gitscm.sf.net/gitroot/android-x86/manifest -b android-x86-4.4-r3<br>
-        &dollar; repo sync
+        <code class="code-shell">repo init -u git://gitscm.sf.net/gitroot/android-x86/manifest -b android-x86-4.4-r3<br></code>
+        <code class="code-shell">repo sync</code>
       </span></div>
       <p>Read <a href="source.html">this page</a> for how to compile source code.</p>
       <br><br><br>

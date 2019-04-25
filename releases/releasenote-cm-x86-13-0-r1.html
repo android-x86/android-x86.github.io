@@ -71,15 +71,15 @@
       </h2>
       <h3>(2015/07/17)</h3>
       The Android-x86 project is glad to announce cm-x86-13.0-r1, the first stable release of CyanogenMod 13.0 porting for Android-x86. The prebuilt images are available in the following site:
-      <br>
+      <p>
       <ul>
         <li><a href="https://osdn.net/rel/android-x86/CM%20Release%2013.0">https://osdn.net/rel/android-x86/CM%20Release%2013.0</a></li>
-
       </ul>
-      <br>
+      </p>
       <h2><b>Key Features</b></h2>
       <p>
-        The cm-x86-13.0-rc1 is a porting of CM 13.0 to the Android-x86 platform as the BSP. Based on the Android-x86 6.0-r2<ul>
+        The cm-x86-13.0-r1 is a porting of CM 13.0 to the Android-x86 platform as the BSP. Based on the <a href="releases/releasenote-6-0-r2.html">Android-x86 6.0-r2</a> and the latest CM 13.0, it includes almost all the features from the two open source projects.
+	<ul>
           <li>32-bit ISO:&nbsp;&nbsp;cm-x86-13.0-r1.iso
             <p>sha1sum: d9d3486f0dd389fc10b1bf7ad75e32170a3ea8f7</p>
           </li>
@@ -114,16 +114,16 @@
       </ul>
 
       <P>Except the traditional ISO files, we also provided android-x86 files as a Linux package rpm. It allows Linux users to easily install the release into an existing Linux device with a standalone ext4 root partition. On an rpm based device (Fedora/Red Hat/CentOS/...), just install it like a normal rpm package: </P>
-      <div class="code-snippet"><span style="color:#d1d1d1">$ sudo rpm -ivh cm-x86-13.0-r1.x86_64.rpm</span></div>
+      <div class="code-snippet"><span style="color:#d1d1d1"><code class="code-shell">sudo rpm -ivh cm-x86-13.0-r1.x86_64.rpm</code></span></div>
       <p>All files will be installed to the /cm-x86-13.0-r1/ subdirectory and a boot entry will be added to grub2 menu. Reboot and choose cm-x86 item from the menu to enter the system.<br>
         To uninstall it:</p>
-        <div class="code-snipppet"><span style="color:#d1d1d1">$ sudo rpm -e cm-x86</span></div>
+        <div class="code-snipppet"><span style="color:#d1d1d1"><code class="code-shell">sudo rpm -e cm-x86</code></span></div>
         On a deb based device (Debian/Ubuntu/LinuxMint/...), please use the alien tool to install it:
-        <div class="code-snipppet"><span style="color:#d1d1d1">$ sudo apt install alien <br>
-          $ sudo alien -ci cm-x86-13.0-r1.x86_64.rpm</span></div>
+        <div class="code-snipppet"><span style="color:#d1d1d1"><code class="code-shell">sudo apt install alien <br></code>
+          <code class="code-shell">sudo alien -ci cm-x86-13.0-r1.x86_64.rpm</code></span></div>
           <p>To use an ISO file, Linux users could just dump the it into a usb drive to create a bootable usb stick like</p>
           <div class="code-snippet"><span style="color:#d1d1d1">
-            $ dd if=cm-x86_64-13.0-r1.iso of=/dev/sdX
+            <code class="code-shell">dd if=cm-x86_64-13.0-r1.iso of=/dev/sdX</code>
           </span></div>
           <p>where <tt>/dev/sdX</tt> is the device name of your usb drive.</p>
           <p>Windows's users can use the tool <a href="https://sourceforge.net/projects/win32diskimager/">Win32 Disk Imager</a> to create a bootable usb stick.</p>
@@ -138,9 +138,9 @@
             <h2><b>Source code</b></h2>
             The source code is available in the main <a href="https://osdn.net/projects/android-x86/scm/">git server.</a>
             <div class="code-snippet"><span style="color:#d1d1d1">
-              $ repo init -u git://git.osdn.net/gitroot/android-x86/manifest -b cm-x86-13.0-r1.xml
+              <code class="code-shell">repo init -u git://git.osdn.net/gitroot/android-x86/manifest -b cm-x86-13.0-r1.xml</code>
               <br>
-              $ repo sync --no-tags --no-clone-bundle
+              <code class="code-shell">repo sync --no-tags --no-clone-bundle</code>
             </span></div>
             <p>Read <a href="source.html">this page</a> for how to compile source code.</p>
 

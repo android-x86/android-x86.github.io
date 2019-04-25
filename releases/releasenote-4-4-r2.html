@@ -71,14 +71,14 @@
       </h2>
       <h3>(2015/01/01)</h3>
       The Android-x86.org is glad to announce the 4.4-r2 release to public. This is the second stable release Android-x86 4.4 (kitkat-x86). A live CD ISO is available in the following site:
-      <br>
+      <p>
       <ul>
         <li><a href="http://www.fosshub.com/Android-x86.html/">http://www.fosshub.com/Android-x86.html/</a></li>
         <li><a href="https://sourceforge.net/projects/android-x86/files/Release%204.4/">https://sourceforge.net/projects/android-x86/files/Release 4.4/</a></li>
       </ul>
-      <br>
+      </p>
       <h2><b>Key Features</b></h2>
-      <p>The 4.4-r2 release is based on the Android 4.4.4_r2 (KitKat-MR2.2) release. We have fixed and added x86 specified code to let the system runs smoothly on x86 platforms, especially for tablets and netbooks. Except the functions of 4.4-r1, the additional features include</p>
+      <p>The 4.4-r2 release is based on the Android 4.4.4_r2 (KitKat-MR2.2) release. We have fixed and added x86 specified code to let the system runs smoothly on x86 platforms, especially for tablets and netbooks. Except the functions of <a href="releases/releasenote-4-4-r1.html">4.4-r1</a>, the additional features include</p>
       <ul>
         <li>Upgrade the kernel to the latest stable version 3.18 with more drivers enabled. Allow us to support more modern hardware like Intel Baytrail platform.</li>
         <li>Primary support booting from UEFI. Note the installer still doesn't work for GPT partition table. But you may manually install it.</li>
@@ -103,7 +103,7 @@
       <p>Both files can be dumped into a usb drive to get a bootable usb stick, like</p>
 
       <div class="code-snippet"><span style="color:#d1d1d1">
-        &dollar; dd if=android-x86-4.4-r1.iso of=/dev/sdX
+        <code class="code-shell">dd if=android-x86-4.4-r2.iso of=/dev/sdX</code>
       </span></div>
 
       <p>where <tt>/dev/sdX</tt> is the device name of your usb drive.</p>
@@ -119,8 +119,8 @@
       <h2><b>Source code</b></h2>
       The source code is available in the main <a href="https://osdn.net/projects/android-x86/scm/">git server.</a>
       <div class="code-snippet"><span style="color:#d1d1d1">
-        &dollar; repo init -u git://gitscm.sf.net/gitroot/android-x86/manifest -b android-x86-4.4-r2<br>
-        &dollar; repo sync
+        <code class="code-shell">repo init -u git://gitscm.sf.net/gitroot/android-x86/manifest -b android-x86-4.4-r2<br></code>
+        <code class="code-shell">repo sync</code>
       </span></div>
       <p>Read <a href="source.html">this page</a> for how to compile source code.</p>
       <br><br><br>

@@ -71,16 +71,14 @@
       </h2>
       <h3>(2016/02/06)</h3>
       The Android-x86.org is glad to release the 4.4-r5 to the public. The prebuilt image is available in the following sites:
-      <br>
-      <ul>
+      <p>
         <ul>
           <li><a href="http://www.fosshub.com/Android-x86.html/">http://www.fosshub.com/Android-x86.html/android-x86-4.4-r5.iso</a></li>
           <li><a href="https://osdn.net/rel/android-x86/Release%204.4">https://osdn.net/rel/android-x86/Release%204.4</a></li>
         </ul>
-      </ul>
-      <br>
+      </p>
       <h2><b>Key Features</b></h2>
-      <p>The Android-x86 4.4-r5 is a bugfix of the 4.4-r4 release. It addresses more hazi fonts issue of Mesa 10.5.9 found on Intel Gen5 GPUs. You are encouraged to upgrade to this release if you still encountered the hazi fonts issue.</p>
+      <p>The Android-x86 4.4-r5 is a bugfix of the <a href="releases/releasenote-4-4-r4.html">4.4-r4</a> release. It addresses more hazi fonts issue of Mesa 10.5.9 found on Intel Gen5 GPUs. You are encouraged to upgrade to this release if you still encountered the hazi fonts issue.</p>
       <br><br>
       <h2><b>Released Files
 
@@ -96,7 +94,7 @@
       <p>The file can be dumped into a usb drive to get a bootable usb stick, like</p>
 
       <div class="code-snippet"><span style="color:#d1d1d1">
-        &dollar; dd if=android-x86-4.4-r5.iso of=/dev/sdX
+        <code class="code-shell">dd if=android-x86-4.4-r5.iso of=/dev/sdX</code>
       </span></div>
 
       <p>where <tt>/dev/sdX</tt> is the device name of your usb drive.</p>
@@ -112,7 +110,7 @@
       The source code is available in the main <a href="https://osdn.net/projects/android-x86/scm/">git server.</a>
       <div class="code-snippet"><span style="color:#d1d1d1">
         &dollar;repo init -u git://git.osdn.net/gitroot/android-x86/manifest -b android-x86-4.4-r5<br>
-        &dollar; repo sync
+        <code class="code-shell">repo sync</code>
       </span></div>
       <p>Read <a href="source.html">this page</a> for how to compile source code.</p>
       <br><br><br>

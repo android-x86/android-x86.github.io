@@ -71,14 +71,13 @@
       </h2>
       <h3>(2016/08/15)</h3>
       The Android-x86 project is glad to announce the 6.0-rc2 release to public. This is the second release candidate for Android-x86 6.0 (marshmallow-x86). The prebuilt images are available in the following site:
-      <br>
+      <p>
       <ul>
-
         <li><a href="https://osdn.net/rel/android-x86/Release%206.0">https://osdn.net/rel/android-x86/Release%206.0</a></li>
       </ul>
-      <br>
+      </p>
       <h2><b>Key Features</b></h2>
-      <p>The 6.0-rc2 release is based on the latest Android Marshmallow-MR2 release (6.0.1_r61) with all AOSP security patches applied. We fixed a lot of issues found in the since 6.0-rc1 and added more features:</p>
+      <p>The 6.0-rc2 release is based on the latest Android Marshmallow-MR2 release (6.0.1_r61) with all AOSP security patches applied. We fixed a lot of issues found in the since <a href="releases/releasenote-6-0-rc1.html">6.0-rc1</a> and added more features:</p>
       <ul>
         <li>Launch the <a href="http://www.android-x86.org/documents/analytics-program">Android-x86 Analytics Program</a> to collect anonymous data from users.
         </li>
@@ -106,7 +105,7 @@
       </ul>
       <p>Both files can be dumped into a usb drive to create a bootable usb stick like :</p>
       <div class="code-snippet"><span style="color:#d1d1d1">
-        &dollar; dd if=android-x86-6.0-rc2.iso of=/dev/sdX
+        <code class="code-shell">dd if=android-x86-6.0-rc2.iso of=/dev/sdX</code>
 
       </span></div>
       <p>where <tt>/dev/sdX</tt> is the device name of your usb drive.</p>
@@ -123,8 +122,8 @@
         <h2><b>Source code</b></h2>
         The source code is available in the main <a href="https://osdn.net/projects/android-x86/scm/">git server.</a>
         <div class="code-snippet"><span style="color:#d1d1d1">
-          &dollar; repo init -u git://git.osdn.net/gitroot/android-x86/manifest -b marshmallow-x86<br>
-          &dollar; repo sync
+          <code class="code-shell">repo init -u git://git.osdn.net/gitroot/android-x86/manifest -b marshmallow-x86<br></code>
+          <code class="code-shell">repo sync</code>
         </span></div>
         <p>Read <a href="source.html">this page</a> for how to compile source code.</p>
         <br><br><br>

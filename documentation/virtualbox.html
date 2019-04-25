@@ -241,7 +241,7 @@
               <h4>Upload files by adb</h4>
                 <p>Adb is Android Debug Bridge, a tool to debug Android system. If you compile from source, it is located in out/host/linux-x86/bin/adb. Otherwise you can get it from Android SDK. Suppose the network of your vbox is OK, you can upload a file from your host by
               <div class="code-snippet"><span style="color:#d1d1d1">
-                $ ADBHOST=&lt;ip of vbox&gt; out/host/linux-x86/bin/adb push &lt;a music file&gt; /sdcard
+                <code class="code-shell">ADBHOST=&lt;ip of vbox&gt; out/host/linux-x86/bin/adb push &lt;a music file&gt; /sdcard</code>
                 </span></div>
                 You need to know the ip of your vbox. You can get it by Alt-F1 and netcfg. You may also need to reboot Android to see the uploaded files. Of course in this way you have to mount /sdcard to a virtual disk partion.
                 <br><br>

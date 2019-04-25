@@ -67,16 +67,16 @@
       </div>
 
       <br>
-      <h2>Release Note 4.4-rc1
+      <h2>Release Note 4.4-RC1
       </h2>
       <h3>(2014/02/14)</h3>
       Happy Valentine's Day! After several months of development, we are glad to announce the 4.4-RC1 release to public. This is a candidate of Android-x86 4.4 stable release. A live CD ISO is available in the following site:
-      <br>
+      <p>
       <ul>
         <li><a href="https://sourceforge.net/projects/android-x86/files/Release%204.4/">https://sourceforge.net/projects/android-x86/files/Release 4.4/</a>
         </li>
       </ul>
-      <br>
+      </p>
       <h2><b>Key Features</b></h2>
       <p>The 4.4-RC1 release is based on the Android 4.4.2 (KitKat-MR1 release). We have fixed and added x86 specified code to let the system runs smoothly on x86 platforms, especially for netbooks or tablets. The key features contain </p>
       <ul>
@@ -105,7 +105,7 @@
       </ul>
       <p>The iso file is hybrid format. That means you can dump the iso into a usb drive and get a bootable usb stick, like</p>
       <div class="code-snippet"><span style="color:#d1d1d1">
-        &dollar; dd if=android-x86-4.4-rc1.iso of=/dev/sdX
+        <code class="code-shell">dd if=android-x86-4.4-RC1.iso of=/dev/sdX</code>
       </span></div>
 
       <p>where <tt>/dev/sdX</tt> is the device name of your usb drive.</p>
@@ -119,8 +119,8 @@
       <h2><b>Source code</b></h2>
       The source code is available in the main <a href="https://osdn.net/projects/android-x86/scm/">git server.</a>
       <div class="code-snippet"><span style="color:#d1d1d1">
-        &dollar; repo init -u git://git.osdn.net/gitroot/android-x86/manifest -b kitkat-x86<br>
-        &dollar; repo sync
+        <code class="code-shell">repo init -u git://git.osdn.net/gitroot/android-x86/manifest -b kitkat-x86<br></code>
+        <code class="code-shell">repo sync</code>
       </span></div>
       <p>Read <a href="source.html">this page</a> for how to compile source code.</p>
       <br><br><br>

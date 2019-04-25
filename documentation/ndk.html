@@ -116,23 +116,23 @@
                     source tree.<br><br>
                     To build the hello example,
                     <div class="code-snippet"><span style="color:#44ffc0">
-                      $ cd ndk<br>
-                      $ ./ndk-build -C samples/hello-jni<br>
+                      <code class="code-shell">cd ndk<br></code>
+                      <code class="code-shell">./ndk-build -C samples/hello-jni<br></code>
                     </span></div>
 
                     To build more complex examples like san-angles using OpenGL, you need to build the required system libs first since they are not in NDK prebuilt libs.<br><br>
 
                     On top of froyo-x86 tree
                     <div class="code-snippet"><span style="color:#44ffc0">
-                      $ . build/envsetup.sh<br>
-                      $ lunch vm-eng (or any target you'd like)<br>
-                      $ m libGLESv1_CM<br>
+                      <code class="code-shell">. build/envsetup.sh<br></code>
+                      <code class="code-shell">lunch vm-eng (or any target you'd like)<br></code>
+                      <code class="code-shell">m libGLESv1_CM<br></code>
                     </span></div>
 
                     Then you can build the example by
                     <div class="code-snippet"><span style="color:#44ffc0">
-                      $ cd ndk<br>
-                      $ ./ndk-build -C samples/san-angeles<br>
+                      <code class="code-shell">cd ndk<br></code>
+                      <code class="code-shell">./ndk-build -C samples/san-angeles<br></code>
                     </span></div>
 
                     Then build the x86 apk by Eclipse or Ant as usual.

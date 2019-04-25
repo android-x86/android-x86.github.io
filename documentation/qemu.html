@@ -110,7 +110,7 @@
                       </span></div>
                       Run it by:
                       <div class="code-snippet"><span style="color:#44ffc0">
-                        $ qemu-android &lt;path to eeepc.iso&gt;
+                        <code class="code-shell">qemu-android &lt;path to eeepc.iso&gt;</code>
                       </span></div>
                         The script configures the qemu machine to have a sound card es1370, and a network card rtl8139 (the default one), and use the user mode network stack.<br><br>
                         Note the script runs qemu in <a href="http://www.linux-kvm.org/page/Main_Page">KVM mode</a>.<br>
@@ -123,11 +123,11 @@
                           Like Virtual Box, you can save data to a qemu virtual disk.<br>
                           First, create a qemu virtual disk (size 1GB) by
                           <div class="code-snippet"><span style="color:#44ffc0">
-                            $ qemu-img create -f qcow2 android.img 1G
+                            <code class="code-shell">qemu-img create -f qcow2 android.img 1G</code>
                             </span></div>
                           Run
                           <div class="code-snippet"><span style="color:#44ffc0">
-                            $ qemu-android eeepc.iso -hda android.img -boot d
+                            <code class="code-shell">qemu-android eeepc.iso -hda android.img -boot d</code>
                             </span></div>
                             Then follow the <a href="virtualbox.html">VirtualBoxHowTo</a> for how to mount user data and sdcard on the virtual disk.
                             <br>You can also follow that article to upload music files and play them.
