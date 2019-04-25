@@ -488,6 +488,34 @@ h3{
   background: none;
 }
 
+.code-snippet {
+  margin-top: 16px!important;
+  margin-bottom: 16px!important;
+  width: auto;
+  background-color: #2b2b2b;
+  padding: 8px 12px;
+  border-left: 4px solid #14b9ff;
+  word-wrap: normal;
+  overflow: auto;
+  white-space: nowrap;
+  font-family: Consolas,"courier new";
+  font-size: 16px;
+}
+
+.code-snippet-inv {
+  margin-top: 16px!important;
+  margin-bottom: 16px!important;
+  width: auto;
+  background-color: #b0c9ff;
+  padding: 8px 12px;
+  border-left: 4px solid #000000;
+  word-wrap: normal;
+  overflow: auto;
+  white-space: nowrap;
+  font-family: Consolas,"courier new";
+  font-size: 16px;
+}
+
 .code-shell {
   font-family: Consolas,"courier new";
 }
