@@ -487,3 +487,12 @@ h3{
   border: none;
   background: none;
 }
+
+.code-shell {
+  font-family: Consolas,"courier new";
+}
+
+.code-shell::before {
+  color: gray;
+  content: '$ ';
+}
