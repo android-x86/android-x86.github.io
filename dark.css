@@ -509,11 +509,16 @@ h3{
   font-size: 16px;
 }
 
-.code-shell {
+.code-shell, .code-shell-root {
   font-family: Consolas,"courier new";
 }
 
 .code-shell::before {
   color: gray;
   content: '$ ';
+}
+
+.code-shell-root::before {
+  color: gray;
+  content: '# ';
 }
