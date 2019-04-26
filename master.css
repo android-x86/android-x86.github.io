@@ -140,6 +140,9 @@ body.dark-theme{
   transform: rotate(45deg);
   -webkit-transform: rotate(45deg);
 }
+ol, ul {
+  padding-left: 28px;
+}
 nav {
   background-color: #2e56cc;
   width: 100%;
@@ -153,8 +156,8 @@ nav ul {
   margin-top: 50px;
   font-family: Product Sans;
   font-size: 1.1em;
+  padding-left: 0;
 }
-
 
 nav li {
   transition :0.4s;
