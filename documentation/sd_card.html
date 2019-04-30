@@ -2,48 +2,16 @@
 <!--Website created by Arya Bhushan & Aditya Sood-->
 <html>
     <head>
+        <base href="..">
         <title>Android-x86 - Porting Android to x86</title>
-        <link rel="stylesheet" type="text/css" href="../master.css">
-		<meta charset="utf-8" name="viewport" content="width=device-width, initial-scale=1.0">
+        <link rel="stylesheet" type="text/css" href="master.css" title="default">
+        <link rel="alternate stylesheet" type="text/css" href="dark.css" title="alternate">
+        <script type="text/javascript" src="styleswitcher.js"></script>
+        <meta charset="utf-8" name="viewport" content="width=device-width, initial-scale=1.0">
+        <link rel="icon" type="image/png" href="mobile.png">
     </head>
     <body>
-      <nav>
-        <ul>
-          <a class="navbar-link" href="../index.html">
-            <li>Home</li>
-          </a>
-          <a class="navbar-link" href="../download.html">
-            <li>Download</li>
-          </a>
-          <a class="navbar-link" href="../donate.html">
-            <li>Donate</li>
-          </a>
-          <a class="navbar-link" href="../source.html">
-            <li>Get Source</li>
-          </a>
-          <a class="navbar-link" href="../installhowto.html">
-            <li>Installation</li>
-          </a>
-          <a class="navbar-link" href="../screenshots.html">
-            <li>Screenshots</li>
-          </a>
-          <a class="active-navbar-link" href="../documentation.html">
-            <li>Documentation</li>
-          </a>
-          <a class="navbar-link" href="../releases.html">
-            <li>Releases</li>
-          </a>
-          <a class="navbar-link" href="../contact.html">
-            <li>Contact Us</li>
-          </a>
-          <a class="navbar-link" href="../changelog.html">
-            <li>News</li>
-          </a>
-          <a class="navbar-link" href="../credits.html">
-            <li>Credits</li>
-          </a>
-        </ul>
-      </nav>
+      <div w3-include-html="navbar.html"></div>
       <div class="openNav">
         <div class="icon"></div>
       </div>
@@ -52,6 +20,10 @@
             <section>
                 <h1 id="top" class="heading">Android-x86</h1>
                 <h2 class="subheading">Run Android on your PC</h2>
+                <div class=themebtn>
+                  <button class="button" onclick="setActiveStyleSheet('default'); return false;"><img src="light_theme.png" height="20px" width="20px" title="Toggle Theme"/></button>
+                  <button class="button" onclick="setActiveStyleSheet('alternate'); return false;"><img src="dark_theme.png" height="20px" width="20px" title="Toggle Theme"/></button>
+                </div>
 
                 <h2>SD-Card How To</h2>
 
@@ -120,25 +92,14 @@
         </section>
 
 
-        <footer class="footer">
-            <div class="cap">
-
-              <a href="#" id="scroll-top" class="scroll-to-top">
-                  Back to top
-              </a>
-            </div>
-                  <div class="footer-copyright">
-                    <div class="navbar-link">
-                    &copy; 2019 Android-x86 | All Rights Reserved | Website v2.14 by <a class="navbar-link" id="easter" href="mailto:aryabhushan2003@gmail.com">@arya</a> & <a class="navbar-link" id="easter" href="mailto:adityasood22@gmail.com">@sood</a>
-                    </div>
-                  </div>
-                </footer>
+        <div w3-include-html="footer.html"></div>
     </div>
 
       <!--JAVASCRIPT CODE-->
 
     <script src="https://code.jquery.com/jquery-2.1.1.min.js"></script>
     <script>
+    includeHTML();
     $(".openNav").click(function() {
     $("body").toggleClass("navOpen");
     $("nav").toggleClass("open");
