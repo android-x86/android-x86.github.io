@@ -1,6 +1,5 @@
 function scroller(id) {
 	document.getElementById(id).scrollIntoView();
-	return false;
 }
 
 function setActiveStyleSheet(title) {
