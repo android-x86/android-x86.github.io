@@ -167,12 +167,16 @@ nav li {
   letter-spacing: 0.02em;
   text-align: center;
 }
+nav li.active {
+  color: white;
+  font-weight: bold;
+}
 nav li:hover {
   cursor: pointer;
   color:white;
   background-color: darkblue;
-
 }
+
 /*SCREENSHOTS GALLERRY*/
 div.gallery {
   border: 1px solid white;
@@ -369,13 +373,6 @@ a:hover{
   width: 100%;
   background-color: royalblue;
   text-align: center;
-}
-
-.active-navbar{
-  background-color:;
-}
-.active-li{
-  color:
 }
 
 .navbar-link a:hover{

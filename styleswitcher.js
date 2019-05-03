@@ -74,6 +74,9 @@ function includeHTML() {
       }
       xhttp.open("GET", file, true);
       xhttp.send();
+      if (typeof this.activeLink == 'undefined' || !this.activeLink) {
+        this.activeLink = setActiveNavLink(window.location.pathname);
+      }
       /* Exit the function: */
       return;
     }
@@ -102,6 +105,20 @@ function trackScroll() {
       this.topBtn.classList.remove('scroll-to-top-show');
     }
   }
+}
+
+function setActiveNavLink(url) {
+  var linkContainer = document.querySelectorAll('.navbar-link');
+  let i = linkContainer.length;
+  if (i == 0) return false;
+  while (--i > 0) {
+    var h = linkContainer[i].getAttribute("href");
+    if (h == null || !h.match(".html")) continue;
+    var k = h.split(".")[0] + ".*html";
+    if (url.match(k)) break;
+  }
+  linkContainer[i].firstChild.classList.add('active');
+  return true;
 }
 
 function loadScript(url) {
