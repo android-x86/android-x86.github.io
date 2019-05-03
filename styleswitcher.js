@@ -1,3 +1,8 @@
+function scroller(id) {
+	document.getElementById(id).scrollIntoView();
+	return false;
+}
+
 function setActiveStyleSheet(title) {
   var i, a, main;
   for(i=0; (a = document.getElementsByTagName("link")[i]); i++) {
