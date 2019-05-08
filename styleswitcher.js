@@ -114,8 +114,7 @@ function setActiveNavLink(url) {
   while (--i > 0) {
     var h = linkContainer[i].getAttribute("href");
     if (h == null || !h.match(".html")) continue;
-    var k = h.split(".")[0] + ".*html";
-    if (url.match(k)) break;
+    if (url.match(h.split(".")[0])) break;
   }
   linkContainer[i].firstChild.classList.add('active');
   return true;
