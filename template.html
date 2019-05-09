@@ -1,50 +1,51 @@
 <!DOCTYPE html>
 <html>
-    <head>
-        <title>Android-x86 - Porting Android to x86</title>
-        <link rel="stylesheet" type="text/css" href="master.css">
-		    <meta charset="utf-8" name="viewport" content="width=device-width, initial-scale=1.0">
-    </head>
-    <body>
-      <div w3-include-html="navbar.html"></div>
-      <div class="openNav">
-        <div class="icon"></div>
+<head>
+  <title>Template | Android-x86</title>
+  <link rel="stylesheet" type="text/css" href="master.css" title="default">
+  <link rel="alternate stylesheet" type="text/css" href="dark.css" title="alternate">
+  <script type="text/javascript" src="styleswitcher.js"></script>
+  <meta charset="utf-8" name="viewport" content="width=device-width, initial-scale=1.0">
+  <link rel="icon" type="image/png" href="mobile.png">
+</head>
+
+<body>
+  <div w3-include-html="navbar.html"></div>
+  <div class="openNav">
+    <div class="icon"></div>
+  </div>
+  <div class="wrapper" >
+    <section>
+      <h1 id="top" class="heading">Android-x86</h1>
+      <h2 class="subheading">Run Android on your PC</h2>
+
+      <div class=themebtn>
+        <button class="button" onclick="setActiveStyleSheet('default'); return false;"><img src="light_theme.png" height="20px" width="20px" title="Toggle Theme"/> </button>
+        <button class="button" onclick="setActiveStyleSheet('alternate'); return false;" ><img src="dark_theme.png" height="20px" width="20px" title="Toggle Theme"/></button>
       </div>
 <!--HTML of main page-->
 
 
 
+<!--CODE ENDS-->
+    </section>
 
-            <!--CODE ENDS-->
-            <br><br><br>
-            <div w3-include-html="footer.html"></div>
+    <div w3-include-html="footer.html"></div>
+  </div>
 
-<!--JAVASCRIPT CODE-->
+  <!--JAVASCRIPT CODE-->
 
-<script src="https://code.jquery.com/jquery-2.1.1.min.js"></script>
-<script>
-includeHTML();
-$(".openNav").click(function() {
-  $("body").toggleClass("navOpen");
-  $("nav").toggleClass("open");
-  $(".wrapper").toggleClass("open");
-  $(this).toggleClass("open");
-});
-</script>
-<script type="text/javascript">
+  <script src="https://code.jquery.com/jquery-2.1.1.min.js"></script>
+  <script>
+  includeHTML();
+  $(".openNav").click(function() {
+    $("body").toggleClass("navOpen");
+    $("nav").toggleClass("open");
+    $(".wrapper").toggleClass("open");
+    $(".wrapperDark").toggleClass("open");
+    $(this).toggleClass("open");
+  });
+  </script>
 
-  var _gaq = _gaq || [];
-  _gaq.push(['_setAccount', 'UA-10249025-10']);
-  _gaq.push(['_setDomainName', 'jqueryscript.net']);
-  _gaq.push(['_trackPageview']);
-
-  (function() {
-    var ga = document.createElement('script'); ga.type = 'text/javascript'; ga.async = true;
-    ga.src = ('https:' == document.location.protocol ? 'https://ssl' : 'http://www') + '.google-analytics.com/ga.js';
-    var s = document.getElementsByTagName('script')[0]; s.parentNode.insertBefore(ga, s);
-  })();
-
-</script>
-
-    </body>
+</body>
 </html>
