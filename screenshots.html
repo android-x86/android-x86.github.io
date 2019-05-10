@@ -1,0 +1,116 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <title>Screenshots | Android-x86</title>
+  <link rel="stylesheet" type="text/css" href="master.css" title="default">
+  <link rel="alternate stylesheet" type="text/css" href="dark.css" title="alternate">
+  <link rel="stylesheet" href="lightbox2/css/lightbox.min.css">
+  <script type="text/javascript" src="styleswitcher.js"></script>
+  <meta charset="utf-8" name="viewport" content="width=device-width, initial-scale=1.0">
+  <link rel="icon" type="image/png" href="mobile.png">
+</head>
+
+<body>
+  <div w3-include-html="navbar.html"></div>
+  <div class="openNav">
+    <div class="icon"></div>
+  </div>
+  <div class="wrapper" >
+    <section>
+      <h1 id="top" class="heading">Android-x86</h1>
+      <h2 class="subheading">Run Android on your PC</h2>
+
+      <div class=themebtn>
+        <button class="button" onclick="setActiveStyleSheet('default'); return false;"><img src="light_theme.png" height="20px" width="20px" title="Toggle Theme"/></button>
+        <button class="button" onclick="setActiveStyleSheet('alternate'); return false;" ><img src="dark_theme.png" height="20px" width="20px" title="Toggle Theme"/></button>
+      </div>
+  <!--HTML of main page-->
+
+      <script>
+        function add_screenshot(img, title) {
+          document.write('<div class="screenshot gallery desc"><a class="image-link" href="screenshots/' + img + '" data-lightbox="ss" data-title="' + title +
+                         '"><img class="screenshot" src="screenshots/thumb/' + img + '"/></a>' + title + '</div>');
+        }
+      </script>
+      <ul>
+        <li><h2><a name="TOC-Setup"></a>Setup</h2></li>
+        <script>
+          add_screenshot("SetupWizard-lang.jpg", "Setup wizard - Choose language");
+          add_screenshot("SetupWizard-wifi.jpg", "Setup wizard - Connect to wifi");
+          add_screenshot("SetupWizard-signin.jpg", "Setup wizard - Sign in");
+          add_screenshot("SetupWizard-services.jpg", "Setup wizard - Enable Google Services");
+        </script>
+	<p>&nbsp;</p>
+
+        <li><h2><a name="TOC-General"></a>General</h2></li>
+        <script>
+          add_screenshot("Select-home.jpg", "Select a Home app");
+          add_screenshot("Launcher3.jpg", "Launcher3");
+          add_screenshot("Apps-list.jpg", "Apps List");
+          add_screenshot("Recent-task-list.jpg", "Recent Task List");
+          add_screenshot("QuickSettings.jpg", "Quick Settings");
+          add_screenshot("Notifications.jpg", "Notifications");
+          add_screenshot("Widgets.jpg", "Widgets");
+          add_screenshot("Multi-desktop.jpg", "Multi-desktop");
+        </script>
+	<p>&nbsp;</p>
+
+        <li><h2><a name="TOC-Built-in-Applications"></a>Built-in Applications</h2></li>
+        <script>
+          add_screenshot("Settings.jpg", "Settings");
+          add_screenshot("Settings-About.jpg", "Settings - About");
+          add_screenshot("Calculator.jpg", "Calculator");
+          add_screenshot("Calendar.jpg", "Calendar");
+          add_screenshot("Camera.jpg", "Camera");
+          add_screenshot("Clock.jpg", "Clock");
+          add_screenshot("Contacts.jpg", "Contacts");
+          add_screenshot("DevTools.jpg", "Dev Tools");
+          add_screenshot("FileManager.jpg", "File Manager");
+          add_screenshot("Gallery.jpg", "Gallery");
+          add_screenshot("Music.jpg", "Music");
+          add_screenshot("Terminal.jpg", "Terminal Emulator");
+        </script>
+	<p>&nbsp;</p>
+
+        <li><h2><a name="TOC-Multi-window"></a>Multi-window</h2></li>
+        <script>
+          add_screenshot("Taskbar.jpg", "Taskbar launcher");
+          add_screenshot("Multi-window.jpg", "Run apps in multi-window mode");
+          add_screenshot("Split-window.jpg", "Run apps in split-window mode");
+          add_screenshot("Switch-to-window-mode.jpg", "Switch an app to window mode");
+        </script>
+	<p>&nbsp;</p>
+
+        <li><h2><a name="TOC-PlayStore"></a>Play Store</h2></li>
+        <script>
+          add_screenshot("PlayStore.jpg", "Play Store");
+          add_screenshot("Installing-VLC.jpg", "Installing VLC from Play Store");
+          add_screenshot("Search-apps.jpg", "Search apps in Play Store");
+          add_screenshot("Installed-apps.jpg", "Installed apps list");
+        </script>
+	<p>&nbsp;</p>
+
+        <li><h2><a href="screenshots-old.html">Older screenshots...</a></h2></li>
+      </ul>
+
+  <!--CODE ENDS-->
+    </section>
+    <div w3-include-html="footer.html"></div>
+  </div>
+
+  <!--JAVASCRIPT CODE-->
+
+  <script src="https://code.jquery.com/jquery-2.1.1.min.js"></script>
+  <script>
+  includeHTML();
+  $(".openNav").click(function() {
+    $("body").toggleClass("navOpen");
+    $("nav").toggleClass("open");
+    $(".wrapper").toggleClass("open");
+    $(".wrapperDark").toggleClass("open");
+    $(this).toggleClass("open");
+  });
+  </script>
+  <script src="lightbox2/js/lightbox.min.js"></script>
+</body>
+</html>
