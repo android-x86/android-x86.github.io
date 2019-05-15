@@ -24,17 +24,17 @@
 
       <!--Style Switcher-->
       <div class=themebtn>
-        <button class="button" onclick="setActiveStyleSheet('default'); return false;"><img src="light_theme.png" height="20px" width"20px" title='Toggle Theme'/> </button>
-        <button class="button" onclick="setActiveStyleSheet('alternate'); return false;" ><img src="dark_theme.png" height="20px" width"20px" title="Toggle Theme"/></button>
+        <button class="button" onclick="setActiveStyleSheet('default'); return false;"><img src="light_theme.png" width="20px" title="Toggle Theme"/></button>
+        <button class="button" onclick="setActiveStyleSheet('alternate'); return false;" ><img src="dark_theme.png" width="20px" title="Toggle Theme"/></button>
       </div>
 
       <br>
       <h2>Download</h2>
 
-      <p>Choose your mirror :</p>
+      <p>Choose one mirror:</p>
       <ul>
-        <li><br><a href="https://osdn.net/projects/android-x86/releases"><img src="OSDN_logo.png" width="350" height="125"></a></li>
-        <li><br><a href="https://www.fosshub.com/Android-x86.html"><img src="FOSSHUB_logo.png" width="350" height="120"></a></li>
+        <li><br><a href="https://osdn.net/projects/android-x86/releases"><img src="OSDN_logo.png" width="350"></a></li>
+        <li><br><a href="https://www.fosshub.com/Android-x86.html"><img src="FOSSHUB_logo.png" width="350"></a></li>
       </ul>
       <br>
       <br>
@@ -54,6 +54,12 @@
     $("nav").toggleClass("open");
     $(".wrapper").toggleClass("open");
     $(this).toggleClass("open");
+  });
+  $("img").load(function() {
+    var w = $(this).parent().parent()[0].clientWidth;
+    if (w < this.width) {
+      this.width = w;
+    }
   });
   </script>
 
