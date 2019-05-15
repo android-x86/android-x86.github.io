@@ -133,11 +133,33 @@ function gtag(){dataLayer.push(arguments);}
 gtag('js', new Date());
 gtag('config', 'UA-10249025-10');
 
+function refreshTag(id, refresh_time, interval) {
+  var timeout;
+  var tag = document.getElementById(id);
+  if (tag == null) {
+    timeout = 500;
+  } else {
+    timeout = interval * 1000;
+    var pixfuture_frame = id + "_mainframe";
+    var idsp = id.split('x');
+    tag.innerHTML = '<iframe id="'+pixfuture_frame+'" scrolling="no" frameborder="0" marginwidth="0" marginheight="0" width="'+ idsp[1] +'" height="'+ idsp[2] +'"></iframe>';
+    var frameDoc = document.getElementById(pixfuture_frame).contentWindow.document;
+    frameDoc.write('<html><head></head><body><div id="'+ id +'" clickTrack="%%CLICK_URL_ESC%%"><\/div><script async type="text/javascript" src="//served-by.pixfuture.com/www/delivery/headerbid_refresh.php?dat='+id+'"><\/script><\/body><\/html>');
+    frameDoc.close();
+  }
+  if (refresh_time > 0) {
+    setTimeout(function() {
+      refreshTag(id, --refresh_time, interval);
+    }, timeout);
+  }
+}
+
 window.onload = function(e) {
   var cookie = readCookie("style");
   var title = cookie ? cookie : getPreferredStyleSheet();
   setActiveStyleSheet(title);
   window.addEventListener('scroll', trackScroll);
+  refreshTag('4945x728x90x964x_ADSLOT1', 5, 30);
 }
 
 window.onunload = function(e) {
