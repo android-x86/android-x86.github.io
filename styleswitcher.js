@@ -142,6 +142,15 @@ function refreshTag(id, refresh_time, interval) {
     timeout = interval * 1000;
     var pixfuture_frame = id + "_mainframe";
     var idsp = id.split('x');
+    var tagw = parseInt(idsp[1]);
+    var tagh = parseInt(idsp[2]);
+    if (tagh < tagw && tag.clientWidth < tagw) {
+      tag.style.transform = "scale(" + tag.clientWidth / tagw + ")";
+      tag.style.transformOrigin = "0 0";
+    } else if (tagw < tagh && tag.clientHeight < tagh) {
+      tag.style.transform = "scale(" + tag.clientHeight / tagh + ")";
+      tag.style.transformOrigin = "0 0";
+    }
     tag.innerHTML = '<iframe id="'+pixfuture_frame+'" scrolling="no" frameborder="0" marginwidth="0" marginheight="0" width="'+ idsp[1] +'" height="'+ idsp[2] +'"></iframe>';
     var frameDoc = document.getElementById(pixfuture_frame).contentWindow.document;
     frameDoc.write('<html><head></head><body><div id="'+ id +'" clickTrack="%%CLICK_URL_ESC%%"><\/div><script async type="text/javascript" src="//served-by.pixfuture.com/www/delivery/headerbid_refresh.php?dat='+id+'"><\/script><\/body><\/html>');
