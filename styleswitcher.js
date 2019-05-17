@@ -147,9 +147,14 @@ function refreshTag(id, refresh_time, interval) {
     if (tagh < tagw && tag.clientWidth < tagw) {
       tag.style.transform = "scale(" + tag.clientWidth / tagw + ")";
       tag.style.transformOrigin = "0 0";
-    } else if (tagw < tagh && tag.clientHeight < tagh) {
-      tag.style.transform = "scale(" + tag.clientHeight / tagh + ")";
-      tag.style.transformOrigin = "0 0";
+    } else if (tagw < tagh) {
+      var scaleh = tag.parentElement.clientHeight / tagh;
+      var scalew = ((document.documentElement.clientWidth - 730) / 2 - 48) / tagw;
+      var scale = Math.min(scalew, scaleh);
+      if (scale < 1) {
+        tag.style.transform = "scale(" + scale + ")";
+        tag.style.transformOrigin = "100% 0";
+      }
     }
     tag.innerHTML = '<iframe id="'+pixfuture_frame+'" scrolling="no" frameborder="0" marginwidth="0" marginheight="0" width="'+ idsp[1] +'" height="'+ idsp[2] +'"></iframe>';
     var frameDoc = document.getElementById(pixfuture_frame).contentWindow.document;
@@ -168,6 +173,9 @@ window.onload = function(e) {
   var title = cookie ? cookie : getPreferredStyleSheet();
   setActiveStyleSheet(title);
   window.addEventListener('scroll', trackScroll);
+  if (document.documentElement.clientWidth > 1000) {
+    refreshTag('4941x160x600x964x_ADSLOT1', 5, 30);
+  }
   refreshTag('4945x728x90x964x_ADSLOT1', 5, 30);
 }
 

@@ -361,6 +361,15 @@ a:hover{
   padding-top: 99px;
 }
 
+#r-padding {
+  position: fixed;
+  z-index: 9998;
+  top: 50px;
+  right: 24px;
+  bottom: 120px;
+  max-width: 160px;
+}
+
 .footer-copyright{
   padding-top: 7px;
 }
