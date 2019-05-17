@@ -52,46 +52,56 @@
         <h2 class="subheading">Project Goal</h2>
 	<p>To provide a complete solution for Android on common x86 platforms. You may think Android-x86 as an Android <a href="https://wikipedia.org/wiki/Board_support_package">BSP</a> of generic x86 platforms.</p>
 
-          <h2 class="subheading">Screenshots</h2>
+        <h2 class="subheading">Screenshots</h2>
+        <div><script>
+          function add_screenshot(img, title) {
+            document.write('<div class="responsive gallery desc"><a class="image-link" href="screenshots/' + img + '" data-lightbox="ss" data-title="' + title +
+                           '"><img class="screenshot" src="screenshots/thumb/' + img + '"/></a>' + title + '</div>');
+          }
+          screenshots = [
+            [ "SetupWizard-lang.jpg", "Setup wizard - Choose language" ],
+            [ "SetupWizard-wifi.jpg", "Setup wizard - Connect to wifi" ],
+            [ "SetupWizard-signin.jpg", "Setup wizard - Sign in" ],
+            [ "SetupWizard-services.jpg", "Setup wizard - Enable Google Services" ],
+            [ "Select-home.jpg", "Select a Home app" ],
+            [ "Launcher3.jpg", "Launcher3" ],
+            [ "Apps-list.jpg", "Apps List" ],
+            [ "Recent-task-list.jpg", "Recent Task List" ],
+            [ "QuickSettings.jpg", "Quick Settings" ],
+            [ "Notifications.jpg", "Notifications" ],
+            [ "Widgets.jpg", "Widgets" ],
+            [ "Multi-desktop.jpg", "Multi-desktop" ],
+            [ "Settings.jpg", "Settings" ],
+            [ "Settings-About.jpg", "Settings - About" ],
+            [ "Calculator.jpg", "Calculator" ],
+            [ "Calendar.jpg", "Calendar" ],
+            [ "Camera.jpg", "Camera" ],
+            [ "Clock.jpg", "Clock" ],
+            [ "Contacts.jpg", "Contacts" ],
+            [ "DevTools.jpg", "Dev Tools" ],
+            [ "FileManager.jpg", "File Manager" ],
+            [ "Gallery.jpg", "Gallery" ],
+            [ "Music.jpg", "Music" ],
+            [ "Terminal.jpg", "Terminal Emulator" ],
+            [ "Taskbar.jpg", "Taskbar launcher" ],
+            [ "Multi-window.jpg", "Run apps in multi-window mode" ],
+            [ "Split-window.jpg", "Run apps in split-window mode" ],
+            [ "Switch-to-window-mode.jpg", "Switch an app to window mode" ],
+            [ "PlayStore.jpg", "Play Store" ],
+            [ "Installing-VLC.jpg", "Installing VLC from Play Store" ],
+            [ "Search-apps.jpg", "Search apps in Play Store" ],
+            [ "Installed-apps.jpg", "Installed apps list" ],
+          ];
+          for (var i = screenshots.length - 1; i > screenshots.length - 5; i--) {
+            var j = Math.floor(Math.random() * (i + 1));
+            var temp = screenshots[i];
+            screenshots[i] = screenshots[j];
+            screenshots[j] = temp;
+            add_screenshot(screenshots[i][0], screenshots[i][1]);
+          }
+        </script></div>
 
-          <div class="responsive">
-            <div class="gallery">
-              <a target="_blank" href="http://lh3.ggpht.com/_bThy5DH7GQI/SqeUBUE-v4I/AAAAAAAAAVo/iqvAI6sjWU4/s288/Slashdot.org.png.jpg">
-                <img src="http://lh3.ggpht.com/_bThy5DH7GQI/SqeUBUE-v4I/AAAAAAAAAVo/iqvAI6sjWU4/s288/Slashdot.org.png.jpg" alt="Surf the Internet" width="300" height="200">
-              </a>
-              <div class="desc">Surf the Internet</div>
-            </div>
-          </div>
-
-
-          <div class="responsive">
-            <div class="gallery">
-              <a target="_blank" href="http://lh5.ggpht.com/_bThy5DH7GQI/Sq4gDP9OX3I/AAAAAAAAAak/jVA-IXGaUpw/s288/PlayHarryPotter.png.jpg">
-                <img src="http://lh5.ggpht.com/_bThy5DH7GQI/Sq4gDP9OX3I/AAAAAAAAAak/jVA-IXGaUpw/s288/PlayHarryPotter.png.jpg" alt="Play Video" width="600" height="400">
-              </a>
-              <div class="desc">Play Video</div>
-            </div>
-          </div>
-
-          <div class="responsive">
-            <div class="gallery">
-              <a target="_blank" href="http://lh5.ggpht.com/_bThy5DH7GQI/SqTg2miayYI/AAAAAAAAAJw/yeZ-G0UFPqQ/s288/ViewThumbnail.png.jpg">
-                <img src="http://lh5.ggpht.com/_bThy5DH7GQI/SqTg2miayYI/AAAAAAAAAJw/yeZ-G0UFPqQ/s288/ViewThumbnail.png.jpg" alt="View Photos" width="600" height="400">
-              </a>
-              <div class="desc">View Photos</div>
-            </div>
-          </div>
-
-          <div class="responsive">
-            <div class="gallery">
-              <a target="_blank" href="http://lh5.ggpht.com/_bThy5DH7GQI/SqeCDx16k9I/AAAAAAAAATA/6rP7a7MCMCc/s288/WifiInfo.png.jpg">
-                <img src="http://lh5.ggpht.com/_bThy5DH7GQI/SqeCDx16k9I/AAAAAAAAATA/6rP7a7MCMCc/s288/WifiInfo.png.jpg" alt="WiFi Status" width="600" height="400">
-              </a>
-              <div class="desc">WiFi Status</div>
-            </div>
-            <br>
-          </div>
-          <p>More screenshots can be found <a href="screenshots.html">here</a>.</p>
+	<p>&nbsp;</p><p><br>More screenshots can be found <a href="screenshots.html">here</a>.</p>
 
           <div w3-include-html="sponsors.html"></div>
 
