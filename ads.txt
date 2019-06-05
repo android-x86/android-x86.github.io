@@ -67,3 +67,4 @@ rubiconproject.com, 18694, RESELLER, 0bfd66d529a55807
 openx.com, 540274407, RESELLER, 6a698e2ec38604c6
 indexexchange.com, 186046, RESELLER, 50b1c356f2c5c8fc
 #pixfuture END updated Apr-19-2019
+runative-syndicate.com, 2604, DIRECT

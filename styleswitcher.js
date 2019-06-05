@@ -120,10 +120,22 @@ function setActiveNavLink(url) {
   return true;
 }
 
-function loadScript(url) {
+function loadScript(url, callback) {
   var script = document.createElement("script");
   script.src = url;
   script.async = true;
+  if (callback && typeof callback == "function") {
+    if (script.readyState) { // IE
+      script.onreadystatechange = function() {
+        if (script.readyState == "loaded" || script.readyState == "complete") {
+          script.onreadystatechange = null;
+          callback();
+        }
+      };
+    } else { // Others
+      script.onload = callback;
+    }
+  }
   document.head.appendChild(script);
 }
 
@@ -133,13 +145,24 @@ function gtag(){dataLayer.push(arguments);}
 gtag('js', new Date());
 gtag('config', 'UA-10249025-10');
 
-function refreshTag(id, refresh_time, interval) {
+function refreshTag(id, refresh_time, interval, callback) {
   var timeout;
   var tag = document.getElementById(id);
   if (tag == null) {
     timeout = 500;
   } else {
     timeout = interval * 1000;
+    callback(tag);
+  }
+  if (--refresh_time > 0) {
+    setTimeout(function() {
+      refreshTag(id, refresh_time, interval, callback);
+    }, timeout);
+  }
+}
+
+function showPixfuture(id) {
+  refreshTag(id, 5, 30, function(tag) {
     var pixfuture_frame = id + "_mainframe";
     var idsp = id.split('x');
     var tagw = parseInt(idsp[1]);
@@ -160,12 +183,41 @@ function refreshTag(id, refresh_time, interval) {
     var frameDoc = document.getElementById(pixfuture_frame).contentWindow.document;
     frameDoc.write('<html><head></head><body><div id="'+ id +'" clickTrack="%%CLICK_URL_ESC%%"><\/div><script async type="text/javascript" src="//served-by.pixfuture.com/www/delivery/headerbid_refresh.php?dat='+id+'"><\/script><\/body><\/html>');
     frameDoc.close();
-  }
-  if (refresh_time > 0) {
-    setTimeout(function() {
-      refreshTag(id, --refresh_time, interval);
-    }, timeout);
-  }
+  });
+}
+
+function showRunative(id) {
+  loadScript("https://cdn.runative-syndicate.com/sdk/v1/n.js", function() {
+    refreshTag(id, 5, 35, function(unused) {
+      NativeAd({
+        element_id: id,
+        spot: "72719163e1c349e3afd19fa5260783ff",
+        type: "label-under",
+        cols: 4,
+        rows: 1,
+        title: "",
+        titlePosition: "left",
+        adsByPosition: "right",
+        breakpoints: [{
+          "cols": 2,
+          "width": 770
+        }],
+        styles: {
+          "headlineLink": {
+            "color": "#333",
+            ":hover": {
+              "color": "#2e81d5"
+            },
+            "font-size": "14px",
+            "font-weight": "bold"
+          },
+          "brandnameLink": {
+            "font-size": "10px"
+          }
+        }
+      });
+    });
+  });
 }
 
 window.onload = function(e) {
@@ -174,9 +226,9 @@ window.onload = function(e) {
   setActiveStyleSheet(title);
   window.addEventListener('scroll', trackScroll);
   if (document.documentElement.clientWidth > 1000) {
-    refreshTag('4941x160x600x964x_ADSLOT1', 5, 30);
+    showPixfuture("4941x160x600x964x_ADSLOT1");
   }
-  refreshTag('4945x728x90x964x_ADSLOT1', 5, 30);
+  showPixfuture("4945x728x90x964x_ADSLOT1");
 }
 
 window.onunload = function(e) {
