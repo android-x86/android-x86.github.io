@@ -95,8 +95,11 @@
                 </p>
                 <h4>Partition</h4>
                 <p>
-                  When you are prompted to Choose a partition, you'll want to Create/Modify partitions. Do not use GPT! This will cause the GRUB installation to fail later.
-                  <br>
+                  When you are prompted to Choose a partition:
+				  <ol>
+					<li>If you upgrade Android-x86 from a previous version, just select the existing partition. Agree to overwrite it when prompted.</li>
+					<li>If this is a new VM, choose to Create/Modify partitions. Use Bootable but not GPT! This will cause the GRUB installation to fail later.</li>
+                  </ol>
                   You may partition your disk however you see fit. If you just want a simple installation, create one partition taking up the entire disk and format it as ext4.
                 </p>
                 <hr>
