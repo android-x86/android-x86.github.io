@@ -27,38 +27,29 @@
                 <br><br>
                 <h3>Customize Kernel</h3>
                 <p>
-                  The Android build system doesn't compile kernel on-fly. It just contains a prebuilt kernel binary which will be added to the target image. This approach may be good enough for the arm emulator target, but not suitable for x86 platforms. The x86 platforms have various hardware. The kernel binary and its modules may need to be adjusted at compile time or runtime.
-                  <br><br>This article describes an extra feature of the build system of android-x86 project. That is, the ability to build kernel and modules by a predefined or customized config during the building process.
+                  The Android build system doesn't compile kernel on-fly. It just contains a prebuilt kernel binary which will be added to the target image. This approach may be good enough for the arm emulator target, but not suitable for x86 platforms. The x86 platforms have various hardware. The kernel binary and its modules may need to be adjusted at compile time or runtime.</p>
+                  <p>This article explains an extra feature of the android-x86 build system. That is, the ability to build kernel and modules by a predefined or customized config during the building process.
                 </p>
-                <h3>Compile kernel for Android-x86<h3>
                   <h3>Prepare the source tree</h3>
                   <p>
                     We have modified the Android build system to compile a kernel image on-fly.
                     You need to use our repository to get this feature.
-                    <br>Read the article <a href="source.html">Get Source Code</a> for details.
+                    Read <a href="source.html">the article</a> for details.
                   </p>
-                  <h3>Build the default kernel</h3>
-                  <p>
-                    We put a default config for android-x86 in kernel/arch/x86/configs/. To build a kernel image from this config, run
-
+                  <h3>Build the target default kernel</h3>
+                  <p>We put default configs of supported targets of android-x86 in <tt>kernel/arch/x86/configs/</tt>. The corresponding defconfig of a selected target will be used automatically. For example,
                     <div class="code-snippet"><span style="color:#d1d1d1">
-
-                    <code class="code-shell">make iso_img TARGET_PRODUCT=android_x86</code>
-
+                    <code class="code-shell">make iso_img TARGET_PRODUCT=android_x86_64</code>
                     </span></div>
-                    By specifying the TARGET_PRODUCT to android_x86, the build system automatically selects the config android-x86_defconfig to compile the kernel binary and its modules. The binary will finally be generated in out/target/product/x86/kernel, and the modules is put under out/target/product/x86/system/lib/modules/. The final target out/target/product/x86/android_x86.iso will contain the kernel binary and its modules.
+                    <p>By specifying the <tt>TARGET_PRODUCT</tt> to <tt>android_x86_64</tt>, the build system automatically selects the config <tt>android-x86_64_defconfig</tt> to compile the kernel binary and its modules. The binary will be generated in <tt>out/target/product/x86_64/kernel</tt>, and the modules is put under <tt>out/target/product/x86_64/system/lib/modules/</tt>. The final target <tt>out/target/product/x86_64/android_x86_64.iso</tt> will contain the kernel binary and its modules.</p>
 
-                    <br><br>
-                    You may build the kernel and its modules alone, by changing the goal iso_img to kernel.
-
+                  <h3>Build and update kernel solely</h3>
+                    <p>To build the kernel and its modules solely, change the goal <tt>iso_img</tt> to <tt>kernel</tt>:
                     <div class="code-snippet"><span style="color:#d1d1d1">
-                      <code class="code-shell">make kernel TARGET_PRODUCT=android_x86</code>
-                    </span></div>
-                    </p>
-                  <h3>Build the target kernel</h3>
-                  <p>
-                    Since donut-x86 we have supported multiple targets, e.g., eeepc, tegav2, ... Each target may has its customized kernel config located in its device definition directory. When you choose a target (by specifying TARGET_PRODUCT or lunch command, see <a href="source.html">Get Source Code</a> for details.), the customized kernel config of this target will be used to build the kernel image.
-                  </p>
+                      <code class="code-shell">. build/envsetup.sh; lunch android_x86_64-userdebug</code><br>
+                      <code class="code-shell">make kernel</code>
+                    </span></div><p>
+                    <p>Then you can copy <tt>$OUT/kernel</tt> and <tt>$OUT/system/lib/modules/</tt> to the target device. Put the former to the android-x86 installation directory, and the latter to <tt>/system/lib/modules</tt>. Note the /system must be installed as read-write mode.</p>
 
                   <h3>Build a customized kernel</h3>
                   <p>Suppose you already have a workable kernel config for you hardware, it's easy to tell the build system to use your config to build the iso. Just put your config file to kernel/arch/x86/configs/, and run (suppose the name of your config is my_defconfig)
@@ -72,12 +63,11 @@
                   <p>
                     It is never advisable to edit the kernel config file directly, as it may generate faulty configuration (dependencies not met etc.). The correct way to customize the kernel config is (on the top of android-x86 tree)
                     <div class="code-snippet"><span style="color:#d1d1d1">
-                      <code class="code-shell">. build/envsetup.sh<br></code>
-                      <code class="code-shell">lunch xxx-userdebug<br></code>
+                      <code class="code-shell">. build/envsetup.sh; lunch android_x86_64-userdebug</code><br>
                       <code class="code-shell">make -C kernel O=$OUT/obj/kernel ARCH=x86 menuconfig<br></code>
                     </span></div>
-                    where xxx is a target you chosen. Then copy $OUT/obj/kernel/.config to custom_kernel_config_location.<br>
-                    DO NOT issue make menuconfig in the kernel/ directory directly. If you do so, the build rules may be broken. In this case, try this way to recover it (on the top of android-x86 tree):</p>
+                    <p>The generated config is <tt>$OUT/obj/kernel/.config</tt>. Copy it to where you want it to be.</p>
+                    <p>DO NOT issue <tt>make menuconfig</tt> in the kernel/ directory directly. If you do so, the build rules may be broken. In this case, try this way to recover it (on the top of android-x86 tree):</p>
                     <div class="code-snippet"><span style="color:#d1d1d1">
                       <code class="code-shell">make -C kernel distclean<br></code>
                       <code class="code-shell">rm -rf $OUT/obj/kernel<br></code>
