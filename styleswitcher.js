@@ -232,9 +232,6 @@ window.onload = function(e) {
   setActiveStyleSheet(title);
   window.addEventListener('scroll', trackScroll);
   showVCMS();
-  if (document.documentElement.clientWidth > 1000) {
-    showPixfuture("4941x160x600x964x_ADSLOT1");
-  }
   showPixfuture("4945x728x90x964x_ADSLOT1");
 }
 
