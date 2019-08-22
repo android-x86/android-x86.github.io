@@ -232,6 +232,7 @@ window.onload = function(e) {
   setActiveStyleSheet(title);
   window.addEventListener('scroll', trackScroll);
   showVCMS();
+  loadScript("https://powerad.ai/script.js");
   showPixfuture("4945x728x90x964x_ADSLOT1");
 }
 
