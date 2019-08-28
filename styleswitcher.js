@@ -188,8 +188,9 @@ function showPixfuture(id) {
 
 function showVCMS()
 {
-  var _bp = _bp||[]; _bp.push({"div": "Brid_66037000", "obj": {"id":"18770","width":"700","height":"393","playlist":{"id":"0","mode":"latest"},"video_type":"0","shuffle":true}});
-  loadScript("https://services.brid.tv/player/build/brid.min.js");
+  loadScript("https://services.brid.tv/player/build/brid.min.js", function() {
+    $bp("Brid_66475714", {"id":"18770","width":"700","height":"393","playlist":{"id":"0","mode":"latest"},"video_type":"0","shuffle":true});
+  });
 }
 
 function showRunative(id) {
