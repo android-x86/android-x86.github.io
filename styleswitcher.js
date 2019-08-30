@@ -161,31 +161,6 @@ function refreshTag(id, refresh_time, interval, callback) {
   }
 }
 
-function showPixfuture(id) {
-  refreshTag(id, 5, 30, function(tag) {
-    var pixfuture_frame = id + "_mainframe";
-    var idsp = id.split('x');
-    var tagw = parseInt(idsp[1]);
-    var tagh = parseInt(idsp[2]);
-    if (tagh < tagw && tag.clientWidth < tagw) {
-      tag.style.transform = "scale(" + tag.clientWidth / tagw + ")";
-      tag.style.transformOrigin = "0 0";
-    } else if (tagw < tagh) {
-      var scaleh = tag.parentElement.clientHeight / tagh;
-      var scalew = ((document.documentElement.clientWidth - 730) / 2 - 48) / tagw;
-      var scale = Math.min(scalew, scaleh);
-      if (scale < 1) {
-        tag.style.transform = "scale(" + scale + ")";
-        tag.style.transformOrigin = "100% 0";
-      }
-    }
-    tag.innerHTML = '<iframe id="'+pixfuture_frame+'" scrolling="no" frameborder="0" marginwidth="0" marginheight="0" width="'+ idsp[1] +'" height="'+ idsp[2] +'"></iframe>';
-    var frameDoc = document.getElementById(pixfuture_frame).contentWindow.document;
-    frameDoc.write('<html><head></head><body><div id="'+ id +'" clickTrack="%%CLICK_URL_ESC%%"><\/div><script async type="text/javascript" src="//served-by.pixfuture.com/www/delivery/headerbid_refresh.php?dat='+id+'"><\/script><\/body><\/html>');
-    frameDoc.close();
-  });
-}
-
 function showVCMS()
 {
   loadScript("https://services.brid.tv/player/build/brid.min.js", function() {
@@ -234,7 +209,6 @@ window.onload = function(e) {
   window.addEventListener('scroll', trackScroll);
   showVCMS();
   loadScript("https://powerad.ai/script.js");
-  showPixfuture("4945x728x90x964x_ADSLOT1");
 }
 
 window.onunload = function(e) {
