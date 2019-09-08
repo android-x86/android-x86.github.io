@@ -207,6 +207,7 @@ window.onload = function(e) {
   var title = cookie ? cookie : getPreferredStyleSheet();
   setActiveStyleSheet(title);
   window.addEventListener('scroll', trackScroll);
+  showVCMS();
   loadScript("https://powerad.ai/script.js");
 }
 
