@@ -66,6 +66,7 @@
                       <code class="code-shell">. build/envsetup.sh; lunch android_x86_64-userdebug</code><br>
                       <code class="code-shell">make -C kernel O=$OUT/obj/kernel ARCH=x86 menuconfig<br></code>
                     </span></div>
+                    <p>If you get an error message <tt>Unknown option: -C</tt>, change <tt>make</tt> to <tt>/usr/bin/make</tt>.</p>
                     <p>The generated config is <tt>$OUT/obj/kernel/.config</tt>. Copy it to where you want it to be.</p>
                     <p>DO NOT issue <tt>make menuconfig</tt> in the kernel/ directory directly. If you do so, the build rules may be broken. In this case, try this way to recover it (on the top of android-x86 tree):</p>
                     <div class="code-snippet"><span style="color:#d1d1d1">
