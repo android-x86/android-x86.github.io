@@ -2,7 +2,7 @@
 <html>
 <head>
   <base href="..">
-  <title>Release 7.1-r2 | Android-x86</title>
+  <title>Release 7.1-r3 | Android-x86</title>
   <link rel="stylesheet" type="text/css" href="master.css" title="default">
   <link rel="alternate stylesheet" type="text/css" href="dark.css" title="alternate">
   <script type="text/javascript" src="styleswitcher.js"></script>
@@ -27,51 +27,40 @@
       </div>
 
       <br>
-      <h2>Release Note 7.1-r2
+      <h2>Release Note 7.1-r3
       </h2>
-      <h3>2018/05/02</h3>
-      The Android-x86 project is glad to announce the release of 7.1-r2. This is the second stable release for Android-x86 7.1 (nougat-x86). The prebuilt images are available in the following site as usual:
+      <h3>2019/10/18</h3>
+      The Android-x86 project is glad to announce the release of 7.1-r3. This is the third stable release for Android-x86 7.1 (nougat-x86). The prebuilt images are available in the following site as usual:
       <p>
       <ul>
-        <li><a href="https://www.fosshub.com/Android-x86.html">https://www.fosshub.com/Android-x86.html</a></li>
+        <li><a href="https://www.fosshub.com/Android-x86-old.html">https://www.fosshub.com/Android-x86-old.html</a></li>
         <li><a href="https://osdn.net/rel/android-x86/Release%207.1">https://osdn.net/rel/android-x86/Release%207.1</a></li>
       </ul>
       </p>
       <h2><b>Key Features</b></h2>
-      <p>The 7.1-r2 is mainly a bugfixes release of <a href="releases/releasenote-7-1-r1.html">7.1-r1</a>:</p>
-      <ul>
-        <li>Update grub-efi 64-bit to 2.02 to fix "Malformed file" error.</li>
-        <li>Fix system_server high load issue caused by kbdsensor on some devices.</li>
-        <li>Fix 64-bit Google Play Services crashing caused by i965 driver.</li>
-        <li>Improve some arm apps compatibility.</li>
-        <li>Fix stagefright-plugins memory leaks.</li>
-        <li>Fix display issue of Hyper-V with legacy booting.</li>
-        <li>Add qxl support to qemu-android script.</li>
-        <li>Fix getSupportedPreviewFpsRange exception.</li>
-        <li>Update kernel to 4.9.95.</li>
-      </ul>
+      <p>The 7.1-r3 is mainly a bugfixes release of <a href="releases/releasenote-7-1-r2.html">7.1-r2</a>. It based on Android 7.1.2 Nougat MR2 security updates (android-7.1.2_r39). Some newer features are also back-ported from <a href="releases/releasenote-8-1-r2.html">8.1 release</a>. We encourage users of 7.1-r2 or older release upgrade to this release.
       <br><br>
       <h2><b>Released Files
 
       </b></h2>
       <p>This release contains four files. You can choose one of these files depends on your devices. Most modern devices should be able to run the 64-bit ISO. For older devices with legacy BIOS, you may try the 32-bit ISO.</p>
       <ul>
-        <li>64-bit ISO:&nbsp;&nbsp;android-x86_64-7.1-r2.iso
-          <p>sha1sum: 1889ac17e0ed94cd31d7652b5f73ee53d26a6826</p>
+        <li>64-bit ISO:&nbsp;&nbsp;android-x86_64-7.1-r3.iso
+          <p>sha1sum: deb9da7b2f27d74ebca697155dbd392212253d91</p>
         </li>
-        <li>32-bit ISO:&nbsp;&nbsp;android-x86-7.1-r2.iso
-          <p>sha1sum: 6167615ca0b4adba67d84bfa1c6c805e3713bdf2</p>
+        <li>32-bit ISO:&nbsp;&nbsp;android-x86-7.1-r3.iso
+          <p>sha1sum: b62e48558be2cd8a6645a190472435e592387d89</p>
         </li>
-        <li>64-bit rpm:&nbsp;&nbsp;android-x86-7.1-r2.x86_64.rpm
-          <p>sha1sum: 2d0442f06ab652a83214ed2237373b826048bdea</p>
+        <li>64-bit rpm:&nbsp;&nbsp;android-x86-7.1-r3.x86_64.rpm
+          <p>sha1sum: 4df26890764d7f71685c90a3acd965aec99a534e</p>
         </li>
-        <li>32-bit rpm:&nbsp;&nbsp;android-x86-7.1-r2.i686.rpm
-          <p>sha1sum: 9e36a9517397185bbbcae1b8817d84da8dbfe619</p>
+        <li>32-bit rpm:&nbsp;&nbsp;android-x86-7.1-r3.i686.rpm
+          <p>sha1sum: a49f893fb8782bdf8eaacef01576ddc7884dd77e</p>
         </li>
       </ul>
       <p>To use an ISO file, Linux users could just dump it into a usb drive to create a bootable usb stick like :</p>
       <div class="code-snippet"><span style="color:#d1d1d1">
-        <code class="code-shell">dd if=android-x86-7.1-r2.iso of=/dev/sdX</code>
+        <code class="code-shell">dd if=android-x86-7.1-r3.iso of=/dev/sdX</code>
       </span></div>
       <p>where <tt>/dev/sdX</tt> is the device name of your usb drive.</p>
       <p>Windows's users can use the tool <a href="https://sourceforge.net/projects/win32diskimager/">Win32 Disk Imager</a> to create a bootable usb stick.</p>
@@ -79,17 +68,17 @@
       </p>
       <p>Except the traditional ISO files, we also package android-x86 files into a Linux package <a href="http://rpm.org/">rpm</a>. It allows Linux users to easily install the release into an existing Linux device with a standalone ext4 root partition. On an rpm based device (Fedora/Red Hat/CentOS/SUSE...), just install it like a normal rpm package:</p>
       <div class="code-snippet"><span style="color:#d1d1d1">
-        <code class="code-shell">sudo rpm -Uvh android-x86-7.1-r2.x86_64.rpm</code>
+        <code class="code-shell">sudo rpm -Uvh android-x86-7.1-r3.x86_64.rpm</code>
 
       </span></div>
-      <p>This will update your older installation like 6.0-r3 or 7.1-r1 if you have.</p><p>On a deb based device (Debian/Ubuntu/LinuxMint/...), please use the <a href="https://wiki.debian.org/Alien"><i>alien</i></a> tool to install it:</p>
+      <p>This will update your older installation like 6.0-r3 or 7.1-r2 if you have.</p><p>On a deb based device (Debian/Ubuntu/LinuxMint/...), please use the <a href="https://wiki.debian.org/Alien"><i>alien</i></a> tool to install it:</p>
       <div class="code-snippet"><span style="color:#d1d1d1">
         <code class="code-shell">sudo apt install alien</code>
         <br>
-        <code class="code-shell">sudo alien -ci android-x86-7.1-r2.x86_64.rpm</code>
+        <code class="code-shell">sudo alien -ci android-x86-7.1-r3.x86_64.rpm</code>
 
       </span></div>
-      <p>All files will be installed to the /android-7.1-r2/ subdirectory and boot entries will be added to grub2 menu. Reboot and choose android-x86 item from the menu to boot Android-x86. Alternatively, you can launch Android-x86 in a QEMU virtual machine by the installed qemu-android script:</p>
+      <p>All files will be installed to the /android-7.1-r3/ subdirectory and boot entries will be added to grub2 menu. Reboot and choose android-x86 item from the menu to boot Android-x86. Alternatively, you can launch Android-x86 in a QEMU virtual machine by the installed qemu-android script:</p>
       <div class="code-snippet"><span style="color:#d1d1d1">
         <code class="code-shell">sudo qemu-android</code>
       </span></div>
@@ -111,7 +100,7 @@
         <h2><b>Source code</b></h2>
         The source code is available in the main <a href="https://osdn.net/projects/android-x86/scm/">git server.</a>
         <div class="code-snippet"><span style="color:#d1d1d1">
-          <code class="code-shell">repo init -u git://git.osdn.net/gitroot/android-x86/manifest -b android-x86-7.1-r2<br></code>
+          <code class="code-shell">repo init -u git://git.osdn.net/gitroot/android-x86/manifest -b android-x86-7.1-r3<br></code>
           <code class="code-shell">repo sync --no-tags --no-clone-bundle</code>
         </span></div>
         <p>Read <a href="source.html">this page</a> for how to compile source code.</p>
@@ -119,19 +108,18 @@
     <div w3-include-html="footer.html"></div>
   </div>
 
-        <!--JAVASCRIPT CODE-->
+  <!--JAVASCRIPT CODE-->
 
-        <script src="https://code.jquery.com/jquery-2.1.1.min.js"></script>
-        <script>
-        includeHTML();
-        $(".openNav").click(function() {
-          $("body").toggleClass("navOpen");
-          $("nav").toggleClass("open");
-          $(".wrapper").toggleClass("open");
-          $(this).toggleClass("open");
-        });
-        </script>
+  <script src="https://code.jquery.com/jquery-2.1.1.min.js"></script>
+  <script>
+  includeHTML();
+  $(".openNav").click(function() {
+    $("body").toggleClass("navOpen");
+    $("nav").toggleClass("open");
+    $(".wrapper").toggleClass("open");
+    $(this).toggleClass("open");
+  });
+  </script>
 
-
-      </body>
-      </html>
+</body>
+</html>
