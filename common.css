@@ -481,7 +481,7 @@ h3{
   font-size: 16px;
 }
 
-.code-shell, .code-shell-root {
+.code-shell, .code-shell-root, .code-shell-android-root {
   font-family: Consolas,"courier new";
 }
 
@@ -493,4 +493,9 @@ h3{
 .code-shell-root::before {
   color: gray;
   content: '# ';
+}
+
+.code-shell-android-root::before {
+  color: gray;
+  content: 'android:/android # ';
 }

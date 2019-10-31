@@ -51,6 +51,49 @@
                     </span></div><p>
                     <p>Then you can copy <tt>$OUT/kernel</tt> and <tt>$OUT/system/lib/modules/</tt> to the target device. Put the former to the android-x86 installation directory, and the latter to <tt>/system/lib/modules</tt>. Note the /system must be installed as read-write mode.</p>
 
+                  <h3>Specify kernel architecture</h3>
+		    <p>Since Android 5.0 it supports both 32-bit and 64-bit images. Usually 32-bit userspace works with 32-bit kernel, while 64-bit userspace must work with 64-bit kernel. Android-x86 build system supports both since lollipop-x86.</p>
+		    <p>Sometimes you may want to run 32-bit userspace with 64-bit kernel. In this case, you may specify kernel architecture by <tt>TARGET_KERNEL_ARCH</tt>:
+                    <div class="code-snippet"><span style="color:#d1d1d1">
+                      <code class="code-shell">. build/envsetup.sh; lunch android_x86-userdebug</code><br>
+                      <code class="code-shell">m -j8 iso_img TARGET_KERNEL_ARCH=x86_64</code>
+                    </span></div>
+                    This builds a 32-bit userspace image with 64-bit kernel.</p>
+
+                  <h3>Force recompilation of the kernel</h3>
+		    <p>Android and kernel use entirely different build systems. Though we combine them together, the integration doesn't work very well. An example is if you modify the kernel tree, Android build system <b>won't</b> notice the change. That means, the kernel won't be rebuilt automatically if you rebuild the image.</p>
+                    <p>There are several ways to overcome that. One is to touch the defconfig like:
+                    <div class="code-snippet"><span style="color:#d1d1d1">
+                      <code class="code-shell">touch kernel/arch/x86/configs/android-x86_*</code>
+                    </span></div></p>
+		    <p>Or remove the kernel config in the <tt>out/</tt> directory:
+                    <div class="code-snippet"><span style="color:#d1d1d1">
+                      <code class="code-shell">rm $OUT/obj/kernel/.config</code>
+                    </span></div></p>
+		    <p>Or remove the kernel image:
+                    <div class="code-snippet"><span style="color:#d1d1d1">
+                      <code class="code-shell">rm $OUT/kernel</code>
+                    </span></div>
+                    Then rebuild the image as usual.</p>
+
+                  <h3>Replace the kernel</h3>
+                    <p>Since we build kernel with modules support, to replace the kernel of an installed system, you have to replace the corresponding modules as well. To do that, copy the kernel image to the android-x86 installation directory, and copy modules to <tt>/system/lib/modules</tt>. You can do that by booting to debug mode like:</p>
+                    <div class="code-snippet"><span style="color:#d1d1d1">
+                      Detecting Android-x86... found at /dev/sda1<br><br>
+                      Type 'exit' to continue booting...<br><br>
+                      Running MirBSD Korn Shell...<br>
+                      <code class="code-shell-android-root">exit</code><br><br>
+                      Use Alt-F1/F2/F3 to switch between virtual consoles<br>
+                      Type 'exit' to enter Android...<br><br>
+                      Running MirBSD Korn Shell...<br>
+                      <code class="code-shell-android-root">mount /dev/sdb1 /hd</code><br>
+                      <code class="code-shell-android-root">cp /hd/kernel /src</code><br>
+                      <code class="code-shell-android-root">rm -rf /system/lib/modules/*</code><br>
+                      <code class="code-shell-android-root">cp -a /hd/modules/* /system/lib/modules</code><br>
+                      <code class="code-shell-android-root">sync; umount /hd; reboot -f</code><br>
+                    </span></div>
+                    The example assumes the new kernel image and the corresponding modules are in a USB disk <tt>/dev/sdb1</tt>, and the <tt>/system/</tt> was installed as read-write mode.</p>
+
                   <h3>Build a customized kernel</h3>
                   <p>Suppose you already have a workable kernel config for you hardware, it's easy to tell the build system to use your config to build the iso. Just put your config file to kernel/arch/x86/configs/, and run (suppose the name of your config is my_defconfig)
 
@@ -59,6 +102,7 @@
                     </span></div>
                     Note you cannot use a kernel config from a normal linux distribution (e.g, ubuntu) for android-x86. You need to enable android kernel features to make it work. See android/configs/android-base.cfg for a list of required configuration options for a kernel to support an Android system. (but removes arm specific options for android-x86, e.g., PMEM)
                   </p>
+
                   <h3>Customize the kernel configuration</h3>
                   <p>
                     It is never advisable to edit the kernel config file directly, as it may generate faulty configuration (dependencies not met etc.). The correct way to customize the kernel config is (on the top of android-x86 tree)
