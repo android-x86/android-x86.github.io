@@ -25,8 +25,8 @@
         <button class="button" onclick="setActiveStyleSheet('alternate'); return false;" ><img src="dark_theme.png" height="20px" width"20px" title="Toggle Theme"/></button>
       </div>
 
-      <h1>Installation</h1>
-      <br /><br /><h2>Introduction</h2>
+      <h1>Installation</h1><br>
+      <h2>Introduction</h2>
       We have implemented an easy installer to install Android-x86 to a harddisk. The supported filesystems are
       <ul>
         <li>ext3</li>
@@ -35,7 +35,8 @@
         <li>fat32</li></ul>
         <p>You can install Android-x86 to an NTFS filesystem to co-exist with Windows. See the <a href="#Advanced">Advanced Section</a> for more details.</p>
 
-        <h2>Step by Step</h2>
+      <script data-cfasync="false" type="text/javascript" src="//www.increaserev.com/ads/728x90below_res.js"></script>
+      <h2>Step by Step</h2>
         <ul>
           <li>Burn the iso image to cdrom, or create a bootable USB disk (recommended). See the <a href="#Advanced">Advanced Section</a> for details.</li>
           <li>Boot from the Android-x86 installation CD/USB, choose the 'Install Android to harddisk' item, as shown below:
@@ -59,7 +60,6 @@
           <ul>
             <li>
               Download the compressed USB image, uncompress and dump it to a USB stick. On a Linux host, you can use the command
-              <!-----CODE BOX--->
               <div class="code-snippet"><span style="color:#d1d1d1"># zcat android-x86-1.6-r2_usb.img.gz | dd of=/dev/sdc
               </span></div>
               <br>where /dev/sdc is the device name of the target USB disk. However, some broken BIOS may fail to boot such a USB disk.</li>
