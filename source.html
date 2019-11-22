@@ -109,135 +109,155 @@
       <p>If you hope to keep syncing your tree with Android-x86 repository, just do <tt>repo sync</tt>. No need to do <tt>repo init</tt> again. However, sometimes you may see conflicts during <tt>repo sync</tt>. See the section "How to Solve Conflicts" for how to solve this situation.
       </p><p>Note: The Android-x86 repository is very big (more than 20GB for oreo-x86). If you encounter problems of sync it, it's likely a network problem or our server is too busy. Repeatedly run '<tt>repo sync</tt>' until it succeeds without any error. Do not bother us with any of the syncing problem.</p>
 
-        <h2><b>Building the image</b></h2>
-        <p>Once <tt>repo sync</tt> is complete, you can build a cdrom iso image. You need Oracle java 1.6 (OpenJDK may not work) to build branches before (includes) kitkat-x86. <b>Since lollipop-x86, java 1.7 is required</b> and OpenJDK is supported. Since <b>nougat-x86, OpenJDK 1.8 is required</b>.</p>
-	<p><b>Note:</b> Before froyo-x86 (included), you can build on either a 32-bit or 64-bit host. Since gingerbread-x86, a 64-bit build environment is recommended.</p>
+      <h2><b>Getting LineageOS for x86 source code</b></h2>
+      <p>To get the source code of <a href="https://www.lineageos.org">LineageOS</a> (formerly CyanogenMod) porting for Android-x86, specify the manifest by an additional option <tt>-m cm.xml</tt>:
+      <div class="code-snippet"><span style="color:#d1d1d1">
+        <code class="code-shell">repo init -u git://git.osdn.net/gitroot/android-x86/manifest -m cm.xml -b &dollar;branch<br></code>
+        <code class="code-shell">repo sync --no-tags --no-clone-bundle</code>
+      </span></div>
+      </p><p>Currently the LineageOS porting is only available in nougat-x86 (cm 14.1) and marshmallow-x86 (cm 13.0) branches.</p>
 
-          <h2><b>Choose a target</b></h2>
-          <p>You need to choose a target for the x86 device you want to use/test. We provides several targets for different branches:</p>
-          <ul>
-            <li><h4>lollipop-x86 and later versions</h4></li>
-	    <ul>
-              <li>android_x86: for 32-bit x86 platform</li>
-              <li>android_x86_64: for 64-bit x86_64 platform</li>
-            </ul>
-            <br><li><h4>kitkat-x86 / jb-x86</h4></li>
-	    <ul>
-              <li>android_x86: for x86 platform</li>
-            </ul>
-            <br><li><h4>ics-x86 / honeycomb-x86</h4></li>
-	    <ul>
-              <li>generic_x86: for generic x86 PC/notebook</li>
-              <li>amd_brazos: for AMD Brazos platform</li>
-              <li>eeepc: for ASUS EeePC family only</li>
-              <li>asus_laptop: for some ASUS laptops</li>
-              <li>tegav2: for Tegatech Tegav2 (may work with other Atom N45x based tablets)</li>
-            </ul>
-            <br><li><h4>gingerbread-x86 / froyo-x86</h4></li>
-	    <ul>
-              <li>generic_x86: for generic x86 PC/notebook</li>
-              <li>eeepc: for ASUS EeePC family only</li>
-              <li>asus_laptop: for some ASUS laptops</li>
-              <li>tegav2: for Tegatech Tegav2 (may work with other Atom N45x based tablets)</li>
-              <li>sparta: for Dell Inspiron Mini Duo platform</li>
-              <li>vm: for virtual machine (virtual box, qemu, vmware)</li>
-              <li>motion_m1400: for Motion M1400 (Intel Centrino M based with Intel PRO/Wireless)</li>
-            </ul>
-            <br><li><h4>eclair-x86</h4></li>
-	    <ul>
-              <li>generic_x86: for generic x86 PC/notebook</li>
-              <li>eeepc: for ASUS EeePC family only</li>
-              <li>q1u: for Samsung Q1U</li>
-              <li>s5: for Viliv S5</li>
-            </ul>
-            <br><li><h4>donut-x86</h4></li>
-	    <ul>
-              <li>eeepc: for ASUS EeePC family only</li>
-              <li>q1u: for Samsung Q1U</li>
-              <li>s5: for Viliv S5</li>
-            </ul>
-          </ul>
-          <br>
-	  <p>Unless you are trying to build an ancient branch, you should just use <i>android_x86_64</i> for a 64-bit target, or <i>android_x86</i> for a 32-bit target. They are the universal targets for all x86 devices.</p>
-	  <p>Historically, you should use to use <i>generic_x86</i> for eclair-x86 to ics-x86 branches. However, it may not optimized for a particular target device. Use <i>eeepc</i> for a generic x86 for donut-x86 branch or before, unless you have the particular devices supported by other targets.</p>
-	  <p>If you are a developer, you can create a target based on <i>android_x86</i> for your device. See <a href="documentation/new_target.html">this article</a> for details. However, it's not recommended to do so unless you are a very experienced Android platform developer.</p>
+      <h2><b>Building the image</b></h2>
+      <p>Once <tt>repo sync</tt> is complete, you can build a cdrom iso image. You need Oracle java 1.6 (OpenJDK may not work) to build branches before (includes) kitkat-x86. <b>Since lollipop-x86, java 1.7 is required</b> and OpenJDK is supported. Since <b>nougat-x86, OpenJDK 1.8 is required</b>.</p>
+      <p><b>Note:</b> Before froyo-x86 (included), you can build on either a 32-bit or 64-bit host. Since gingerbread-x86, a 64-bit build environment is recommended.</p>
 
-            <h2><b>Using lunch commnd (recommended)</b></h2>
-            <p>You can source the file <i>build/envsetup.sh</i> into your bash environment to get some shell functions to help the building:</p>
+      <h2><b>Choose a target</b></h2>
+      <p>You need to choose a target for the x86 device you want to use/test. We provides several targets for different branches:</p>
+      <ul>
+        <li><h4>lollipop-x86 and later versions</h4></li>
+        <ul>
+          <li>android_x86_64: for 64-bit x86_64 platform</li>
+          <li>android_x86: for 32-bit x86 platform</li>
+        </ul>
+        <br><li><h4>kitkat-x86 / jb-x86</h4></li>
+        <ul>
+          <li>android_x86: for x86 platform</li>
+        </ul>
+        <br><li><h4>ics-x86 / honeycomb-x86</h4></li>
+        <ul>
+          <li>generic_x86: for generic x86 PC/notebook</li>
+          <li>amd_brazos: for AMD Brazos platform</li>
+          <li>eeepc: for ASUS EeePC family only</li>
+          <li>asus_laptop: for some ASUS laptops</li>
+          <li>tegav2: for Tegatech Tegav2 (may work with other Atom N45x based tablets)</li>
+        </ul>
+        <br><li><h4>gingerbread-x86 / froyo-x86</h4></li>
+        <ul>
+          <li>generic_x86: for generic x86 PC/notebook</li>
+          <li>eeepc: for ASUS EeePC family only</li>
+          <li>asus_laptop: for some ASUS laptops</li>
+          <li>tegav2: for Tegatech Tegav2 (may work with other Atom N45x based tablets)</li>
+          <li>sparta: for Dell Inspiron Mini Duo platform</li>
+          <li>vm: for virtual machine (virtual box, qemu, vmware)</li>
+          <li>motion_m1400: for Motion M1400 (Intel Centrino M based with Intel PRO/Wireless)</li>
+        </ul>
+        <br><li><h4>eclair-x86</h4></li>
+        <ul>
+          <li>generic_x86: for generic x86 PC/notebook</li>
+          <li>eeepc: for ASUS EeePC family only</li>
+          <li>q1u: for Samsung Q1U</li>
+          <li>s5: for Viliv S5</li>
+        </ul>
+        <br><li><h4>donut-x86</h4></li>
+        <ul>
+          <li>eeepc: for ASUS EeePC family only</li>
+          <li>q1u: for Samsung Q1U</li>
+          <li>s5: for Viliv S5</li>
+        </ul>
+        <br><li><h4>LineageOS for x86</h4></li>
+        <ul>
+          <li>cm_android_x86_64: for 64-bit x86_64 platform</li>
+          <li>cm_android_x86: for 32-bit x86 platform</li>
+        </ul>
+      </ul>
+      <br>
+      <p>Unless you are trying to build an ancient branch, you should just use <i>android_x86_64</i> for a 64-bit target, or <i>android_x86</i> for a 32-bit target. They are the universal targets for all x86 devices.</p>
+      <p>Historically, you should use to use <i>generic_x86</i> for eclair-x86 to ics-x86 branches. However, it may not optimized for a particular target device. Use <i>eeepc</i> for a generic x86 for donut-x86 branch or before, unless you have the particular devices supported by other targets.</p>
+      <p>If you are a developer, you can create a target based on <i>android_x86</i> for your device. See <a href="documentation/new_target.html">this article</a> for details. However, it's not recommended to do so unless you are a very experienced Android platform developer.</p>
 
-            <div class="code-snippet"><span style="color:#d1d1d1">
-              <code class="code-shell">source build/envsetup.sh</code>
-            </span></div>
-            <p>Now you can select a target by lunch command:</p>
-            <div class="code-snippet"><span style="color:#d1d1d1">
-              <code class="code-shell">lunch $TARGET_PRODUCT-$TARGET_BUILD_VARIANT</code>
-            </span></div>
-            <p>where &dollar;TARGET_PRODUCT is any target described in the previous section, and possible values of &dollar;TARGET_BUILD_VARIANT are eng, user, userdebug. For example,</p>
+      <h2><b>Using lunch commnd (recommended)</b></h2>
+      <p>You can source the file <i>build/envsetup.sh</i> into your bash environment to get some shell functions to help the building:</p>
 
-            <div class="code-snippet"><span style="color:#d1d1d1">
-              <code class="code-shell">lunch android_x86_64-userdebug</code>
-            </span></div>
-            <p>Then you can build by <b>m</b> command:</p>
+      <div class="code-snippet"><span style="color:#d1d1d1">
+        <code class="code-shell">source build/envsetup.sh</code>
+      </span></div>
+      <p>Now you can select a target by lunch command:</p>
+      <div class="code-snippet"><span style="color:#d1d1d1">
+        <code class="code-shell">lunch $TARGET_PRODUCT-$TARGET_BUILD_VARIANT</code>
+      </span></div>
+      <p>where &dollar;TARGET_PRODUCT is any target described in the previous section, and possible values of &dollar;TARGET_BUILD_VARIANT are eng, user, userdebug. For example,</p>
 
-            <div class="code-snippet"><span style="color:#d1d1d1">
-              <code class="code-shell">m -jX iso_img</code>
-            </span></div>
-            <p><b>m</b> command is equivalent to make, but you can use it in any subdirectory of the android-x86 tree.
-            Replace X by the number of processors you have. For example, if you have a quad core CPU, replace X with 4:</p>
-            <div class="code-snippet"><span style="color:#d1d1d1">
-              <code class="code-shell">m -j4 iso_img</code>
-            </span></div>
-	    <br>Since froyo-x86, we also add menu selection to lunch command. Just type <tt>lunch</tt>, and you will get a list of available targets. Choose a target by inputting its number. Alternatively, just type <tt>lunch $number</tt>.</p>
-              <h2><b>Building directly</b></h2>
-              <p>You may specify the target to be built by TARGET_PRODUCT variable. For example, to build a live cdrom iso image for target android_x86, type:</p>
-              <div class="code-snippet"><span style="color:#d1d1d1">
-                <code class="code-shell">make -jX iso_img TARGET_PRODUCT=android_x86</code>
-              </span></div>
-              <p>To generate a live cdrom iso for tegav2, type</p>
-              <div class="code-snippet"><span style="color:#d1d1d1">
-                <code class="code-shell">make -jX iso_img TARGET_PRODUCT=tegav2</code>
-              </span></div>
-              <p>Then you will get an iso file out/target/product/x86/android_x86.iso, etc.</p>
-                <h2><b>Using buildspec.mk</b></h2>
-                <p>You can create a <tt>buildspec.mk</tt> in your android-x86 directory to remember a particular target product you build often:</p>
-                <div class="code-snippet"><span style="color:#d1d1d1">
-                  TARGET_PRODUCT := android_x86_64<br>
-                  TARGET_BUILD_VARIANT := userdebug<br>
-                  TARGET_BUILD_TYPE := release<br>
-                  TARGET_KERNEL_CONFIG := android-x86_64_defconfig
-                </span></div>
-                <p>With your <tt>buildspec.mk</tt> file in your android-x86 working directory, you can simply make by</p>
-                <div class="code-snippet"><span style="color:#d1d1d1">
-                  <code class="code-shell">make -jX iso_img</code>
-                </span></div>
+      <div class="code-snippet"><span style="color:#d1d1d1">
+        <code class="code-shell">lunch android_x86_64-userdebug</code>
+      </span></div>
+      <p>Then you can build an iso file by <b>m</b> command:</p>
+      <div class="code-snippet"><span style="color:#d1d1d1">
+        <code class="code-shell">m -jX iso_img</code>
+      </span></div>
+      <p><b>m</b> command is equivalent to <b>make</b>, but you can use it in any subdirectory of the android-x86 tree. Replace X by the number of processors you have. For example, if you have a quad core CPU, replace X with 4:</p>
+      <div class="code-snippet"><span style="color:#d1d1d1">
+        <code class="code-shell">m -j4 iso_img</code>
+      </span></div>
+      <p>Since froyo-x86, we also add menu selection to lunch command. Just type <tt>lunch</tt>, and you will get a list of available targets. Input the number to select a target. Alternatively, just type <tt>lunch $number</tt>.</p>
+      <p>To build an rpm file:</p>
+      <div class="code-snippet"><span style="color:#d1d1d1">
+        <code class="code-shell">m -jX rpm</code>
+      </span></div>
+      <p>You need to install the <tt>rpm-build</tt> package (Fedora based distributions) or <tt>rpm</tt> package (Debian / Ubuntu based distributions) before building.</p>
+      The rpm file could be installed to a Linux distribution directly.<p>
 
-                <h2><b>Build smaller image</b></h2>
+      <h2><b>Building directly</b></h2>
+      <p>You may specify the target to be built by TARGET_PRODUCT variable. For example, to build an iso image for target <tt>android_x86</tt>, type:</p>
+      <div class="code-snippet"><span style="color:#d1d1d1">
+        <code class="code-shell">make -jX iso_img TARGET_PRODUCT=android_x86</code>
+      </span></div>
+      <p>To generate a live cdrom iso for tegav2, type</p>
+      <div class="code-snippet"><span style="color:#d1d1d1">
+        <code class="code-shell">make -jX iso_img TARGET_PRODUCT=tegav2</code>
+      </span></div>
+      <p>Then you will get an iso file out/target/product/x86/android_x86.iso, etc.</p>
+      <h2><b>Using buildspec.mk</b></h2>
+      <p>You can create a <tt>buildspec.mk</tt> in your android-x86 directory to remember a particular target product you build often:</p>
+      <div class="code-snippet"><span style="color:#d1d1d1">
+        TARGET_PRODUCT := android_x86_64<br>
+        TARGET_BUILD_VARIANT := userdebug<br>
+        TARGET_BUILD_TYPE := release<br>
+        TARGET_KERNEL_CONFIG := android-x86_64_defconfig
+      </span></div>
+      <p>With your <tt>buildspec.mk</tt> file in your android-x86 working directory, you can simply make by</p>
+      <div class="code-snippet"><span style="color:#d1d1d1">
+        <code class="code-shell">make -jX iso_img</code>
+      </span></div>
 
-                <p>Since marshmallow-x86, the generated Android-x86 core filesystem will be compressed by <a href="https://en.wikipedia.org/wiki/SquashFS">squashfs</a> by default. Before that, squashfs is used only if you have squashfs-tools 4.0 (older version <b>will not work</b>) installed in your host. The generated iso file is much smaller (only about 30-40%). However, if you hope to disable it for some reasons, add <tt>USE_SQUASHFS=0</tt> to make. You can put it to buildspec.mk:</p>
-                <div class="code-snippet"><span style="color:#d1d1d1">
-                  USE_SQUASHFS := 0
-                </span></div>
-                <p>Before froyo-x86 (included), If you hope to get a more smaller image, you may remove the debugging symbols by adding</p>
-                <div class="code-snippet"><span style="color:#d1d1d1">
-                  TARGET_STRIP := 1
-                </span></div>
-                <p>Since gingerbread-x86, the debugging symbols are stripped by default. So the option is unnecessary.</p>
+      <h2><b>Building smaller image</b></h2>
+      <p>Since marshmallow-x86, the generated Android-x86 core filesystem will be compressed by <a href="https://en.wikipedia.org/wiki/SquashFS">squashfs</a> by default. Before that, squashfs is used only if you have squashfs-tools 4.0 (older version <b>will not work</b>) installed in your host. The generated iso file is much smaller (only about 30-40%). However, if you hope to disable it for some reasons, add <tt>USE_SQUASHFS=0</tt> to make. You can put it to buildspec.mk:</p>
+      <div class="code-snippet"><span style="color:#d1d1d1">
+        USE_SQUASHFS := 0
+      </span></div>
+      <p>Before froyo-x86 (included), If you hope to get a more smaller image, you may remove the debugging symbols by adding</p>
+      <div class="code-snippet"><span style="color:#d1d1d1">
+        TARGET_STRIP := 1
+      </span></div>
+      <p>Since gingerbread-x86, the debugging symbols are stripped by default. So the option is unnecessary.</p>
 
-                <h2><b>Testing</b></h2>
-                <p>The generated image is located at</p>
-                <div class="code-snippet"><span style="color:#d1d1d1">
-                  out/target/product/$TARGET_PRODUCT/$TARGET_PRODUCT.iso
-                </span></div>
+      <h2><b>Testing</b></h2>
+      <p>The generated image is located at</p>
+      <div class="code-snippet"><span style="color:#d1d1d1">
+        out/target/product/$TARGET_PRODUCT/$TARGET_PRODUCT.iso
+      </span></div>
 
-                <p>You can easily test the iso file by a <a href="documentation/virtualbox.html">virtual box</a> or <a href="documentation/qemu.html">qemu</a>. On the booting screen, select the VESA or debug mode to boot.<br>
-                  <br>Of course you can burn the iso to a CD disk and test it on a real hardware. On booting it will automatically detect your hardware and load necessary modules. If you have problem with the default frame buffer driver, you may try the VESA mode (select second item on boot screen).
-                  <br><br>Since honeycomb-x86, we supports the&nbsp;<b>hybrid iso format</b>. That is, the iso could be dumped to a usb disk directly. You may create a bootable USB disk by</p>
-
-                  <div class="code-snippet"><span style="color:#d1d1d1">
-                    <code class="code-shell">dd if=out/target/product/x86/android_x86.iso of=/dev/sdX</code>
-                  </span></div>
-		  <p>where <tt>/dev/sdX</tt> is the device name of your USB disk. The feature is available for all iso files released after 2011/12/25.</p>
-		  <p>For more details about how to use the iso or install it, see the <a href="installhowto.html">installation howto.</a></p>
+      <p>You can easily test the iso file by a virtual machine like <a href="documentation/virtualbox.html">virtual box</a> or <a href="documentation/qemu.html">qemu</a>. Alternatively, on a Linux host you can use the <tt>qemu-android</tt> script (available since nougat-x86) to run android-x86 in qemu directly:</p>
+      <div class="code-snippet"><span style="color:#d1d1d1">
+        <code class="code-shell">sudo out/host/linux-x86/bin/qemu-android</code>
+      </span></div>
+      <p>To test the image on a real x86 hardware, you can burn the iso to a compact disc (CD), then boot it on the target device. Check the manual of your vendor to see how to boot from a CD. On booting it will automatically detect your hardware and load necessary modules.</p>
+      <p>Since honeycomb-x86, we support the <b>hybrid iso format</b>. That is, the iso could be dumped to a usb disk directly. For example,</p>
+      <div class="code-snippet"><span style="color:#d1d1d1">
+        <code class="code-shell">dd if=out/target/product/x86_64/android_x86_64.iso of=/dev/sdX</code>
+      </span></div>
+      <p>where <tt>/dev/sdX</tt> is the device name of your USB disk. The feature is available for all iso files released after 2011/12/25.</p>
+      <p>If you build an rpm file, install it to your Linux host and run the <tt>qemu-android</tt> script directly. Or reboot and choose android-x86 item from the booting menu.</p>
+      <p>For more details about how to use the iso or install it, see the <a href="installhowto.html">installation howto.</a></p>
 
                   <h2><strong>Advanced</strong></h2>
                   <p>This section describes some useful information for advanced users. You may need good linux expertise to complete it.</p>
