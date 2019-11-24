@@ -12,6 +12,16 @@ body {
   line-height: 1.5em;
 }
 
+
+@media (prefers-color-scheme: dark) {
+  body { background: #080e16; color: #dad7d7;; }
+}
+
+@media (prefers-color-scheme: light) {
+  body   { background: white; color:  #555; }
+  }
+
+
 @font-face {
   font-family: 'Product Sans';
   font-style: normal;
