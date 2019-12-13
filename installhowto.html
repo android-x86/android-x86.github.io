@@ -25,35 +25,52 @@
         <button class="button" onclick="setActiveStyleSheet('alternate'); return false;" ><img src="dark_theme.png" height="20px" width"20px" title="Toggle Theme"/></button>
       </div>
 
-      <h1>Installation</h1><br>
-      <h2>Introduction</h2>
-      We have implemented an easy installer to install Android-x86 to a harddisk. The supported filesystems are
+      <h1>Installation</h1>
+      <br><h2>Introduction</h2>
+      We have implemented a text-based easy installer to help install Android-x86 to a hard drive. These filesystems are supported:
       <ul>
-        <li>ext3</li>
-        <li>ext2</li>
+        <li>ext4</li>
         <li>ntfs</li>
         <li>fat32</li></ul>
-        <p>You can install Android-x86 to an NTFS filesystem to co-exist with Windows. See the <a href="#Advanced">Advanced Section</a> for more details.</p>
-
+        <p>In particular, you can install Android-x86 to an NTFS filesystem to co-exist with Windows. See the <a href="#Advanced">Advanced Section</a> for more details.</p>
+      <p>
       <script data-cfasync="false" type="text/javascript" src="//www.increaserev.com/ads/728x90below_res.js"></script>
-      <h2>Step by Step</h2>
+      </p>
+
+      <br><h2>Step by Step</h2>
         <ul>
+          <li>Download an iso image from <a href="download.html">a mirror site</a>. Usually you should just use the latest image.</li>
           <li>Burn the iso image to cdrom, or create a bootable USB disk (recommended). See the <a href="#Advanced">Advanced Section</a> for details.</li>
-          <li>Boot from the Android-x86 installation CD/USB, choose the 'Install Android to harddisk' item, as shown below:
-			<br /><blockquote><img src="screenshots/InstallBootSelect.png"></blockquote></li>
+          <li>Boot from the Android-x86 installation CD/USB, choose the 'Install Android-x86 to harddisk' item, as shown below:
+			<br><blockquote><img src="screenshots/InstallBootSelect.png"></blockquote></li>
           <li>After seconds of booting, you will see a partition selection dialog. You can choose an existing partition to install Android-x86, or you can create or modify partitions by choosing 'Create/Modify partitions'. Note you can install Android-x86 to an external disk like USB drive. If the target drive is not shown, try 'Detect devices'.
-			<br /><blockquote><img src="screenshots/InstallChoosePartition.png"></blockquote></li>
-          <li>Android-x86 can co-exist with other operating system or data in the chosen partition. If the partition is formatted, you may choose 'Do not format' to keep existing data. Otherwise, choose a filesystem type to format. Note the type you chosen must match the partition id, or the boot loader will fail to boot.
-			<br /><blockquote><img src="screenshots/InstallChooseFilesystem.png"></blockquote></li>
-          <li>Also note if you choose to format to fat32, you will see a warning that android cannot save data to fat32. You can still proceed to install, but the installed android system will work like a live cd system. That is, all data will lose after power off. Therefore we do not recommend to install Android-x86 to a fat32 partition.</li>
-          <li>Next question is whether to install boot loader Grub. Usually you should answer yes, unless you want to install boot loader by hand yourself. Note the installer only creates boot items for Android-x86. If you hope to boot other operating systems, you need to add the item to /grub/menu.lst manually. See the Advanced section for how to do this.
-			<br /><blockquote><img src="screenshots/InstallGrubConfirm.png">
-</blockquote></li>
+			<br><blockquote><img src="screenshots/InstallChoosePartition.png"></blockquote></li>
+          <li>Android-x86 can co-exist with other operating system or data in the chosen partition. If the partition is formatted, you may choose 'Do not re-format' to keep existing data. Otherwise, choose a filesystem type to format. Note the type you chosen must match the partition id, or the boot loader will fail to boot.
+			<br><blockquote><img src="screenshots/InstallChooseFilesystem.png"></blockquote></li>
+          <li>If you choose to format the partition, you will see a warning like below. Select 'Yes' to confirm, or select 'No' to keep the original filesystem.
+			<br><blockquote><img src="screenshots/InstallFormatConfirm.png"></blockquote></li>
+	  <li>Next question is whether to install boot loader Grub. Usually you should answer 'Yes', unless you want to install boot loader by hand yourself.
+			<br><blockquote><img src="screenshots/InstallGrubConfirm.png"></blockquote></li>
+	  <li>Then the installer will ask if you want to install <tt>/system</tt> directory as read-write. If you want to modify the system for some purposes (e.g., debugging), select 'Yes'.
+			<br><blockquote><img src="screenshots/InstallSelectSystemRW.png"></blockquote></li>
           <li>If you are lucky, the installation will begin, and you will see the progress bar.
-			<br /><blockquote><img src="screenshots/InstallProgress.png"></blockquote></li>
+			<br><blockquote><img src="screenshots/InstallProgress.png"></blockquote></li>
           <li>If you see the following screen, the installation is complete. Congratulations! Now you can run Andrond-x86 directly, or you can reboot and run it:
-			<br /><blockquote><img src="screenshots/InstallComplete.png"></blockquote>
+			<br><blockquote><img src="screenshots/InstallComplete.png"></blockquote>
         </ul>
+
+      <br><h2>Upgrade</h2>
+      <p>You may upgrade an older Android-x86 installation by the installer. Just select the partition containing the older installation. The installer will prompt if you'd like to upgrade it:
+			<br><blockquote><img src="screenshots/UpgradeSingleVersion.png"></blockquote>
+      Select 'Yes' to upgrade it. Select 'No' to install the new version to a new directory and keep the older installation untouched.</p>
+
+      <p>If there are multiple older versions in the same partition, the installer will ask which version to upgrade:
+			<br><blockquote><img src="screenshots/UpgradeMultipleVersions.png"></blockquote>
+      Select the one you want to upgrade, or choose to install to a new folder.</p>
+
+      <h2>Auto Installation / Update</h2>
+
+      <h2>Other boot options</h2>
 
           <br /><br /><h1 id="Advanced">Advanced</h1>
           <br/ /><br /><h2>How to create a bootable USB stick for Android-x86?</h2>
