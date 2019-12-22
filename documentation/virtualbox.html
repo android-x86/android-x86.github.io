@@ -6,6 +6,9 @@
         <title>VirtualBox HowTo | Android-x86</title>
         <link rel="stylesheet" type="text/css" href="master.css" title="default">
         <link rel="alternate stylesheet" type="text/css" href="dark.css" title="alternate">
+		<style>
+			.bold {font-weight: bold; }
+		</style>
         <script type="text/javascript" src="styleswitcher.js"></script>
         <meta charset="utf-8" name="viewport" content="width=device-width, initial-scale=1.0">
         <link rel="icon" type="image/png" href="mobile.png">
@@ -76,9 +79,9 @@
                     <li><span class="bold">[Display]</span>:
 			    <ol style="padding-left: 40px;">
 				    <li>Optional: Video Memory may be increased beyond the minimum selected automatically. The affects of this are unknown.</li>
-		                    <li>Optional: Enable 3D Acceleration may be checked. The Linux Guest Additions may need to be installed<sup><a id="ref1_a" href="#ref1" onclick="scroller('ref1'); return false">[1]</a></sup> to get any benefit from this.</li>
-				    <li><span class="bold">Mandatory:</span> Unless guest additions are installed<sup><a id="ref1_b" href="#ref1" onclick="scroller('ref1'); return false">[1]</a></sup>, change the default <span class="bold">VMSVGA</span> to <span class="bold">VBoxVGA</span>.
-					<br />Failure to do so means you won't even be able to launch Android-X86 in the first place.<sup><a id="ref2_a" href="#ref2" onclick="scroller('ref2'); return false">[2]</a></sup>
+					<li><span class="bold">Mandatory:</span> Unless guest additions are installed<sup><a id="ref1_a" href="#ref1" onclick="scroller('ref1'); return false">[1]</a></sup>, change the default <span class="bold">VMSVGA</span> to <span class="bold">VBoxVGA</span>.
+                    <li>Optional: Enable 3D Acceleration may be checked. The Linux Guest Additions must (VirtualBox v6.1+) / may (VirtualBox v6.0 and below) need to be installed<sup><a id="ref2" href="#ref2_a" onclick="scroller('ref2'); return false">[2]</a></sup><sup><a id="ref1_b" href="#ref1" onclick="scroller('ref1'); return false">[1]</a></sup> to get any benefit from this.</li>
+					<br />Failure to do so means you won't even be able to launch Android-X86 in the first place.<sup><a id="ref3_a" href="#ref3" onclick="scroller('ref3'); return false">[3]</a></sup>
 			    </ol>
                     <li><span class="bold">[Storage]</span> Find the first "Empty" item (this should have an icon of a CD). In the Attributes, click on the CD icon with a small down arrow, and pick "Choose Optical Virtual Disk File...". Specify the Android-x86 ISO that you downloaded.</li>
                     <li><span class="bold">[Audio]</span> Intel HD Audio seems to be natively supported in Android-x86.</li>
@@ -106,7 +109,7 @@
                 <p>
                   Continue through the installation. You should install GRUB when it prompts you to. You may also leave /system as read and write when prompted.
                   <br>
-                  Once the installation is complete, reboot your virtual machine and remove the ISO from the virtual CD drive. Once Android-x86 has loaded, you can perform the Android setup and begin using your machine.
+                  Once the installation is complete, force close/shut down the virtual machine and remove the ISO from the virtual CD drive. Once Android-x86 has loaded, you can perform the Android setup and begin using your machine.
                 </p>
                 <h3>Advanced</h3>
                 <h4>Custom partitions, SDCard</h4>
@@ -175,7 +178,8 @@
 	<h3>References</h3>
     <ol class="refs">
 	<li id="ref1"></a><sup>^ <a href="#ref1_a" onclick="scroller('ref1_a'); return false">a</a> <a href="#ref1_b" onclick="scroller('ref1_b'); return false">b</a></sup> VirtualBox currently <a href="https://www.virtualbox.org/manual/ch04.html#additions-linux" target="_blank">has no Guest Additions for Android.</a></li>
-	<li id="ref2"></a><sup><a href="#ref2_a" onclick="scroller('ref2_a'); return false">^</a></sup> VirtualBox states: <a href="https://docs.oracle.com/cd/E97728_01/F12470/html/gui-changes.html" target="_blank">"Note that you must install the Guest Additions on the guest VM to specify the VBoxSVGA or VMSVGA graphics controller."</a></li>
+	<li id="ref2"></a><sup><a href="#ref2_a" onclick="scroller('ref2_a'); return false">^</a></sup> VirtualBox v6.1.0 states: <a href="https://www.virtualbox.org/wiki/Changelog-6.1" target="_blank">"old style 3D support (with VBoxVGA) has been completely removed"</a></li>
+	<li id="ref3"></a><sup><a href="#ref3_a" onclick="scroller('ref3_a'); return false">^</a></sup> VirtualBox states: <a href="https://www.virtualbox.org/manual/ch03.html#settings-display" target="_blank">"Note that you must install the Guest Additions on the guest VM to specify the VBoxSVGA or VMSVGA graphics controller."</a></li>
     </ol>
 
         </section>
