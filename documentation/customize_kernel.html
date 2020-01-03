@@ -66,13 +66,13 @@
                     <div class="code-snippet"><span style="color:#d1d1d1">
                       <code class="code-shell">touch kernel/arch/x86/configs/android-x86_*</code>
                     </span></div></p>
-		    <p>Or remove the kernel config in the <tt>out/</tt> directory:
+                    <p>Or remove the kernel config in the <tt>out/</tt> directory:
                     <div class="code-snippet"><span style="color:#d1d1d1">
                       <code class="code-shell">rm $OUT/obj/kernel/.config</code>
                     </span></div></p>
-		    <p>Or remove the kernel image:
+                    <p>Or remove the kernel image:
                     <div class="code-snippet"><span style="color:#d1d1d1">
-                      <code class="code-shell">rm $OUT/kernel</code>
+                      <code class="code-shell">rm $OUT/obj/kernel/arch/x86/boot/bzImage</code>
                     </span></div>
                     Then rebuild the image as usual.</p>
 
