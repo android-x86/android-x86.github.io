@@ -45,7 +45,7 @@
 			<br><blockquote><img src="screenshots/InstallBootSelect.png"></blockquote></li>
           <li>After seconds of booting, you will see a partition selection dialog. You can choose an existing partition to install Android-x86, or you can create or modify partitions by choosing 'Create/Modify partitions'. Note you can install Android-x86 to an external disk like USB drive. If the target drive is not shown, try 'Detect devices'.
 			<br><blockquote><img src="screenshots/InstallChoosePartition.png"></blockquote></li>
-          <li>Android-x86 can co-exist with other operating system or data in the chosen partition. If the partition is formatted, you may choose 'Do not re-format' to keep existing data. Otherwise, choose a filesystem type to format. Note the type you chosen must match the partition id, or the boot loader will fail to boot.
+          <li>Android-x86 can co-exist with other operating system or data in the chosen partition. If the partition is formatted, you may choose 'Do not re-format' to keep existing data. Otherwise, choose a filesystem type to format. Note the type you chose must match the partition id, or the boot loader will fail to boot.
 			<br><blockquote><img src="screenshots/InstallChooseFilesystem.png"></blockquote></li>
           <li>If you choose to format the partition, you will see a warning like below. Select 'Yes' to confirm, or select 'No' to keep the original filesystem.
 			<br><blockquote><img src="screenshots/InstallFormatConfirm.png"></blockquote></li>
@@ -68,25 +68,50 @@
 			<br><blockquote><img src="screenshots/UpgradeMultipleVersions.png"></blockquote>
       Select the one you want to upgrade, or choose to install to a new folder.</p>
 
-      <h2>Auto Installation / Update</h2>
+      <br><h2>Auto Installation</h2>
+      <p>If you want to use Android-x86 as the only OS in your device, you may choose "Auto Installation" under the "Advanced options".
+			<br><blockquote><img src="screenshots/AutoInstallation.png"></blockquote>
+      </p><p>The installer will prompt you to confirm:
+			<br><blockquote><img src="screenshots/AutoInstallConfirm.png"></blockquote>
+      </p><p>After you select 'Yes', the installer will erase the whole content of the hard disk, partition and install Android-x86 to it.
+      </p><p>If you have multiple hard drives, the installer will let you choose which one to use. Be careful to choose the correct one.
+			<br><blockquote><img src="screenshots/AutoInstallMultiDrives.png"></blockquote>
+      </p>
+      <br><h2>Auto Update</h2>
+      <p>By choosing "Auto Update" under the "Advanced options", the installer could update an older installation automatically.
+			<br><blockquote><img src="screenshots/AutoUpdate.png"></blockquote>
+      </p><p>In this mode, the installer searches a partition named "Android-x86" or the first ext4 partition, and update the older installation in it automatically. If no such a partition is found, the auto update mode will be cancelled.
+      </p>
 
       <h2>Other boot options</h2>
+      <ul>
+        <li>Live CD - Run Android-x86 without installation</li>
+	<p>The item means to boot Android-x86 directly. This is useful to check if your hardware is compatible with Android-x86 quickly. All data is stored in RAM (tmpfs) and will lose after poweroff.</p>
+        <li>Live CD - Debug mode</li>
+	<p>See the <a href="documentation/debug.html">debug howto</a> for more details.</p>
+        <li>Live CD - Vulkan support (experimental)</li>
+	<p>Enable the experimental <a href="https://en.wikipedia.org/wiki/Vulkan_(API)">Vulkan</a> support. Not all <a href="https://en.wikipedia.org/wiki/Graphics_processing_unit">GPUs</a> support it.</p>
+        <li>Live CD - No Setup Wizard</li>
+	<p>Skip the Setup Wizard. It's useful if you want to test some apps quickly in live mode.</p>
+        <li>Live CD VESA mode - No GPU hardware acceleration</li>
+	<p>Disable GPU hardware acceleration. If you encounter black screen after booting, you may try this mode to see if it's bootable.</p>
+      </ul>
 
-          <br /><br /><h1 id="Advanced">Advanced</h1>
-          <br/ /><br /><h2>How to create a bootable USB stick for Android-x86?</h2>
-          <ul>
-            <li>
-              Download the compressed USB image, uncompress and dump it to a USB stick. On a Linux host, you can use the command
-              <div class="code-snippet"><span style="color:#d1d1d1"># zcat android-x86-1.6-r2_usb.img.gz | dd of=/dev/sdc
-              </span></div>
-              <br>where /dev/sdc is the device name of the target USB disk. However, some broken BIOS may fail to boot such a USB disk.</li>
-              <li>Create a bootable USB stick by iso
-                There are some free (open source or freeware) tools that can convert an iso into a bootable USB disk. See <a href="https://www.portablefreeware.com/index.php?sc=312">online list</a> and here are some examples:
-                <ul>
-					<li><a href="https://unetbootin.github.io">UNetbootin</a> - see <a href="https://www.youtube.com/watch?v=HPYQEOUr9fE">demo video</a></li></ul>
-					<li><s><a href="https://www.linuxliveusb.com">Linux Live USB Creator (LiLi)</a></s> - Obsolete software, but <a href="https://www.linuxliveusb.com/en/component/search/?searchword=android+x86&ordering=newest&searchphrase=all&limit=0">used</a> to officially support Android-x86 <a href="https://www.linuxliveusb.com/en/release-notes">until v4.4</a></li>
-              </ul>
-			  <br /><br />
+      <br><h1 id="Advanced">Advanced</h1>
+      <h2>Create a bootable USB stick for Android-x86</h2>
+      <p>There are several tools which could be used to create a bootable USB stick for Android-x86. The following tools are available for Windows users:
+      <ul>
+        <li><a href="https://sourceforge.net/projects/win32diskimager/">Win32 Disk Imager</a> - see <a href="https://www.youtube.com/watch?v=nvwqmzhj0cU">demo video</a>.</li>
+        <li><a href="https://unetbootin.github.io">UNetbootin</a> - see <a href="https://www.youtube.com/watch?v=FPjCJexkqKg">demo video</a>.</li>
+        <li><a href="https://rufus.ie">Rufus</a> - see <a href="https://www.youtube.com/watch?v=RQBWpgxlZxc">demo video</a>.</li>
+        <li><a href="https://www.linuxliveusb.com">Linux Live USB Creator (LiLi)</a> - Obsolete software, but <a href="https://www.linuxliveusb.com/en/component/search/?searchword=android+x86&ordering=newest&searchphrase=all&limit=0">used</a> to officially support Android-x86 <a href="https://www.linuxliveusb.com/en/release-notes">until v4.4</a>.</li>
+      </ul>
+      </p><p>For Linux users, just use the standard <tt>dd</tt> command like:
+      <div class="code-snippet"><span style="color:#d1d1d1">
+        <code class="code-shell">dd if=android-x86_64-9.0-rc1.iso of=/dev/sdX</code>
+      </span></div>
+      where /dev/sdX is the device name of the target USB disk.
+      </p>
                   <h2>Multi-Boot</h2>
                   <p>To boot other operating systems, you have to add items for them to /grub/menu.lst. For example, to boot Windows, add the following:</p>
                   <div class="code-snippet"><span style="color:#d1d1d1">title Windows<br>rootnoverify (hd0,0)<br>chainloader +1</span></div>
