@@ -1,0 +1,134 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <base href="..">
+  <title>Release 9.0-rc2 | Android-x86</title>
+  <link rel="stylesheet" type="text/css" href="master.css" title="default">
+  <link rel="alternate stylesheet" type="text/css" href="dark.css" title="alternate">
+  <script type="text/javascript" src="styleswitcher.js"></script>
+  <link rel="icon" type="image/png" href="mobile.png">
+  <meta charset="utf-8" name="viewport" content="width=device-width, initial-scale=1.0">
+</head>
+<body>
+  <div w3-include-html="navbar.html"></div>
+  <div class="openNav">
+    <div class="icon"></div>
+  </div>
+  <!--HTML of main page-->
+  <div class="wrapper">
+    <section>
+      <h1 id="top" class="heading">Android-x86</h1>
+      <h2 class="subheading">Run Android on your PC</h2>
+
+      <!--Style Switcher-->
+      <div class=themebtn>
+        <button class="button" onclick="setActiveStyleSheet('default'); return false;"><img src="light_theme.png" height="20px" width"20px" title='Toggle Theme'/> </button>
+        <button class="button" onclick="setActiveStyleSheet('alternate'); return false;" ><img src="dark_theme.png" height="20px" width"20px" title="Toggle Theme"/></button>
+      </div>
+
+      <h2>Release Note 9.0-rc2</h2>
+      <h3>(2020/01/23)</h3>
+      The Android-x86 project is glad to announce the 9.0-rc2 to public. This is the second release candidate for Android-x86 9.0 (pie-x86). The prebuilt images are available in the following site:
+      <p>
+      <ul>
+        <li><a href="https://www.fosshub.com/Android-x86.html">https://www.fosshub.com/Android-x86.html</a></li>
+        <li><a href="https://osdn.net/rel/android-x86/Release%209.0">https://osdn.net/rel/android-x86/Release%209.0</a></li>
+      </ul>
+      </p>
+      <p><script data-cfasync="false" type="text/javascript" src="//www.increaserev.com/ads/728x90below_res.js"></script></p>
+      <h2><b>Key Features</b></h2>
+      <p>The 9.0-rc2 release is an update of <a href="releases/releasenote-9-0-rc1.html">9.0-rc1</a>:
+      <ul>
+        <li>Update to Android 9.0.0 Pie release (android-9.0.0_r52).</li>
+        <li>Update to LTS kernel 4.19.95.</li>
+        <li>Update to Mesa 19.3.2.</li>
+        <li>Update to Taskbar 5.0.1.</li>
+      </ul>
+      <br>
+
+      <h2>Released Files</h2>
+      <p>This release contains four files. You can choose one of these files depends on your devices. Most modern devices should be able to run the 64-bit ISO. For older devices with legacy BIOS, you may try the 32-bit ISO.</p>
+      <!--DoWNLOAD UL LIST-->
+      <ul>
+        <li>64-bit ISO:&nbsp;&nbsp;android-x86_64-9.0-rc2.iso
+          <p>sha1sum: af05f7f28c613f6975be519b2fdd6ae4c0482a02</p>
+        </li>
+        <li>32-bit ISO:&nbsp;&nbsp;android-x86-9.0-rc2.iso
+          <p>sha1sum: 3a94d0886f998c0b0af8d88b2d99dca7d077388f</p>
+        </li>
+        <li>64-bit rpm:&nbsp;&nbsp;android-x86-9.0-rc2.x86_64.rpm
+          <p>sha1sum: f4c67d8e580903b8ef2034ae442b2945f4a911a8</p>
+        </li>
+        <li>32-bit rpm:&nbsp;&nbsp;android-x86-9.0-rc2.i686.rpm
+          <p>sha1sum: 8ee0f575cec2e2d468ababd8ec99d70663d9a50f</p>
+        </li>
+        <li>64-bit ISO with kernel 4.9:&nbsp;&nbsp;android-x86_64-9.0-rc2-k49.iso
+          <p>sha1sum: 4279f5a0a8f37ae340e6fff5f8542352da464bf0
+	  <br>Recommended for VMware users</p>
+        </li>
+      </ul>
+      <!--DOWNLOAD UL ENDS-->
+      <p>To use an ISO file, Linux users could just dump it into a usb drive to create a bootable usb stick like:</p>
+      <div class="code-snippet"><span style="color:#d1d1d1">
+        <code class="code-shell">dd if=android-x86_64-9.0-rc2.iso of=/dev/sdX</code>
+      </span></div>
+      <p>where <tt>/dev/sdX</tt> is the device name of your usb drive.</p>
+      <p>Windows's users can use the tool <a href="https://sourceforge.net/projects/win32diskimager/">Win32 Disk Imager</a> to create a bootable usb stick.</p>
+      <p>Please read <a href="installhowto.html">this page</a> about how to install it to the device.</p>
+      <p>Except the traditional ISO files, we also package android-x86 files into a Linux package <a href="http://rpm.org/">rpm</a>. It allows Linux users to easily install the release into an existing Linux device with a standalone ext4 root partition. On an rpm based device (Fedora/Red Hat/CentOS/SUSE...), just install it like a normal rpm package:</p>
+        <div class="code-snippet"><span style="color:#d1d1d1">
+          <code class="code-shell">sudo rpm -Uvh android-x86-9.0-rc2.x86_64.rpm</code>
+        </span></div>
+        <p>This will update your older installation like 8.1-r3 or 9.0-rc1 if you have.</p><p>On a deb based device (Debian/Ubuntu/LinuxMint/...), please use the <a href="https://wiki.debian.org/Alien"><i>alien</i></a> tool to install it:</p>
+        <div class="code-snippet"><span style="color:#d1d1d1">
+          <code class="code-shell">sudo apt install alien</code>
+          <br>
+          <code class="code-shell">sudo alien -ci android-x86-9.0-rc2.x86_64.rpm</code>
+        </span></div>
+        <p>All files will be installed to the /android-9.0-rc2/ subdirectory and boot entries will be added to grub2 menu. Reboot and choose android-x86 item from the menu to boot Android-x86. Alternatively, you can launch Android-x86 in a QEMU virtual machine by the installed qemu-android script:</p>
+        <div class="code-snippet"><span style="color:#d1d1d1">
+          <code class="code-shell">sudo qemu-android</code>
+        </span></div>
+        <p>Note Android-x86 running in QEMU and the real machine (after rebooting) share the same data sub-folder.</p>
+        To uninstall it :
+        <div class="code-snippet"><span style="color:#d1d1d1">
+          <code class="code-shell">sudo rpm -e android-x86</code>
+        </span></div>
+        or (on Debian/Ubuntu/LinuxMint/...)
+        <div class="code-snippet"><span style="color:#d1d1d1">
+          <code class="code-shell">sudo apt-get remove android-x86</code>
+        </span></div>
+      <h2><b>Known Issues</b></h2>
+      <ul>
+        <li>Google Play Service may crash sometimes on the 32-bit image.</li>
+        <li>Suspend and resume doesn't work on some devices.</li>
+        <li>Nvidia GPU (nouveau) may hang sometimes.</li>
+        <li>Taking photos doesn't work if Vulkan is enabled.</li>
+      </ul>
+      <br>
+      <h2><b>Source code</b></h2>
+      The source code is available in the main <a href="https://osdn.net/projects/android-x86/scm/">git server.</a>
+      <div class="code-snippet"><span style="color:#d1d1d1">
+        <code class="code-shell">repo init -u git://git.osdn.net/gitroot/android-x86/manifest -b pie-x86<br></code>
+        <code class="code-shell">repo sync --no-tags --no-clone-bundle</code>
+      </span></div>
+      <p>Read <a href="source.html">this page</a> for how to compile source code.</p>
+    </section>
+    <div w3-include-html="footer.html"></div>
+  </div>
+
+  <!--JAVASCRIPT CODE-->
+
+  <script src="https://code.jquery.com/jquery-2.1.1.min.js"></script>
+  <script>
+  includeHTML();
+  $(".openNav").click(function() {
+    $("body").toggleClass("navOpen");
+    $("nav").toggleClass("open");
+    $(".wrapper").toggleClass("open");
+    $(this).toggleClass("open");
+  });
+  </script>
+
+</body>
+</html>
