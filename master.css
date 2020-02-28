@@ -1,104 +1,103 @@
 @import "common.css";
+@media (prefers-color-scheme: light) {
 
-@media (prefers-color-scheme: light){
+        body {
+		color: #666666;
+	}
 
-body{
-  color: #666666;
-}
-body.dark-theme{
-  color:white;
-}
+	body.dark-theme {
+		color: white;
+	}
 
-.wrapper{
-  background-color: white;
-}
-.wrapperDark{
-  transition-duration: 0.5s;
-  transition-timing-function: swing;
-  width: 100%;
-  height: 100%;
-  position: relative;
-  padding: 100px 40px;
-  background-color: #171717;
-}
+	.wrapper {
+		background-color: white;
+	}
 
-/*SCREENSHOTS GALLERRY*/
-div.gallery {
-  border: 1px solid white;
-}
+	.wrapperDark {
+		transition-duration: 0.5s;
+		transition-timing-function: swing;
+		width: 100%;
+		height: 100%;
+		position: relative;
+		padding: 100px 40px;
+		background-color: #171717;
+	}
 
-div.gallery:hover {
-    box-shadow: 0px 0.5px 5px 0.2px black;
-    transition: box-shadow 0.2s;
-}
+	/*SCREENSHOTS GALLERRY*/
 
-.cap {
-  background-color: #fff;
-}
+	div.gallery {
+		border: 1px solid white;
+	}
 
-#download-button-home{
-  color: azure;
-}
+	div.gallery:hover {
+		box-shadow: 0px 0.5px 5px 0.2px black;
+		transition: box-shadow 0.2s;
+	}
 
-#box1 {
-  width: auto;
-  height: auto;
-  padding: 15px;
-  word-wrap: normal;
-  overflow: auto;
-  white-space: nowrap;
-  -webkit-box-shadow: 0px 4px 7px 0px #ccc;
-  -moz-box-shadow: 0px 4px 7px 0px #ccc;
-  box-shadow: 0px 4px 7px 0px #ccc;
-  border: 2px solid #e9e9ea!important;
-  background: #ffffff;
-  border-radius: 15px;
-}
-}
+	.cap {
+		background-color: #fff;
+	}
 
-@media(prefers-color-scheme: dark){
+	#download-button-home {
+		color: azure;
+	}
 
-
-body{
-  color: #dad7d7;
+	#box1 {
+		width: auto;
+		height: auto;
+		padding: 15px;
+		word-wrap: normal;
+		overflow: auto;
+		white-space: nowrap;
+		-webkit-box-shadow: 0px 4px 7px 0px #ccc;
+		-moz-box-shadow: 0px 4px 7px 0px #ccc;
+		box-shadow: 0px 4px 7px 0px #ccc;
+		border: 2px solid #e9e9ea!important;
+		background: #ffffff;
+		border-radius: 15px;
+	}
 }
 
-.wrapper{
-  background-color: #080e16;
-}
+@media(prefers-color-scheme: dark) {
 
-div.gallery {
-  border: 1px solid black;
-}
+	body {
+		color: #dad7d7;
+	}
 
-div.gallery:hover {
-    box-shadow: 0px 0.5px 5px 0.2px grey;
-    transition: box-shadow 0.3s;
-}
+	.wrapper {
+		background-color: #080e16;
+	}
 
-.cap {
-  background-color: #080e16;
-}
+	div.gallery {
+		border: 1px solid black;
+	}
 
-#download-button-home{
-  color: white;
-}
+	div.gallery:hover {
+		box-shadow: 0px 0.5px 5px 0.2px grey;
+		transition: box-shadow 0.3s;
+	}
 
-#box1 {
-  width: auto;
-  height: auto;
-  padding: 15px;
-  word-wrap: normal;
-  overflow: auto;
-  white-space: nowrap;
-  transition: background-color 0.3;
-  -webkit-box-shadow: 0px 1px 10px -6px #ccc;
-  -moz-box-shadow: 0px 1px 10px -6px #ccc;
-  box-shadow: -1px 4px 10px -6px #e4dede;
-  border: 1px solid #4a4a4c!important;
-  background: #333232;
-  border-radius: 15px;
-}
+	.cap {
+		background-color: #080e16;
+	}
 
-}
+	#download-button-home {
+		color: white;
+	}
 
+	#box1 {
+		width: auto;
+		height: auto;
+		padding: 15px;
+		word-wrap: normal;
+		overflow: auto;
+		white-space: nowrap;
+		transition: background-color 0.3;
+		-webkit-box-shadow: 0px 1px 10px -6px #ccc;
+		-moz-box-shadow: 0px 1px 10px -6px #ccc;
+		box-shadow: -1px 4px 10px -6px #e4dede;
+		border: 1px solid #4a4a4c!important;
+		background: #333232;
+		border-radius: 15px;
+	}
+}
