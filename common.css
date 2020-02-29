@@ -253,22 +253,22 @@ div.desc {
   bottom: 60px;
   background-color: #295db2;
   color: white;
-  font-family: Product Sans;
+  font-family: Product Sans; 
   font-size: 18px;
   padding: 14px 25px;
   text-align: center;
   text-decoration: none;
   display: none;
   cursor: pointer;
-  border: 2px solid transparent;
-  border-radius: 25px;
+  border: 1px solid transparent;
+  border-radius: 50px;
   transition : box-shadow 0.4s;
 }
 
 .scroll-to-top:hover {
   color: white;
   background-color: #4165f4;
-  box-shadow: 0px +1.5px #888888;
+  box-shadow: 0px +1px #888888;
 }
 
 .scroll-to-top-show {
