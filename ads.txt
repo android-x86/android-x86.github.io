@@ -7,6 +7,8 @@ google.com, pub-1937576406332709, RESELLER, f08c47fec0942fa0
 google.com, pub-7002491002409919, DIRECT, f08c47fec0942fa0
 google.com, pub-3958635835380150, DIRECT, f08c47fec0942fa0
 google.com, pub-9326071770086369, DIRECT, f08c47fec0942fa0
+google.com, pub-9031689156885069, RESELLER, f08c47fec0942fa0
+google.com, pub-9031689156885069, DIRECT, f08c47fec0942fa0
 #NextMillennium
 nextmillennium.io, 14951, DIRECT, 65bd090fa4a1e3d6
 google.com, pub-7269238500499280, RESELLER, f08c47fec0942fa0
