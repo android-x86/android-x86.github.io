@@ -120,3 +120,7 @@ freewheel.tv, 772065, RESELLER
 freewheel.tv, 774001, RESELLER
 ucfunnel.com, par-77274B9A266D6BD20BD6849D8EB7DD2A, DIRECT
 aralego.com, par-77274B9A266D6BD20BD6849D8EB7DD2A, DIRECT
+pubmatic.com,159175,reseller
+aniview.com,5db075ae28a0610a7120a21b,reseller
+improvedigital.com,1581,reseller
+synacor.com,82171,reseller
