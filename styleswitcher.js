@@ -208,7 +208,8 @@ window.onload = function(e) {
   setActiveStyleSheet(title);
   window.addEventListener('scroll', trackScroll);
   showVCMS();
-  loadScript("https://powerad.ai/script.js");
+  if (window.location.pathname != "" && window.location.pathname != "/" && window.location.pathname != "/index.html")
+    loadScript("https://powerad.ai/script.js");
 }
 
 window.onunload = function(e) {
