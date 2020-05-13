@@ -2,7 +2,7 @@
 <html>
 <head>
   <base href="..">
-  <title>Release 8.1-r4 | Android-x86</title>
+  <title>Release 8.1-r5 | Android-x86</title>
   <link rel="stylesheet" type="text/css" href="master.css" title="default">
   <link rel="alternate stylesheet" type="text/css" href="dark.css" title="alternate">
   <script type="text/javascript" src="styleswitcher.js"></script>
@@ -27,31 +27,27 @@
       </div>
 
       <br>
-      <h2><b>Release Note 8.1-r4</b></h2>
-      <h3>(2020/03/18)</h3>
-      The Android-x86 project is glad to announce the 8.1-r4 release to public. This is the fourth stable release for Android-x86 8.1 (oreo-x86). The prebuilt images are available in the following site as usual:
+      <h2><b>Release Note 8.1-r5</b></h2>
+      <h3>(2020/05/13)</h3>
+      The Android-x86 project is glad to announce the 8.1-r5 release to public. This is the fifth stable release for Android-x86 8.1 (oreo-x86). The prebuilt images are available in the following site as usual:
       <p>
       <ul>
         <li><a href="https://www.fosshub.com/Android-x86-old.html">https://www.fosshub.com/Android-x86-old.html</a></li>
         <li><a href="https://osdn.net/rel/android-x86/Release%208.1">https://osdn.net/rel/android-x86/Release%208.1</a></li>
       </ul>
       </p>
-      <p>
-      <b>2020/03/23 Updated: new images have been uploaded to fix an emergency audio issue of Surface 3. If you are not a user of Surface 3, you do not need to re-download the images.</b>
-      </p>
-      <script data-cfasync="false" type="text/javascript" src="//www.increaserev.com/ads/cm/728x90.js"></script>
+      <p><script data-cfasync="false" type="text/javascript" src="//www.increaserev.com/ads/cm/728x90.js"></script></p>
 
       <br>
       <h2><b>Key Features</b></h2>
-      <p>The 8.1-r4 is mainly a security updates of <a href="releases/releasenote-8-1-r3.html">8.1-r3</a>. We encourage users of 8.1-r3 or older releases upgrade to this one.
+      <p>The 8.1-r5 is mainly a security updates of <a href="releases/releasenote-8-1-r4.html">8.1-r4</a> with some bugfixes. We encourage users of 8.1-r4 or older releases upgrade to this one.
       <ul>
-        <li>Update to latest Android 8.1.0 Oreo MR1 release (8.1.0_r74).</li>
-        <li>Update to LTS kernel 4.19.110.</li>
-        <li>Fix Camera app disappeared issue on devices with only one camera.</li>
-        <li>Fix GMS crashing issue on 32-bit image.</li>
-        <li>Get native bridge libraries by DownloadManager.</li>
-        <li>Update Taskbar to version 5.0.</li>
-        <li>Fix audio issue of Microsoft Surface 3.</li>
+        <li>Update to latest Android 8.1.0 Oreo MR1 release (8.1.0_r76).</li>
+        <li>Update to LTS kernel 4.19.122.</li>
+        <li>Fix sdcardfs permissions issue.</li>
+        <li>Enable serial gps.</li>
+        <li>Add more devices specific quirks.</li>
+	<li>Fix read-write mode support in auto-update.</li>
       </ul>
 
       <br>
@@ -59,42 +55,42 @@
       <p>This release contains these files. You can choose one of them depends on your devices. Most modern devices should be able to run the 64-bit ISO. For older devices with legacy BIOS, you may try the 32-bit ISO.</p>
       <!--DoWNLOAD UL LIST-->
       <ul>
-        <li>64-bit ISO:&nbsp;&nbsp;android-x86_64-8.1-r4.iso
-          <p>sha1sum: d68b0f9c9e8fb37503ece1326e6916208df31458</p>
+        <li>64-bit ISO:&nbsp;&nbsp;android-x86_64-8.1-r5.iso
+          <p>sha1sum: 130a8a712ee0753eb3475465647efd61296a8afb</p>
         </li>
-        <li>32-bit ISO:&nbsp;&nbsp;android-x86-8.1-r4.iso
-          <p>sha1sum: 5feac81f22cc69ca0a5d21010e9e6c8715ec89cc</p>
+        <li>32-bit ISO:&nbsp;&nbsp;android-x86-8.1-r5.iso
+          <p>sha1sum: eedc18b3d362d1f0805339c2617b882c02bb340d</p>
         </li>
-        <li>64-bit rpm:&nbsp;&nbsp;android-x86-8.1-r4.x86_64.rpm
-          <p>sha1sum: f94d74dfcba1ffbb9a2c4d74e536d1e098b92bc6</p>
+        <li>64-bit rpm:&nbsp;&nbsp;android-x86-8.1-r5.x86_64.rpm
+          <p>sha1sum: 7e22066aaf74a9e3ac68a1278016c17b43b96718</p>
         </li>
-        <li>32-bit rpm:&nbsp;&nbsp;android-x86-8.1-r4.i686.rpm
-          <p>sha1sum: 21eaab2599e07a7200f4d537ce3cc9082d1fde74</p>
+        <li>32-bit rpm:&nbsp;&nbsp;android-x86-8.1-r5.i686.rpm
+          <p>sha1sum: 27be9535d7e7258111ed485b8bb39414a27e8127</p>
         </li>
-        <li>64-bit ISO with kernel 4.9:&nbsp;&nbsp;android-x86_64-8.1-r4-k49.iso
-          <p>sha1sum: 020e392b309af3dff7c2258a54383b2389f5d823
+        <li>64-bit ISO with kernel 4.9:&nbsp;&nbsp;android-x86_64-8.1-r5-k49.iso
+          <p>sha1sum: a002e414e20b846d7f1fa4a640e5b75bbe508db7
 	  <br>Recommended for VMware users</p>
         </li>
       </ul>
       <!--DOWNLOAD UL ENDS-->
       <p>To use an ISO file, Linux users can dump it into a usb drive by <tt>dd</tt> command like:</p>
       <div class="code-snippet"><span style="color:#d1d1d1">
-        <code class="code-shell">dd if=android-x86_64-8.1-r4.iso of=/dev/sdX</code>
+        <code class="code-shell">dd if=android-x86_64-8.1-r5.iso of=/dev/sdX</code>
       </span></div>
       <p>where <tt>/dev/sdX</tt> is the device name of your usb drive.</p>
       <p>Windows's users can use the tool <a href="https://sourceforge.net/projects/win32diskimager/">Win32 Disk Imager</a> to create a bootable usb stick.</p>
       <p>Please read <a href="installhowto.html">this page</a> about how to install it to the device.</p>
       <p>Except the traditional ISO files, we also package android-x86 files into a Linux package <a href="http://rpm.org/">rpm</a>. It allows Linux users to easily install the release into an existing Linux device with a standalone ext4 root partition. On an rpm based device (Fedora/Red Hat/CentOS/SUSE...), just install it like a normal rpm package:</p>
       <div class="code-snippet"><span style="color:#d1d1d1">
-        <code class="code-shell">sudo rpm -Uvh android-x86-8.1-r4.x86_64.rpm</code>
+        <code class="code-shell">sudo rpm -Uvh android-x86-8.1-r5.x86_64.rpm</code>
       </span></div>
-      <p>This will update your older installation like 7.1-r3 or 8.1-r3 if you have.</p><p>On a deb based device (Debian/Ubuntu/LinuxMint/...), please use the <a href="https://wiki.debian.org/Alien"><i>alien</i></a> tool to install it:</p>
+      <p>This will update your older installation like 7.1-r3 or 8.1-r4 if you have.</p><p>On a deb based device (Debian/Ubuntu/LinuxMint/...), please use the <a href="https://wiki.debian.org/Alien"><i>alien</i></a> tool to install it:</p>
       <div class="code-snippet"><span style="color:#d1d1d1">
         <code class="code-shell">sudo apt install alien</code>
         <br>
-        <code class="code-shell">sudo alien -ci android-x86-8.1-r4.x86_64.rpm</code>
+        <code class="code-shell">sudo alien -ci android-x86-8.1-r5.x86_64.rpm</code>
       </span></div>
-      <p>All files will be installed to the /android-8.1-r4/ subdirectory and boot entries will be added to grub2 menu. Reboot and choose android-x86 item from the menu to boot Android-x86. Alternatively, you can launch Android-x86 in a QEMU virtual machine by the installed qemu-android script:</p>
+      <p>All files will be installed to the /android-8.1-r5/ subdirectory and boot entries will be added to grub2 menu. Reboot and choose android-x86 item from the menu to boot Android-x86. Alternatively, you can launch Android-x86 in a QEMU virtual machine by the installed qemu-android script:</p>
       <div class="code-snippet"><span style="color:#d1d1d1">
         <code class="code-shell">sudo qemu-android</code>
       </span></div>
@@ -112,11 +108,11 @@
       <h2><b>Source code</b></h2>
       The source code is available in the main <a href="https://osdn.net/projects/android-x86/scm/">git server.</a>
       <div class="code-snippet"><span style="color:#d1d1d1">
-        <code class="code-shell">repo init -u git://git.osdn.net/gitroot/android-x86/manifest -b oreo-x86 -m android-x86-8.1-r4.xml<br></code>
+        <code class="code-shell">repo init -u git://git.osdn.net/gitroot/android-x86/manifest -b oreo-x86 -m android-x86-8.1-r5.xml<br></code>
         <code class="code-shell">repo sync --no-tags --no-clone-bundle</code>
       </span></div>
       <p>Read <a href="source.html">this page</a> for how to compile source code.</p>
-      <p>To build 8.1-r4 with kernel 4.9, sync the source tree as above commands, then
+      <p>To build 8.1-r5 with kernel 4.9, sync the source tree as above commands, then
       <div class="code-snippet"><span style="color:#d1d1d1">
         <code class="code-shell">cd kernel<br></code>
         <code class="code-shell">git fetch x86 kernel-4.9<br></code>
