@@ -1,0 +1,136 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <base href="..">
+  <title>Release CM-x86-14.1-r4 | Android-x86</title>
+  <link rel="stylesheet" type="text/css" href="master.css" title="default">
+  <link rel="alternate stylesheet" type="text/css" href="dark.css" title="alternate">
+  <script type="text/javascript" src="styleswitcher.js"></script>
+  <link rel="icon" type="image/png" href="mobile.png">
+  <meta charset="utf-8" name="viewport" content="width=device-width, initial-scale=1.0">
+</head>
+<body>
+  <div w3-include-html="navbar.html"></div>
+  <div class="openNav">
+    <div class="icon"></div>
+  </div>
+  <!--HTML of main page-->
+  <div class="wrapper">
+    <section>
+      <h1 id="top" class="heading">Android-x86</h1>
+      <h2 class="subheading">Run Android on your PC</h2>
+
+      <!--Style Switcher-->
+      <div class=themebtn>
+        <button class="button" onclick="setActiveStyleSheet('default'); return false;"><img src="light_theme.png" height="20px" width"20px" title='Toggle Theme'/> </button>
+        <button class="button" onclick="setActiveStyleSheet('alternate'); return false;" ><img src="dark_theme.png" height="20px" width"20px" title="Toggle Theme"/></button>
+      </div>
+
+      <br>
+      <h2>Release Note CM-x86-14.1-r4</h2>
+      <h3>(2020/05/20)</h3>
+      The Android-x86 project is glad to announce cm-x86-14.1-r4. This is the fourth stable release of <a href="https://www.lineageos.org/">Lineage OS</a> (formerly CyanogenMod) 14.1 porting for Android-x86. The prebuilt images are available in the following mirror sites:
+      <p>
+      <ul>
+        <li><a href="https://www.fosshub.com/Android-x86-old.html">https://www.fosshub.com/Android-x86-old.html</a></li>
+        <li><a href="https://osdn.net/rel/android-x86/CM%20Release%2014.1">https://osdn.net/rel/android-x86/CM%20Release%2014.1</a></li>
+      </ul>
+      </p>
+      <p><script data-cfasync="false" type="text/javascript" src="//www.increaserev.com/ads/cm/728x90.js"></script></p>
+
+      <br>
+      <h2><b>Key Features</b></h2>
+      <p>
+      The cm-x86-14.1-r4 is an update of <a href="releases/releasenote-cm-x86-14-1-r3.html">cm-x86-14.1-r3</a>. It's based on the <a href="releases/releasenote-7-1-r4.html">Android-x86 7.1-r4</a> and the latest LineageOS 14.1.
+      </p>
+
+      <br>
+      <h2><b>Released Files</b></h2>
+      <p>The release contains these files. Except the images built with kernel 4.9 as before (the first four files), we also provide experimental images built with kernel 4.19 (the last two files). If you have newer devices not supported by kernel 4.9, you may try the kernel 4.19 version. Most modern devices should be able to run the 64-bit ISO. For older devices with legacy BIOS, try the 32-bit ISO.</p>
+      <ul>
+        <li>64-bit ISO:&nbsp;&nbsp;cm-x86_64-14.1-r4.iso
+          <p>sha1sum: 9e7540a213e35066d0839860cfb8ef0da9f90462</p>
+        </li>
+        <li>32-bit ISO:&nbsp;&nbsp;cm-x86-14.1-r4.iso
+          <p>sha1sum: 60b33c0f7bdfae9f429a01aad80cd86b1cea3ac1</p>
+        </li>
+        <li>64-bit rpm:&nbsp;&nbsp;cm-x86-14.1-r4.x86_64.rpm
+          <p>sha1sum: 7acfed4b0ce031e99195f564f0cd56f5a3b197e0</p>
+        </li>
+        <li>32-bit rpm:&nbsp;&nbsp;cm-x86-14.1-r4.i686.rpm
+          <p>sha1sum: 3bc0a107785de1b70e7e8012a28659fbc6ca61ed</p>
+        </li>
+        <li>64-bit ISO with kernel 4.19:&nbsp;&nbsp;cm-x86_64-14.1-r4-k419.iso
+          <p>sha1sum: f67d5b157bdeaea32f387bc1123922c5e8caa954
+	  <br>Recommended for newer devices</p>
+        </li>
+        <li>32-bit ISO with kernel 4.19:&nbsp;&nbsp;cm-x86-14.1-r4-k419.iso
+          <p>sha1sum: 721a9d21a3b30baf5d79e5c8e09802f94db0e48e
+	  <br>Recommended for newer devices</p>
+        </li>
+      </ul>
+      <p>You can choose one of these files depends on your devices. In doubt, try the 32-bit ISO for legacy BIOS devices and 64-bit files for UEFI devices.</p>
+      <p>To use an ISO file, Linux users could just dump it into a usb drive to create a bootable usb stick like :</p>
+      <div class="code-snippet"><span style="color:#d1d1d1">
+        <code class="code-shell">dd if=cm-x86_64-14.1-r4.iso of=/dev/sdX</code>
+      </span></div>
+      <p>where <tt>/dev/sdX</tt> is the device name of your usb drive.</p>
+      <p>Windows's users can use the tool <a href="https://sourceforge.net/projects/win32diskimager/">Win32 Disk Imager</a> to create a bootable usb stick.</p>
+      <p>Please read <a href="installhowto.html">this page</a> about how to install it to the device.
+        Except the traditional ISO files, we also package android-x86 files into a Linux package <a href="http://rpm.org/">rpm</a>. It allows Linux users to easily install the release into an existing Linux device with a standalone ext4 root partition. On an rpm based device (Fedora/Red Hat/CentOS/SUSE...), just install it like a normal rpm package:</p>
+      <div class="code-snippet"><span style="color:#d1d1d1">
+        <code class="code-shell">sudo rpm -Uvh cm-x86-14.1-r4.x86_64.rpm</code>
+      </span></div>
+      <p>All files will be installed to the /cm-x86-14.1-r4/ subdirectory and a boot entry will be added to grub2 menu. Reboot and choose cm-x86 item from the menu to enter the system.</p>
+      To uninstall it:
+      <div class="code-snippet"><span style="color:#d1d1d1">
+        <code class="code-shell">sudo rpm -e cm-x86</code>
+      </span></div>
+      <p>On a deb based device (Debian/Ubuntu/LinuxMint/...), please use the <a href="https://wiki.debian.org/Alien"><i>alien</i></a> tool to install it:</p>
+      <div class="code-snippet"><span style="color:#d1d1d1">
+        <code class="code-shell">sudo apt install alien</code>
+        <br>
+        <code class="code-shell">sudo alien -ci cm-x86-14.1-r4.x86_64.rpm</code>
+      </span></div>
+
+      <br>
+      <h2><b>Known Issues</b></h2>
+      <ul>
+        <li>All known bugs of <a href="releases/releasenote-7-1-r4.html">Android-x86 7.1-r4 release.</a></li>
+      </ul>
+
+      <br>
+      <h2><b>Source code</b></h2>
+      The source code is available in the main <a href="https://osdn.net/projects/android-x86/scm/">git server.</a>
+      <div class="code-snippet"><span style="color:#d1d1d1">
+        <code class="code-shell">repo init -u git://git.osdn.net/gitroot/android-x86/manifest -b cm-x86-14.1-r4<br></code>
+        <code class="code-shell">repo sync --no-tags --no-clone-bundle</code>
+      </span></div>
+      <p>Read <a href="source.html">this page</a> for how to compile source code.</p>
+      <p>To build an image with kernel 4.19, sync the source tree as above commands, then
+      <div class="code-snippet"><span style="color:#d1d1d1">
+        <code class="code-shell">cd kernel<br></code>
+        <code class="code-shell">git fetch x86 kernel-4.19<br></code>
+        <code class="code-shell">git checkout x86/kernel-4.19<br></code>
+        <code class="code-shell">cd ..</code>
+      </span></div>
+      Then build the source as usual.</p>
+    </section>
+    <div w3-include-html="footer.html"></div>
+  </div>
+
+  <!--JAVASCRIPT CODE-->
+
+  <script src="https://code.jquery.com/jquery-2.1.1.min.js"></script>
+  <script>
+  includeHTML();
+  $(".openNav").click(function() {
+    $("body").toggleClass("navOpen");
+    $("nav").toggleClass("open");
+    $(".wrapper").toggleClass("open");
+    $(this).toggleClass("open");
+  });
+  </script>
+
+</body>
+</html>
