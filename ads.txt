@@ -11,10 +11,12 @@ google.com, pub-9326071770086369, DIRECT, f08c47fec0942fa0
 #UAT
 google.com, pub-9031689156885069, RESELLER, f08c47fec0942fa0
 google.com, pub-9031689156885069, DIRECT, f08c47fec0942fa0
-#NextMillennium
+#Next Millennium Media
 nextmillennium.io, 14951, DIRECT, 65bd090fa4a1e3d6
 google.com, pub-7269238500499280, RESELLER, f08c47fec0942fa0
+google.com, pub-8606804482029683, RESELLER, f08c47fec0942fa0
 gumgum.com, 13165, DIRECT, ffdef49475d318a9
+gumgum.com, 13615, RESELLER, ffdef49475d318a9
 districtm.io, 101200, DIRECT, 3fd707be9c4527c3
 appnexus.com, 1908, RESELLER, f5ab79cb980f11d1
 appnexus.com, 7944, RESELLER, f5ab79cb980f11d1
@@ -28,12 +30,12 @@ indexexchange.com, 188029, DIRECT
 indexexchange.com, 188333, DIRECT
 aps.amazon.com, 79e40b05-e673-4b6c-85f9-79252a7f96a5, DIRECT
 pubmatic.com, 157150, RESELLER, 5d62403b186f2ace
-districtm.io, 100962, RESELLER, 3fd707be9c4527c3
+districtm.io, 100962, RESELLER
 openx.com, 540191398, RESELLER, 6a698e2ec38604c6
 yldbt.com, 5b522cc167f6b300b89dc6d3, RESELLER, cd184cb30abaabb5
 coxmt.com, 2000068024302, RESELLER
+pubmatic.com, 157689, RESELLER, 5d62403b186f2ace
 pubmatic.com, 157577, RESELLER, 5d62403b186f2ace
-gumgum.com, 13615, RESELLER, ffdef49475d318a9
 undertone.com, 3757, DIRECT
 appnexus.com, 2234, RESELLER
 openx.com, 537153564, RESELLER, 6a698e2ec38604c6
@@ -41,7 +43,6 @@ springserve.com, 743, DIRECT, a24eb641fc82e93d
 beachfront.com, 4969, RESELLER, e2541279e8e2ca4d
 advertising.com, 26282, RESELLER
 appnexus.com, 9284, RESELLER, f5ab79cb980f11d1
-pubmatic.com, 157689, RESELLER, 5d62403b186f2ace
 conversantmedia.com, 41868, DIRECT
 video.unrulymedia.com, UNRX-PUB-79ae5563-e8e5-40d2-8446-b661c8e95d52, DIRECT
 indexexchange.com, 182257, RESELLER
@@ -50,9 +51,9 @@ rubiconproject.com, 15268, RESELLER
 spotxchange.com, 250862, RESELLER, 7842df1d2fe2db34
 spotx.tv, 250862, RESELLER, 7842df1d2fe2db34
 teads.tv, 18141, DIRECT, 15a9c44f6d26cbe1
-rhythmone.com, 2059465938, DIRECT, a670c89d4a324e47
 rhythmone.com, 316817661, DIRECT, a670c89d4a324e47
-beachfront.com, 13150, DIRECT, e2541279e8e2ca4d
+rhythmone.com, 2059465938, DIRECT, a670c89d4a324e47
+video.unrulymedia.com, 316817661, DIRECT
 smartadserver.com, 1827, RESELLER
 improvedigital.com, 335, RESELLER
 appnexus.com, 3538, RESELLER
@@ -68,25 +69,12 @@ adform.com, 183, RESELLER
 freewheel.tv, 33081, RESELLER
 freewheel.tv, 33601, RESELLER
 google.com, pub-8172268348509349, RESELLER, f08c47fec0942fa0
-connatix.com, 102898, DIRECT, 2af98acdee0e81ed
-tremorhub.com, cd009, RESELLER, 1a4e959a1b50034a
-advertising.com, 14564, RESELLER
-spotxchange.com, 136839, RESELLER, 7842df1d2fe2db34
-spotx.tv, 136839, RESELLER, 7842df1d2fe2db34
-openx.com, 539496816, RESELLER, 6a698e2ec38604c6
-rubiconproject.com, 19564, RESELLER, 0bfd66d529a55807
-google.com, pub-1929615694373103, RESELLER, f08c47fec0942fa0
-appnexus.com, 9733, RESELLER
-contextweb.com, 561340, RESELLER, 89ff185a4c4e857c
-media.net, 8CUPL16D1, DIRECT
 yieldmo.com, 2230523609997805235, DIRECT
 outbrain.com, 0012d9f0ac51b05ef9b320793a03ba4a9c, DIRECT
 appnexus.com, 7597, RESELLER, f5ab79cb980f11d1
 triplelift.com, 7001, DIRECT, 6c33edb13117fd86
 appnexus.com, 1314, RESELLER
-spotxchange.com, 228454, RESELLER, 7842df1d2fe2db34
-spotx.tv, 228454, RESELLER, 7842df1d2fe2db34
-lkqd.net, 504, RESELLER, 59c49fa9598a0117?
+facebook.com, 590126751405962, RESELLER, c3e20eee3f780d68
 # vdo.ai
 vdo.ai,1313, DIRECT
 appnexus.com, 8148, RESELLER
