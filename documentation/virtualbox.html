@@ -177,6 +177,16 @@
               Then type exit to enter Android.
             </p>
 
+            <h3>Debug with adb</h3>
+            <p>This section describes the way to debug Android with adb via network.</p>
+            <p>If we want to debug with adb via network, we should ensure the ip of vbox can be accessed by host machine. So we should change the Network Adapter type of vbox to Bridged Adapter. After starting the android-x86, we should follow the above Settings/[Network] section to ensure the network of android-x86 is enabled, and enable USB debugging in Settings/System/Developer Options. Then we can get the device ip from Settings/System/About tablet/IP address. For example, if we see the ip address is 192.168.0.116, then we can use following command to connect android-x86 in vbox from host machine.
+            <div class="code-snippet"><span style="color:#d1d1d1">
+                <code class="code-shell">adb connect 192.168.0.116</code>
+                </span>
+            </div>
+            Then you can use adb command to debug android-x86 such as get log, and dump system information.
+            </p>
+
 	<h3>References</h3>
     <ol class="refs">
 	<li id="ref1"></a><sup>^ <a href="#ref1_a" onclick="scroller('ref1_a'); return false">a</a> <a href="#ref1_b" onclick="scroller('ref1_b'); return false">b</a></sup> VirtualBox currently <a href="https://www.virtualbox.org/manual/ch04.html#additions-linux" target="_blank">has no Guest Additions for Android.</a></li>
