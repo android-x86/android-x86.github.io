@@ -1,7 +1,5 @@
 @import "common.css";
 
-@media (prefers-color-scheme: light){
-
 body{
   color: #666666;
 }
@@ -54,51 +52,3 @@ div.gallery:hover {
   background: #ffffff;
   border-radius: 15px;
 }
-}
-
-@media(prefers-color-scheme: dark){
-
-
-body{
-  color: #dad7d7;
-}
-
-.wrapper{
-  background-color: #080e16;
-}
-
-div.gallery {
-  border: 1px solid black;
-}
-
-div.gallery:hover {
-    box-shadow: 0px 0.5px 5px 0.2px grey;
-    transition: box-shadow 0.3s;
-}
-
-.cap {
-  background-color: #080e16;
-}
-
-#download-button-home{
-  color: white;
-}
-
-#box1 {
-  width: auto;
-  height: auto;
-  padding: 15px;
-  word-wrap: normal;
-  overflow: auto;
-  white-space: nowrap;
-  transition: background-color 0.3;
-  -webkit-box-shadow: 0px 1px 10px -6px #ccc;
-  -moz-box-shadow: 0px 1px 10px -6px #ccc;
-  box-shadow: -1px 4px 10px -6px #e4dede;
-  border: 1px solid #4a4a4c!important;
-  background: #333232;
-  border-radius: 15px;
-}
-
-}
-
