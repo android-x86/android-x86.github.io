@@ -25,7 +25,7 @@
         <button class="button" onclick="setActiveStyleSheet('alternate'); return false;" ><img src="dark_theme.png" height="20px" width"20px" title="Toggle Theme"/></button>
       </div>
 
-      <p>This page describes the latest information about how to build Android for x86 platform. To browse our source code, see
+      <p>This page describes the latest information on how to build Android for x86 platform. To browse our source code, see
       <p><ul>
         <li><a href="https://git.osdn.net/view?a=project_list;pf=android-x86">Android-x86 at OSDN Gitiweb</a></li>
         <li><a href="https://osdn.net/projects/android-x86/scm">Code repository list at OSDN</a></li>
@@ -106,8 +106,8 @@
         <code class="code-shell">repo init -u http://scm.osdn.net/gitroot/android-x86/manifest -b &dollar;branch<br></code>
         <code class="code-shell">repo sync --no-tags --no-clone-bundle</code>
       </span></div>
-      <p>If you hope to keep syncing your tree with Android-x86 repository, just do <tt>repo sync</tt>. No need to do <tt>repo init</tt> again. However, sometimes you may see conflicts during <tt>repo sync</tt>. See the section "How to Solve Conflicts" for how to solve this situation.
-      </p><p>Note: The Android-x86 repository is very big (more than 20GB for oreo-x86). If you encounter problems of sync it, it's likely a network problem or our server is too busy. Repeatedly run '<tt>repo sync</tt>' until it succeeds without any error. Do not bother us with any of the syncing problem.</p>
+      <p>If you hope to keep syncing your tree with Android-x86 repository, just do <tt>repo sync</tt>. No need to do <tt>repo init</tt> again. However, sometimes you may see conflicts during <tt>repo sync</tt>. See the section "How to Solve Conflicts?" for how to solve this situation.
+      </p><p>Note: The Android-x86 repository is very big (more than 20GB for oreo-x86). If you encounter problems while syncing it, it's likely to be a network problem or it might be the case that our server is too busy. Repeatedly run '<tt>repo sync</tt>' until it succeeds without any error. Do not bother us with any of the syncing problem.</p>
 
       <h2><b>Getting LineageOS for x86 source code</b></h2>
       <p>To get the source code of <a href="https://www.lineageos.org">LineageOS</a> (formerly CyanogenMod) porting for Android-x86, specify the manifest by an additional option <tt>-m cm.xml</tt>:
@@ -122,7 +122,7 @@
       <p><b>Note:</b> Before froyo-x86 (included), you can build on either a 32-bit or 64-bit host. Since gingerbread-x86, a 64-bit build environment is recommended.</p>
 
       <h2><b>Choose a target</b></h2>
-      <p>You need to choose a target for the x86 device you want to use/test. We provides several targets for different branches:</p>
+      <p>You need to choose a target for the x86 device you want to use/test. We provide several targets for different branches:</p>
       <ul>
         <li><h4>lollipop-x86 and later versions</h4></li>
         <ul>
@@ -172,7 +172,7 @@
       </ul>
       <br>
       <p>Unless you are trying to build an ancient branch, you should just use <i>android_x86_64</i> for a 64-bit target, or <i>android_x86</i> for a 32-bit target. They are the universal targets for all x86 devices.</p>
-      <p>Historically, you should use to use <i>generic_x86</i> for eclair-x86 to ics-x86 branches. However, it may not optimized for a particular target device. Use <i>eeepc</i> for a generic x86 for donut-x86 branch or before, unless you have the particular devices supported by other targets.</p>
+      <p>Historically, you should use  <i>generic_x86</i> for eclair-x86 to ics-x86 branches. However, it may not be optimized for a particular target device. Use <i>eeepc</i> for a generic x86 for donut-x86 branch or before, unless you have the particular devices supported by other targets.</p>
       <p>If you are a developer, you can create a target based on <i>android_x86</i> for your device. See <a href="documentation/new_target.html">this article</a> for details. However, it's not recommended to do so unless you are a very experienced Android platform developer.</p>
 
       <h2><b>Using lunch commnd (recommended)</b></h2>
@@ -198,7 +198,7 @@
       <div class="code-snippet"><span style="color:#d1d1d1">
         <code class="code-shell">m -j4 iso_img</code>
       </span></div>
-      <p>Since froyo-x86, we also add menu selection to lunch command. Just type <tt>lunch</tt>, and you will get a list of available targets. Input the number to select a target. Alternatively, just type <tt>lunch $number</tt>.</p>
+      <p>Since froyo-x86, we also add menu selection to lunch command. Just type <tt>lunch</tt>, and you will get a list of available targets. Input a number to select a target. Alternatively, just type <tt>lunch $number</tt>.</p>
       <p>To build an rpm file:</p>
       <div class="code-snippet"><span style="color:#d1d1d1">
         <code class="code-shell">m -jX rpm</code>
@@ -230,11 +230,11 @@
       </span></div>
 
       <h2><b>Building smaller image</b></h2>
-      <p>Since marshmallow-x86, the generated Android-x86 core filesystem will be compressed by <a href="https://en.wikipedia.org/wiki/SquashFS">squashfs</a> by default. Before that, squashfs is used only if you have squashfs-tools 4.0 (older version <b>will not work</b>) installed in your host. The generated iso file is much smaller (only about 30-40%). However, if you hope to disable it for some reasons, add <tt>USE_SQUASHFS=0</tt> to make. You can put it to buildspec.mk:</p>
+      <p>Since marshmallow-x86, the generated Android-x86 core filesystem will be compressed by <a href="https://en.wikipedia.org/wiki/SquashFS">squashfs</a> by default. Before that, squashfs is used only if you have squashfs-tools 4.0 (older version <b>will not work</b>) installed in your host. The generated iso file is much smaller (only about 30-40%). However, if you wish to disable it for some reasons, add <tt>USE_SQUASHFS=0</tt> to make. You can put it to buildspec.mk:</p>
       <div class="code-snippet"><span style="color:#d1d1d1">
         USE_SQUASHFS := 0
       </span></div>
-      <p>Before froyo-x86 (included), If you hope to get a more smaller image, you may remove the debugging symbols by adding</p>
+      <p>Before froyo-x86 (included), If you wish to get a more smaller image, you may remove the debugging symbols by adding</p>
       <div class="code-snippet"><span style="color:#d1d1d1">
         TARGET_STRIP := 1
       </span></div>
@@ -295,11 +295,11 @@
                     <p>Since kitkat-x86 the SRC= parameter may be omitted if the system image is in the same directory as the kernel.</p>
                       <li>Create /android directory in the USB disk, and copy the four files kernel initrd.img ramdisk.img system.sfs (or system.img if you set USE_SQUASHFS=0) to it.</li>
                   </ol></p>
-                    <p>Then you can boot from the USB disk and enjoy Android. Note all data are saved to the ramdisk, so all will lose after power off. If you hope to save data to disk, see the next section.</p>
+                    <p>Then you can boot from the USB disk and enjoy Android. Note all data are saved to the ramdisk, so all data will be lost after power off. If you hope to save data to disk, see the next section.</p>
 
                     <br><br><h2>Install to hard disk</h2>
-                    <p>Install to a hard disk is just the same as install to a USB disk. Even you do not need to create a new partition. Just copy android files into an existing partition, install grub to the hard disk (if not done yet), and modify the menu.lst.<br><br>
-                      People still ask, what if my hard disk is empty? How to install grub and copy files into it? There are several ways to do it. I provide two here:</p>
+                    <p>Installation to a hard disk is exactly the same as installation to a USB disk. Infact you don't even need to create a new partition. Just copy android files into an existing partition, install grub to the hard disk (if not done yet), and modify the menu.lst.<br><br>
+                      People still ask, what if my hard disk is empty? How to install grub and copy files into it? There are several ways to do it. Two of those ways are listed here:</p>
                       <ul>
                         <li>Boot from any rescue cd like <a href="http://www.sysresccd.org">systemrescuecd</a>, and follow the instructions in the previous section.</li>
                         <li>Install your favorite linux distribution, then copy android files and modify the grub menu.</li>
@@ -327,7 +327,7 @@
                         <li>You modify your tree locally.</li>
                         <li>The upstream changed. Since we usually keep syncing with original Android repository, sometimes we have to rebase with it. That changes the history and may cause conflicts.</li>
                       </ul>
-                      <br><p>In this section we assume you have conflicts due to the upstream changed. That is, you don't have local modifications. If you do, you have to solve conflicts yourself. If you follow the procedures in this section, you may lose your local modifications.<br><br>Here is an example of a conflict in mainfest:</p>
+                      <br><p>In this section we assume you have conflicts due to the upstream changed. That is, you don't have local modifications. If you do, you have to solve your conflicts on your own. If you follow the procedures in this section, you may lose your local modifications.<br><br>Here is an example of a conflict in mainfest:</p>
 
                       <div class="code-snippet"><span style="color:#d1d1d1">
                         <code class="code-shell">repo sync<br></code>
