@@ -9,6 +9,7 @@ google.com, pub-3737030722290655, DIRECT, f08c47fec0942fa0
 google.com, pub-3958635835380150, DIRECT, f08c47fec0942fa0
 google.com, pub-9326071770086369, DIRECT, f08c47fec0942fa0
 #UAT
+facebook.com
 google.com, pub-9031689156885069, RESELLER, f08c47fec0942fa0
 google.com, pub-9031689156885069, DIRECT, f08c47fec0942fa0
 #Next Millennium Media
