@@ -96,3 +96,4 @@ indexexchange.com, 191514, DIRECT
 spotxchange.com, 280397, RESELLER, 7842df1d2fe2db34
 spotx.tv, 280397, RESELLER, 7842df1d2fe2db34
 google.com, pub-7094677798399606, RESELLER, f08c47fec0942fa0
+atlas5.co, 1313, DIRECT
