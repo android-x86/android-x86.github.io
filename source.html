@@ -399,8 +399,19 @@
                       <h2>Customize Kernel</h2>
                       <p>If you'd like to customize the kernel for your hardware, read <a href="documentation/customize_kernel.html">this article</a> for details. <br></p>
 
-
-
+                      <h2>Develop with Intellij IDEA</h2>
+                      <p>If you want to use IDE to develop Android-x86, maybe <a href="https://www.jetbrains.com/idea/">Intellij IDEA</a> can be a good choice. You can follow below instructions to
+                      setup project for Intellij IDEA:</p>
+                      <p>Firstly, we should build Intellij IDEA project module files:</p>
+                      <div class="code-snippet"><span style="color:#d1d1d1">
+                        <code class="code-shell">source build/envsetup.sh<br/></code>
+                        <code class="code-shell">m idegen<br/></code>
+                        <code class="code-shell">development/tools/idegen/idegen.sh<br/></code>
+                      </span></div>
+                      <p>
+                      And then we should create an empty project from Intellij IDEA, and import android.iml in the source code root directory
+                      as module to import Android-x86 code to Intellij IDEA. After loading, we can use it to view and debug source code.
+                      </p>
                     </section>
                     <br><br><br>
                     <div w3-include-html="footer.html"></div>
