@@ -120,14 +120,11 @@
         <code class="code-shell">repo sync --no-tags --no-clone-bundle</code>
       </span></div>
       <p>Read <a href="source.html">this page</a> for how to compile source code.</p>
-      <p>To build 7.1-r5 with kernel 4.19, sync the source tree as above commands, then
+      <p>To build 7.1-r5 with kernel 4.19, sync the source tree as above commands, and add <tt>KERNEL_DIR=kernel-4.19</tt> to the build command like:
       <div class="code-snippet"><span style="color:#d1d1d1">
-        <code class="code-shell">cd kernel<br></code>
-        <code class="code-shell">git fetch x86 kernel-4.19<br></code>
-        <code class="code-shell">git checkout x86/kernel-4.19<br></code>
-        <code class="code-shell">cd ..</code>
+        <code class="code-shell">source build/envsetup.sh; lunch android_x86_64-userdebug<br></code>
+        <code class="code-shell">m -j4 iso_img KERNEL_DIR=kernel-4.19</code>
       </span></div>
-      Then build the source as usual.</p>
     </section>
     <div w3-include-html="footer.html"></div>
   </div>
