@@ -23,6 +23,8 @@ google.com, pub-5016155138623826, DIRECT, f08c47fec0942fa0
 google.com, pub-5413329544040947, DIRECT, f08c47fec0942fa0
 google.com, pub-7945044863874787, DIRECT, f08c47fec0942fa0
 google.com, pub-1875306655941163, DIRECT, f08c47fec0942fa0
+google.com, pub-7002491002409919, RESELLER, f08c47fec0942fa0
+google.com, pub-7002491002409919, DIRECT, f08c47fec0942fa0
 mgid.com, 411859, DIRECT, d4c29acad76ce94f
 #Next Millennium Media
 nextmillennium.io, 14951, DIRECT, 65bd090fa4a1e3d6
