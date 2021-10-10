@@ -208,6 +208,7 @@ window.onload = function(e) {
   setActiveStyleSheet(title);
   window.addEventListener('scroll', trackScroll);
   showVCMS();
+  loadScript("https://www.increaserev.com/ads/aspk/head.js");
   if (window.location.pathname != "" && window.location.pathname != "/" && window.location.pathname != "/index.html")
     loadScript("https://powerad.ai/script.js");
 }
