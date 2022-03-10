@@ -1,31 +1,4 @@
 runative-syndicate.com, 2604, DIRECT
-#NTU
-google.com, pub-1937576406332709, RESELLER, f08c47fec0942fa0
-google.com, pub-8834194653550774, RESELLER, f08c47fec0942fa0
-google.com, pub-3737030722290655, RESELLER, f08c47fec0942fa0
-google.com, pub-8834194653550774, DIRECT, f08c47fec0942fa0
-google.com, pub-3737030722290655, DIRECT, f08c47fec0942fa0
-#YAM
-google.com, pub-3958635835380150, DIRECT, f08c47fec0942fa0
-google.com, pub-9326071770086369, DIRECT, f08c47fec0942fa0
-#UAT
-google.com, pub-9031689156885069, RESELLER, f08c47fec0942fa0
-google.com, pub-9031689156885069, DIRECT, f08c47fec0942fa0
-increaserev.com, 6010109, DIRECT
-openx.com, 544088483, RESELLER, 6a698e2ec38604c6
-rubiconproject.com, 21582, RESELLER, 0bfd66d529a55807
-pubmatic.com, 160803, RESELLER, 5d62403b186f2ace
-google.com, pub-5016155138623826, RESELLER, f08c47fec0942fa0
-google.com, pub-5413329544040947, RESELLER, f08c47fec0942fa0
-google.com, pub-7945044863874787, RESELLER, f08c47fec0942fa0
-google.com, pub-1875306655941163, RESELLER, f08c47fec0942fa0
-google.com, pub-5016155138623826, DIRECT, f08c47fec0942fa0
-google.com, pub-5413329544040947, DIRECT, f08c47fec0942fa0
-google.com, pub-7945044863874787, DIRECT, f08c47fec0942fa0
-google.com, pub-1875306655941163, DIRECT, f08c47fec0942fa0
-google.com, pub-7002491002409919, RESELLER, f08c47fec0942fa0
-google.com, pub-7002491002409919, DIRECT, f08c47fec0942fa0
-mgid.com, 411859, DIRECT, d4c29acad76ce94f
 # Next Millennium Ads.txt File
 # Last updated 12-02-2021
 #Next Millennium
