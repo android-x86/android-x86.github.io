@@ -161,13 +161,6 @@ function refreshTag(id, refresh_time, interval, callback) {
   }
 }
 
-function showVCMS()
-{
-  loadScript("https://services.brid.tv/player/build/brid.min.js", function() {
-    $bp("Brid_66475714", {"id":"18770","width":"700","height":"393","playlist":{"id":"0","mode":"latest"},"video_type":"0","shuffle":true});
-  });
-}
-
 function showRunative(id) {
   loadScript("https://cdn.runative-syndicate.com/sdk/v1/n.js", function() {
     refreshTag(id, 5, 35, function(unused) {
@@ -207,7 +200,6 @@ window.onload = function(e) {
   var title = cookie ? cookie : getPreferredStyleSheet();
   setActiveStyleSheet(title);
   window.addEventListener('scroll', trackScroll);
-  showVCMS();
   if (window.location.pathname != "" && window.location.pathname != "/" && window.location.pathname != "/index.html")
     loadScript("https://powerad.ai/script.js");
 }
