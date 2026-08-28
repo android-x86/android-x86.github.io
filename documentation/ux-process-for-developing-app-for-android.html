@@ -1,0 +1,169 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <base href="..">
+  <title>User Experiences | Android-x86</title>
+  <link rel="stylesheet" type="text/css" href="master.css" title="default">
+  <link rel="alternate stylesheet" type="text/css" href="dark.css" title="alternate">
+  <script type="text/javascript" src="styleswitcher.js"></script>
+  <meta charset="utf-8" name="viewport" content="width=device-width, initial-scale=1.0">
+  <link rel="icon" type="image/png" href="mobile.png">
+</head>
+
+<body>
+  <div w3-include-html="navbar.html"></div>
+  <div class="openNav">
+    <div class="icon"></div>
+  </div>
+  <div class="wrapper" >
+    <section>
+      <h1 id="top" class="heading">Android-x86</h1>
+      <h2 class="subheading">Run Android on your PC</h2>
+
+      <div class=themebtn>
+        <button class="button" onclick="setActiveStyleSheet('default'); return false;"><img src="light_theme.png" height="20px" width="20px" title="Toggle Theme"/> </button>
+        <button class="button" onclick="setActiveStyleSheet('alternate'); return false;" ><img src="dark_theme.png" height="20px" width="20px" title="Toggle Theme"/></button>
+      </div>
+<!--HTML of main page-->
+
+<h2>
+What Is the Process for Developing an App for Android?
+</h2>
+<p>
+<br>
+<div align="center"><img src="img/black-android-smartphone-turned-on-displaying-icons.jpg"></div>
+<p></p>
+The Google Play Store hosts roughly 2.39 million available apps and continues to add almost 2,443 apps daily (Panto AI). The numbers vary, with some reports saying the Google Store has over 3.9 million (Listslink), but whether it's 2 or 3 million, it's still enough for you to realise that if you want to add an app that gets noticed, it has to be a good one. And a good Android app needs a good development process.
+<p></p>
+Below, we've created a comprehensive guide to developing an app for Android, from concept to deployment.
+</p>
+
+<h3>App Concept</h3>
+<p>
+The concept is probably the most important part. Your idea should be solving a problem. Whether it's <a href="https://www.10bet.co.za/app-download/">10Bet's sports betting app</a> that solves the problem of people wanting to feel more involved with game outcomes, or Stravas' app that solves the problem of people wanting to track their fitness and feel part of a community, every app is designed around the intended users and the actions users should be able to complete.
+<p></p>
+Start by defining the minimum viable product (MVP) and don't try to launch every possible feature. Separate essential functions from additions such as live streaming, personalised recommendations, loyalty programmes or social features.
+<p></p>
+And realistically, you should establish measurable objectives early. These could include:
+<ul>
+	<li>Successful registrations</li>
+	<li>Completed verification checks</li>
+	<li>First deposits</li>
+	<li>Bet completion rates</li>
+	<li>Retention</li>
+	<li>App stability</li>
+	<li>Customer-support contacts</li>
+</ul>
+<p></p>
+It's also important to decide which devices and Android versions the app will support. The app should be responsive on phones, tablets, foldables, and different window sizes.
+<p></p>
+Then you need to play for the technical side:
+<ul>
+	<li>The backend</li>
+	<li>User accounts</li>
+	<li>Payment or wallet systems</li>
+	<li>Live-data providers</li>
+	<li>Notifications</li>
+	<li>Analytics</li>
+	<li>Customer support</li>
+	<li>Offline behaviour</li>
+</ul>
+
+</p>
+<h3>Designing the App</h3>
+<p>
+During the app concept, you will build a massive brainstorm of ideas and requirements that you can turn into app design through user flows showing how people move between the following:
+<ul>
+	<li>Onboarding</li>
+	<li>Account verification</li>
+	<li>The home screen</li>
+	<li>Event markets</li>
+	<li>Bet slips</li>
+	<li>Payments</li>
+	<li>Account settings</li>
+</ul>
+<p></p>
+Google actually recommends Jetpack Compose as its modern Android UI toolkit. You can use Material Design components to create reusable interfaces, themes, animations and adaptive layouts.
+<p></p>
+Follow Material Design 3 conventions where appropriate, but keep enough custom branding to distinguish the product. Standard Android interaction patterns can reduce the amount users need to learn.
+<p></p>
+Android's current guidance says adaptive design should be default and not an optional enhancement. To do that, you need to think about edge-to-edge display, system bars, gesture-navigation areas and camera cut-outs so that content and essential controls aren't cut off.
+<p></p>
+Then you need to think about designs for every state:
+<ul>
+	<li>Loading</li>
+	<li>Empty results</li>
+	<li>Lost connections</li>
+	<li>Suspended markets</li>
+	<li>Unsuccessful payments</li>
+	<li>Incorrect passwords</li>
+	<li>Unavailable services</li>
+</ul>
+<p></p>
+To actually build the app, we'd recommend hiring an app developer. If not, you can use Kotlin, Jetpack Compose, the Android SDK and Gradle for dependency and build management.
+</p>
+
+<h3>App Quality Assurance Testing</h3>
+<p>
+Quality assurance (QA) testing checks if the app works correctly, consistently, and securely before you release it to the public. You can hire companies such as TestDevLab, QA Madness, and QA Mentor to do it for you, but you should still have an understanding of how to do it properly.
+<p></p>
+The process starts with functional testing, which looks at whether the features behave as they're intended to. You should then test complete user journeys rather than looking at anything in isolation. Only focus on isolated areas if you find an issue.
+<p></p>
+Integration tests are also used to confirm that the app communicates correctly with APIs, databases, payment services and identity-verification providers.
+<p></p>
+User-interface testing ensures that buttons, menus, forms and navigation work consistently.
+Compatibility testing checks that the app is responsive across all devices, as we mentioned earlier that it should be.
+<p></p>
+Performance testing looks at:
+<ul>
+	<li>Startup times</li>
+	<li>Screen-loading speeds</li>
+	<li>Memory consumption</li>
+	<li>Battery use</li>
+	<li>The app's behaviour during periods of heavy traffic</li>
+</ul>
+<p></p>
+Finally, never forget security testing for authentication, session management, encryption, API access, data storage and protection against unauthorised account activity.
+<p></p>
+Security testing should check authentication, session management, encryption, API access, data storage and protection against unauthorised account activity. Sensitive information should not appear in logs or be stored insecurely on the device.
+<p></p>
+Again, you can hire a company to do it all for you.
+<p></p>
+Top tip: use internal, closed or open testing tracks before production. Developers can then distribute near-final versions to Google Play selected testers.
+</p>
+
+<h3>App Deployment</h3>
+<p>
+When you've finished with testing, create a release build and package it as an Android App Bundle. The bundle will show your app's code and resources, and Google Play generates device-optimised APKs for individual users.
+<p></p>
+You need to sign the bundle with an upload key and enrol in Play App Signing. All Android apps must be digitally signed before you can install or update them.
+<p></p>
+As of now, you should target Android 16, API level 36. From the 31st August 2026, new apps and app updates submitted to Google Play must target API level 36 or higher.
+<p></p>
+And, top tip, make sure you complete the data safety form accurately. Filling it out wrong can delay your deployment.
+<p></p>
+How you design your app, from concept to deployment, can literally determine whether anyone will actually notice it. And if they do, it'll determine whether they actually like it. Designing an app should take months, if not a year or more, so take your time with it.
+</p>
+
+<!--CODE ENDS-->
+    </section>
+
+    <div w3-include-html="footer.html"></div>
+  </div>
+
+  <!--JAVASCRIPT CODE-->
+
+  <script src="https://code.jquery.com/jquery-2.1.1.min.js"></script>
+  <script>
+  includeHTML();
+  $(".openNav").click(function() {
+    $("body").toggleClass("navOpen");
+    $("nav").toggleClass("open");
+    $(".wrapper").toggleClass("open");
+    $(".wrapperDark").toggleClass("open");
+    $(this).toggleClass("open");
+  });
+  </script>
+
+</body>
+</html>
